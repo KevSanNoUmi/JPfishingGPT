@@ -1,0 +1,37 @@
+{
+  "version": 5,
+  "updated": "2026-08-11",
+  "method": "Consensus technique construit à partir de la base opérationnelle et recoupé avec des sources fabricant / techniques. Cette couche décrit des mécanismes et une logique de décision; elle n'est pas injectée comme source indépendante dans le score de concordance des observations.",
+  "sources": [
+    {
+      "label": "DAIWA Overdrive — officiel",
+      "url": "https://www.daiwa.com/jp/product/hi65fyu",
+      "use": "Relation vitesse de récupération et comportement du leurre : wide tail swing à basse vitesse, rolling irrégulier à plus haute vitesse; rôle du heavy sinking pencil."
+    },
+    {
+      "label": "Megabass KAGELOU 124F — officiel",
+      "url": "https://www.megabass.co.jp/site/products/kagelou124/",
+      "use": "Action intrinsèque dépendante de la vitesse : natural roll puis roll + slide; distinction entre geste du pêcheur et comportement du leurre."
+    },
+    {
+      "label": "YAMARIA — guide débutant eging",
+      "url": "https://www.yamaria.com/beginner/eging",
+      "use": "Couleurs d'egi selon heure/couleur d'eau et adaptation de taille selon saison/taille des calamars."
+    },
+    {
+      "label": "Ultimate Fishing — Choisir son coloris d'Asturie",
+      "url": "https://www.ultimate-fishing.net/choisir-son-coloris-dasturie-pour-la-peche-du-bar/",
+      "use": "Transparent/ghost en eau claire, opaque quand l'eau est chargée, fluorescent/UV aux transitions de lumière, match the hatch."
+    },
+    {
+      "label": "Ultimate Fishing — conditions d'utilisation des finitions Megabass",
+      "url": "https://www.ultimate-fishing.net/code-couleur-megabass-chapitre-3-les-conditions-dutilisation-des-differentes-finitions-megabass/",
+      "use": "Lecture des finitions transparentes, métalliques et mates selon lumière, turbidité et agressivité."
+    },
+    {
+      "label": "Ultimate Fishing — 3 leurres pour pêcher en fin d'année",
+      "url": "https://www.ultimate-fishing.net/3-leurres-pour-pecher-en-fin-dannee/",
+      "use": "Jerk/twitch créé par la canne, moulinet utilisé pour reprendre la bannière, rôle des pauses."
+    }
+  ]
+}

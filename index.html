@@ -63,6 +63,29 @@
   .tide-source{font-family:'IBM Plex Mono', monospace; font-size:9.5px; line-height:1.45; color:var(--text-muted); margin:6px 0 2px;}
   .tide-source strong{color:var(--ok); font-weight:600;}
   .tide-warning{background:rgba(196,105,79,0.10); border:1px solid rgba(196,105,79,0.35); border-radius:8px; padding:8px 9px; color:#d69a89; font-size:11.5px; line-height:1.45; margin-top:7px;}
+  .tide-days{display:flex; gap:7px; overflow-x:auto; padding:2px 0 8px; scrollbar-width:none;}
+  .tide-days::-webkit-scrollbar{display:none;}
+  .tide-day{min-width:74px; background:var(--surface); border:1px solid var(--border); color:var(--text); border-radius:10px; padding:8px 9px; cursor:pointer; text-align:left;}
+  .tide-day.on{border-color:var(--accent); background:rgba(232,163,61,0.10);}
+  .tide-day .d{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--text-muted);}
+  .tide-day .score{font-family:'Fraunces',serif; font-size:16px; color:var(--accent); margin-top:2px;}
+  .tide-nav{display:flex; align-items:center; justify-content:space-between; gap:8px; margin:3px 0 8px;}
+  .tide-nav button{background:var(--surface); color:var(--accent); border:1px solid var(--border); border-radius:9px; padding:7px 10px; cursor:pointer;}
+  .tide-nav button:disabled{opacity:.3; cursor:default;}
+  .tide-scorebox{display:flex; align-items:flex-start; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:11px; padding:10px 11px; margin:7px 0;}
+  .tide-scorebig{font-family:'Fraunces',serif; font-size:25px; line-height:1; color:var(--accent); min-width:48px;}
+  .tide-scoretxt{font-size:12px; line-height:1.45; color:var(--text-muted);}
+  .sun-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:5px; margin:7px 0;}
+  .sun-chip{background:var(--surface); border:1px solid var(--border); border-radius:9px; padding:7px 4px; text-align:center;}
+  .sun-chip .lab{font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--text-muted); text-transform:uppercase;}
+  .sun-chip .tm{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text); margin-top:2px;}
+  .dest-summary{display:flex; flex-direction:column; gap:8px; margin-top:7px;}
+  .dest-row{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px 11px; line-height:1.5;}
+  .dest-row .lab{font-family:'IBM Plex Mono',monospace; font-size:9px; text-transform:uppercase; color:var(--accent); margin-bottom:4px;}
+  .spot-line{margin:4px 0;}
+  .spot-line strong{color:var(--text);}
+  .intel-details{margin-top:9px;}
+  .intel-details summary{cursor:pointer; color:var(--text-muted); font-family:'IBM Plex Mono',monospace; font-size:10px;}
   .intel-list{display:flex; flex-direction:column; gap:7px; margin-top:7px;}
   .intel-item{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:9px 10px; font-size:12.3px; line-height:1.5;}
   .intel-meta{display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin-bottom:4px;}
@@ -119,6 +142,21 @@
   .fam-count{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-muted);}
   .fam-meta{display:flex; flex-wrap:wrap; gap:5px; align-items:center;}
   .fam-note{font-size:12px; color:var(--text-muted); margin:0 0 12px; font-style:italic;}
+  .role-card,.tech-card,.color-card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 13px; margin-bottom:8px;}
+  .role-name,.tech-name,.color-name{font-family:'Fraunces',serif; font-size:15px; color:var(--accent); font-weight:600;}
+  .role-fam,.tech-control{font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-muted); margin:2px 0 6px;}
+  .tech-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .tech-k{font-family:'IBM Plex Mono',monospace; font-size:9px; text-transform:uppercase; color:var(--text-muted); margin-bottom:2px;}
+  .tech-v{font-size:12.5px; line-height:1.45;}
+  .tech-not{margin-top:7px; padding-top:7px; border-top:1px solid var(--border); font-size:11.5px; color:var(--text-muted);}
+  .color-axis-grid{display:grid; grid-template-columns:1fr 1fr; gap:7px;}
+  .color-axis{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px;}
+  .color-axis .axis{font-family:'Fraunces',serif; color:var(--accent); font-size:14px; margin-bottom:5px;}
+  .color-axis p{margin:3px 0; font-size:12px; line-height:1.4;}
+  .color-matrix-row{display:grid; grid-template-columns:1.1fr 1.5fr; gap:8px; border-bottom:1px solid var(--border); padding:8px 0; font-size:12.5px; line-height:1.4;}
+  .color-matrix-row:last-child{border-bottom:none;}
+  .color-cond{font-weight:600;}
+  .essence-box{background:rgba(232,163,61,0.08); border:1px solid var(--border); border-radius:12px; padding:12px 13px; margin-bottom:10px; font-size:13px; line-height:1.55;}
   .mech-block{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:13px 14px; margin-bottom:11px;}
   .mech-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; gap:8px;}
   .mech-fam{font-family:'Fraunces', serif; font-weight:600; font-size:16px; color:var(--accent);}
@@ -225,6 +263,13 @@
 
   .empty{text-align:center; color:var(--text-muted); padding:40px 20px; font-size:13.5px;}
   .restart-btn{all:unset; cursor:pointer; color:var(--accent); font-size:13px; font-family:'IBM Plex Mono', monospace; margin-top:14px; display:inline-block;}
+
+  @media (max-width:390px){
+    .tech-grid,.color-axis-grid{grid-template-columns:1fr;}
+    .color-matrix-row{grid-template-columns:1fr; gap:4px;}
+    .sun-strip{grid-template-columns:repeat(2,1fr);}
+    .tide-scorebox{align-items:flex-start;}
+  }
 </style>
 </head>
 <body>
@@ -234,7 +279,7 @@
 
 <script>
 /* ============ MARÉES OFFICIELLES EMBARQUÉES (JMA) ============
-   V4 : plus de constantes harmoniques fictives. L'app lit tides_2026.json,
+   V5 : plus de constantes harmoniques fictives. L'app lit tides_2026.json,
    construit l'état montante/descendante entre PM/BM officielles et interpole
    uniquement pour dessiner la courbe. Les valeurs JMA sont des PRÉVISIONS
    astronomiques, pas des niveaux observés en temps réel. */
@@ -332,25 +377,38 @@ function tideSourceInfo(portKey,date){
     proxy:day.proxy_note||null, url:day.source_url||null};
 }
 
-/* Soleil calculé localement pour le repère de faible lumière. */
-function sunTimes(lat,lng,date){
+/* Soleil calculé localement pour le repère de faible lumière.
+   V5 ajoute les lueurs civiles : plus utiles au pêcheur que le seul lever/coucher. */
+function sunEvent(lat,lng,date,isSunrise,zenith=90.833){
   const rad=Math.PI/180, deg=180/Math.PI;
   const p=jstParts(date), base=Date.UTC(p.y,p.m-1,p.d), jan0=Date.UTC(p.y,0,0);
   const day=Math.floor((base-jan0)/864e5), lngHour=lng/15;
-  function calc(isSunrise){
-    const t=day+((isSunrise?6:18)-lngHour)/24;
-    const M=(0.9856*t)-3.289;
-    let L=M+(1.916*Math.sin(M*rad))+(0.020*Math.sin(2*M*rad))+282.634; L=(L+360)%360;
-    let RA=deg*Math.atan(0.91764*Math.tan(L*rad)); RA=(RA+360)%360;
-    RA+=(Math.floor(L/90)*90)-(Math.floor(RA/90)*90); RA/=15;
-    const sinDec=.39782*Math.sin(L*rad), cosDec=Math.cos(Math.asin(sinDec));
-    const cosH=(Math.cos(90.833*rad)-(sinDec*Math.sin(lat*rad)))/(cosDec*Math.cos(lat*rad));
-    if(cosH>1||cosH<-1) return null;
-    let H=isSunrise?360-deg*Math.acos(cosH):deg*Math.acos(cosH); H/=15;
-    const T=H+RA-(0.06571*t)-6.622; let UT=(T-lngHour)%24; UT=(UT+24)%24;
-    return new Date(Date.UTC(p.y,p.m-1,p.d,Math.floor(UT),Math.round((UT%1)*60),0));
-  }
-  return {sunrise:calc(true),sunset:calc(false)};
+  const t=day+((isSunrise?6:18)-lngHour)/24;
+  const M=(0.9856*t)-3.289;
+  let L=M+(1.916*Math.sin(M*rad))+(0.020*Math.sin(2*M*rad))+282.634; L=(L+360)%360;
+  let RA=deg*Math.atan(0.91764*Math.tan(L*rad)); RA=(RA+360)%360;
+  RA+=(Math.floor(L/90)*90)-(Math.floor(RA/90)*90); RA/=15;
+  const sinDec=.39782*Math.sin(L*rad), cosDec=Math.cos(Math.asin(sinDec));
+  const cosH=(Math.cos(zenith*rad)-(sinDec*Math.sin(lat*rad)))/(cosDec*Math.cos(lat*rad));
+  if(cosH>1||cosH<-1) return null;
+  let H=isSunrise?360-deg*Math.acos(cosH):deg*Math.acos(cosH); H/=15;
+  const T=H+RA-(0.06571*t)-6.622; let UT=(T-lngHour)%24; UT=(UT+24)%24;
+  // NOAA renvoie ici une heure UTC modulo 24. Pour le Japon, l'aube tombe souvent
+  // la veille en UTC : réaligner l'événement sur le jour civil JST demandé.
+  let out=new Date(Date.UTC(p.y,p.m-1,p.d,Math.floor(UT),Math.round((UT%1)*60),0));
+  const target=`${p.y}-${String(p.m).padStart(2,'0')}-${String(p.d).padStart(2,'0')}`;
+  const got=dateKeyJST(out);
+  if(got>target) out=new Date(out.getTime()-864e5);
+  else if(got<target) out=new Date(out.getTime()+864e5);
+  return out;
+}
+function sunTimes(lat,lng,date){
+  return {
+    civilDawn:sunEvent(lat,lng,date,true,96),
+    sunrise:sunEvent(lat,lng,date,true,90.833),
+    sunset:sunEvent(lat,lng,date,false,90.833),
+    civilDusk:sunEvent(lat,lng,date,false,96),
+  };
 }
 
 function idealWindows(portKey,date){
@@ -391,6 +449,62 @@ function bestMomentsBySpecies(){
   return out;
 }
 
+function tidePreferencesBySpecies(){
+  const acc={};
+  DATA.observations.forEach(o=>{
+    const st=o.tags&&o.tags.maree; if(!st) return;
+    const sp=o.species; (acc[sp]=acc[sp]||{})[st]=(acc[sp][st]||0)+1;
+  });
+  return acc;
+}
+function tideRangeCm(portKey,key){
+  const ev=tideEventsForDay(portKey,key).filter(e=>Number.isFinite(e.height_cm));
+  if(ev.length<2) return 0;
+  return Math.max(...ev.map(e=>e.height_cm))-Math.min(...ev.map(e=>e.height_cm));
+}
+function tideMovementIndex(portKey,date){
+  const {prev,next}=tideBracket(portKey,date); if(!prev||!next) return 0;
+  const span=next.time-prev.time; if(span<=0) return 0;
+  const p=Math.max(0,Math.min(1,(date-prev.time)/span));
+  return Math.sin(Math.PI*p); // proxy de vitesse de phase: 0 aux étales, 1 à mi-marée
+}
+function momentCenter(portKey,key,moment){
+  const p=PORTS[portKey]; if(!p) return null;
+  const d=dateFromJST(key,'12:00'), sun=sunTimes(p.lat,p.lng,d);
+  if(moment==='aube') return sun.sunrise;
+  if(moment==='crépuscule') return sun.sunset;
+  if(moment==='nuit' && sun.sunset) return new Date(sun.sunset.getTime()+90*6e4);
+  if(moment==='jour' && sun.sunrise && sun.sunset) return new Date((sun.sunrise.getTime()+sun.sunset.getTime())/2);
+  return null;
+}
+function stayDatesForStop(s){
+  const arr=(s.stay_dates&&s.stay_dates.length?s.stay_dates:[s.arrival_date]).filter(Boolean).slice(0,4);
+  return arr.filter(k=>officialTideDay(s.port,k));
+}
+function tideDayScore(portKey,key,speciesList,stayDates){
+  if(!officialTideDay(portKey,key)) return {score:null,label:'—',reason:'Pas de table officielle'};
+  const best=bestMomentsBySpecies(), prefs=tidePreferencesBySpecies();
+  let wsum=0,mov=0,pref=0,bestEval=null;
+  (speciesList||[]).forEach(sp=>{
+    const moments=(best[sp]&&best[sp].length?best[sp].filter(x=>x.pct>=20).slice(0,3):[{moment:'aube',pct:50},{moment:'crépuscule',pct:50}]);
+    moments.forEach(m=>{
+      const t=momentCenter(portKey,key,m.moment); if(!t) return;
+      const w=Math.max(.15,m.pct/100), mv=tideMovementIndex(portKey,t), st=tideState(portKey,t);
+      const pc=prefs[sp]||{}, pt=Object.values(pc).reduce((a,b)=>a+b,0);
+      const ps=pt&&st ? (pc[st]||0)/pt : .5;
+      mov+=mv*w; pref+=ps*w; wsum+=w;
+      const e={sp,moment:m.moment,mv,st,t}; if(!bestEval||mv*w>bestEval.mv*bestEval.w) bestEval={...e,w};
+    });
+  });
+  if(!wsum){mov=.5;pref=.5;wsum=1;} else {mov/=wsum;pref/=wsum;}
+  const amp=tideRangeCm(portKey,key), maxAmp=Math.max(1,...(stayDates||[key]).map(k=>tideRangeCm(portKey,k)));
+  const ampScore=Math.min(1,amp/maxAmp);
+  const score=Math.max(0,Math.min(100,Math.round(55*mov+25*pref+20*ampScore)));
+  const label=score>=80?'fort':score>=65?'bon':score>=50?'correct':'secondaire';
+  const reason=bestEval ? `${bestEval.moment} ${bestEval.st||'phase inconnue'} · mouvement ${bestEval.mv>=.7?'soutenu':bestEval.mv>=.4?'moyen':'proche étale'} · marnage ${Math.round(amp)} cm` : `marnage ${Math.round(amp)} cm`;
+  return {score,label,reason,movement:mov,preference:pref,amplitude:amp};
+}
+
 const MOMENT_COLORS = {
   aube:       '#E8A33D',   // ambre
   jour:       '#6FB1D6',   // bleu clair
@@ -416,7 +530,7 @@ function momentRange(portKey, date, moment){
 
 function tideCurveSVG(portKey, refDate, speciesFilter){
   const base=refDate?new Date(refDate):new Date(), key=dateKeyJST(base), day=officialTideDay(portKey,key);
-  if(!day) return `<div class="tide-warning">Pas de table JMA embarquée pour ${escHTML(key)}. La V4 refuse volontairement d'inventer une courbe.</div>`;
+  if(!day) return `<div class="tide-warning">Pas de table JMA embarquée pour ${escHTML(key)}. La V5 refuse volontairement d'inventer une courbe.</div>`;
   const dayStart=dateFromJST(key,'00:00'), pts=[];
   for(let m=0;m<=24*60;m+=15){
     const t=new Date(dayStart.getTime()+m*6e4), h=tideHeight(portKey,t);
@@ -479,6 +593,7 @@ let currentSpeciesId = null;
 let speciesTab = 0;   // 0 comportement / 1 leurres / 2 couleur / 3 animation
 let qcmState = null;
 let openStopId = null;
+let tideDayByStop = {}; // stop_id -> index dans stay_dates (V5)
 let openComboName = null;
 let logResult = null;
 
@@ -660,12 +775,32 @@ function briefMd(s){
   if(inList)html+='</ul>'; return html;
 }
 
-function intelBlock(s){
+function intelBlock(s,limit=5){
   const intel=(s.intel||[]).filter(x=>['strategy','access','field'].includes(x.category));
   if(!intel.length) return '';
   const score=x=>(x.confidence_level||0)*10 + (x.category==='strategy'?3:x.category==='access'?2:1);
-  const chosen=[...intel].sort((a,b)=>score(b)-score(a)).slice(0,8);
-  return `<div class="k">Intel local V4 — ${intel.length} éléments sourcés</div><div class="intel-list">${chosen.map(x=>`<div class="intel-item"><div class="intel-meta"><span class="intel-cat">${escHTML(x.category)}</span><span class="intel-conf">niveau ${Number(x.confidence_level||0)}/4</span></div>${escHTML(x.text)}<div class="intel-src">${escHTML(x.source||'source')}</div></div>`).join('')}</div>`;
+  const chosen=[...intel].sort((a,b)=>score(b)-score(a)).slice(0,limit);
+  return `<div class="intel-list">${chosen.map(x=>`<div class="intel-item"><div class="intel-meta"><span class="intel-cat">${escHTML(x.category)}</span><span class="intel-conf">niveau ${Number(x.confidence_level||0)}/4</span></div>${escHTML(x.text)}<div class="intel-src">${escHTML(x.source||'source')}</div></div>`).join('')}</div>`;
+}
+
+function destinationSummaryHTML(s){
+  const q=s.summary; if(!q) return s.brief?`<div class="brief-box">${briefMd(s.brief)}</div>`:'';
+  const spots=(q.spots||[]).map(x=>`<div class="spot-line"><strong>${escHTML(x.name)}</strong> — ${escHTML(x.info)}</div>`).join('');
+  return `<div class="dest-summary">
+    <div class="dest-row"><div class="lab">Tendance</div>${escHTML(q.trend||'—')}</div>
+    <div class="dest-row"><div class="lab">Spots à lire</div>${spots||'—'}</div>
+    <div class="dest-row"><div class="lab">Marée / timing</div>${escHTML(q.tide||'—')}</div>
+    <div class="dest-row"><div class="lab">Typicité locale</div>${escHTML(q.local||'—')}</div>
+  </div>`;
+}
+function setTideDay(stopId,index){ tideDayByStop[stopId]=Number(index)||0; renderHome(); }
+function shortDayLabel(key){
+  const d=dateFromJST(key,'12:00');
+  return d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit',timeZone:'Asia/Tokyo'}).replace('.','');
+}
+function fullDayLabel(key){
+  const d=dateFromJST(key,'12:00');
+  return d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',timeZone:'Asia/Tokyo'});
 }
 
 function stopDetail(s){
@@ -677,17 +812,31 @@ function stopDetail(s){
 
   let tideBlock='';
   if(s.port&&PORTS[s.port]){
-    const refDate=s.arrival_date?dateFromJST(s.arrival_date,'09:00'):new Date();
-    const dateLabel=s.arrival_date?refDate.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',timeZone:'Asia/Tokyo'}):'maintenant';
-    const ext=dayExtremes(s.port,refDate),wins=idealWindows(s.port,refDate),documented=Object.keys(bestMomentsBySpecies());
+    let days=stayDatesForStop(s);
+    if(!days.length && s.arrival_date && officialTideDay(s.port,s.arrival_date)) days=[s.arrival_date];
+    const idx=Math.max(0,Math.min(days.length-1,Number(tideDayByStop[s.id]||0)));
+    tideDayByStop[s.id]=idx;
+    const key=days[idx]||s.arrival_date||dateKeyJST(new Date());
+    const refDate=dateFromJST(key,'12:00'), ext=dayExtremes(s.port,refDate), wins=idealWindows(s.port,refDate);
+    const documented=Object.keys(bestMomentsBySpecies());
     const effectiveSpecies=(s.target_species&&s.target_species.length)?s.target_species:documented;
     const sun=sunTimes(PORTS[s.port].lat,PORTS[s.port].lng,refDate), src=tideSourceInfo(s.port,refDate);
-    const winHTML=wins.length?wins.map(w=>`<div class="ideal-win"><span class="ideal-badge ${w.light==='aube'?'is-dawn':'is-dusk'}">${w.light}</span><span class="ideal-tide">marée ${w.tide}</span><span class="ideal-time">${fmtJST(w.from)}–${fmtJST(w.to)}</span></div>`).join(''):`<div class="tide-next">Pas de fenêtre calculable avec les tables officielles embarquées ce jour-là.</div>`;
-    const sourceHTML=src?`<div class="tide-source"><strong>JMA embarqué</strong> · ${escHTML(src.station)}${src.code?' ('+escHTML(src.code)+')':''}. Prévision astronomique, pas une mesure temps réel.${src.proxy?`<br>⚠ ${escHTML(src.proxy)}`:''}</div>`:`<div class="tide-warning">Aucune table JMA embarquée pour cette date. Aucune estimation harmonique de secours n'est affichée.</div>`;
-    tideBlock=`<div class="k">Marée — ${escHTML(PORTS[s.port].label)} · ${escHTML(dateLabel)}</div><div class="tide-now"><span class="tide-next">${ext.length?ext.map(e=>`${e.type} ${fmtJST(e.time)} · ${Math.round(e.height_cm)} cm`).join(' · '):'—'}</span></div>${sourceHTML}<div class="k" style="margin-top:12px">☀︎ Soleil : ${sun.sunrise?fmtJST(sun.sunrise):'—'} → ${sun.sunset?fmtJST(sun.sunset):'—'} JST</div><div class="k" style="margin-top:12px">Fenêtres — marée active × faible lumière</div>${winHTML}<div class="k" style="margin-top:12px">Courbe interpolée ENTRE les PM/BM officielles</div>${tideCurveSVG(s.port,refDate,effectiveSpecies)}${momentLegend(effectiveSpecies)}<button class="session-btn" onclick="event.stopPropagation();setActivePort('${escAttr(s.port)}');renderHome()">Pêcher ici — activer ce port</button>`;
+    const score=tideDayScore(s.port,key,effectiveSpecies,days.length?days:[key]);
+    const dayButtons=days.map((k,i)=>{const sc=tideDayScore(s.port,k,effectiveSpecies,days);return `<button class="tide-day ${i===idx?'on':''}" onclick="event.stopPropagation();setTideDay(${s.id},${i})"><div class="d">${escHTML(shortDayLabel(k))}</div><div class="score">${sc.score??'—'}</div></button>`;}).join('');
+    const winHTML=wins.length?wins.slice(0,4).map(w=>`<div class="ideal-win"><span class="ideal-badge ${w.light==='aube'?'is-dawn':'is-dusk'}">${w.light}</span><span class="ideal-tide">${w.tide}</span><span class="ideal-time">${fmtJST(w.from)}–${fmtJST(w.to)}</span></div>`).join(''):`<div class="tide-next">Pas de fenêtre faible lumière × phase active calculable ce jour.</div>`;
+    const sourceHTML=src?`<div class="tide-source"><strong>JMA embarqué</strong> · ${escHTML(src.station)}${src.code?' ('+escHTML(src.code)+')':''}. Courbe interpolée entre extrema officiels; le score est un outil de comparaison, pas une prédiction de touche.${src.proxy?`<br>⚠ ${escHTML(src.proxy)}`:''}</div>`:`<div class="tide-warning">Aucune table JMA embarquée pour cette date.</div>`;
+    tideBlock=`<div class="k">Prévisions marée — jours du séjour</div>
+      ${days.length>1?`<div class="tide-days">${dayButtons}</div><div class="tide-nav"><button ${idx===0?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx-1})">← Préc.</button><span class="tide-next">${escHTML(fullDayLabel(key))}</span><button ${idx===days.length-1?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx+1})">Suiv. →</button></div>`:`<div class="tide-next" style="margin:6px 0">${escHTML(fullDayLabel(key))}</div>`}
+      <div class="tide-scorebox"><div class="tide-scorebig">${score.score??'—'}</div><div class="tide-scoretxt"><strong style="color:var(--text)">Score marée/lumière : ${escHTML(score.label)}</strong><br>${escHTML(score.reason)}<br><span style="font-size:10px">Compare uniquement les jours du séjour; mouvement de phase ≠ courant réel du spot.</span></div></div>
+      <div class="tide-now"><span class="tide-next">${ext.length?ext.map(e=>`${e.type} ${fmtJST(e.time)} · ${Math.round(e.height_cm)} cm`).join(' · '):'—'}</span></div>
+      <div class="sun-strip"><div class="sun-chip"><div class="lab">1res lueurs</div><div class="tm">${sun.civilDawn?fmtJST(sun.civilDawn):'—'}</div></div><div class="sun-chip"><div class="lab">Lever</div><div class="tm">${sun.sunrise?fmtJST(sun.sunrise):'—'}</div></div><div class="sun-chip"><div class="lab">Coucher</div><div class="tm">${sun.sunset?fmtJST(sun.sunset):'—'}</div></div><div class="sun-chip"><div class="lab">Fin lueurs</div><div class="tm">${sun.civilDusk?fmtJST(sun.civilDusk):'—'}</div></div></div>
+      <div class="k" style="margin-top:10px">Courbe du jour</div>${tideCurveSVG(s.port,refDate,effectiveSpecies)}
+      <div class="k" style="margin-top:10px">Fenêtres faibles lumières × marée active</div>${winHTML}${sourceHTML}
+      <button class="session-btn" onclick="event.stopPropagation();setActivePort('${escAttr(s.port)}');renderHome()">Pêcher ici — activer ce port</button>`;
   }
-  const briefBlock=s.brief?`<div class="k">Brief destination</div><div class="brief-box">${briefMd(s.brief)}</div>`:`<div class="k">Briefing</div><div class="tide-next">Pas encore de brief local pour cette étape.</div>`;
-  return `<div class="pad-detail" onclick="event.stopPropagation()"><div class="k">Espèces ciblées</div><div class="chips">${chips||'—'}</div>${tideBlock}${briefBlock}${intelBlock(s)}</div>`;
+  const summaryBlock=`<div class="k" style="margin-top:13px">Lecture destination</div>${destinationSummaryHTML(s)}`;
+  const details=(s.intel&&s.intel.length)?`<details class="intel-details"><summary>Voir quelques preuves / contraintes (${s.intel.length} éléments en base)</summary>${intelBlock(s,5)}</details>`:'';
+  return `<div class="pad-detail" onclick="event.stopPropagation()"><div class="k">Espèces ciblées</div><div class="chips">${chips||'—'}</div>${summaryBlock}${tideBlock}${details}</div>`;
 }
 
 function toggleStop(id){ openStopId = (openStopId===id) ? null : id; renderHome(); }
@@ -802,7 +951,68 @@ function panelComportement(sp, obs){
     </div>`;
 }
 
-/* --- Panneau 2 : types de leurre + top 10 par combo --- */
+/* --- Panneaux techniques V5 : rôle du leurre, geste, comportement, couleur --- */
+function techSpecies(sp){
+  return SYNTH.technique_v5 && SYNTH.technique_v5.species && SYNTH.technique_v5.species[sp.name_fr];
+}
+function techRoot(){ return SYNTH.technique_v5 || {}; }
+
+function lureRoleEssenceHTML(sp){
+  const ts = techSpecies(sp);
+  if(!ts || !ts.lure_roles || !ts.lure_roles.length) return '';
+  return `<div class="essence-box">
+    <strong>Lecture pêcheur :</strong> ne pars pas d'un nom de modèle. Pars du rôle à remplir sur le spot, puis choisis famille, densité et taille.
+  </div>
+  <div class="tech-grid">${ts.lure_roles.map(r=>`<div class="role-card">
+    <div class="tech-k">${escHTML(r.role)}</div>
+    <div class="fam-name" style="font-size:14px;margin:3px 0 5px">${escHTML(r.families)}</div>
+    <div class="tech-v">${escHTML(r.essence)}</div>
+  </div>`).join('')}</div>`;
+}
+
+function animationEssenceHTML(sp){
+  const root = techRoot(), ts = techSpecies(sp);
+  if(!root.animation_grammar) return '';
+  const speciesLine = ts && ts.animation ? `<div class="essence-box"><strong>Essence ${escHTML(sp.name_fr)} :</strong> ${escHTML(ts.animation)}</div>` : '';
+  const cards = root.animation_grammar.map(a=>`<div class="tech-card">
+    <div class="mech-head" style="margin-bottom:6px"><span class="mech-fam">${escHTML(a.name)}</span><span class="mech-esp">piloté par ${escHTML(a.control)}</span></div>
+    <div class="tech-grid" style="grid-template-columns:1fr">
+      <div><div class="tech-k">Geste</div><div class="tech-v">${escHTML(a.gesture)}</div></div>
+      <div><div class="tech-k">Ce que fait le leurre</div><div class="tech-v">${escHTML(a.lure)}</div></div>
+      <div><div class="tech-k">But</div><div class="tech-v">${escHTML(a.purpose)}</div></div>
+    </div>
+    <div class="tech-not">≠ ${escHTML(a.not)}</div>
+  </div>`).join('');
+  return `${speciesLine}<div class="essence-box"><strong>Règle de lecture :</strong> ${escHTML(root.principle||'')}</div>${cards}`;
+}
+
+function colorLogicHTML(sp){
+  const root=techRoot(), c=root.color_logic, ts=techSpecies(sp);
+  if(!c) return '';
+  const speciesLine = ts && ts.color ? `<div class="essence-box"><strong>Essence ${escHTML(sp.name_fr)} :</strong> ${escHTML(ts.color)}</div>` : '';
+  const axes = (c.axes||[]).map(a=>`<div class="color-axis">
+    <div class="tech-k">${escHTML(a.axis)}</div>
+    <div class="tech-v"><strong>Signal réduit :</strong> ${escHTML(a.low)}<br><strong>Signal renforcé :</strong> ${escHTML(a.high)}</div>
+  </div>`).join('');
+  const matrix = (c.matrix||[]).map(r=>`<div class="color-matrix-row">
+    <div class="tech-k">${escHTML(r.condition)}</div>
+    <div class="tech-v"><strong>Départ :</strong> ${escHTML(r.start)}<br><span style="color:var(--text-muted)">Puis :</span> ${escHTML(r.switch)}</div>
+  </div>`).join('');
+  const finishes=(c.finish_logic||[]).map(f=>`<div class="color-card"><div class="color-name">${escHTML(f.finish)}</div><div class="tech-v">${escHTML(f.mechanic)}</div><div class="tech-not"><strong>À sortir :</strong> ${escHTML(f.best)}<br><strong>Attention :</strong> ${escHTML(f.watch)}</div></div>`).join('');
+  const tint=c.water_tint_logic||{};
+  const tintHTML=Object.keys(tint).length?`<div class="essence-box"><strong>Teinte d'eau :</strong><br>${Object.entries(tint).map(([k,v])=>`<span class="tech-k" style="display:inline;color:var(--accent)">${escHTML(k.replaceAll('_',' '))}</span> — ${escHTML(v)}`).join('<br>')}</div>`:'';
+  return `${speciesLine}
+    <div class="essence-box"><strong>Principe :</strong> ${escHTML(c.rule||'')}</div>
+    <div class="color-axis-grid">${axes}</div>
+    ${tintHTML}
+    <div style="margin-top:10px">${matrix}</div>
+    <p class="section-title" style="margin-top:16px">Finition : ce qu'elle change réellement</p>
+    ${finishes}
+    <div class="essence-box"><strong>Bracketing :</strong> ${escHTML(c.bracketing||'')}</div>
+    <div class="essence-box"><strong>Rose fluo vs jaune/chartreuse :</strong> ${escHTML(c.pink_vs_yellow||'')}</div>`;
+}
+
+/* --- Panneau 2 : types de leurre + rôle technique --- */
 function panelLeurres(sp, obs){
   // Agrégation par famille → densité → longueurs, depuis les observations enrichies (typologie vérifiée fabricant)
   const withTypo = obs.filter(o=>o.recommendation && o.recommendation.typology);
@@ -817,25 +1027,27 @@ function panelLeurres(sp, obs){
     fams[f].sources.add(o.source);
   });
   const famList = Object.entries(fams).sort((a,b)=>b[1].n-a[1].n);
-
-  // Boîte à leurres perso (si un jour renseignée)
   const lures = speciesLures(sp.id);
 
   const famHTML = famList.length ? famList.map(([f,d])=>{
     const densStr = Object.entries(d.dens).sort((a,b)=>b[1]-a[1])
-      .map(([k,v])=>`<span class="typo-dens dens-${k.replace(/[^a-z]/g,'')}">${k} ×${v}</span>`).join(' ');
+      .map(([k,v])=>`<span class="typo-dens dens-${k.replace(/[^a-z]/g,'')}">${escHTML(k)} ×${v}</span>`).join(' ');
     const lens = [...d.lens].sort((a,b)=>a-b);
     const lenStr = lens.length ? `${Math.min(...lens)}–${Math.max(...lens)} cm` : '';
     return `<div class="fam-block">
-      <div class="fam-head"><span class="fam-name">${f}</span><span class="fam-count">${d.n} obs · ${d.sources.size} source${d.sources.size>1?'s':''}</span></div>
+      <div class="fam-head"><span class="fam-name">${escHTML(f)}</span><span class="fam-count">${d.n} obs · ${d.sources.size} source${d.sources.size>1?'s':''}</span></div>
       <div class="fam-meta">${densStr} ${lenStr?`<span class="typo-len">${lenStr}</span>`:''}</div>
     </div>`;
   }).join('') : `<div class="empty">Pas encore de leurre typologisé pour cette espèce.</div>`;
 
   return `
     <div class="section" style="margin-top:0">
-      <p class="section-title">Ce qui ressort — par famille &amp; densité</p>
-      <p class="fam-note">Typologie vérifiée fabricant. Le modèle exact compte moins que : famille · densité · longueur.</p>
+      <p class="section-title">Rôles dans la boîte — l'essence</p>
+      ${lureRoleEssenceHTML(sp) || `<div class="empty">Pas encore assez de consensus pour hiérarchiser les rôles.</div>`}
+    </div>
+    <div class="section">
+      <p class="section-title">Consensus par famille &amp; densité</p>
+      <p class="fam-note">Fréquence dans la base enrichie. À lire après le rôle : famille · densité · longueur, pas comme un classement absolu de modèles.</p>
       ${famHTML}
     </div>
     ${lures.length ? `<div class="section">
@@ -844,21 +1056,20 @@ function panelLeurres(sp, obs){
     </div>` : ''}`;
 }
 
-/* --- Panneaux 3 & 4 : agrégation des recos couleur / animation, sourcées --- */
 /* Badge typologie leurre : famille · densité · longueur, à partir de la reco enrichie */
 function typoBadge(o){
   const tp = o.recommendation && o.recommendation.typology;
   if(!tp) return '';
   const bits = [];
-  if(tp.famille) bits.push(`<span class="typo-fam">${tp.famille}</span>`);
+  if(tp.famille) bits.push(`<span class="typo-fam">${escHTML(tp.famille)}</span>`);
   if(tp.densite){
-    const nu = tp.densite_nuance && tp.densite_nuance!==tp.densite ? ` (${tp.densite_nuance})` : '';
-    bits.push(`<span class="typo-dens dens-${(tp.densite||'').replace(/[^a-z]/g,'')}">${tp.densite}${nu}</span>`);
+    const nu = tp.densite_nuance && tp.densite_nuance!==tp.densite ? ` (${escHTML(tp.densite_nuance)})` : '';
+    bits.push(`<span class="typo-dens dens-${(tp.densite||'').replace(/[^a-z]/g,'')}">${escHTML(tp.densite)}${nu}</span>`);
   }
   if(tp.longueur) bits.push(`<span class="typo-len">${tp.longueur} cm</span>`);
   if(tp.poids) bits.push(`<span class="typo-len">${tp.poids} g</span>`);
   const corr = (tp.marque && o.recommendation.lure && !o.recommendation.lure.toLowerCase().includes((tp.marque||'').toLowerCase().split(' ')[0]))
-    ? `<div class="typo-corr">↳ ${tp.modele||''}${tp.marque?' — '+tp.marque:''}${tp.confiance?' · '+tp.confiance.toLowerCase():''}</div>` : '';
+    ? `<div class="typo-corr">↳ ${escHTML(tp.modele||'')}${tp.marque?' — '+escHTML(tp.marque):''}${tp.confiance?' · '+escHTML(tp.confiance.toLowerCase()):''}</div>` : '';
   return `<div class="typo-badges">${bits.join('')}</div>${corr}`;
 }
 
@@ -866,44 +1077,44 @@ function recoPanelInner(obs, field){
   const entries = obs.filter(o=>o.recommendation && o.recommendation[field]);
   if(!entries.length) return `<div class="empty">Aucune recommandation sourcée pour l'instant.<br>Elles apparaîtront dès qu'une extraction ou une session terrain en fournit.</div>`;
   return entries.map(o=>{
-    const conds = COND_DIMS.filter(d=>o.tags[d]).map(d=>`<span class="tag">${DIM_LABELS[d]}: ${o.tags[d]}</span>`).join('');
+    const conds = COND_DIMS.filter(d=>o.tags[d]).map(d=>`<span class="tag">${DIM_LABELS[d]}: ${escHTML(o.tags[d])}</span>`).join('');
     return `<div class="fact-card">
-      <strong style="color:var(--accent)">${o.recommendation[field]}</strong>
-      ${o.recommendation.lure ? `<span style="color:var(--text-muted); font-size:12.5px"> — sur ${o.recommendation.lure}</span>` : ''}
-      <div class="fact-meta">${conds}<span class="conf-mini ${confClass(o.confidence)}">${o.confidence.toFixed(2)} · ${o.source}</span></div>
+      <strong style="color:var(--accent)">${escHTML(o.recommendation[field])}</strong>
+      ${o.recommendation.lure ? `<span style="color:var(--text-muted); font-size:12.5px"> — sur ${escHTML(o.recommendation.lure)}</span>` : ''}
+      ${field==='animation' ? typoBadge(o) : ''}
+      <div class="fact-meta">${conds}<span class="conf-mini ${confClass(o.confidence)}">${o.confidence.toFixed(2)} · ${escHTML(o.source)}</span></div>
     </div>`;
   }).join('');
 }
-function recoPanel(obs, field, title){
-  const inner = recoPanelInner(obs, field);
-  return `<div class="section" style="margin-top:0">
-    <p class="section-title">${title}</p>
-    ${inner}</div>`;
-}
-function panelCouleur(sp, obs){ return recoPanel(obs, 'color', 'Choix de la couleur — selon conditions'); }
-function panelAnimation(sp, obs){
-  // Mécanique de mise en action, par famille de leurre — filtrée sur les familles pertinentes pour l'espèce
-  const mech = (SYNTH.mechanics || []).filter(m => m.especes.toLowerCase().includes(sp.name_fr.toLowerCase()));
-  const mechHTML = mech.length ? mech.map(m=>`
-    <div class="mech-block">
-      <div class="mech-head">
-        <span class="mech-fam">${m.famille}</span>
-        <span class="mech-esp">${m.especes}</span>
-      </div>
-      <div class="mech-principe">${mdLite(m.principe)}</div>
-      <ul class="mech-corr">${m.corr.map(c=>`<li>${mdLite(c)}</li>`).join('')}</ul>
-    </div>`).join('') : '';
 
-  return `
-    ${mech.length ? `<div class="section" style="margin-top:0">
-      <p class="section-title">Mécanique de mise en action</p>
-      <p class="fam-note">Comment animer chaque famille selon l'activité — corrélations tirées des observations.</p>
-      ${mechHTML}
-    </div>` : ''}
-    <div class="section" ${mech.length?'':'style="margin-top:0"'}>
-      <p class="section-title">Animations observées — selon conditions</p>
-      ${recoPanelInner(obs, 'animation')}
-    </div>`;
+function panelCouleur(sp, obs){
+  const n = obs.filter(o=>o.recommendation && o.recommendation.color).length;
+  return `<div class="section" style="margin-top:0">
+    <p class="section-title">Logique couleur — décider, pas réciter</p>
+    <p class="fam-note">Visibilité utile → lumière → activité → fourrage. La couleur vient après la silhouette, la taille et la présentation.</p>
+    ${colorLogicHTML(sp)}
+  </div>
+  <div class="section">
+    <details class="intel-details">
+      <summary>Voir les recommandations couleur sourcées (${n})</summary>
+      <div style="margin-top:10px">${recoPanelInner(obs,'color')}</div>
+    </details>
+  </div>`;
+}
+
+function panelAnimation(sp, obs){
+  const n = obs.filter(o=>o.recommendation && o.recommendation.animation).length;
+  return `<div class="section" style="margin-top:0">
+    <p class="section-title">Grammaire d'animation — geste → leurre → effet</p>
+    <p class="fam-note">Un mot doit dire qui crée le mouvement : moulinet, canne, ligne/courant ou gravité. Roll, wobble, dart et shimmy décrivent le comportement du leurre, pas forcément ton geste.</p>
+    ${animationEssenceHTML(sp)}
+  </div>
+  <div class="section">
+    <details class="intel-details">
+      <summary>Voir les animations sourcées dans la base (${n})</summary>
+      <div style="margin-top:10px">${recoPanelInner(obs,'animation')}</div>
+    </details>
+  </div>`;
 }
 
 /* --- Panneau 5 : synthèse (grandes lignes, générée depuis l'ensemble de la base) --- */
@@ -980,40 +1191,27 @@ function activityLevel(o){
   return null;
 }
 
-/* Typologie d'ACTION — le GESTE réel une fois le leurre à l'eau. Distinctions techniques strictes
-   (demande explicite de l'utilisateur) : le geste de CANNE, le rôle du fond et de la chute comptent,
-   pas la marque. Chaque obs reçoit UNE catégorie dominante (la plus spécifique), jamais plusieurs.
-
-   - lift-and-fall / jig    : tirées de CANNE pour décoller le leurre du FOND, puis chute contrôlée à la bannière (touche à la retombée)
-   - fall / chute (egi…)    : on laisse DESCENDRE le leurre, prise pendant la chute — sans tirée de décollage du fond
-   - jerk / twitch / dog-walk: animation de CANNE (coups de scion, écarts) SANS logique de fond
-   - stop-and-go            : récupération MOULINET entrecoupée d'ARRÊTS
-   - linéaire               : récupération MOULINET continue, AUCUN mouvement de canne
-   - dérive                 : on accompagne le COURANT, récupération minimale
-   - surface / induction    : travail en surface (topwater, 誘い出し) */
+/* Typologie d'ACTION — le GESTE réel une fois le leurre à l'eau.
+   V5 suit la même grammaire que l'onglet Animation : on ne fusionne plus un one-pitch,
+   un lift-and-fall, une chute seule et un linéaire simplement parce qu'ils peuvent tous
+   utiliser un jig. Une observation reçoit UNE mécanique dominante, la plus spécifique. */
 const ACTION_PATTERNS = [
-  {cat:"lift-and-fall (canne, décollage du fond + chute)",
-   any:["lift-and-fall","lift and fall","one-pitch","one pitch","remontée rythmée depuis le fond","remonte en one-pitch","soulever le montage","relever puis","décoll","remontées et descentes en laissant le leurre retomber","fast pitch"],
-   // doit impliquer canne + fond/chute
-  },
-  {cat:"fall / chute contrôlée (laisser descendre)",
-   any:["free fall","tension fall","カーブフォール","descente en courbe","shimmy fall","back-roll","rolling fall","laisser l'egi retomber","laisser descendre","chute horizontale","laisser tomber","chute contrôlée","10 secondes de chute","allonger le temps de descente","descente stable","descente progressive"],
-  },
-  {cat:"jerk / twitch / dog-walk (animation de canne, sans logique de fond)",
-   any:["jerk","twitch","dog walk","dog-walk","écart","glisse","glissade","dart","pop","zigzag","tirée","impulsion de canne","animation souple imprimée","pointe de la canne","誘い出し","induction"],
-  },
+  {cat:"one-pitch / jigging (canne + moulinet synchronisés)",
+   any:["one-pitch","one pitch","fast pitch","remontée rythmée depuis le fond","remonte en one-pitch","ジャカ巻き","pitch jigging"]},
+  {cat:"lift-and-fall (lift de canne + retombée)",
+   any:["lift-and-fall","lift and fall","soulever le montage","relever puis","décoll","remontées et descentes en laissant le leurre retomber","lift puis fall","lift puis chute"]},
+  {cat:"fall / chute (gravité + tension de ligne)",
+   any:["free fall","tension fall","カーブフォール","descente en courbe","shimmy fall","back-roll","rolling fall","laisser l'egi retomber","laisser descendre","chute horizontale","laisser tomber","chute contrôlée","10 secondes de chute","allonger le temps de descente","descente stable","descente progressive","sur la chute","pendant la chute"]},
+  {cat:"surface — dog-walk / pop / dive (canne + reprise de mou)",
+   any:["dog walk","dog-walk","popping","petits pops","popper","plongée sur traction","diving pencil","誘い出し","induction","zigzag de surface"]},
+  {cat:"jerk / twitch (impulsion de canne)",
+   any:["jerk","twitch","dart","écart latéral","glissade latérale","impulsion de canne","coups de scion","short jerk","long jerk"]},
   {cat:"stop-and-go (moulinet + arrêts)",
-   any:["stop-and-go","stop and go","arrêt","pause","interrompre","interrompu","tours puis arrêt","tours de manivelle puis arrêt","marquer un arrêt","puis marquer une pause"],
-  },
-  {cat:"dérive dans le courant",
-   any:["dériv","drift","accompagner le courant","dérive du courant","laisser filer","dans le courant en conservant","vitesse de dérive"],
-  },
-  {cat:"récupération linéaire (moulinet continu, sans canne)",
-   any:["linéaire","récupération continue","récupération régulière","récupération lente","récupération très lente","dead slow","récupération simple","récupération rapide","tour de manivelle toutes les","récupération dead slow","balancement de la queue","récupération sous la surface","récupération minimale","digital retrieve","ジャカ巻き","prospection large en récupération"],
-  },
-  {cat:"surface / topwater",
-   any:["surface","topwater","top water","wake","sous la surface","juste sous la surface","planante","en surface"],
-  },
+   any:["stop-and-go","stop and go","tours de manivelle puis arrêt","tours puis arrêt","récupération puis arrêt","récupérer puis stopper","marquer un arrêt","récupération entrecoupée de pauses"]},
+  {cat:"dérive / dead drift (courant + bannière)",
+   any:["dériv","dead drift","accompagner le courant","laisser filer","vitesse de dérive","lancer en amont"]},
+  {cat:"linéaire (moulinet continu)",
+   any:["linéaire","récupération continue","récupération régulière","récupération lente","récupération très lente","dead slow","récupération simple","récupération rapide","tour de manivelle toutes les","digital retrieve","prospection large en récupération"]},
 ];
 
 /* Renvoie LA catégorie d'action dominante d'une obs (la première règle qui matche, ordre = spécificité),
@@ -1179,6 +1377,36 @@ function selectQCMAnswer(dim, value, expectedStep=null){
   renderQCM();
 }
 
+function qcmColorGuideHTML(sp,answers){
+  const water=answers.couleur_eau, light=answers.moment_jour, seen=answers.observation||[];
+  const bait=seen.includes('fourrage visible / oiseaux');
+  const transition=light==='aube'||light==='crépuscule', night=light==='nuit';
+  let start='', alt='';
+  if(night){
+    if(water==='claire'){
+      start='sous éclairage : naturel/transparent; sans éclairage : silhouette sombre ou pearl/white';
+      alt='glow ponctuel si cohérent avec la technique, sans confondre glow et fluorescence UV';
+    }else{
+      start='opaque pearl/white ou silhouette sombre bien lisible';
+      alt='chart/rose en accent ou glow ponctuel; réduire le signal si suivis sans attaque';
+    }
+  }else if(water==='claire'){
+    start=transition?'translucide/pearl ou naturel avec contraste contenu':'ghost / transparent / naturel bait';
+    alt=transition?'accent rose/chart fluorescent ou UV-reactif, puis réduire quand la lumière monte':'un peu de flash si activité; plus opaque si ciel se ferme';
+  }else if(water==='verte'){
+    start=transition?'pearl + rose/magenta ou chartreuse bien lisible':'silver/gold naturel + accent rose ou chart';
+    alt=transition?'rose = contraste de teinte; chart = lisibilité. Tester les deux niveaux de signal.':'naturel/flash si chasse sur bait; plus discret si pression forte';
+  }else if(water==='trouble'){
+    start=transition?'opaque pearl/blanc, chartreuse/jaune ou rose/orange high-appeal':'opaque/pearl + flash ou chartreuse';
+    alt='garder une option sombre/mate pour une silhouette franche si le flash ne produit rien';
+  }else{
+    start=transition?'opaque/pearl ou accent fluo/UV avec une option naturelle':'naturel/ghost comme base';
+    alt='bracketer avec une option plus discrète et une plus visible';
+  }
+  const baitLine=bait?'Fourrage visible : fais d’abord matcher silhouette/taille, couche et cadence; la nuance exacte vient après. ':'';
+  return `<div class="essence-box" style="margin:10px 0"><strong>Logique couleur V5</strong> <span style="color:var(--text-muted);font-size:10px">(heuristique, séparée des recos sourcées)</span><br>${escHTML(baitLine)}Départ : <strong>${escHTML(start)}</strong>. Alternative : ${escHTML(alt)}.</div>`;
+}
+
 function renderQCMResults(){
   const obs = speciesObservations(currentSpeciesId).filter(o=>o.recommendation);
   const answers = qcmState.answers;
@@ -1200,12 +1428,14 @@ function renderQCMResults(){
   if(!scored.length){
     zone.innerHTML = `<div class="qcm-panel">
       <div class="qcm-step-label">${condLine}</div>
+      ${qcmColorGuideHTML(DATA.species.find(s=>s.id===currentSpeciesId),answers)}
       <div class="empty">Pas de recommandation sourcée pour cette combinaison.<br>Réfère-toi au top leurres — et logge ta session : elle deviendra la première source terrain pour ces conditions.</div>
       <span class="restart-btn" onclick="startQCM()">↺ Refaire</span></div>`;
     return;
   }
   zone.innerHTML = `<div class="qcm-panel">
     <p class="qcm-step-label">${condLine}</p>
+    ${qcmColorGuideHTML(DATA.species.find(s=>s.id===currentSpeciesId),answers)}
     ${scored.map(({o,matchedDims,matchedObs})=>`
       <div class="reco-card">
         <div class="reco-lure">${escHTML(o.recommendation.lure||'Config')}</div>

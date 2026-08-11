@@ -1,5 +1,5 @@
 """
-Pipeline base de connaissance pêche Japon — v4.
+Pipeline base de connaissance pêche Japon — v5.
 Usage :
     export ANTHROPIC_API_KEY=sk-ant-...
     python pipeline.py init                                # crée/migre la base (schema.sql)
@@ -126,13 +126,15 @@ def _ensure_column(conn, table, definition):
 
 
 def migrate_db(conn):
-    """Migration additive v3 -> v4, sans destruction des données existantes."""
+    """Migration additive v3 -> v5, sans destruction des données existantes."""
     _ensure_column(conn, "sources", "source_kind TEXT")
     _ensure_column(conn, "observations", "evidence_level INTEGER")
     _ensure_column(conn, "observations", "metadata_json TEXT")
     _ensure_column(conn, "observations", "typology_json TEXT")
     _ensure_column(conn, "observations", "fingerprint TEXT")
     _ensure_column(conn, "trip_stops", "arrival_date TEXT")
+    _ensure_column(conn, "trip_stops", "stay_dates_json TEXT")
+    _ensure_column(conn, "trip_stops", "summary_json TEXT")
     conn.executescript("""
         CREATE UNIQUE INDEX IF NOT EXISTS idx_observation_fingerprint
           ON observations(fingerprint) WHERE fingerprint IS NOT NULL;
@@ -170,7 +172,7 @@ def init_db():
     migrate_db(conn)
     conn.commit()
     conn.close()
-    print(f"Base v4 initialisée/migrée : {DB_PATH}")
+    print(f"Base v5 initialisée/migrée : {DB_PATH}")
 
 
 def normalize_species_key(value):
@@ -242,11 +244,15 @@ def add_stop():
     city = input("ville / spot (ex: Numazu / Izu): ").strip()
     dates = input("dates (ex: 29-30 nov): ").strip()
     arrival_date = input("date d'arrivée YYYY-MM-DD (optionnel): ").strip() or None
+    stay_raw = input("jours exacts de pêche YYYY-MM-DD, séparés par virgules (max 4, optionnel): ").strip()
+    stay_dates = [x.strip() for x in stay_raw.split(",") if x.strip()][:4]
+    if not stay_dates and arrival_date:
+        stay_dates = [arrival_date]
     species = input("espèces ciblées, séparées par des virgules: ").strip()
     port = input("clé marée (shimizu/fukuoka/itoshima/kobe/toba/numazu/tokyo/kashima, vide si aucun): ").strip() or None
     cur = conn.execute(
-        "INSERT INTO trip_stops (city, dates, arrival_date, target_species, port) VALUES (?, ?, ?, ?, ?)",
-        (city, dates, arrival_date, species, port),
+        "INSERT INTO trip_stops (city, dates, arrival_date, stay_dates_json, target_species, port) VALUES (?, ?, ?, ?, ?, ?)",
+        (city, dates, arrival_date, json.dumps(stay_dates, ensure_ascii=False) if stay_dates else None, species, port),
     )
     conn.commit()
     print(f"Étape créée, id = {cur.lastrowid}")
@@ -716,7 +722,7 @@ def import_research(filepath):
 
 
 def bootstrap_json(filepath, force=False):
-    """Reconstruit une DB v4 à partir d'un data.json existant, utile quand le .db n'était pas versionné."""
+    """Reconstruit une DB v5 à partir d'un data.json existant, utile quand le .db n'était pas versionné."""
     if force and os.path.exists(DB_PATH):
         os.remove(DB_PATH)
     if os.path.exists(DB_PATH):
@@ -762,8 +768,13 @@ def bootstrap_json(filepath, force=False):
     for st in data.get("trip_stops", []):
         targets=st.get("target_species") or []
         if isinstance(targets,list): targets=",".join(targets)
-        conn.execute("""INSERT OR REPLACE INTO trip_stops (id,city,dates,arrival_date,target_species,port)
-            VALUES (?,?,?,?,?,?)""",(st["id"],st["city"],st["dates"],st.get("arrival_date"),targets,st.get("port")))
+        conn.execute("""INSERT OR REPLACE INTO trip_stops
+            (id,city,dates,arrival_date,stay_dates_json,summary_json,target_species,port)
+            VALUES (?,?,?,?,?,?,?,?)""",
+            (st["id"],st["city"],st["dates"],st.get("arrival_date"),
+             json.dumps(st.get("stay_dates") or [],ensure_ascii=False) if st.get("stay_dates") else None,
+             json.dumps(st.get("summary"),ensure_ascii=False) if st.get("summary") else None,
+             targets,st.get("port")))
         if st.get("brief"):
             conn.execute("INSERT OR REPLACE INTO trip_briefs (stop_id,text) VALUES (?,?)",(st["id"],st["brief"]))
     conn.commit(); conn.close()
@@ -778,7 +789,7 @@ def brief_local():
             WHERE stop_id=? ORDER BY CASE category WHEN 'strategy' THEN 0 WHEN 'access' THEN 1 WHEN 'field' THEN 2 ELSE 3 END,
             confidence_level DESC, id LIMIT 10""",(stop[0],)).fetchall()
         if not rows: continue
-        lines=[f"# {stop[1]} — intel V4"]
+        lines=[f"# {stop[1]} — intel V5"]
         for cat,text,level in rows[:8]:
             lines.append(f"- {text} [intel {level or '?'}]")
         conn.execute("INSERT INTO trip_briefs (stop_id,text) VALUES (?,?) ON CONFLICT(stop_id) DO UPDATE SET text=excluded.text, generated_at=datetime('now')",(stop[0],"\n".join(lines)))
@@ -958,10 +969,19 @@ def export_json():
                 try: item["metadata"]=json.loads(x["metadata_json"])
                 except json.JSONDecodeError: pass
             intel.append(item)
+        stay_dates=[]; summary=None
+        if st["stay_dates_json"]:
+            try: stay_dates=json.loads(st["stay_dates_json"])
+            except json.JSONDecodeError: stay_dates=[]
+        if st["summary_json"]:
+            try: summary=json.loads(st["summary_json"])
+            except json.JSONDecodeError: summary=None
         stops_out.append({"id":st["id"],"city":st["city"],"dates":st["dates"],"port":st["port"],"arrival_date":st["arrival_date"],
+                          "stay_dates":stay_dates,
+                          "summary":summary,
                           "target_species":[x.strip() for x in (st["target_species"] or "").split(",") if x.strip()],
                           "brief":briefs.get(st["id"]),"intel":intel})
-    result={"schema_version":4,"updated":datetime.now(JST).date().isoformat(),"species":species_out,"observations":obs_out,
+    result={"schema_version":5,"updated":datetime.now(JST).date().isoformat(),"species":species_out,"observations":obs_out,
             "lures":lures_out,"combos":combos_out,"trip_stops":stops_out}
     out_path=os.path.join(os.path.dirname(__file__),"data.json")
     with open(out_path,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)

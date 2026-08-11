@@ -1,6 +1,6 @@
 {
   "updated": "2026-08-11",
-  "based_on": "Synthèse stratégique v3 (303 obs) + base V4 portée à 493 observations; intel locale V4 séparée",
+  "based_on": "493 observations validées · 10 espèces · 257 éléments d’intelligence locale",
   "species": {
     "Hirame": "**Concept central : poisson de discontinuité de fond, qui mange à la pause.**\n\n**Leurres** — hiérarchie nette : 1) sinking pencil lourd (Overdrive 65S/80S/95S/120S, Zeonu Evo 95S) : chute lente planante, roulis en descente, downsizing 95→80→65 en cas de refus. 2) Souple sur tête plombée (Rodem, Freak Worm, Bone Bait) : zones peu profondes, poissons proches du bord ou peu actifs (finesse 5-15 g fin nov.). 3) Metal jig 32 g : prospection initiale, vent, distance — plomb = vent/distance, zinc = lent près du fond. 4) Minnow : contrôle rapide des actifs proches du bord.\n\n**Tailles** — bimodal : 8-10 cm = cœur de gamme (95 mm polyvalent), 6-8 cm = downsizing, 12-16 cm = pattern konoshiro uniquement. Rien hors 6-16.\n\n**Positionnement** — rupture de fond (ブレイク/カケ上がり) : pente descendante derrière la cassure. Courant de retour (離岸流) : chenal affouillé, repérable à la zone sans mousse entre les vagues. Fosse proche du bord : peut tenir dans 1 m à 10-20 m du bord si le fourrage est là — ramener jusqu'aux pieds. Règle : pas de fourrage = changer de secteur (run-and-gun). Déclencheur : le démarrage du courant met en activité des poissons déjà présents.\n\n**Lumière** — aube dominante ; plein jour possible si présentation près du fond ; green gold red belly réservé au soleil haut. ⚠️ Trou de données : marée quasi non taggée sur cette espèce.\n\n**Animation** — stop-and-go (3 tours / pause ×3 / retour au fond), 2 sources concordantes. Attaques à la pause ou en descente. Chute horizontale = déclencheur spécifique.",
     "Suzuki": "**Concept central : poisson de structure + lumière, qui mange à la dérive.**\n\n**Leurres** — wake/sub-surface écrase tout (Gorham, Garva, Kagelou, Kirinji, Chovy, Solaria, Hadara Trap) : les 30 premiers cm d'eau. Minnow flottant 85-131 mm en dérive. Souple (VJ/RJ, vibration) uniquement en repli quand les couches hautes ont échoué — RJ10 rasant le fond, vibration 26 g en eau très trouble de jour.\n\n**Tailles** — étalé 8-16 cm, pas de pic : la taille suit le fourrage (バチ fins ~10-11, sardines → downsizing documenté, konoshiro → gros wake 147+, big bait 187 en rotation nocturne).\n\n**Positionnement** — structure urbaine dominante : ponts, piles, murs — le clair-obscur (明暗) est le poste roi, lancer au ras du mur, posé discret. Nuit = 34 tags sur 47 (écrasant). Marée descendante 14 vs montante 2 : バチ post-pleine mer, chenaux qui accélèrent, fourrage évacué des criques. Limites de courant (ヨレ, contre-courants, bordures de bancs de sable) = postes de déclenchement. Iso-maru (rochers) nov-janv : migration pré-repro.\n\n**Animation** — LA DÉRIVE : lancer amont + accompagner le courant + récupération minimale (8+ obs, 5 sources). Ligne légèrement détendue, vitesse calée sur les proies. Exception : récupération très rapide de réaction sur poisson calé mais inactif. Prospecter toujours de la surface vers le fond (préservation du poste).\n\n**Couleur** — moins déterminante avec courant/surface ridée ; transparents quand calme et clair ; silhouette nette > couleur fine en dérive.",
@@ -185,5 +185,329 @@
       ]
     }
   ],
-  "v4_note": "Les fiches et le QCM utilisent les 493 observations exportées. Les paragraphes de synthèse historiques n’ont pas été régénérés par LLM; ils sont conservés comme couche éditoriale v3, tandis que les briefs destination V4 sont générés localement depuis l’intel sourcée."
+  "v4_note": "Historique: la V4 a porté la base opérationnelle à 493 observations et séparé les briefs destination de la couche éditoriale historique.",
+  "technique_v5": {
+    "version": "V5 technique",
+    "principle": "Séparer ce que fait le pêcheur (moulinet / canne / gestion de bannière), ce que fait le leurre (nage / chute / désaxage) et l'effet recherché (tenir une couche / provoquer / créer une fenêtre de touche).",
+    "animation_grammar": [
+      {
+        "name": "Linéaire",
+        "control": "Moulinet",
+        "gesture": "Récupération continue; canne neutre ou basse, sans impulsion volontaire.",
+        "lure": "La nage vient de la conception du leurre: roll, wobble, tail swing, vibration, slalom… selon vitesse/courant.",
+        "purpose": "Tenir une couche, couvrir de l'eau, laisser le leurre travailler.",
+        "not": "Ce n'est ni un jerk, ni un lift-and-fall. Une pause transforme la séquence en stop-and-go."
+      },
+      {
+        "name": "Stop-and-go",
+        "control": "Moulinet + arrêt",
+        "gesture": "Séquence de tours de manivelle puis arrêt franc ou relâché; canne surtout gestionnaire de ligne.",
+        "lure": "Nage → arrêt → suspension, remontée ou chute selon flottabilité.",
+        "purpose": "Créer une rupture de cadence et une fenêtre de prise à la pause/retombée.",
+        "not": "Si on décolle volontairement le leurre à la canne depuis le fond, on passe vers lift-and-fall."
+      },
+      {
+        "name": "Lift-and-fall",
+        "control": "Canne + récupération de bannière",
+        "gesture": "Lift volontaire à la canne pour décoller/remonter, puis accompagnement de la descente; moulinet récupère surtout le mou.",
+        "lure": "Montée provoquée puis chute contrôlée ou semi-libre; contact fond souvent référent.",
+        "purpose": "Pêcher verticalement une cassure/couche basse et déclencher sur la retombée.",
+        "not": "Un simple linéaire interrompu n'est pas un lift-and-fall."
+      },
+      {
+        "name": "Jerk / twitch",
+        "control": "Canne",
+        "gesture": "Impulsions sèches (twitch court, jerk plus ample); moulinet reprend la bannière sans créer l'action principale.",
+        "lure": "Dart, slide, embardée, flash latéral; pause possible après désaxage.",
+        "purpose": "Réaction, changement brutal de direction, imitation d'une proie désorganisée.",
+        "not": "Le mot roll/wobble décrit le leurre, pas le geste du pêcheur."
+      },
+      {
+        "name": "Dérive / dead drift",
+        "control": "Courant + bannière",
+        "gesture": "Lancer amont/3-4 amont, accompagner; moulinet ne fait que maintenir le bon contact.",
+        "lure": "Le courant déplace le leurre; nage intrinsèque minimale à modérée.",
+        "purpose": "Présenter à la vitesse de la veine d'eau, surtout Suzuki.",
+        "not": "Une récupération lente n'est une dérive que si le courant fait réellement progresser la présentation."
+      },
+      {
+        "name": "Fall / chute",
+        "control": "Gravité + tension de ligne",
+        "gesture": "Laisser descendre; bannière détendue = chute plus libre, tension = trajectoire plus contrôlée/arquée.",
+        "lure": "Planing, shimmy, roll, posture stable ou plongeante selon leurre.",
+        "purpose": "Traverser une couche et exploiter la retombée comme fenêtre de touche.",
+        "not": "Le jerk précédent sert souvent seulement à repositionner; la prise peut se faire exclusivement au fall."
+      },
+      {
+        "name": "One-pitch / jigging",
+        "control": "Canne + moulinet synchronisés",
+        "gesture": "Une impulsion par tour/portion de tour, cadence régulière ou variable depuis le fond vers la couche cible.",
+        "lure": "Montée en écarts/flash puis micro-chutes entre impulsions.",
+        "purpose": "Chercher des pélagiques dans la colonne d'eau et identifier leur couche.",
+        "not": "À distinguer d'un linéaire rapide de casting jig, où le moulinet crée presque tout le déplacement."
+      },
+      {
+        "name": "Surface: dog-walk / pop / dive",
+        "control": "Canne + récupération de bannière",
+        "gesture": "Dog-walk = petits twitchs rythmés; pop = tirée qui frappe l'eau; diving pencil = traction qui le fait plonger puis relâchement.",
+        "lure": "Zigzag, éclaboussure/bulles, ou plongée-remontée.",
+        "purpose": "Appel, réaction ou induction depuis la profondeur.",
+        "not": "Trois mécaniques différentes malgré une même couche de surface."
+      }
+    ],
+    "color_logic": {
+      "rule": "Choisir d'abord le niveau de visibilité utile, puis la teinte. Les quatre axes sont clarté de l'eau, lumière, activité/pression et fourrage.",
+      "axes": [
+        {
+          "axis": "Clarté",
+          "low": "Eau claire + calme → translucide/ghost, naturel, flash fin.",
+          "high": "Eau teintée/trouble → opaque, silhouette, contraste, flash ou mat selon lumière."
+        },
+        {
+          "axis": "Lumière",
+          "low": "Aube/crépuscule/ciel bas → silhouette plus nette; fluo/UV en accent utile pendant la transition.",
+          "high": "Soleil fort → transparence/naturel; métallique si besoin de flash mais à doser sur poissons méfiants."
+        },
+        {
+          "axis": "Activité",
+          "low": "Poisson suiveur/méfiant → réduire signal: naturel, ghost, taille/flash contenus.",
+          "high": "Chasse/agressivité → accepter high-appeal: rose, chartreuse/jaune, orange, miroir/flash."
+        },
+        {
+          "axis": "Fourrage",
+          "low": "Bait non identifié → commencer polyvalent naturel + une option contraste.",
+          "high": "Bait clairement identifié → match the hatch en silhouette/taille d'abord, teinte ensuite."
+        }
+      ],
+      "matrix": [
+        {
+          "condition": "Claire + soleil + calme",
+          "start": "Ghost / transparent / iwashi naturel",
+          "switch": "Un peu plus de flash si poissons actifs; plus opaque si ciel se couvre."
+        },
+        {
+          "condition": "Claire + couvert / ombres",
+          "start": "Translucide avec dos opaque, pearl ou naturel contrasté",
+          "switch": "Fluo discret/UV à l'aube-crépuscule; revenir ghost si pression forte."
+        },
+        {
+          "condition": "Verte / chargée mais lumineuse",
+          "start": "Silver/gold + dos chartreuse ou rose; pearl",
+          "switch": "Rose fluo pour casser le vert, chart/jaune pour maximum de lecture; naturel flash si chasse sur bait."
+        },
+        {
+          "condition": "Trouble + ciel bas",
+          "start": "Opaque blanc/pearl, chartreuse/jaune, orange/rose high-appeal",
+          "switch": "Mat sombre/noir si le poisson doit surtout lire une silhouette plutôt qu'un flash."
+        },
+        {
+          "condition": "Aube / crépuscule",
+          "start": "Rose ou jaune/chart fluo, UV, pearl/opaque",
+          "switch": "À mesure que la lumière monte: glisser vers naturel/transparent; à mesure qu'elle tombe: silhouette/opaque."
+        },
+        {
+          "condition": "Nuit / lumière artificielle",
+          "start": "Silhouette sombre ou pearl/white selon contraste; glow/UV si la source lumineuse le rend cohérent",
+          "switch": "Sous éclairage fort et eau claire, tester transparent/naturel avant de surcharger en glow."
+        }
+      ],
+      "bracketing": "Ne pas chercher une couleur magique: partir d'un choix logique puis faire un pas vers plus discret et un pas vers plus visible. Si un suivi sans attaque apparaît, modifier une seule variable à la fois.",
+      "pink_vs_yellow": "Rose fluo et jaune/chartreuse sont deux solutions de visibilité, pas des lois. Le rose est souvent utile comme accent très distinctif dans des eaux verdâtres/bleutées et aux transitions de lumière; le jaune/chartreuse donne une silhouette très lisible en eau chargée ou lumière diffuse. Si le bait est clairement identifié et les poissons nourrissent vraiment, le naturel/flash peut repasser devant les deux.",
+      "finish_logic": [
+        {
+          "finish": "Ghost / transparent",
+          "mechanic": "Réduit la silhouette et le signal visuel; laisse passer la lumière.",
+          "best": "Eau claire, calme, poissons sollicités; match-the-hatch discret.",
+          "watch": "Peut manquer de lecture en eau chargée ou lumière très faible."
+        },
+        {
+          "finish": "Pearl / opaque",
+          "mechanic": "Silhouette pleine et réflexion diffuse, lisible sans gros flash miroir.",
+          "best": "Ciel couvert, eau teintée, faible lumière; blanc/pearl comme base polyvalente.",
+          "watch": "Peut être trop présent en eau cristalline très calme."
+        },
+        {
+          "finish": "Metal / foil / flash",
+          "mechanic": "Éclats spéculaires dépendants de la lumière et de l'angle; imite les flancs d'un bait.",
+          "best": "Bait argenté, soleil, eau légèrement chargée, poissons actifs.",
+          "watch": "Sous forte pression en eau plate et claire, réduire le flash peut être meilleur."
+        },
+        {
+          "finish": "Fluo / UV-reactif",
+          "mechanic": "Augmente la visibilité lorsque des courtes longueurs d'onde restent disponibles; ce n'est pas du glow.",
+          "best": "Transitions aube/crépuscule, ciel diffus, eau verdâtre/teintée; souvent en accent plutôt qu'en corps total.",
+          "watch": "Dans l'obscurité sans source UV/lumière, l'effet fluorescent n'est pas une lampe autonome."
+        },
+        {
+          "finish": "Glow / phosphorescent",
+          "mechanic": "Emmagasine puis réémet de la lumière après charge; signal autonome pendant un temps limité.",
+          "best": "Nuit, profondeur, eging/tenya et situations où un repère lumineux est documenté.",
+          "watch": "Plus de signal n'est pas toujours mieux : ventre/point glow peut être plus fin qu'un corps entièrement lumineux."
+        },
+        {
+          "finish": "Mat sombre / noir",
+          "mechanic": "Travaille surtout la silhouette et le contraste, pas le flash.",
+          "best": "Contre-jour, ciel bas, eau sale ou surface claire vue par dessous.",
+          "watch": "À alterner avec opaque clair : la meilleure silhouette dépend du fond lumineux derrière le leurre."
+        }
+      ],
+      "water_tint_logic": {
+        "verte": "Rose/magenta = contraste de teinte très distinctif; chartreuse/jaune = forte lisibilité/luminance. Tester lequel donne le bon niveau de signal plutôt que décréter un gagnant.",
+        "trouble_brunâtre": "Chartreuse/jaune/orange, pearl/white et silhouette sombre sont des points de départ logiques; le flash dépend de la lumière disponible.",
+        "claire_bleutée": "Naturel/ghost d'abord si poissons méfiants; rose/orange/flash deviennent des options de réaction si l'activité monte.",
+        "bait_identifié": "Match the hatch = silhouette, taille, cadence et couche avant la nuance exacte de couleur."
+      }
+    },
+    "species": {
+      "Hirame": {
+        "lure_roles": [
+          {
+            "role": "Chercher loin + tenir bas",
+            "families": "Heavy sinking pencil 80–120 mm",
+            "essence": "Linéaire lent au-dessus du fond; la vitesse pilote profondeur et amplitude. Stop ou chute si contact/refus."
+          },
+          {
+            "role": "Insister précisément",
+            "families": "Souple / tête plombée",
+            "essence": "Linéaire rasant ou petit lift-and-fall; pauses près des cassures."
+          },
+          {
+            "role": "Vent / distance / prospection",
+            "families": "Metal / blade jig",
+            "essence": "Linéaire ou one-pitch selon couche; retombée surveillée."
+          }
+        ],
+        "animation": "Priorité à la tenue près du fond. Linéaire ≠ lift-and-fall: le premier laisse nager le leurre, le second crée volontairement une montée puis une retombée. Le stop-and-go ajoute une fenêtre de pause sans forcément utiliser la canne.",
+        "color": "Départ naturel/flash (iwashi, silver) si bait; rose/chart/or quand visibilité ou réaction doivent monter. En plein soleil/eau claire, réduire vers naturel/ghost; en faible lumière, opaque/fluo ou glow belly peut prendre le relais."
+      },
+      "Suzuki": {
+        "lure_roles": [
+          {
+            "role": "Couche haute / structure",
+            "families": "Wake, shallow minnow, sinking pencil sub-surface",
+            "essence": "Dérive/dead slow à la vitesse du courant; la canne ne doit pas sur-animer par défaut."
+          },
+          {
+            "role": "Réaction / cassure",
+            "families": "Vibration, sinking minnow",
+            "essence": "Linéaire plus rapide, arrêt ou jerk ponctuel si poisson calé."
+          },
+          {
+            "role": "Bait spécifique",
+            "families": "Gros pencil / big bait",
+            "essence": "À sortir quand konoshiro/sappa est réellement présent, sinon revenir structure/courant."
+          }
+        ],
+        "animation": "La dérive est une mécanique de courant, pas juste 'mouliner lentement'. Jerk/twitch = canne; linéaire = moulinet; roll/slalom = réponse du leurre à ces commandes.",
+        "color": "Claire/calme: ghost/translucide. Ciel bas/eau chargée: opaque/pearl/white. Aube-crépuscule: UV/fluo en accent. Bait identifié: match the hatch en taille/silhouette avant la nuance exacte."
+      },
+      "Hamachi": {
+        "lure_roles": [
+          {
+            "role": "Faire monter / chasse",
+            "families": "Diving pencil, stickbait, popper",
+            "essence": "Tractions, short jerks ou travail de surface selon leurre; viser devant la trajectoire du banc."
+          },
+          {
+            "role": "Chercher les couches",
+            "families": "Metal / blade jig",
+            "essence": "Linéaire rapide si poissons hauts; one-pitch fond→mi-eau si invisibles; fall surveillé."
+          },
+          {
+            "role": "Surface éteinte",
+            "families": "Sinking pencil / sub-surface",
+            "essence": "Rester sous le film, contrôler vitesse et profondeur; ne pas confondre jerk et simple linéaire."
+          }
+        ],
+        "animation": "Le signal clé est la couche. Surface visible = geste de canne/topwater; poisson bas = séquence fond→haut; casting jig haut = linéaire rapide possible. Une touche au fall impose de reproduire la chute, pas seulement le leurre.",
+        "color": "Bait argenté: silver/iwashi naturel en base. Blue-pink, rose métallique, chart/pearl = montée de signal si activité/visibilité l'exigent. En chasse focalisée, taille et silhouette du bait priment sur la fantaisie."
+      },
+      "Aori-Ika": {
+        "lure_roles": [
+          {
+            "role": "Tout le système",
+            "families": "Egi",
+            "essence": "Le jerk repositionne; la descente pêche. Choisir vitesse/stabilité de chute selon profondeur, vent et activité."
+          }
+        ],
+        "animation": "Séparer jerk et fall. Actif: 2–3 jerks nets puis chute. Méfiant: moins de jerks, moins forts, chute plus longue/stable. Free fall et tension fall changent trajectoire et lecture de touche.",
+        "color": "Claire/jour: naturel bleu/brun, keimura/UV si lumière disponible. Trouble/faible lumière: orange/rose/lime, red base, glow/phospho. Le fluo sert de visibilité; sur calamar suiveur, revenir plus naturel est un vrai changement de signal."
+      },
+      "Kurodai": {
+        "lure_roles": [
+          {
+            "role": "Très peu profond",
+            "families": "Pencil / popper / wake",
+            "essence": "Dog-walk ou pop discret; contrôler bruit, silhouette et angle de ligne."
+          }
+        ],
+        "animation": "Dog-walk = twitchs de canne + récupération du mou; un linéaire sans secousse est une autre proposition. Sur suivi: ralentir/stopper OU rupture franche de vitesse, en testant une seule variable.",
+        "color": "Eau claire/pression: transparent/holographique. Faible lumière ou eau sale: opaque, noir/blanc, chart/rose/orange. Le dos visible aide aussi le pêcheur à contrôler le leurre en surface."
+      },
+      "Tachiuo": {
+        "lure_roles": [
+          {
+            "role": "Trouver la couche",
+            "families": "Tenya / jig / sinking minnow",
+            "essence": "Compter la descente, reproduire exactement la couche; lift-and-fall si fond/intermédiaire, linéaire si banc haut et mobile."
+          }
+        ],
+        "animation": "La variable n°1 est la profondeur reproduite. Lift-and-fall = montée de canne + retombée; un minnow en linéaire haut est une mécanique différente même si les deux prennent le même poisson.",
+        "color": "Base à consolider. En faible lumière, pearl/chart/glow peut servir de signal; dès que bait/éclairage est lisible, tester une option naturelle ou argentée en parallèle."
+      },
+      "Madai": {
+        "lure_roles": [],
+        "animation": "Base shore-lure encore insuffisante pour imposer une mécanique unique.",
+        "color": "Données insuffisantes: ne pas créer une règle couleur locale sans nouvelle source."
+      },
+      "Saba": {
+        "lure_roles": [],
+        "animation": "Base encore insuffisante; conserver les observations locales avant de généraliser.",
+        "color": "Données insuffisantes."
+      },
+      "Aji": {
+        "lure_roles": [],
+        "animation": "Base encore insuffisante; micro-jig/softbait doivent être enrichis par sources locales avant synthèse.",
+        "color": "Données insuffisantes."
+      },
+      "Mebaru": {
+        "lure_roles": [],
+        "animation": "Base encore insuffisante; distinguer futur linéaire light-game, drift et micro-jig au lieu de les fusionner.",
+        "color": "Données insuffisantes."
+      }
+    },
+    "sources": [
+      {
+        "label": "DAIWA Overdrive officiel",
+        "url": "https://www.daiwa.com/jp/product/hi65fyu",
+        "use": "Relation vitesse de récupération ↔ wide tail swing / irregular roll et usage slow vs fast."
+      },
+      {
+        "label": "Megabass KAGELOU 124F officiel",
+        "url": "https://www.megabass.co.jp/site/products/kagelou124/",
+        "use": "Action variable avec la vitesse: natural roll puis roll + slide."
+      },
+      {
+        "label": "YAMARIA guide eging officiel",
+        "url": "https://www.yamaria.com/beginner/eging",
+        "use": "Choix couleurs selon heure et couleur d'eau; taille d'egi selon saison/taille des calamars."
+      },
+      {
+        "label": "Ultimate Fishing — choix coloris Asturie",
+        "url": "https://www.ultimate-fishing.net/choisir-son-coloris-dasturie-pour-la-peche-du-bar/",
+        "use": "Translucide/opaque selon clarté, fluo/UV aux transitions, match the hatch."
+      },
+      {
+        "label": "Ultimate Fishing — finitions Megabass",
+        "url": "https://www.ultimate-fishing.net/code-couleur-megabass-chapitre-3-les-conditions-dutilisation-des-differentes-finitions-megabass/",
+        "use": "Lecture transparent / métallique / mat selon lumière, turbidité et agressivité."
+      },
+      {
+        "label": "Ultimate Fishing — jerkbait fin d'année",
+        "url": "https://www.ultimate-fishing.net/3-leurres-pour-pecher-en-fin-dannee/",
+        "use": "Distinction action de canne jerk/twitch, moulinet qui récupère la bannière, rôle des pauses."
+      }
+    ]
+  },
+  "v5_note": "V5: les onglets techniques utilisent technique_v5, construit pour séparer geste du pêcheur, comportement du leurre et effet recherché; la logique couleur est structurée par clarté, lumière, activité et fourrage. Les pads destination utilisent des résumés courts et une navigation marée limitée aux jours réels du séjour."
 }

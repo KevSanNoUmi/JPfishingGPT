@@ -1,6 +1,6 @@
-// Carnet Pêche JP — service worker V4
+// Carnet Pêche JP — service worker V5
 // Objectif : une première installation réellement utilisable hors ligne.
-const CACHE = 'carnet-peche-jp-v4-20260811';
+const CACHE = 'carnet-peche-jp-v5-20260811';
 
 // Ces fichiers sont indispensables au démarrage et existent dans la release.
 const CRITICAL = [

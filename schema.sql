@@ -1,4 +1,4 @@
--- Schéma base de connaissance pêche Japon — v4
+-- Schéma base de connaissance pêche Japon — v5
 -- Multi-espèces, briefs, terrain PWA, intel locale et marées officielles 2026.
 
 CREATE TABLE IF NOT EXISTS species (
@@ -79,6 +79,8 @@ CREATE TABLE IF NOT EXISTS trip_stops (
     city TEXT NOT NULL,
     dates TEXT NOT NULL,
     arrival_date TEXT,       -- YYYY-MM-DD, ancre l'affichage sur le séjour
+    stay_dates_json TEXT,     -- JSON array YYYY-MM-DD, jours exacts affichés dans le navigateur de marée
+    summary_json TEXT,        -- synthèse destination V5 (tendance, spots, marée, typicités)
     target_species TEXT,
     port TEXT
 );

@@ -1,134 +1,142 @@
-# Carnet Pêche JP — V4
+# Carnet Pêche JP — V5
 
 PWA mobile-first de préparation et de décision pour un voyage de pêche du bord au Japon.
-Le dépôt contient à la fois l'application statique publiée sur GitHub Pages, la base SQLite
-qui sert de source de vérité et le pipeline Python d'enrichissement/export.
+Le dépôt contient l'application GitHub Pages, la base SQLite source de vérité, les données
+exportées et le pipeline Python d'enrichissement.
 
-## État de cette release
+## État de la release
 
-- **493 observations validées** dans `data.json`, sur les 10 espèces de la base désormais documentées.
-- **257 entrées d'intelligence locale** liées aux étapes du voyage (accès, stratégie,
-  conditions, contexte et signaux terrain), intégrées dans les pads d'étape.
-- **8 étapes de voyage** avec date d'arrivée et espèces cibles.
-- **25 journées de marées astronomiques JMA** embarquées dans `tides_2026.json` pour les
-  dates utiles du voyage.
-- **101 observations enrichies par une typologie de leurre** dans l'export courant.
-- Les quatre deep-research fournis pour Fukuoka, Kobe, Ise-Shima et Numazu sont conservés
-  dans `research/` avec les enrichissements complémentaires Shizuoka, Tokyo et Kashima.
+- **493 observations validées** sur **10 espèces**.
+- **257 éléments d'intelligence locale** rattachés aux étapes du voyage.
+- **8 étapes** avec jours de séjour explicites (maximum 4 jours affichés par pad).
+- **25 journées de marées astronomiques JMA** embarquées dans `tides_2026.json`.
+- **101 observations** enrichies par une typologie de leurre.
+- Deep research conservé dans `research/` pour Fukuoka, Kobe, Ise-Shima, Numazu, plus les
+  compléments Shizuoka, Tokyo, Kashima, Madai et Saba.
 
-## Ce qui change en V4
+## Ce qui change en V5
 
-### 1. Marées : suppression du faux modèle harmonique
+### 1. Navigation marée limitée aux vrais jours sur place
 
-La V3 affichait une courbe calculée à partir de constantes harmoniques provisoires. Elles
-étaient explicitement des placeholders et pouvaient produire une heure crédible mais fausse.
-La V4 ne fait plus cela.
+Chaque pad destination possède maintenant `stay_dates`. L'écran marée commence au **premier
+jour du séjour** et permet de naviguer avec **Préc. / Suiv.** uniquement dans ces dates,
+avec un maximum de quatre jours affichés.
 
-`tides_2026.json` embarque les **heures de pleine mer / basse mer issues des prévisions
-astronomiques JMA** pour les dates prévues du voyage. L'app :
+Pour Fukuoka, Kobe et Numazu, les plages suivent directement les dates des deep research :
+15–18 novembre, 20–23 novembre et 29 novembre–2 décembre. Tokyo couvre 2–5 décembre.
 
-- détermine `montante / descendante / étale` depuis les extrema officiels ;
-- affiche PM/BM et leurs hauteurs ;
-- dessine uniquement une interpolation visuelle entre ces points ;
-- n'invente rien lorsqu'une date n'est pas couverte ;
-- affiche clairement les références de proximité lorsqu'elles sont utilisées
-  (`Hakata` pour Itoshima, `Toba` pour Ise-Shima).
+Chaque jour affiche :
 
-**Important :** ce sont des prévisions astronomiques, pas des hauteurs observées en temps
-réel. Vent, pression, houle et configuration locale peuvent modifier le niveau réel.
+- les PM/BM et hauteurs JMA embarquées ;
+- la courbe interpolée du jour ;
+- les **premières lueurs**, le lever, le coucher et la fin des lueurs ;
+- les croisements faible lumière × phase de marée active ;
+- un **score comparatif 0–100** pour classer les jours du séjour.
 
-### 2. Log terrain fiabilisé
+Le score combine : activité de phase autour des moments documentés pour les espèces ciblées,
+préférences de marée présentes dans la base et marnage relatif entre les jours du séjour.
+Il sert à **comparer les journées entre elles**. Ce n'est ni une probabilité de capture, ni un
+modèle hydrodynamique du courant réel d'une pointe, d'un chenal ou d'un port.
 
-L'import d'une session PWA ne casse plus lorsque le QCM contient plusieurs observations du
-spot. Les valeurs tableau sont maintenant éclatées proprement en tags. L'import est aussi
-idempotent grâce à un fingerprint : réimporter le même fichier ne duplique pas la session.
+### 2. Brief destination condensé
 
-L'app enregistre en plus :
+Les gros blocs de texte ont été remplacés en lecture principale par quatre informations :
 
-- la date/heure locale `Asia/Tokyo` ;
-- un timestamp UTC séparé ;
-- une copie figée des conditions du QCM ;
-- les métadonnées complètes de la session.
+- **Tendance** : ce qui structure la pêche locale.
+- **Spots à lire** : secteurs précis et ce qu'il faut y observer.
+- **Marée / timing** : fenêtre et logique utiles sur place.
+- **Typicité locale** : bait, structure, pression, mobilité, lumière ou autre particularité.
 
-### 3. Pipeline et schéma synchronisés
+Les preuves détaillées restent accessibles dans un volet replié pour ne pas perdre la
+traçabilité.
 
-La V4 ajoute au schéma :
+### 3. Consensus leurres : raisonner par rôle
 
-- `trip_stops.arrival_date` ;
-- `sources.source_kind` ;
-- `observations.evidence_level`, `metadata_json`, `typology_json`, `fingerprint` ;
-- `trip_intel` pour les règles d'accès / stratégie / contexte ;
-- `tide_days` pour les tables de marée embarquées.
+L'onglet leurres commence maintenant par le **rôle à remplir** avant d'afficher les fréquences
+par famille/densité : chercher loin et tenir bas, insister précisément, pêcher le vent,
+présenter dans une veine, induction surface, etc.
 
-Un nouvel export ne supprime donc plus silencieusement les dates d'arrivée, métadonnées ou
-la typologie déjà stockée.
+Le but est d'éviter qu'un nom de modèle devienne une recette universelle. La famille, la
+densité, la taille, la vitesse et la couche sont reliées à une fonction de pêche.
 
-### 4. Deep research intégré sans gonfler artificiellement la concordance
+### 4. Grammaire stricte des animations
 
-`pipeline.py import-research` distingue :
+V5 sépare explicitement :
 
-- une **preuve directe liée à une espèce** → observation ;
-- une règle synthétique, réglementation, plan de voyage ou contexte général → `trip_intel` ;
-- une table officielle de marée → `tide_days`.
+1. **ce que fait le pêcheur** — moulinet, canne, gestion de bannière ;
+2. **ce que fait le leurre** — roll, wobble, tail swing, dart, shimmy, planing… ;
+3. **l'effet recherché** — tenir une couche, provoquer, dériver, créer une retombée, etc.
 
-Ainsi une synthèse dérivée ne compte pas comme une nouvelle source indépendante confirmant
-une autre synthèse.
+Les mécaniques ne sont plus mélangées :
 
-### 5. PWA offline plus robuste
+- linéaire ;
+- stop-and-go ;
+- lift-and-fall ;
+- jerk / twitch ;
+- dérive / dead drift ;
+- fall / chute ;
+- one-pitch / jigging ;
+- surface : dog-walk / pop / dive.
 
-Le service worker précache maintenant les fichiers indispensables (`index.html`, `data.json`,
-`tides_2026.json`) dès l'installation. Les fichiers de données sont ensuite servis en
-**network-first avec repli cache**. Une première installation peut donc réellement démarrer
-hors ligne après que le service worker a terminé son installation.
+Exemple : un **linéaire** laisse la conception du leurre produire sa nage via la récupération ;
+un **lift-and-fall** crée volontairement une montée à la canne puis une retombée. Une pause
+dans un linéaire produit un stop-and-go, pas automatiquement un lift-and-fall.
 
-### 6. QCM et rendu mobile
+### 5. Couleurs : une logique de visibilité, pas une couleur magique
 
-- la réponse asynchrone de pression ne peut plus faire avancer le QCM deux fois ;
-- la marée n'est préremplie que si une table officielle existe pour le jour concerné ;
-- les erreurs critiques de chargement ne sont plus avalées silencieusement ;
-- plusieurs surfaces de rendu dynamique sont échappées avant insertion HTML ;
-- les pads d'étape affichent une couche d'**intel V4** sourcée en plus du brief.
+L'onglet couleur commence par quatre axes :
 
-## Fichiers importants
+- clarté / teinte de l'eau ;
+- lumière ;
+- niveau d'activité / pression ;
+- fourrage identifié ou non.
 
-- `index.html` — PWA et interface mobile.
-- `data.json` — export public des espèces, observations, leurres, combos et étapes.
-- `tides_2026.json` — tables PM/BM embarquées pour le voyage.
-- `synthesis.json` — synthèse éditoriale historique ; voir la note V4 dans le fichier.
-- `lure_typology.json` — référentiel de typologie des leurres.
-- `peche_jp.db` — base SQLite source de vérité de cette release.
-- `schema.sql` — schéma V4.
-- `pipeline.py` — import, enrichissement, briefs et export.
-- `research/` — sources structurées utilisées pour l'enrichissement V4.
-- `sw.js` — service worker offline.
+La matrice V5 distingue notamment naturel/ghost, translucide, métallique/flash, opaque,
+mat/silhouette, pearl, UV/glow et couleurs high-appeal.
 
-## Workflow recommandé
+Le **rose fluo** et le **jaune/chartreuse** sont traités comme deux solutions de visibilité,
+pas comme des lois : rose très distinctif dans des eaux verdâtres/bleutées et aux transitions
+de lumière ; jaune/chartreuse très lisible en eau chargée ou lumière diffuse. Quand le bait
+est clairement identifié et que les poissons nourrissent dessus, la silhouette/taille puis
+le naturel/flash peuvent redevenir prioritaires.
+
+La méthode recommandée est un **color bracketing** : choix logique de départ, une option plus
+discrète, une option plus visible, puis modification d'une seule variable à la fois.
+
+### 6. Sources techniques de la passe V5
+
+La structuration technique recoupe les 493 observations avec des documents fabricants et des
+articles techniques, notamment DAIWA Overdrive, Megabass KAGELOU, le guide eging YAMARIA et
+les dossiers couleur/animation Ultimate Fishing. La provenance est conservée dans
+`synthesis.json` et `research/technique_consensus_v5_sources.json`.
+
+## Marées et soleil
+
+`tides_2026.json` contient les extrema astronomiques JMA. La courbe de l'app est une
+**interpolation visuelle entre ces extrema**, pas une reconstruction harmonique. Une référence
+de proximité est signalée lorsqu'elle est utilisée (par exemple Hakata pour Itoshima ou Toba
+pour Ise-Shima).
+
+Les horaires de lumière sont calculés localement pour les coordonnées du port : crépuscule
+civil du matin (premières lueurs), lever, coucher et crépuscule civil du soir. Ils donnent une
+fenêtre opérationnelle plus utile au pêcheur que le seul lever/coucher.
+
+## Pipeline / schéma V5
+
+`trip_stops` conserve désormais :
+
+- `arrival_date` ;
+- `stay_dates_json` ;
+- `summary_json` ;
+- les espèces cibles, port et briefs existants.
+
+Le reste des migrations V4 est conservé : métadonnées observations, fingerprint terrain,
+`trip_intel`, typologie, `tide_days`, etc.
 
 ### Installation / migration
 
 ```bash
 python3 pipeline.py init
-```
-
-`init` est additif : il crée les tables manquantes et migre une base existante sans jeter les
-données.
-
-### Reconstruire la base depuis un export existant
-
-À utiliser seulement si le `.db` est absent ou volontairement régénéré :
-
-```bash
-python3 pipeline.py bootstrap-json data.json --force
-```
-
-### Extraction classique depuis une source
-
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-python3 pipeline.py add-source
-python3 pipeline.py extract <source_id> source.txt
-python3 pipeline.py review
-python3 pipeline.py validate <observation_id>
 ```
 
 ### Importer un deep research structuré
@@ -137,82 +145,57 @@ python3 pipeline.py validate <observation_id>
 python3 pipeline.py import-research research/mon_fichier.json
 ```
 
-L'import est idempotent pour les observations et l'intel. Les espèces hors périmètre des 10
-espèces de l'app sont conservées dans le fichier de recherche mais non injectées comme
-observations.
-
 ### Retour terrain depuis le téléphone
-
-Exporter les sessions depuis la PWA puis :
 
 ```bash
 python3 pipeline.py import-log sessions-terrain.json
 ```
 
-### Régénérer les briefs locaux et publier
+### Régénérer et publier
 
 ```bash
 python3 pipeline.py brief-local
 python3 pipeline.py export
 ```
 
-`export` régénère **à la fois** `data.json` et `tides_2026.json`.
-
-Le brief Claude historique reste disponible avec :
-
-```bash
-python3 pipeline.py brief
-```
-
-mais il n'est pas nécessaire pour publier la couche d'intel V4 déterministe.
+`export` régénère `data.json` et `tides_2026.json` en conservant les jours de séjour et les
+résumés destination.
 
 ## Vocabulaire contrôlé du QCM
-
-Ne pas dériver ces valeurs :
 
 - `maree` : `montante`, `descendante`, `étale`
 - `moment_jour` : `aube`, `jour`, `crépuscule`, `nuit`
 - `couleur_eau` : `claire`, `trouble`, `verte`
 - `pression_atmo` : `basse`, `moyenne`, `haute`
 
-La pression récupérée par l'app est classée ainsi : `<1013` basse, `1013–1020` moyenne,
-`>1020` haute.
-
 ## Tester localement
-
-Ne pas ouvrir `index.html` directement en `file://`, car la PWA charge des JSON avec `fetch`.
-Servir le dossier :
 
 ```bash
 python3 -m http.server 8000
 ```
 
-puis ouvrir `http://localhost:8000/`.
+Puis ouvrir `http://localhost:8000/`. Ne pas lancer la page en `file://`, car elle charge les
+JSON avec `fetch`.
 
-Pour tester l'offline dans un navigateur desktop : charger une fois la page, attendre
-l'activation du service worker, puis passer DevTools > Network en Offline et recharger.
+## GitHub Pages
 
-## Déploiement GitHub Pages
-
-Le contenu de ce dossier peut être placé directement à la racine du dépôt :
+Le contenu du dossier peut être envoyé directement à la racine du dépôt :
 
 ```bash
 git add .
-git commit -m "Carnet Peche JP V4"
+git commit -m "Carnet Peche JP V5"
 git push
 ```
 
-Avec GitHub Pages configuré sur la branche `main` et `/root`, aucune étape de build n'est
-nécessaire.
+Aucune étape de build n'est nécessaire. Le service worker V5 utilise un nouveau cache afin
+de forcer la prise en compte de l'interface après déploiement.
 
-Sur iPhone, après le déploiement, ouvrir le site dans Safari puis **Partager → Sur l'écran
-d'accueil**. Si une ancienne V3 reste affichée, fermer/réouvrir la PWA ; au besoin supprimer
-l'ancienne icône et la réinstaller pour repartir avec le nouveau service worker.
+`.gitignore` est optionnel pour le fonctionnement du site : si le sélecteur de fichiers du
+navigateur le masque, il peut être ignoré ou créé directement dans GitHub.
 
-## Note sur `synthesis.json`
+## `synthesis.json`
 
-La base opérationnelle est désormais à 493 observations, mais les grands paragraphes de
-`synthesis.json` restent la synthèse éditoriale V3 initialement produite sur 303 observations.
-Ils sont volontairement conservés pour éviter de prétendre qu'ils ont été recalculés. Les
-nouvelles observations alimentent bien les fiches/QCM et l'intel destination. Une prochaine
-étape pourra régénérer cette couche narrative sur l'ensemble de la V4.
+Les grands paragraphes historiques de synthèse sont conservés comme couche narrative, mais
+la **couche technique V5** (`technique_v5`) a été ajoutée séparément : grammaire des animations,
+logique couleur, rôles de leurres par espèce et sources techniques. Elle est celle utilisée par
+les nouveaux onglets Leurres / Couleur / Animation.
