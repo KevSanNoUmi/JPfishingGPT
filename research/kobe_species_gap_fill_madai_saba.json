@@ -1,0 +1,31 @@
+[
+  {
+    "source_label": "Fishing Max / Azure Maiko mid-Nov predators",
+    "source_type": "local_shop_field_intel",
+    "species": "madai",
+    "raw_text": "À Azure Maiko, un rapport local du 14 novembre 2025 recense des Madai jusqu'à 44 cm, ce qui confirme leur présence côtière dans le secteur à la mi-novembre.",
+    "tags": {
+      "zone": "Azure Maiko",
+      "date": "2025-11-14",
+      "size_cm_max": 44,
+      "shore_relevance": "local_shore_intel",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport exact-date 21 Nov",
+    "source_type": "catch_report",
+    "species": "saba",
+    "raw_text": "Le 21 novembre 2025 à Kobe Airport, des Saba de taille moyenne sont signalés de nuit parmi les prédateurs capables d'intercepter les présentations utilisées sur le secteur.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "date": "2025-11-21",
+      "moment_jour": "night",
+      "shore_relevance": "direct_area_report",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1542835"
+    }
+  }
+]

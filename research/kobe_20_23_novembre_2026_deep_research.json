@@ -1,0 +1,957 @@
+[
+  {
+    "source_label": "Trip dates / Kobe 2026",
+    "source_type": "trip_context",
+    "species": "general",
+    "raw_text": "Séjour pêche du bord prévu à Kobe du 20 au 23 novembre 2026. Priorité aux preuves locales datées des 20-23 novembre, aux zones officiellement ouvertes et aux secteurs Kobe Airport, Azure Maiko, Hiraiso et Suma.",
+    "tags": {
+      "trip_dates": [
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23"
+      ],
+      "region": "Kobe / Kobe Airport / Suma / Tarumi / Azure Maiko / Hiraiso",
+      "evidence_type": "USER_CONTEXT",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Kobe tide station",
+    "source_type": "official_tide_reference",
+    "species": "general",
+    "raw_text": "La station JMA Kobe (KB), située à Kobe Chuo-ku Hatobacho, sert de référence officielle de marée. Coordonnées 34°41'N, 135°11'E.",
+    "tags": {
+      "station": "Kobe",
+      "station_code": "KB",
+      "latitude": "34°41'N",
+      "longitude": "135°11'E",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?GRAPH=on&LV=DL&S_HILO=on&de=23&ds=09&me=11&ms=11&stn=KB&ye=2026&ys=2026"
+    }
+  },
+  {
+    "source_label": "JMA / Kobe tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 2026-11-20 à Kobe: pleines mers 03:42 (101 cm), 16:04 (131 cm); basses mers 09:23 (78 cm), 22:58 (61 cm). L'aube arrive en plein jusant.",
+    "tags": {
+      "date": "2026-11-20",
+      "high_tides": [
+        {
+          "time": "03:42",
+          "height_cm": 101
+        },
+        {
+          "time": "16:04",
+          "height_cm": 131
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "09:23",
+          "height_cm": 78
+        },
+        {
+          "time": "22:58",
+          "height_cm": 61
+        }
+      ],
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Kobe tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 2026-11-21 à Kobe: pleines mers 04:31 (115 cm), 16:18 (134 cm); basses mers 10:07 (83 cm), 23:09 (43 cm). L'aube reste sur le jusant, plus près de la pleine mer.",
+    "tags": {
+      "date": "2026-11-21",
+      "high_tides": [
+        {
+          "time": "04:31",
+          "height_cm": 115
+        },
+        {
+          "time": "16:18",
+          "height_cm": 134
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "10:07",
+          "height_cm": 83
+        },
+        {
+          "time": "23:09",
+          "height_cm": 43
+        }
+      ],
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Kobe tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 2026-11-22 à Kobe: pleines mers 05:16 (130 cm), 16:44 (140 cm); basses mers 10:48 (87 cm), 23:37 (23 cm). Le lever arrive au début du jusant; le coucher est presque sur la pleine mer du soir.",
+    "tags": {
+      "date": "2026-11-22",
+      "high_tides": [
+        {
+          "time": "05:16",
+          "height_cm": 130
+        },
+        {
+          "time": "16:44",
+          "height_cm": 140
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "10:48",
+          "height_cm": 87
+        },
+        {
+          "time": "23:37",
+          "height_cm": 23
+        }
+      ],
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Kobe tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 2026-11-23 à Kobe: pleines mers 06:01 (144 cm), 17:15 (146 cm); basses mers 11:29 (90 cm). L'aube arrive seulement 39 minutes après la pleine mer du matin.",
+    "tags": {
+      "date": "2026-11-23",
+      "high_tides": [
+        {
+          "time": "06:01",
+          "height_cm": 144
+        },
+        {
+          "time": "17:15",
+          "height_cm": 146
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "11:29",
+          "height_cm": 90
+        }
+      ],
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / approaching spring tide",
+    "source_type": "official_tide_context",
+    "species": "general",
+    "raw_text": "La pleine lune est indiquée le 24 novembre 2026. Les 22-23 novembre se situent donc dans la montée d'amplitude vers la pleine lune.",
+    "tags": {
+      "date_reference": "2026-11-24",
+      "moon_phase": "full_moon",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "NAOJ / Kobe daylight",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "À Kobe le 2026-11-20, lever du soleil à 06:37 et coucher à 16:52.",
+    "tags": {
+      "date": "2026-11-20",
+      "sunrise": "06:37",
+      "sunset": "16:52",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2911.html"
+    }
+  },
+  {
+    "source_label": "NAOJ / Kobe daylight",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "À Kobe le 2026-11-21, lever du soleil à 06:38 et coucher à 16:51.",
+    "tags": {
+      "date": "2026-11-21",
+      "sunrise": "06:38",
+      "sunset": "16:51",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2911.html"
+    }
+  },
+  {
+    "source_label": "NAOJ / Kobe daylight",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "À Kobe le 2026-11-22, lever du soleil à 06:39 et coucher à 16:51.",
+    "tags": {
+      "date": "2026-11-22",
+      "sunrise": "06:39",
+      "sunset": "16:51",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2911.html"
+    }
+  },
+  {
+    "source_label": "NAOJ / Kobe daylight",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "À Kobe le 2026-11-23, lever du soleil à 06:40 et coucher à 16:51.",
+    "tags": {
+      "date": "2026-11-23",
+      "sunrise": "06:40",
+      "sunset": "16:51",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2911.html"
+    }
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport 20 Nov Tachiuo",
+    "source_type": "local_shop_field_intel",
+    "species": "tachiuo",
+    "raw_text": "Rapport publié le 20 novembre 2025: le Tachiuo est de retour à Kobe Airport. Une session du 15 novembre de nuit avait produit du poisson avec de nombreuses touches et coupures.",
+    "tags": {
+      "zone": "Kobe Airport Shinsui Gogan",
+      "date_published": "2025-11-20",
+      "recent_capture_reference": "2025-11-15 night",
+      "evidence_type": "OBSERVED_PLUS_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1540566"
+    }
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport Tachiuo timing",
+    "source_type": "local_shop_field_intel",
+    "species": "tachiuo",
+    "raw_text": "Le rapport du 20 novembre souligne les heures sombres et propose autour de 05:00 et 17:00 comme fenêtres pratiques à intégrer.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "date_published": "2025-11-20",
+      "suggested_windows": [
+        "around 05:00",
+        "around 17:00"
+      ],
+      "evidence_type": "LOCAL_SHOP_INTERPRETATION",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport shore-jigging",
+    "source_type": "local_shop_field_intel",
+    "species": "hamachi",
+    "raw_text": "Dans le même rapport de fin novembre, Hamachi et Sagoshi sont pris au shore-jigging à Kobe Airport; un jig muni d'une blade est explicitement cité comme bon choix.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "date_published": "2025-11-20",
+      "species_mix": [
+        "hamachi",
+        "sagoshi"
+      ],
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4
+    },
+    "recommended_lure": "blade jig / metal jig compact",
+    "recommended_animation": "récupération active, varier rapidement les couches"
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport Buri ecosystem",
+    "source_type": "local_shop_field_intel",
+    "species": "hamachi",
+    "raw_text": "Un Buri de 85 cm est également signalé au vif à Kobe Airport. Ce n'est pas une preuve au leurre, mais c'est un signal fort de gros prédateur et de bait dans la zone.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "date_published": "2025-11-20",
+      "species_actual": "buri",
+      "size_cm": 85,
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport exact-date 21 Nov",
+    "source_type": "catch_report",
+    "species": "tachiuo",
+    "raw_text": "Le 21 novembre 2025 à Kobe Airport, le Tachiuo est encore pris de nuit et les touches commencent vers 19:00. Des Saba moyens et Sagoshi peuvent également intercepter la présentation.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "date": "2025-11-21",
+      "time_bites_start": "around 19:00",
+      "mixed_predators": [
+        "tachiuo",
+        "saba",
+        "sagoshi"
+      ],
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1542835"
+    }
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport exact-date 23 Nov",
+    "source_type": "catch_report",
+    "species": "aji",
+    "raw_text": "Le 23 novembre 2025 à Kobe Airport, un gros banc d'Aji est observé à partir de la fin d'après-midi. Le rapport indique que le Tachiuo, pris les jours précédents, est attendu ensuite dans la nuit.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "date": "2025-11-23",
+      "moment_jour": "evening",
+      "biological_signs": "large Aji school",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1543363"
+    }
+  },
+  {
+    "source_label": "Fishing Max / Kobe Airport 19 Nov near-exact",
+    "source_type": "catch_report",
+    "species": "general",
+    "raw_text": "Le 19 novembre 2025 à Kobe Airport, un rapport nocturne signale Tachiuo, Akou autour de 30 cm et Aji de bonne taille à l'ajiing.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "date": "2025-11-19",
+      "species_mix": [
+        "tachiuo",
+        "akou",
+        "aji"
+      ],
+      "akou_size_cm": "around 30",
+      "ajiing": true,
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1541133"
+    }
+  },
+  {
+    "source_label": "Fishing Max / Hiraiso exact-date 21 Nov",
+    "source_type": "catch_report",
+    "species": "mebaru",
+    "raw_text": "Le 21 novembre 2025 à Hiraiso Sea Fishing Park, un Mebaru de 25 cm est observé, avec Gure, Gashira et Bera.",
+    "tags": {
+      "zone": "Hiraiso Sea Fishing Park",
+      "date": "2025-11-21",
+      "mebaru_size_cm": 25,
+      "species_mix": [
+        "mebaru",
+        "gure",
+        "gashira",
+        "bera"
+      ],
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1541824"
+    }
+  },
+  {
+    "source_label": "Fishing Max / Hiraiso exact-date 22 Nov",
+    "source_type": "catch_report",
+    "species": "general",
+    "raw_text": "Le 22 novembre 2025 à Hiraiso, de bons Gure sont pris et le Mebaru est explicitement signalé comme cible montante; le début de la saison du Karei est également mentionné.",
+    "tags": {
+      "zone": "Hiraiso Sea Fishing Park",
+      "date": "2025-11-22",
+      "species_mix": [
+        "gure",
+        "mebaru",
+        "karei"
+      ],
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1542261"
+    }
+  },
+  {
+    "source_label": "Fishing Max / Azure Maiko Aori",
+    "source_type": "local_shop_field_intel",
+    "species": "aori_ika",
+    "raw_text": "Le 6 novembre 2025 à Azure Maiko, un Aori de bonne taille est pris en eging dans la baie intérieure peu après 18:00 sur Yamashita Egi-O Mura Mura Cherry.",
+    "tags": {
+      "zone": "Azure Maiko inner cove",
+      "date": "2025-11-06",
+      "moment_jour": "after 18:00",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 3,
+      "source_url": "https://fishingmax.co.jp/fishingpost/1534602"
+    },
+    "recommended_lure": "egi 3.0-3.5",
+    "recommended_color": "Mura Mura Cherry / fort contraste rose-violet"
+  },
+  {
+    "source_label": "Fishing Max / Azure Maiko mid-Nov predators",
+    "source_type": "local_shop_field_intel",
+    "species": "general",
+    "raw_text": "Les rapports de mi-novembre à Azure Maiko documentent encore Madai et Hamachi; un rapport du 14 novembre recense des Madai jusqu'à 44 cm et un Hamachi de 50 cm.",
+    "tags": {
+      "zone": "Azure Maiko",
+      "date_published": "2025-11-14",
+      "species_mix": [
+        "madai",
+        "hamachi"
+      ],
+      "hamachi_size_cm": 50,
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Hyogo / recreational fishing rules",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "Hyogo impose le respect des zones de prélèvement interdites, des tailles/périodes de protection et des règles locales propres à certains secteurs.",
+    "tags": {
+      "region": "Hyogo Prefecture",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.hyogo-suigi.jp/fishing/manners"
+    }
+  },
+  {
+    "source_label": "Hyogo / protected sizes and seasons",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "Hyogo publie une table officielle des poissons et ressources dont la capture est interdite selon taille ou période; les captures concernées doivent être remises à l'eau.",
+    "tags": {
+      "region": "Hyogo Prefecture",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.hyogo-suigi.jp/fishing/manners/size_time"
+    }
+  },
+  {
+    "source_label": "Kobe City / Kobe Airport official fishing area",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Kobe Airport Shinsui Gogan est officiellement ouvert gratuitement 24 h/24. La ville le présente comme la seule zone de pêche ouverte parmi les installations portuaires de Kobe Port proprement dites.",
+    "tags": {
+      "zone": "Kobe Airport Shinsui Gogan",
+      "hours": "24h",
+      "entry_fee": "free",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.city.kobe.lg.jp/a42810/business/kowanjigyo/kobekukonishiryokuchi-tsuri.html"
+    }
+  },
+  {
+    "source_label": "Kobe City / Kobe Airport restrictions",
+    "source_type": "official_access_rule",
+    "species": "general",
+    "raw_text": "À Kobe Airport, le passage indiqué en jaune est interdit à la pêche et les lancers lointains vers le chenal de navigation sont interdits. La ville demande le port du gilet et interdit de franchir barrières/zones fermées.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "restricted_area": "yellow passage",
+      "long_cast_to_navigation_channel": "prohibited",
+      "lifejacket": "strongly requested",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Kobe City / Kobe Airport night safety",
+    "source_type": "official_safety_context",
+    "species": "general",
+    "raw_text": "La pêche de nuit est autorisée à Kobe Airport, mais la zone près de l'eau est très sombre car l'éclairage est surtout côté passage.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "night_fishing": "allowed",
+      "waterfront_lighting": "very dark",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Kobe City / Kobe Airport parking",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Parking adjacent: 150 yens par heure jusqu'à 10 h, puis forfait maximal de 1 500 yens entre 10 et 24 h. Kobe Airport Station est à environ 7 minutes à pied.",
+    "tags": {
+      "zone": "Kobe Airport",
+      "parking_jpy_per_hour": 150,
+      "parking_10_to_24h_max_jpy": 1500,
+      "public_transport": "Kobe Airport Station ~7 min walk",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Kobe City / general port fishing prohibition",
+    "source_type": "official_access_rule",
+    "species": "general",
+    "raw_text": "Les autres quais, appontements et revêtements de Kobe Port sont généralement interdits à la pêche. Utiliser uniquement les secteurs explicitement ouverts.",
+    "tags": {
+      "region": "Kobe Port",
+      "general_quays": "fishing prohibited",
+      "trip_action": "use explicitly open areas only",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Azure Maiko / official fishing area",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "À Azure Maiko, la pêche est autorisée sur les portions de revêtement indiquées en rouge par le gestionnaire. La plage n'est pêchable qu'en dehors de la saison de baignade.",
+    "tags": {
+      "zone": "Azure Maiko",
+      "fishing_area": "red-line revetment",
+      "beach_fishing": "outside swimming season only",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.kobe-park.or.jp/azur/fishing/"
+    }
+  },
+  {
+    "source_label": "Azure Maiko / night access",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Azure Maiko ferme à 23:00; après 23:00, la pêche reste possible uniquement sur les portions rouges du revêtement dédiées à la pêche.",
+    "tags": {
+      "zone": "Azure Maiko",
+      "park_closing_time": "23:00",
+      "after_23_fishing": "red-line revetment only",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Azure Maiko / parking",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Parkings à 200 yens/heure. Le parking ouest compte 296 places et accepte les entrées de 05:00 à 23:00; le parking est compte 100 places.",
+    "tags": {
+      "zone": "Azure Maiko",
+      "parking_jpy_per_hour": 200,
+      "west_parking_spaces": 296,
+      "west_entry_hours": "05:00-23:00",
+      "east_parking_spaces": 100,
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.kobe-park.or.jp/azur/access/"
+    }
+  },
+  {
+    "source_label": "Kobe City / Suma Sea Fishing Park hours",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Suma Sea Fishing Park ouvre de 07:00 à 17:00 de novembre à mars. Fermeture normale le mardi et du 29 décembre au 3 janvier, avec exception pour les jours fériés.",
+    "tags": {
+      "zone": "Suma Sea Fishing Park",
+      "november_hours": "07:00-17:00",
+      "weekly_closed_day": "Tuesday",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://faq.city.kobe.lg.jp/faq/show/1007?site_domain=default"
+    }
+  },
+  {
+    "source_label": "Kobe City / Hiraiso Sea Fishing Park hours",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Hiraiso Sea Fishing Park ouvre en novembre de 06:00 à 18:00 en semaine et de 06:00 à 19:00 les samedis, dimanches et jours fériés. Fermeture normale le jeudi.",
+    "tags": {
+      "zone": "Hiraiso Sea Fishing Park",
+      "november_weekday_hours": "06:00-18:00",
+      "november_weekend_holiday_hours": "06:00-19:00",
+      "weekly_closed_day": "Thursday",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Fishing Max Kobe Harbor",
+    "source_type": "local_tackle_shop",
+    "species": "general",
+    "raw_text": "Fishing Max Kobe Harbor: 2-3-11 Nishide-cho, Hyogo-ku, Kobe, téléphone 078-682-3838. Source pratique pour Kobe Airport et les secteurs urbains.",
+    "tags": {
+      "address": "2-3-11 Nishide-cho, Hyogo-ku, Kobe",
+      "phone": "078-682-3838",
+      "evidence_type": "BUSINESS_CURRENT",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/shoplist/kobeharvor"
+    }
+  },
+  {
+    "source_label": "Fishing Max Tarumi",
+    "source_type": "local_tackle_shop",
+    "species": "general",
+    "raw_text": "Fishing Max Tarumi: 1-6-20 Shioya-cho, Tarumi-ku, Kobe, téléphone 078-753-3838. Source pratique pour Azure Maiko, Hiraiso et Suma.",
+    "tags": {
+      "address": "1-6-20 Shioya-cho, Tarumi-ku, Kobe",
+      "phone": "078-753-3838",
+      "evidence_type": "BUSINESS_CURRENT",
+      "confidence_level": 4,
+      "source_url": "https://fishingmax.co.jp/shoplist/tarumi"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB01",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Les quatre aubes ne sont pas équivalentes: le 20 le soleil se lève presque trois heures après la pleine mer, le 23 seulement 39 minutes après. Noter séparément lumière et phase de courant.",
+    "tags": {
+      "rule_id": "KOB-KB01",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_TIDE_DAYLIGHT_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB02",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "SI chasses, oiseaux ou bait sont visibles à Kobe Airport à l'aube, commencer par blade jig/metal jig; le secteur est directement documenté avec Hamachi et Sagoshi au shore-jigging.",
+    "tags": {
+      "rule_id": "KOB-KB02",
+      "confidence_level": 4,
+      "evidence_type": "DIRECT_LOCAL_LURE_INTEL"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB03",
+    "source_type": "synthesis",
+    "species": "tachiuo",
+    "raw_text": "Préserver au moins une vraie session de nuit à Kobe Airport: le Tachiuo est documenté de façon répétée sur la période, avec touches vers 19:00 le 21 novembre 2025.",
+    "tags": {
+      "rule_id": "KOB-KB03",
+      "confidence_level": 4,
+      "evidence_type": "MULTIPLE_DIRECT_LOCAL_REPORTS"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB04",
+    "source_type": "synthesis",
+    "species": "tachiuo",
+    "raw_text": "SI le Tachiuo est présent sans chasse visible, prospecter méthodiquement plusieurs couches plutôt que rester uniquement en surface.",
+    "tags": {
+      "rule_id": "KOB-KB04",
+      "confidence_level": 3,
+      "evidence_type": "LOCAL_PATTERN_PLUS_LURE_INTERPRETATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB05",
+    "source_type": "synthesis",
+    "species": "aji",
+    "raw_text": "SI un gros passage d'Aji arrive au crépuscule à Kobe Airport, ne pas quitter immédiatement: le 23 novembre 2025 l'Aji précède une fenêtre attendue de Tachiuo.",
+    "tags": {
+      "rule_id": "KOB-KB05",
+      "confidence_level": 4,
+      "evidence_type": "DIRECT_EXACT_DATE_SEQUENCE"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB06",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "À Azure Maiko, l'Aori reste une cible secondaire crédible; privilégier la baie intérieure et les zones où le courant reste contrôlable.",
+    "tags": {
+      "rule_id": "KOB-KB06",
+      "confidence_level": 3,
+      "evidence_type": "DIRECT_LOCAL_NOVEMBER_EGING"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB07",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "Le 22 au crépuscule, la pleine mer de 16:44 tombe presque sur le coucher 16:51. Si l'étale tue le courant, attendre la remise en jusant ou chercher un contre-courant.",
+    "tags": {
+      "rule_id": "KOB-KB07",
+      "confidence_level": 3,
+      "evidence_type": "OFFICIAL_TIDE_PLUS_EGING_INTERPRETATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB08",
+    "source_type": "synthesis",
+    "species": "mebaru",
+    "raw_text": "SI pélagiques et Aori sont absents, Hiraiso offre un plan light-game solide: Mebaru 25 cm documenté exactement le 21 novembre et encore signalé le 22.",
+    "tags": {
+      "rule_id": "KOB-KB08",
+      "confidence_level": 4,
+      "evidence_type": "MULTIPLE_EXACT_DATE_LOCAL_REPORTS"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB09",
+    "source_type": "synthesis",
+    "species": "akou",
+    "raw_text": "Kobe Airport peut produire de l'Akou fin novembre. Si la surface est morte, tester le fond près des structures accessibles sans lancer vers le chenal.",
+    "tags": {
+      "rule_id": "KOB-KB09",
+      "confidence_level": 3,
+      "evidence_type": "DIRECT_NEAR_EXACT_DATE_SPECIES_SIGNAL"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB10",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Ne pas improviser sur les quais industriels de Kobe Port: hors zones explicitement ouvertes, la pêche est généralement interdite.",
+    "tags": {
+      "rule_id": "KOB-KB10",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_ACCESS_RULE"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB11",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "À Kobe Airport, si un poste impose de lancer vers le chenal, changer d'angle ou de place: les lancers lointains vers le chenal sont interdits.",
+    "tags": {
+      "rule_id": "KOB-KB11",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_ACCESS_RULE"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB12",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "À Maiko/Tarumi, si le courant empêche de tenir la couche, chercher une couture ou attendre une phase plus gérable plutôt que sur-lester sans limite.",
+    "tags": {
+      "rule_id": "KOB-KB12",
+      "confidence_level": 3,
+      "evidence_type": "CURRENT_ENVIRONMENT_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB13",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Le 23 novembre est le meilleur des quatre matins pour tester immédiatement la transition après pleine mer; le 20 correspond à un jusant déjà bien installé.",
+    "tags": {
+      "rule_id": "KOB-KB13",
+      "confidence_level": 3,
+      "evidence_type": "TIDE_PHASE_INTERPRETATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB14",
+    "source_type": "synthesis",
+    "species": "tachiuo",
+    "raw_text": "Après toute touche/coupe de Tachiuo ou Sagoshi, contrôler immédiatement le leader et renforcer seulement si les coupes se répètent.",
+    "tags": {
+      "rule_id": "KOB-KB14",
+      "confidence_level": 3,
+      "evidence_type": "OPERATIONAL_INFERENCE"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB15",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Séparer Kobe en deux blocs: est/urbain pour Kobe Airport et ouest/courant pour Azure Maiko-Hiraiso-Suma. Éviter les traversées inutiles de la ville.",
+    "tags": {
+      "rule_id": "KOB-KB15",
+      "confidence_level": 4,
+      "evidence_type": "TRIP_LOGISTICS_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / KOB-KB16",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Avant chaque session, demander au magasin: heure du dernier passage Tachiuo, présence Sagoshi/Hamachi, Aji/bait au crépuscule, et état du vent/courant à Maiko-Tarumi.",
+    "tags": {
+      "rule_id": "KOB-KB16",
+      "confidence_level": 4,
+      "evidence_type": "OPERATIONAL_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Lure-box / Kobe bluefish",
+    "source_type": "lure_box_synthesis",
+    "species": "hamachi",
+    "raw_text": "Rôle prioritaire: blade jig ou metal jig compact 20-40 g pour Sagoshi/Hamachi. La blade est directement soutenue par le rapport Kobe Airport de fin novembre.",
+    "tags": {
+      "role": "fast_search_flash_distance",
+      "priority": "VERY_HIGH",
+      "confidence_level": 4
+    },
+    "recommended_lure": "blade jig / compact metal jig 20-40 g",
+    "recommended_color": "silver-natural en premier; high-appeal en second"
+  },
+  {
+    "source_label": "Lure-box / Kobe baitfish profile",
+    "source_type": "lure_box_synthesis",
+    "species": "general",
+    "raw_text": "Un sinking minnow/pencil 90-120 mm complète le jig pour garder une silhouette poisson sur Sagoshi, Suzuki et Tachiuo.",
+    "tags": {
+      "role": "baitfish_profile",
+      "priority": "HIGH",
+      "confidence_level": 3
+    },
+    "recommended_lure": "sinking minnow / pencil 90-120 mm"
+  },
+  {
+    "source_label": "Lure-box / Kobe Tachiuo",
+    "source_type": "lure_box_synthesis",
+    "species": "tachiuo",
+    "raw_text": "Pour la pêche aux leurres du Tachiuo: minnow sinking/vibration et jig permettant de changer rapidement de couche. La présence du poisson est très bien prouvée; le choix précis du leurre est une synthèse tactique.",
+    "tags": {
+      "role": "night_layer_search",
+      "priority": "VERY_HIGH",
+      "confidence_level": 3
+    },
+    "recommended_lure": "sinking minnow or vibration + metal jig 15-30 g",
+    "recommended_animation": "compte à rebours par couches, récupération linéaire ou lift-fall"
+  },
+  {
+    "source_label": "Lure-box / Kobe Aori",
+    "source_type": "lure_box_synthesis",
+    "species": "aori_ika",
+    "raw_text": "Pour Azure Maiko/Tarumi: egi 3.0 et 3.5. Un coloris rose-violet fort contraste est directement documenté à Azure Maiko.",
+    "tags": {
+      "role": "late_autumn_eging",
+      "priority": "HIGH",
+      "confidence_level": 3
+    },
+    "recommended_lure": "egi 3.0 + 3.5",
+    "recommended_color": "natural + Mura Mura Cherry/high contrast + dark/red"
+  },
+  {
+    "source_label": "Lure-box / Kobe light game",
+    "source_type": "lure_box_synthesis",
+    "species": "mebaru",
+    "raw_text": "Une petite boîte light-game couvre Aji, Mebaru et petits rockfish: softbaits 1.5-2.5 pouces sur jigheads légers, avec option float rig si courant/distance.",
+    "tags": {
+      "role": "aji_mebaru_night",
+      "priority": "HIGH",
+      "confidence_level": 4
+    },
+    "recommended_lure": "jighead + softbait 1.5-2.5 in; optional float rig"
+  },
+  {
+    "source_label": "Lure-box / Kobe bottom structure",
+    "source_type": "lure_box_synthesis",
+    "species": "akou",
+    "raw_text": "Pour Akou/Gashira autour des structures autorisées: quelques softbaits denses sur montage anti-accroche.",
+    "tags": {
+      "role": "rockfish_bottom",
+      "priority": "MEDIUM",
+      "confidence_level": 3
+    },
+    "recommended_lure": "compact craw/shad softbait on weedless bottom rig"
+  },
+  {
+    "source_label": "Target hierarchy / Kobe 20-23 November",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Hiérarchie provisoire: 1) Tachiuo; 2) Sagoshi/Hamachi/Buri; 3) Aori Ika; 4) Aji/Mebaru light game; 5) Akou/Suzuki et autres prédateurs de structure.",
+    "tags": {
+      "ranking": [
+        "tachiuo",
+        "sagoshi_hamachi_buri",
+        "aori_ika",
+        "aji_mebaru",
+        "akou_suzuki"
+      ],
+      "evidence_type": "MULTI_SOURCE_SYNTHESIS",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Decision engine / Kobe first questions",
+    "source_type": "decision_engine",
+    "species": "general",
+    "raw_text": "Ordre des questions: 1) zone explicitement ouverte? 2) bait/oiseaux/chasses? 3) phase réelle du courant? 4) surface active = Sagoshi/Hamachi; 5) nuit + bait = Tachiuo; 6) baie/couture contrôlable = Aori; 7) petite activité nocturne = Aji/Mebaru; 8) fond/structure = Akou.",
+    "tags": {
+      "decision_order": [
+        "legal_access",
+        "biological_activity",
+        "current",
+        "bluefish",
+        "tachiuo",
+        "aori",
+        "lightgame",
+        "bottom"
+      ],
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 2026-11-20",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Pleine mer 03:42, lever 06:37, basse mer 09:23: aube en jusant installé, priorité Kobe Airport pour pélagiques si bait visible. Le soir, pleine mer 16:04 puis coucher 16:52: crépuscule sur début de jusant pour Aji/Tachiuo, Aori selon zone.",
+    "tags": {
+      "date": "2026-11-20",
+      "tactical_theme": "dawn_mid_ebb_plus_evening_early_ebb",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 2026-11-21",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Pleine mer 04:31, lever 06:38, basse mer 10:07: matinée pélagique sur jusant. Alternative Hiraiso, où un Mebaru de 25 cm est documenté exactement le 21/11/2025. Le soir, Kobe Airport prioritaire: touches de Tachiuo vers 19:00 sur la date exacte.",
+    "tags": {
+      "date": "2026-11-21",
+      "tactical_theme": "ebb_dawn_plus_exact_date_tachiuo_night",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 2026-11-22",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Pleine mer 05:16, lever 06:39, basse mer 10:48: aube au début du jusant. Le soir, pleine mer 16:44 pour coucher 16:51: attendre la remise en jusant si l'étale coupe l'activité Aori/Tachiuo.",
+    "tags": {
+      "date": "2026-11-22",
+      "tactical_theme": "early_ebb_dawn_plus_dusk_high_slack",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 2026-11-23",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Pleine mer 06:01, lever 06:40, basse mer 11:29: aube la plus proche de la pleine mer, exploiter immédiatement le redémarrage du jusant. Le soir, coucher 16:51 avant pleine mer 17:15; Aji documenté exactement le 23/11/2025 à Kobe Airport avec Tachiuo attendu ensuite.",
+    "tags": {
+      "date": "2026-11-23",
+      "tactical_theme": "dawn_just_after_high_plus_evening_aji_predator_transition",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Four-day operating plan / Kobe",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Plan compact: donner à Kobe Airport au moins deux aubes et deux soirées/nuit car les preuves exactes Tachiuo/Aji et les signaux shore-jigging y sont les plus forts. Garder une journée ou demi-journée ouest pour Azure Maiko-Hiraiso selon vent/courant. Suma est une option de journée, pas une solution avant l'aube en novembre car l'ouverture officielle est à 07:00.",
+    "tags": {
+      "dates": [
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23"
+      ],
+      "core_zones": [
+        "Kobe Airport Shinsui Gogan",
+        "Azure Maiko",
+        "Hiraiso Sea Fishing Park",
+        "Suma Sea Fishing Park"
+      ],
+      "priority_sessions": [
+        "Kobe Airport dawn",
+        "Kobe Airport night",
+        "Azure Maiko dusk",
+        "Hiraiso light game/day"
+      ],
+      "evidence_type": "TRIP_LOGISTICS_SYNTHESIS",
+      "confidence_level": 4
+    }
+  }
+]

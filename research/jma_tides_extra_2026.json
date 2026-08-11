@@ -1,0 +1,65 @@
+[
+  {
+    "source_label": "JMA / Shimizu Port tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 7 novembre 2026 à Shimizu Port: pleines mers 04:15 (149 cm) et 15:51 (151 cm); basses mers 10:02 (70 cm) et 22:23 (29 cm).",
+    "tags": {"date":"2026-11-07","port_key":"shimizu","station":"Shimizu Port","station_code":"SM","high_tides":[{"time":"04:15","height_cm":149},{"time":"15:51","height_cm":151}],"low_tides":[{"time":"10:02","height_cm":70},{"time":"22:23","height_cm":29}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/SM.txt"}
+  },
+  {
+    "source_label": "JMA / Shimizu Port tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 8 novembre 2026 à Shimizu Port: pleines mers 04:57 (155 cm) et 16:17 (153 cm); basses mers 10:39 (74 cm) et 22:53 (21 cm).",
+    "tags": {"date":"2026-11-08","port_key":"shimizu","station":"Shimizu Port","station_code":"SM","high_tides":[{"time":"04:57","height_cm":155},{"time":"16:17","height_cm":153}],"low_tides":[{"time":"10:39","height_cm":74},{"time":"22:53","height_cm":21}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/SM.txt"}
+  },
+  {
+    "source_label": "JMA / Toba tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 27 novembre 2026 à Toba (proxy régional Ise-Shima): pleines mers 08:07 (204 cm) et 18:55 (194 cm); basses mers 01:14 (-18 cm) et 13:30 (103 cm).",
+    "tags": {"date":"2026-11-27","port_key":"toba","station":"Toba","station_code":"TB","proxy_note":"Référence régionale pour Ise-Shima/Ago Bay; vérifier localement les décalages.","high_tides":[{"time":"08:07","height_cm":204},{"time":"18:55","height_cm":194}],"low_tides":[{"time":"01:14","height_cm":-18},{"time":"13:30","height_cm":103}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/TB.txt"}
+  },
+  {
+    "source_label": "JMA / Toba tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 28 novembre 2026 à Toba (proxy régional Ise-Shima): pleines mers 08:57 (194 cm) et 19:42 (183 cm); basses mers 02:02 (-9 cm) et 14:16 (107 cm).",
+    "tags": {"date":"2026-11-28","port_key":"toba","station":"Toba","station_code":"TB","proxy_note":"Référence régionale pour Ise-Shima/Ago Bay; vérifier localement les décalages.","high_tides":[{"time":"08:57","height_cm":194},{"time":"19:42","height_cm":183}],"low_tides":[{"time":"02:02","height_cm":-9},{"time":"14:16","height_cm":107}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/TB.txt"}
+  },
+  {
+    "source_label": "JMA / Tokyo tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 2 décembre 2026 à Tokyo: pleines mers 11:34 (159 cm) et 23:56 (136 cm); basses mers 04:43 (68 cm) et 18:24 (98 cm).",
+    "tags": {"date":"2026-12-02","port_key":"tokyo","station":"Tokyo","station_code":"TK","high_tides":[{"time":"11:34","height_cm":159},{"time":"23:56","height_cm":136}],"low_tides":[{"time":"04:43","height_cm":68},{"time":"18:24","height_cm":98}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/TK.txt"}
+  },
+  {
+    "source_label": "JMA / Tokyo tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 3 décembre 2026 à Tokyo: pleine mer 12:20 (161 cm); basses mers 05:54 (84 cm) et 19:32 (78 cm).",
+    "tags": {"date":"2026-12-03","port_key":"tokyo","station":"Tokyo","station_code":"TK","high_tides":[{"time":"12:20","height_cm":161}],"low_tides":[{"time":"05:54","height_cm":84},{"time":"19:32","height_cm":78}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/TK.txt"}
+  },
+  {
+    "source_label": "JMA / Tokyo tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 4 décembre 2026 à Tokyo: pleines mers 01:39 (142 cm) et 13:34 (165 cm); basses mers 07:03 (95 cm) et 20:18 (59 cm).",
+    "tags": {"date":"2026-12-04","port_key":"tokyo","station":"Tokyo","station_code":"TK","high_tides":[{"time":"01:39","height_cm":142},{"time":"13:34","height_cm":165}],"low_tides":[{"time":"07:03","height_cm":95},{"time":"20:18","height_cm":59}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/TK.txt"}
+  },
+  {
+    "source_label": "JMA / Tokyo tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 5 décembre 2026 à Tokyo: pleines mers 02:54 (153 cm) et 14:36 (170 cm); basses mers 08:03 (102 cm) et 20:58 (42 cm).",
+    "tags": {"date":"2026-12-05","port_key":"tokyo","station":"Tokyo","station_code":"TK","high_tides":[{"time":"02:54","height_cm":153},{"time":"14:36","height_cm":170}],"low_tides":[{"time":"08:03","height_cm":102},{"time":"20:58","height_cm":42}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/TK.txt"}
+  },
+  {
+    "source_label": "JMA / Kashima tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 4 décembre 2026 à Kashima: pleines mers 00:42 (102 cm) et 11:55 (127 cm); basses mers 05:33 (79 cm) et 19:19 (48 cm).",
+    "tags": {"date":"2026-12-04","port_key":"kashima","station":"Kashima","station_code":"D2","high_tides":[{"time":"00:42","height_cm":102},{"time":"11:55","height_cm":127}],"low_tides":[{"time":"05:33","height_cm":79},{"time":"19:19","height_cm":48}],"evidence_type":"OFFICIAL","confidence_level":4,"source_url":"https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/D2.txt"}
+  }
+]

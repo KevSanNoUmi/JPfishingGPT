@@ -1,0 +1,61 @@
+[
+  {
+    "source_label": "Ishiguro / Enshu Surf exact-date 7 Nov midday",
+    "source_type": "catch_log",
+    "species": "hirame",
+    "raw_text": "Le 7 novembre 2025 sur le surf d'Enshu, un Hirame de 46,5 cm a été pris entre 11:30 et 15:00 sur un Shimano Beam Blade, coloris candy. Cette capture montre qu'un créneau de jour reste exploitable à la date exacte du futur passage.",
+    "recommended_lure": "Shimano Beam Blade / blade jig compact",
+    "recommended_color": "candy / fort contraste",
+    "tags": {
+      "zone": "Enshu Surf / Shizuoka",
+      "date": "2025-11-07",
+      "time_window": "11:30-15:00",
+      "size_cm": 46.5,
+      "evidence_type": "OBSERVED_USER_LOG",
+      "confidence_level": 3,
+      "source_url": "https://www.ishiguro-gr.com/enjoy/fishing/detail.php?id=45414"
+    }
+  },
+  {
+    "source_label": "Ishiguro / Enshu Surf exact-date 7 Nov evening",
+    "source_type": "catch_log",
+    "species": "hirame",
+    "raw_text": "Le 7 novembre 2025 sur le surf d'Enshu, un Hirame de 44 cm a été pris entre 16:00 et 17:00 au shore-jigging avec un Zeake R-SARDINE blue-pink. Le compte rendu est explicitement titré autour du triptyque veine de courant (ヨレ), marée montante et bait.",
+    "recommended_lure": "Zeake R-SARDINE / metal jig compact",
+    "recommended_color": "blue-pink / flash",
+    "tags": {
+      "zone": "Enshu Surf / Shizuoka",
+      "date": "2025-11-07",
+      "time_window": "16:00-17:00",
+      "size_cm": 44,
+      "biological_signs": "bait + current seam",
+      "maree": "montante",
+      "evidence_type": "OBSERVED_USER_LOG",
+      "confidence_level": 3,
+      "source_url": "https://www.ishiguro-gr.com/enjoy/fishing/detail.php?id=45638"
+    }
+  },
+  {
+    "source_label": "Decision rule / SHI-V4-01",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Pour Shizuoka le 7 novembre, ne pas limiter le Hirame à l'aube: deux analogues exactement datés du 7/11/2025 produisent un poisson en milieu de journée puis un autre au crépuscule. La seconde capture associe explicitement bait, veine de courant et montant.",
+    "tags": {
+      "rule_id": "SHI-V4-01",
+      "date": "2026-11-07",
+      "confidence_level": 3,
+      "evidence_type": "EXACT_CALENDAR_DATE_LOCAL_DATA"
+    }
+  },
+  {
+    "source_label": "Decision rule / SHI-V4-02",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Sur le surf de Shizuoka, si une veine de courant et du bait sont visibles, prioriser une présentation dense qui garde de la distance et du contrôle plutôt que changer de secteur uniquement parce que le soleil est haut.",
+    "tags": {
+      "rule_id": "SHI-V4-02",
+      "confidence_level": 3,
+      "evidence_type": "LOCAL_PATTERN_SYNTHESIS"
+    }
+  }
+]

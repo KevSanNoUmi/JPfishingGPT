@@ -1,0 +1,1206 @@
+[
+  {
+    "source_label": "Trip dates / Fukuoka 2026",
+    "source_type": "trip_context",
+    "species": "general",
+    "raw_text": "Séjour pêche du bord prévu à Fukuoka du 15 au 18 novembre 2026. La recherche doit privilégier les preuves locales de mi-novembre, particulièrement les captures datées du 15, 16, 17 et 18 novembre des années récentes.",
+    "tags": {
+      "trip_dates": [
+        "2026-11-15",
+        "2026-11-16",
+        "2026-11-17",
+        "2026-11-18"
+      ],
+      "region": "Fukuoka / Hakata Bay / Shikanoshima / Itoshima",
+      "shore_relevance": "trip_context",
+      "evidence_type": "USER_CONTEXT",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Hakata tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 15 novembre 2026 à Hakata, la basse mer est prévue à 06:44 à 53 cm, la pleine mer à 13:40 à 133 cm, puis une basse mer à 18:22 à 97 cm. L'aube se produit donc autour de la fin de descendante / basse mer puis le montant domine la matinée.",
+    "tags": {
+      "date": "2026-11-15",
+      "location": "Hakata",
+      "high_tides": [
+        {
+          "time": "13:40",
+          "height_cm": 133
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "06:44",
+          "height_cm": 53
+        },
+        {
+          "time": "18:22",
+          "height_cm": 97
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?LV=DL&S_HILO=on&de=18&ds=04&me=11&ms=11&stn=QF&ye=2026&ys=2026"
+    }
+  },
+  {
+    "source_label": "JMA / Hakata tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 16 novembre 2026 à Hakata, pleine mer à 00:28 à 155 cm, basse mer à 07:32 à 62 cm, pleine mer à 14:45 à 127 cm et basse mer à 19:18 à 103 cm. L'aube arrive encore sur la fin de descendante, mais la basse mer est plus tardive que la veille.",
+    "tags": {
+      "date": "2026-11-16",
+      "location": "Hakata",
+      "high_tides": [
+        {
+          "time": "00:28",
+          "height_cm": 155
+        },
+        {
+          "time": "14:45",
+          "height_cm": 127
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "07:32",
+          "height_cm": 62
+        },
+        {
+          "time": "19:18",
+          "height_cm": 103
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Hakata tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 17 novembre 2026 correspond au premier quartier. Pleines mers à 01:34 à 144 cm et 16:06 à 127 cm; basses mers à 08:34 à 69 cm et 21:07 à 105 cm. L'amplitude est relativement faible et l'aube se situe plus franchement pendant la descendante.",
+    "tags": {
+      "date": "2026-11-17",
+      "location": "Hakata",
+      "moon_phase": "first_quarter",
+      "high_tides": [
+        {
+          "time": "01:34",
+          "height_cm": 144
+        },
+        {
+          "time": "16:06",
+          "height_cm": 127
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "08:34",
+          "height_cm": 69
+        },
+        {
+          "time": "21:07",
+          "height_cm": 105
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Hakata tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 18 novembre 2026 à Hakata, pleine mer à 03:09 à 136 cm, basse mer à 09:52 à 73 cm, pleine mer à 17:15 à 134 cm et basse mer à 23:03 à 95 cm. L'aube se situe donc nettement pendant la descendante, avec encore plusieurs heures avant la basse mer.",
+    "tags": {
+      "date": "2026-11-18",
+      "location": "Hakata",
+      "high_tides": [
+        {
+          "time": "03:09",
+          "height_cm": 136
+        },
+        {
+          "time": "17:15",
+          "height_cm": 134
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "09:52",
+          "height_cm": 73
+        },
+        {
+          "time": "23:03",
+          "height_cm": 95
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "福岡市漁業協同組合 / November seasonal fish",
+    "source_type": "official_seasonal_context",
+    "species": "general",
+    "raw_text": "Le syndicat de pêche de Fukuoka indique pour novembre: Suzuki dans le secteur Hiro; Sawara et Hiras à Shikanoshima; Hirame et Sawara à Nata; Hirame et Suzuki à Izaki; Madai, Konoshiro et Suzuki à Meinohama; Sawara et Hirame autour de Genkaishima.",
+    "tags": {
+      "month": "November",
+      "zones": [
+        "Hiro",
+        "Shikanoshima",
+        "Nata",
+        "Izaki",
+        "Meinohama",
+        "Genkaishima"
+      ],
+      "shore_relevance": "official_ecosystem_context",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://fukuokashigyokyo.com/season/"
+    }
+  },
+  {
+    "source_label": "Anglers / Nata Port",
+    "source_type": "catch_log",
+    "species": "hirame",
+    "raw_text": "À Nata Port le 15 novembre 2025 à 08:44, un Hirame de 45 cm a été capturé. Le pêcheur visait l'Aji avec un montage très léger et précise que le fond de la zone est sableux. Cette capture tombe exactement sur le premier jour du futur séjour.",
+    "tags": {
+      "zone": "Nata Port",
+      "date": "2025-11-15",
+      "time": "08:44",
+      "size_cm": 45,
+      "bottom": "sandy according to angler",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Anglers / Itoshima Peninsula",
+    "source_type": "catch_log",
+    "species": "hirame",
+    "raw_text": "Le 16 novembre 2025 sur la péninsule d'Itoshima, le pêcheur a pris deux soge le matin, perdu un autre poisson et enregistré de nombreuses touches. Il revient en fin de journée et prend un Hirame de 40 cm à 17:49.",
+    "recommended_animation": "prospecter matin et crépuscule plutôt que considérer un seul créneau comme exclusif",
+    "tags": {
+      "zone": "Itoshima Peninsula",
+      "date": "2025-11-16",
+      "time_evening_capture": "17:49",
+      "morning_result": "2 soge + 1 lost + multiple bites",
+      "shore_relevance": "direct_shore_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Point Meinohama / Itoshima shore",
+    "source_type": "local_shop_field_intel",
+    "species": "hirame",
+    "raw_text": "Le 12 novembre 2025, un Hirame d'environ 30 cm est signalé du bord dans le secteur d'Itoshima sur un leurre Morekeen 01. Le magasin indique qu'autour du même secteur des Sagoshi et Yazu étaient pris en nombres à deux chiffres.",
+    "recommended_lure": "leurre dense polyvalent Hirame / shore game; modèle cité Morekeen 01",
+    "tags": {
+      "zone": "Itoshima",
+      "date": "2025-11-12",
+      "mixed_predators": "Sagoshi and Yazu abundant nearby",
+      "shore_relevance": "local_shore_intel",
+      "evidence_type": "DECLARED_LOCAL_SHOP",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Local Itoshima shore report",
+    "source_type": "field_report",
+    "species": "general",
+    "raw_text": "Un compte rendu publié le 15 novembre 2025 décrit deux sessions de novembre entièrement depuis des ports d'Itoshima: Sagoshi d'environ 40 cm avec Aji et poissons de roche le matin, puis Hirame d'environ 44 cm et maquereau le soir. Cela renforce la complémentarité prédateurs pélagiques le matin / flatfish le soir.",
+    "tags": {
+      "zone": "Itoshima ports",
+      "date_published": "2025-11-15",
+      "morning": "Sagoshi ~40 cm + Aji",
+      "evening": "Hirame ~44 cm + mackerel",
+      "shore_relevance": "direct_shore_report",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Point / 糸島方面",
+    "source_type": "local_shop_catch_database",
+    "species": "hamachi",
+    "raw_text": "Le 15 novembre 2025 dans le secteur d'Itoshima, un Sagoshi de 50 cm est signalé sur blade jig. Le commentaire précise que de nombreuses touches intervenaient pendant la chute.",
+    "recommended_lure": "blade jig compact",
+    "recommended_animation": "récupération active entrecoupée de chutes; surveiller la ligne pendant la descente",
+    "tags": {
+      "zone": "Itoshima",
+      "date": "2025-11-15",
+      "species_actual": "sagoshi",
+      "size_cm": 50,
+      "moment_touche": "fall",
+      "shore_relevance": "local_shore_catch_database",
+      "evidence_type": "OBSERVED/DECLARED",
+      "confidence_level": 4,
+      "source_url": "https://www.point-i.jp/fishing_spots/16935"
+    }
+  },
+  {
+    "source_label": "Anglers / Shikanoshima East Red Lighthouse",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Le 16 novembre 2025 à 06:42 sur la digue du feu rouge est de Shikanoshima, un Aori d'environ 200 g est pris en quelques lancers seulement pendant la courte fenêtre d'aube.",
+    "recommended_lure": "egi coloris ムラムラチェリー",
+    "recommended_color": "Mura Mura Cherry / fort contraste rosé",
+    "tags": {
+      "zone": "Shikanoshima East Red Lighthouse breakwater",
+      "date": "2025-11-16",
+      "time": "06:42",
+      "size_g": 200,
+      "moment_jour": "dawn",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Anglers / Shikanoshima East Red Lighthouse",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Le même 16 novembre 2025 à 11:23, un Aori d'environ 500 g est pris à Shikanoshima avec un coloris rose de journée. Le pêcheur décrit la touche par l'expression 落ちパク, c'est-à-dire une prise immédiate pendant ou juste au début de la chute.",
+    "recommended_lure": "egi adapté à la profondeur locale",
+    "recommended_color": "daytime pink / HIGH APPEAL",
+    "recommended_animation": "laisser travailler la chute; considérer la première descente comme une fenêtre de touche",
+    "tags": {
+      "zone": "Shikanoshima East Red Lighthouse breakwater",
+      "date": "2025-11-16",
+      "time": "11:23",
+      "size_g": 500,
+      "moment_touche": "immediate_on_fall",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Anglers / Itoshima Aori logs",
+    "source_type": "catch_index",
+    "species": "aori_ika",
+    "raw_text": "Le 16 novembre 2025, des Aori sont recensés à Fukuno-ura Port, Nokita Port et plus largement sur la péninsule d'Itoshima. Un pêcheur décrit un circuit de ports et indique quitter rapidement une zone sans touche.",
+    "recommended_animation": "rotation rapide entre ports si aucune présence n'est détectée",
+    "tags": {
+      "zone": "Itoshima",
+      "date": "2025-11-16",
+      "ports": [
+        "Fukuno-ura",
+        "Nokita",
+        "Kishi",
+        "Shinmachi",
+        "Karatomari",
+        "Nishiura",
+        "Fukae",
+        "Oiri"
+      ],
+      "shore_relevance": "direct_area_logs",
+      "evidence_type": "OBSERVED/DECLARED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Anglers / Itoshima Aori",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Le 9 novembre 2025 dans le secteur d'Itoshima, une session combinant nuit et journée totalise neuf Aori, dont un poisson d'environ 920 g, sur Egi-O Live Monster Red.",
+    "recommended_lure": "egi 3.0-3.5; 3.5 devient réellement justifié par la taille des calamars de mi-novembre",
+    "recommended_color": "Monster Red / dark-red low-light role",
+    "tags": {
+      "zone": "Itoshima",
+      "date": "2025-11-09",
+      "count": 9,
+      "max_weight_g": 920,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Anglers / Itoshima Aori",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Le 10 novembre 2025 à 06:32 dans le secteur d'Itoshima, un Aori de 920 g est encore enregistré malgré un vent NNW annoncé à 5,8 m/s.",
+    "tags": {
+      "zone": "Itoshima",
+      "date": "2025-11-10",
+      "time": "06:32",
+      "weight_g": 920,
+      "wind": "NNW 5.8 m/s",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Anglers / Shingu Port",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "À Shingu Port le 15 novembre 2025 à 22:30, une seiche a été prise sur un egi coloris Gunkan Green. Ce n'est pas l'Aori cible, mais cela confirme un plan de secours eging nocturne dans les ports de la façade est.",
+    "recommended_color": "Gunkan Green / dark-natural silhouette",
+    "tags": {
+      "zone": "Shingu Port",
+      "date": "2025-11-15",
+      "time": "22:30",
+      "species_actual": "cuttlefish",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Anglers / Marina Town Seaside Park",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 17 novembre 2025 à 06:42, six Sagoshi d'environ 45 cm sont enregistrés à Marina Town Seaside Park. Le pêcheur voyait des montées/chasses de Tachiuo et Sagoshi et lançait un Jackson G-Control 28 g dans ces manifestations.",
+    "recommended_lure": "Jackson G-Control 28 g ou sinking minnow compact de même rôle",
+    "recommended_color": "Sagoshibait / baitfish flash",
+    "recommended_animation": "viser dans ou légèrement devant les montées; récupération active",
+    "tags": {
+      "zone": "Marina Town Seaside Park / Hakata Bay",
+      "date": "2025-11-17",
+      "time": "06:42",
+      "species_actual": "sagoshi",
+      "size_cm": 45,
+      "count": 6,
+      "biological_signs": "visible rises/boils",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 16 novembre 2025 à 07:20 en baie de Hakata, un Sagoshi d'environ 40 cm est pris sur Waterland Jerk Sonic 90 redhead avec une récupération linéaire.",
+    "recommended_lure": "sinking minnow compact ~90 mm",
+    "recommended_color": "red head",
+    "recommended_animation": "récupération linéaire",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-16",
+      "time": "07:20",
+      "species_actual": "sagoshi",
+      "size_cm": 40,
+      "moment_touche": "during_straight_retrieve",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay",
+    "source_type": "catch_log",
+    "species": "suzuki",
+    "raw_text": "Le 16 novembre 2025 à 07:30 en baie de Hakata, trois Suzuki sont pris, dont un de 75 cm, sur DAIWA Real Steel TG 18 g. Le pêcheur explique qu'au premier jour les Tachiuo et Sagoshi étaient actifs; quand leur activité a diminué, les Suzuki se sont mis à mordre.",
+    "recommended_lure": "vibration compacte ~18 g",
+    "recommended_animation": "prospecter la couche où les prédateurs restent après la baisse d'activité des Sagoshi/Tachiuo",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-16",
+      "time": "07:30",
+      "size_cm": 75,
+      "count": 3,
+      "preceding_species": [
+        "tachiuo",
+        "sagoshi"
+      ],
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED/DECLARED",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Point / Tsuyazaki Port",
+    "source_type": "local_shop_catch_database",
+    "species": "hamachi",
+    "raw_text": "Le 18 novembre dans les données du Point pour Tsuyazaki Port, des Sagoshi jusqu'à environ 50 cm sont signalés à l'aube sur jig récupéré rapidement. Cette date correspond exactement au dernier jour du séjour 2026.",
+    "recommended_lure": "metal jig compact",
+    "recommended_animation": "récupération rapide à l'aube",
+    "tags": {
+      "zone": "Tsuyazaki Port",
+      "date_reference": "November 18",
+      "species_actual": "sagoshi",
+      "max_size_cm": 50,
+      "moment_jour": "dawn",
+      "shore_relevance": "local_shore_catch_database",
+      "evidence_type": "OBSERVED/DECLARED",
+      "confidence_level": 3,
+      "source_url": "https://www.point-i.jp/fishing_spots/17711"
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 5 novembre 2025 à 13:31 en baie de Hakata, un Sagoshi de 50 cm est pris sur jig de 28 g. Cela montre que l'activité n'est pas limitée à l'aube, même si l'aube reste le créneau le mieux documenté.",
+    "recommended_lure": "metal jig ~28 g",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-05",
+      "time": "13:31",
+      "species_actual": "sagoshi",
+      "size_cm": 50,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 8 novembre 2025 en baie de Hakata, un Sagoshi de 56 cm est pris sur High Standard 120F pendant le passage de basse mer au montant.",
+    "recommended_lure": "minnow 120 mm",
+    "recommended_animation": "exploiter la remise en courant après basse mer",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-08",
+      "species_actual": "sagoshi",
+      "size_cm": 56,
+      "tide_phase": "low_to_rising",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 22 novembre 2025 en baie de Hakata, dans une eau fortement teintée pendant le jusant après pleine mer, un Sagoshi de 45 cm est pris sur vibration BlueBlue Tracey coloris Pink Joker. Le pêcheur indique que la vibration était le choix qui fonctionnait dans cette eau très trouble.",
+    "recommended_lure": "vibration",
+    "recommended_color": "Pink Joker / HIGH APPEAL",
+    "recommended_animation": "récupération de vibration dans eau très teintée",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-22",
+      "species_actual": "sagoshi",
+      "water_clarity": "very muddy/turbid",
+      "tide_phase": "ebb_after_high",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED/DECLARED",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Anglers / Nokita Port",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 2 novembre 2025 à Nokita Port, un Sagoshi de 50 cm est pris sur Jackall Big Backer rose malgré un vent fort, et l'auteur signale que plusieurs autres pêcheurs prenaient également du poisson.",
+    "recommended_lure": "blade/vibration metal dense",
+    "recommended_color": "pink / HIGH APPEAL",
+    "tags": {
+      "zone": "Nokita Port",
+      "date": "2025-11-02",
+      "species_actual": "sagoshi",
+      "size_cm": 50,
+      "wind": "strong",
+      "crowd_signal": "multiple anglers catching",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Anglers / Karatomari Port",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 3 novembre 2025 à Karatomari Port, un Sagoshi de 45 cm est pris sur Onimaru GG Twilight. Le pêcheur utilisait même une canne d'eging, ce qui montre que les poissons de taille courante ne nécessitent pas systématiquement une installation shore-jigging lourde.",
+    "recommended_lure": "vibration/metal compact",
+    "tags": {
+      "zone": "Karatomari Port",
+      "date": "2025-11-03",
+      "species_actual": "sagoshi",
+      "size_cm": 45,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Point Meinohama / Sea Fishing Park local intel",
+    "source_type": "local_shop_intel",
+    "species": "hamachi",
+    "raw_text": "Autour du 10 novembre 2025, le magasin Point Meinohama signalait également un Sawara d'environ 98 cm dans le secteur du Sea Fishing Park. C'est un signal écologique de gros poisson denté dans l'ouest de la baie, mais pas une recommandation de pêche aux leurres dans le parc lui-même.",
+    "tags": {
+      "zone": "Fukuoka City Sea Fishing Park vicinity",
+      "date_reference": "around 2025-11-10",
+      "species_actual": "sawara",
+      "size_cm": 98,
+      "shore_relevance": "local_ecosystem_signal",
+      "evidence_type": "DECLARED_LOCAL_SHOP",
+      "confidence_level": 2,
+      "important_note": "official Sea Fishing Park rules prohibit lure fishing on the fishing platform"
+    }
+  },
+  {
+    "source_label": "Fukuoka City Sea Fishing Park official rules",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "Le règlement officiel du Fukuoka City Sea Fishing Park interdit explicitement la pêche aux leurres et aux grappins sur la plateforme de pêche. Ce site ne doit donc pas être intégré comme spot lure-fishing dans le plan du voyage.",
+    "tags": {
+      "zone": "Fukuoka City Sea Fishing Park",
+      "shore_relevance": "official_access_rule",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "lure_fishing": "prohibited",
+      "source_url": "https://www.city.fukuoka.lg.jp/d1w_reiki/reiki_honbun/q003RG00000637.html"
+    }
+  },
+  {
+    "source_label": "Fukuoka City Sea Fishing Park official rules",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "En novembre, le Fukuoka City Sea Fishing Park ouvre officiellement de 07:00 à 18:00 et ferme chaque mardi sauf règle de report en cas de jour férié. Le mardi 17 novembre 2026 tombe donc sur son jour normal de fermeture, sous réserve de modification exceptionnelle.",
+    "tags": {
+      "zone": "Fukuoka City Sea Fishing Park",
+      "month": "November",
+      "hours": "07:00-18:00",
+      "weekly_closed_day": "Tuesday",
+      "date_relevant": "2026-11-17",
+      "shore_relevance": "official_access_rule",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Anglers / Muromi River mouth",
+    "source_type": "catch_log",
+    "species": "suzuki",
+    "raw_text": "À l'embouchure de la Muromi le 3 novembre 2025 à 17:40, un Suzuki de 52 cm est pris lors d'une session ayant produit quatre touches et trois décrochés. Le vent NE était soutenu et la marée annoncée grande.",
+    "tags": {
+      "zone": "Muromi River mouth",
+      "date": "2025-11-03",
+      "time": "17:40",
+      "size_cm": 52,
+      "bites": 4,
+      "lost_fish": 3,
+      "wind": "NE 6.1 m/s",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay",
+    "source_type": "catch_index",
+    "species": "suzuki",
+    "raw_text": "Un Suzuki d'environ 45 cm est indexé en baie de Hakata le 18 novembre 2025. Les détails de leurre ne sont pas suffisamment documentés pour être utilisés comme règle tactique, mais la date confirme la présence de Suzuki exactement au dernier jour du futur séjour.",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-18",
+      "size_cm": 45,
+      "shore_relevance": "direct_area_index",
+      "evidence_type": "OBSERVED_INDEX",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Anglers / Mikasa River mouth",
+    "source_type": "catch_index",
+    "species": "kurodai",
+    "raw_text": "Le 15 novembre 2025, un Chinu de 46 cm est recensé à l'embouchure de la Mikasa. Cette capture tombe exactement sur le premier jour du voyage et confirme le potentiel Kurodai des embouchures urbaines de la baie.",
+    "tags": {
+      "zone": "Mikasa River mouth",
+      "date": "2025-11-15",
+      "size_cm": 46,
+      "shore_relevance": "direct_area_index",
+      "evidence_type": "OBSERVED_INDEX",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Anglers / Shikanoshima East Red Lighthouse",
+    "source_type": "catch_index",
+    "species": "kurodai",
+    "raw_text": "Un Chinu de 48 cm est recensé le 8 novembre 2025 sur le secteur du feu rouge est de Shikanoshima.",
+    "tags": {
+      "zone": "Shikanoshima East Red Lighthouse",
+      "date": "2025-11-08",
+      "size_cm": 48,
+      "shore_relevance": "direct_area_index",
+      "evidence_type": "OBSERVED_INDEX",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay",
+    "source_type": "catch_log",
+    "species": "kurodai",
+    "raw_text": "Le 8 novembre 2025 de nuit en baie de Hakata, un Chinu est pris sur DAIWA Switch Hitter chartreuse. C'est une preuve directe qu'un hardbait peut produire le Kurodai local, et pas uniquement les techniques appât ou softbait.",
+    "recommended_lure": "sinking pencil / hardbait de type Switch Hitter",
+    "recommended_color": "chartreuse / HIGH APPEAL",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-08",
+      "moment_jour": "night",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay chinning",
+    "source_type": "catch_log",
+    "species": "kurodai",
+    "raw_text": "Le 23 novembre 2025, dans une eau devenue très claire et hivernale, une prospection ouverte ne produit rien. Après déplacement vers l'ombre d'un bâtiment/ouvrage, un Kibire d'environ 30 cm mord rapidement. La structure et l'ombre peuvent devenir prioritaires lorsque l'eau est claire.",
+    "recommended_animation": "travailler lentement les zones d'ombre et structures plutôt que quadriller uniquement l'eau ouverte",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-23",
+      "water_clarity": "clear",
+      "structure": "building/structure shadow",
+      "species_actual": "kibire",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED/INTERPRETED",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Anglers / Hakata Bay multi-species session",
+    "source_type": "catch_log",
+    "species": "general",
+    "raw_text": "Le 1er novembre 2025 en baie de Hakata, une longue session produit un Aori sur Egi-O K Gunkan Green 3.0 shallow, un Sagoshi de 50 cm à 22:35 sur G-Control 28 g blue-pink, puis de nombreux Aji de 22 à 26 cm après la tombée de la nuit.",
+    "recommended_lure": "egi 3.0 shallow + sinking minnow 28 g pour prédateurs",
+    "recommended_color": "Gunkan Green pour egi; blue-pink pour Sagoshi",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-01",
+      "species_mix": [
+        "aori_ika",
+        "sagoshi",
+        "aji"
+      ],
+      "aji_size_cm": "22-26",
+      "night_sagoshi": true,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Casting Fukuoka / Hakata Bay Hiika",
+    "source_type": "local_shop_report",
+    "species": "general",
+    "raw_text": "Le 6 novembre 2025 en baie de Hakata, une session Hiika produit 28 petits calamars entre 18:00 et 21:00 avec de petits egi. Même si ce n'est pas une cible principale, cela confirme une forte composante de petites proies/céphalopodes dans l'écosystème nocturne de novembre.",
+    "tags": {
+      "zone": "Hakata Bay",
+      "date": "2025-11-06",
+      "time_window": "18:00-21:00",
+      "species_actual": "hiika",
+      "count": 28,
+      "shore_relevance": "local_shore_report",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Fukuoka seasonal ecosystem / Meinohama",
+    "source_type": "official_seasonal_context",
+    "species": "suzuki",
+    "raw_text": "Le syndicat de pêche de Fukuoka classe le Konoshiro et le Suzuki parmi les poissons de novembre à Meinohama. Le Konoshiro constitue un bait de grande taille potentiellement important pour les gros Suzuki et Sawara, mais il ne faut conclure à une alimentation active dessus que si le bait est réellement observé.",
+    "tags": {
+      "zone": "Meinohama",
+      "month": "November",
+      "baitfish": "konoshiro",
+      "shore_relevance": "official_ecosystem_context",
+      "evidence_type": "OFFICIAL + INTERPRETED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Current Nokita access guide",
+    "source_type": "access_context",
+    "species": "general",
+    "raw_text": "Les informations récentes sur Nokita indiquent un port très fréquenté par les pêcheurs, avec certains panneaux/secteurs interdits et une forte pression de pêche. Le panneau sur place doit être l'autorité finale; l'encombrement est une vraie variable de décision à l'aube.",
+    "tags": {
+      "zone": "Nokita Port",
+      "shore_relevance": "access_and_crowd",
+      "evidence_type": "CURRENT_LOCAL_GUIDE",
+      "confidence_level": 3,
+      "trip_action": "arrive early or keep an alternative port"
+    }
+  },
+  {
+    "source_label": "Karatomari current access",
+    "source_type": "access_context",
+    "species": "general",
+    "raw_text": "Karatomari dispose d'un stationnement payant documenté autour de 500 yens par voiture et de toilettes. Le long brise-lames en fait un candidat pratique dans un circuit Itoshima, sous réserve des panneaux et zones de travail le jour du séjour.",
+    "tags": {
+      "zone": "Karatomari Port",
+      "parking_jpy": 500,
+      "toilet": true,
+      "shore_relevance": "access_context",
+      "evidence_type": "CURRENT_LOCAL_INFORMATION",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Nata current safety guide",
+    "source_type": "access_context",
+    "species": "general",
+    "raw_text": "À Nata, le côté tétrapodes / digue est du port est signalé comme clôturé ou restreint dans les guides récents. La façade extérieure peut également devenir très exposée au vent et aux vagues. Ne pas franchir une clôture pour rejoindre un poste.",
+    "tags": {
+      "zone": "Nata Port",
+      "shore_relevance": "safety_context",
+      "evidence_type": "CURRENT_LOCAL_GUIDE",
+      "confidence_level": 3,
+      "trip_action": "use only clearly open areas"
+    }
+  },
+  {
+    "source_label": "Fukutsu City / Fukuma Fishing Port Seaside Park",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "La ville de Fukutsu présente le Seaside Park de Fukuma Fishing Port comme un espace ouvert au public avec parking gratuit et un brise-lames sud d'environ 280 m. La face intérieure du brise-lames sud est interdite à la pêche. C'est une alternative d'accès légal dans l'extension est vers Tsuyazaki.",
+    "tags": {
+      "zone": "Fukuma Fishing Port Seaside Park",
+      "parking": "free",
+      "breakwater_length_m": 280,
+      "restricted_area": "inside face of south breakwater",
+      "shore_relevance": "official_access_context",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Fukuoka Prefecture / fishing-port etiquette",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "La préfecture de Fukuoka rappelle que les ports sont avant tout des lieux de travail pour la pêche professionnelle. Ne pas gêner les bateaux, amarres, engins, manutentions ou stationnements professionnels.",
+    "tags": {
+      "region": "Fukuoka Prefecture",
+      "shore_relevance": "official_safety_and_access",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Fukuoka Prefecture / recreational fishing rules",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "Les règles préfectorales rappellent que les droits de pêche et les zones professionnelles doivent être respectés; le pêcheur de loisir ne doit pas gêner les filets fixes, bouées et opérations professionnelles ni prélever des ressources sous droits de pêche sans autorisation.",
+    "tags": {
+      "region": "Fukuoka Prefecture",
+      "shore_relevance": "official_regulation",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Point Meinohama",
+    "source_type": "local_tackle_shop",
+    "species": "general",
+    "raw_text": "Point Meinohama constitue une source locale pratique pour les informations Itoshima, Shikanoshima et ouest de Hakata Bay. Adresse: secteur Meinohama Ekiminami, téléphone 092-891-7371. Les horaires actuels indiquent ouverture très tôt le week-end.",
+    "tags": {
+      "zone": "Meinohama",
+      "phone": "092-891-7371",
+      "shore_relevance": "real_time_local_intel",
+      "evidence_type": "BUSINESS_CURRENT",
+      "confidence_level": 4,
+      "trip_action": "ask where bait, Sagoshi, Aori and Hirame were caught in previous 24-48h"
+    }
+  },
+  {
+    "source_label": "Casting Fukuoka",
+    "source_type": "local_tackle_shop",
+    "species": "general",
+    "raw_text": "Casting Fukuoka est situé à Hakata-ku Higashinaka 2-3-53, téléphone 092-432-6081. Le magasin publie régulièrement des rapports Hakata Bay, notamment Aji, Tachiuo et Hiika, et constitue une bonne source de dernière minute pour la baie urbaine.",
+    "tags": {
+      "zone": "Hakata",
+      "phone": "092-432-6081",
+      "shore_relevance": "real_time_local_intel",
+      "evidence_type": "BUSINESS_CURRENT",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB01",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "SI Sagoshi visibles à l'aube avec montées ou boils, ALORS lancer un sinking minnow compact 28 g ou un jig/blade légèrement devant la manifestation et récupérer activement. Cette logique est directement soutenue par les captures des 16 et 17 novembre.",
+    "recommended_lure": "sinking minnow 25-30 g, metal jig ou blade jig compact",
+    "recommended_animation": "cast ahead of boil -> active straight retrieve",
+    "tags": {
+      "rule_id": "FUK-KB01",
+      "condition": "visible Sagoshi activity",
+      "confidence_level": 4,
+      "evidence_type": "CONVERGENCE"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB02",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "SI les Sagoshi d'Itoshima sont présents mais ne prennent pas uniquement en récupération rapide, ALORS introduire volontairement des phases de chute avec un blade jig. Le 15 novembre, plusieurs touches ont été signalées sur la chute.",
+    "recommended_lure": "blade jig",
+    "recommended_animation": "retrieve -> controlled fall -> restart",
+    "tags": {
+      "rule_id": "FUK-KB02",
+      "condition": "Sagoshi present / short or inconsistent bites",
+      "moment_touche": "fall",
+      "confidence_level": 4,
+      "evidence_type": "LOCAL_EXACT_DATE"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB03",
+    "source_type": "synthesis",
+    "species": "suzuki",
+    "raw_text": "SI l'aube en baie de Hakata commence avec Tachiuo/Sagoshi puis leur activité cesse, NE PAS quitter immédiatement le secteur: une session du 16 novembre montre les Suzuki prenant le relais juste après la baisse de l'activité des poissons dentés.",
+    "recommended_lure": "vibration compacte ~18-25 g",
+    "tags": {
+      "rule_id": "FUK-KB03",
+      "condition": "toothy predator activity fades after dawn",
+      "action": "test seabass layer before moving",
+      "confidence_level": 2,
+      "evidence_type": "STRONG_ISOLATED_SEQUENCE"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB04",
+    "source_type": "synthesis",
+    "species": "hirame",
+    "raw_text": "Itoshima peut produire du Hirame matin et soir le même jour. Le 16 novembre 2025, deux soge et de nombreuses touches ont été obtenus le matin, puis un Hirame de 40 cm au crépuscule. Une matinée ratée ne condamne donc pas nécessairement le secteur pour le soir.",
+    "tags": {
+      "rule_id": "FUK-KB04",
+      "zone": "Itoshima",
+      "confidence_level": 3,
+      "evidence_type": "DIRECT_DAY_SEQUENCE"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB05",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "À Shikanoshima le 16 novembre, l'Aori a produit à la fois une touche en quelques lancers à l'aube et un poisson de 500 g vers 11:23 sur la chute. L'eging ne doit donc pas être limité au seul changement de lumière.",
+    "recommended_animation": "priorité au contrôle de la chute; première descente = fenêtre active",
+    "tags": {
+      "rule_id": "FUK-KB05",
+      "confidence_level": 3,
+      "evidence_type": "MULTIPLE_SAME_DAY_OBSERVATIONS"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB06",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "Avec une voiture à Itoshima, un circuit de petits ports peut être plus efficace que de rester plusieurs heures sans signe. Un pêcheur de novembre quitte rapidement les ports sans touche et poursuit sa rotation.",
+    "recommended_animation": "tester rapidement plusieurs angles/couches puis déplacer si aucune présence",
+    "tags": {
+      "rule_id": "FUK-KB06",
+      "strategy": "harbor hopping",
+      "confidence_level": 1,
+      "evidence_type": "DECLARED_BY_ONE_ANGLER"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB07",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Nokita peut être très fréquenté. SI le poste utile est saturé, le temps de séjour est mieux investi dans un autre port du circuit Itoshima que dans l'attente d'une place.",
+    "tags": {
+      "rule_id": "FUK-KB07",
+      "zone": "Nokita",
+      "confidence_level": 2,
+      "evidence_type": "LOCAL_ACCESS_PATTERN"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB08",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "SI l'eau de Hakata Bay devient fortement teintée, une vibration compacte et visible mérite de monter dans la hiérarchie. Une capture de Sagoshi le 22 novembre a été obtenue ainsi lorsque les autres présentations semblaient moins adaptées.",
+    "recommended_lure": "vibration 18-25 g",
+    "recommended_color": "high appeal / pink / chartreuse selon inventaire",
+    "tags": {
+      "rule_id": "FUK-KB08",
+      "condition": "heavy turbidity",
+      "confidence_level": 1,
+      "evidence_type": "ISOLATED_OBSERVATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB09",
+    "source_type": "synthesis",
+    "species": "kurodai",
+    "raw_text": "SI l'eau de fin novembre est très claire et les zones ouvertes restent muettes, tester les ombres, pieds d'ouvrages et ruptures de lumière avant de changer totalement de secteur.",
+    "recommended_animation": "présentation lente et proche de la structure",
+    "tags": {
+      "rule_id": "FUK-KB09",
+      "confidence_level": 1,
+      "evidence_type": "ISOLATED_OBSERVATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB10",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Les quatre aubes du 15 au 18 novembre 2026 ne correspondent pas à la même phase de courant: basse mer 06:44 le 15, 07:32 le 16, 08:34 le 17 puis 09:52 le 18. Il faut donc noter séparément l'effet de la luminosité et l'effet de la marée au lieu de conclure 'l'aube marche' sans contexte.",
+    "tags": {
+      "rule_id": "FUK-KB10",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_TIDE_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB11",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Le Fukuoka City Sea Fishing Park n'est PAS une solution pour la pêche aux leurres du voyage: son règlement interdit les leurres. Ne pas l'utiliser comme plan de secours pour Sagoshi, Suzuki ou Hirame au lancer.",
+    "tags": {
+      "rule_id": "FUK-KB11",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_RULE"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB12",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "Le 18 novembre, Tsuyazaki constitue une extension est crédible si Itoshima/Hakata Bay semblent vides: les données locales du même jour de novembre signalent des Sagoshi jusqu'à 50 cm à l'aube sur jig rapide.",
+    "recommended_lure": "metal jig compact",
+    "recommended_animation": "fast retrieve at dawn",
+    "tags": {
+      "rule_id": "FUK-KB12",
+      "zone": "Tsuyazaki",
+      "confidence_level": 3,
+      "evidence_type": "EXACT_CALENDAR_DATE_LOCAL_DATA"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB13",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Karatomari est pratique pour un circuit Itoshima grâce au parking payant et aux toilettes, tandis que Nokita peut être beaucoup plus concurrentiel. Le choix d'un port doit donc inclure la logistique et la pression de pêche.",
+    "tags": {
+      "rule_id": "FUK-KB13",
+      "confidence_level": 3,
+      "evidence_type": "ACCESS_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB14",
+    "source_type": "synthesis",
+    "species": "suzuki",
+    "raw_text": "Le Konoshiro est officiellement présent dans les captures de novembre à Meinohama. SI des bancs sont réellement observés sur place, augmenter la taille/silhouette du minnow ou sinking pencil pour Suzuki/Sawara devient rationnel; sans observation, ne pas supposer ce bait.",
+    "tags": {
+      "rule_id": "FUK-KB14",
+      "baitfish": "konoshiro",
+      "confidence_level": 2,
+      "evidence_type": "OFFICIAL_ECOSYSTEM_PLUS_CONDITIONAL_INTERPRETATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB15",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Mi-novembre à Itoshima peut regrouper Hirame, Sagoshi et Yazu sur une même zone générale. Au lieu d'emporter trois boîtes séparées, privilégier des rôles polyvalents permettant de basculer immédiatement du fond vers la chasse.",
+    "tags": {
+      "rule_id": "FUK-KB15",
+      "confidence_level": 3,
+      "evidence_type": "LOCAL_CONVERGENCE",
+      "lure_box_impact": "favor multi-species shore lures"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB16",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "La présence de Sawara de grande taille autour de Fukuoka en novembre signifie qu'il faut contrôler fréquemment l'état du leader après une touche ou un contact. Cela ne justifie pas automatiquement un bas de ligne acier qui pourrait pénaliser d'autres espèces.",
+    "tags": {
+      "rule_id": "FUK-KB16",
+      "confidence_level": 3,
+      "evidence_type": "OPERATIONAL_INFERENCE",
+      "trip_action": "inspect leader after toothy-fish contact"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB17",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "Un Sagoshi de nuit est documenté à 22:35 en baie de Hakata sur G-Control 28 g blue-pink, mais il s'agit d'une observation isolée. La nuit ne doit pas devenir le créneau Sagoshi principal; elle reste une opportunité secondaire si bait/Aji sont présents.",
+    "tags": {
+      "rule_id": "FUK-KB17",
+      "confidence_level": 1,
+      "evidence_type": "ISOLATED_OBSERVATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / FUK-KB18",
+    "source_type": "synthesis",
+    "species": "suzuki",
+    "raw_text": "La baie de Hakata présente en novembre un mélange nocturne Aji de 22-26 cm, Hiika et autres petites proies. Pour Suzuki, les zones de concentration de bait et les courants de quai/embouchure ont donc plus de valeur que le simple fait de pêcher 'de nuit'.",
+    "tags": {
+      "rule_id": "FUK-KB18",
+      "confidence_level": 3,
+      "evidence_type": "ECOSYSTEM_CONVERGENCE"
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Fukuoka Sagoshi-Yazu",
+    "source_type": "lure_box_synthesis",
+    "species": "hamachi",
+    "raw_text": "Rôle pratiquement indispensable pour Fukuoka mi-novembre: blade jig compact 20-30 g. Il couvre Sagoshi/Yazu, récupération linéaire, flash, distance correcte et surtout la possibilité de déclencher sur la chute.",
+    "recommended_lure": "blade jig compact 20-30 g",
+    "recommended_color": "silver/natural flash en priorité; blue-pink/high appeal en second",
+    "tags": {
+      "role": "fast_search_plus_fall",
+      "priority": "VERY_HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Fukuoka long-range",
+    "source_type": "lure_box_synthesis",
+    "species": "hamachi",
+    "raw_text": "Un metal jig compact 20-30 g complète le blade jig pour la distance, la récupération rapide et le contrôle de couche sur Sagoshi/Yazu. Un 30-40 g n'est nécessaire que si vent/distance/courant le justifient.",
+    "recommended_lure": "compact metal jig 20-30 g; optional 30-40 g",
+    "tags": {
+      "role": "distance_fast_retrieve_layer_control",
+      "priority": "HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / G-Control role",
+    "source_type": "lure_box_synthesis",
+    "species": "hamachi",
+    "raw_text": "Un sinking minnow/pencil aérodynamique autour de 90-120 mm et 25-30 g est fortement justifié: Sagoshi du 16 et du 17 novembre, pêche des montées, récupération linéaire et possibilité de conserver un profil poisson plutôt qu'un jig.",
+    "recommended_lure": "sinking minnow/pencil 90-120 mm, ~25-30 g",
+    "tags": {
+      "role": "baitfish_profile_long_cast",
+      "priority": "VERY_HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Hakata Suzuki",
+    "source_type": "lure_box_synthesis",
+    "species": "suzuki",
+    "raw_text": "Une vibration compacte de 18-25 g est très pertinente pour Hakata Bay: Suzuki de 75 cm le 16 novembre sur TG18 g et Sagoshi en eau teintée sur vibration. Elle apporte un rôle distinct des minnows.",
+    "recommended_lure": "vibration 18-25 g",
+    "tags": {
+      "role": "deeper_bay_reaction_turbidity",
+      "priority": "HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Hirame",
+    "source_type": "lure_box_synthesis",
+    "species": "hirame",
+    "raw_text": "Pour Itoshima/Nata, conserver au minimum un minnow 100-130 mm pour la zone proche et un leurre dense 25-35 g pour atteindre les cassures plus éloignées. Les mêmes leurres peuvent partiellement couvrir Suzuki et Sagoshi, ce qui limite les doublons.",
+    "recommended_lure": "minnow 100-130 mm + dense lure 25-35 g",
+    "tags": {
+      "role": "hirame_nearshore_plus_distance",
+      "priority": "HIGH",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Aori",
+    "source_type": "lure_box_synthesis",
+    "species": "aori_ika",
+    "raw_text": "À Fukuoka mi-novembre, 3.0 et 3.5 doivent constituer le cœur de la sélection egi. Des Aori autour de 500-920 g sont documentés début/mi-novembre. Le 2.5 reste utile en finesse ou faible profondeur mais est moins central qu'à un début d'automne très précoce.",
+    "recommended_lure": "egi 3.0 + 3.5; 2.5 en complément",
+    "recommended_color": "1 naturel, 1 high appeal/pink, 1 dark-red/low-light",
+    "tags": {
+      "role": "aori_autumn_late",
+      "priority": "HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Target hierarchy / Fukuoka 15-18 November",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Hiérarchie provisoire pour Fukuoka mi-novembre: 1) Sagoshi/Sawara et Yazu comme opportunité de très forte valeur; 2) Hirame, étonnamment bien documenté exactement les 15-16 novembre; 3) Aori Ika, très solide sur Itoshima/Shikanoshima; 4) Suzuki en Hakata Bay et embouchures; 5) Kurodai comme solution ciblée structure/embouchure.",
+    "tags": {
+      "ranking": [
+        "sagoshi_sawara_yazu",
+        "hirame",
+        "aori_ika",
+        "suzuki",
+        "kurodai"
+      ],
+      "month": "mid-November",
+      "evidence_type": "MULTI_SOURCE_SYNTHESIS",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Decision engine / Fukuoka first questions",
+    "source_type": "decision_engine",
+    "species": "general",
+    "raw_text": "Ordre des questions sur place: 1) y a-t-il des montées, oiseaux ou baitfish ? 2) Sagoshi/Tachiuo/Yazu sont-ils actifs ? 3) quelle phase de marée exacte à cette heure ? 4) si la surface meurt, le Suzuki prend-il le relais ? 5) si aucun pélagique n'est confirmé, basculer Hirame ou Aori selon le fond et l'accès.",
+    "tags": {
+      "decision_order": [
+        "biological_activity",
+        "predator_species_rotation",
+        "tide_phase",
+        "water_layer",
+        "structure_bottom",
+        "target_switch"
+      ],
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 15 November 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 15 novembre 2026, l'aube coïncide presque avec la basse mer de Hakata à 06:44. Priorité à une zone où la remise en courant du montant peut être exploitée après le lever du jour: Hakata Bay/Nata/Itoshima selon vent et activité. Les précédents du 15 novembre comprennent Hirame à Nata et Sagoshi sur blade jig à Itoshima.",
+    "tags": {
+      "date": "2026-11-15",
+      "tactical_theme": "dawn_low_tide_then_rising",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 16 November 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 16 novembre est le jour le plus riche en analogues exacts retrouvés: Sagoshi et gros Suzuki en baie de Hakata autour de 07:20-07:30, Aori à Shikanoshima à 06:42 puis 11:23, et Hirame actif matin et soir à Itoshima. C'est un excellent jour pour choisir selon les signes biologiques plutôt que figer une espèce.",
+    "tags": {
+      "date": "2026-11-16",
+      "tactical_theme": "multi-species exact-date evidence",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 17 November 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 17 novembre, la basse mer n'arrive qu'à 08:34 et la lune est au premier quartier. Un analogue exact montre six Sagoshi à Marina Town vers 06:42 dans des montées. Le Sea Fishing Park est fermé le mardi et interdit de toute façon les leurres.",
+    "tags": {
+      "date": "2026-11-17",
+      "tactical_theme": "dawn_sagoshi_on_falling_tide",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 18 November 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 18 novembre, l'aube est en pleine descendante avec basse mer seulement à 09:52. Si les signaux à Hakata/Itoshima sont faibles, Tsuyazaki/Fukutsu constitue une extension logique car des Sagoshi jusqu'à 50 cm sont documentés le 18 novembre à l'aube sur jig rapide.",
+    "tags": {
+      "date": "2026-11-18",
+      "tactical_theme": "falling_tide_dawn_plus_east_extension",
+      "confidence_level": 3
+    }
+  }
+]

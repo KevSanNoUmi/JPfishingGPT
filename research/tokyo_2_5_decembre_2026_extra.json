@@ -1,0 +1,43 @@
+[
+  {
+    "source_label": "Casting Hachioji / Tokyo Bay inner exact-date 2 Dec",
+    "source_type": "local_shop_field_intel",
+    "species": "suzuki",
+    "raw_text": "Le 2 décembre 2025 dans le fond de la baie de Tokyo, une session du bord de 22:00 à 03:00 produit deux Suzuki de 50 à 60 cm. Konoshiro et sappa sont présents; les pêcheurs gardent une couche très peu profonde parce qu'en descendant ils accrochent le bait.",
+    "recommended_lure": "BANQ 120S ou gros pencil/minnow sub-surface",
+    "recommended_animation": "water dog-walk / action immédiate en couche haute",
+    "tags": {
+      "zone": "Tokyo Bay inner shore",
+      "date": "2025-12-02",
+      "time_window": "22:00-03:00",
+      "size_cm": "50-60",
+      "baitfish": "konoshiro + sappa",
+      "evidence_type": "OBSERVED_LOCAL_SHOP_STAFF",
+      "confidence_level": 4,
+      "source_url": "https://castingnet.jp/shop/choka_detail.php?no=5132847&s=47"
+    }
+  },
+  {
+    "source_label": "Decision rule / TOK-V4-01",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Le 2 décembre possède un analogue local exact: bait de type konoshiro/sappa et Suzuki actifs de nuit en couche très haute. Si le leurre accroche le fourrage en descendant, remonter immédiatement la présentation au lieu d'insister plus profond.",
+    "tags": {
+      "rule_id": "TOK-V4-01",
+      "date": "2026-12-02",
+      "confidence_level": 4,
+      "evidence_type": "EXACT_CALENDAR_DATE_LOCAL_DATA"
+    }
+  },
+  {
+    "source_label": "Decision rule / TOK-V4-02",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "À Tokyo début décembre, la présence réelle de konoshiro/sappa doit décider du gabarit et de la couche. Sans bait détecté, revenir à la logique structure/courant de la base plutôt que forcer le big-bait.",
+    "tags": {
+      "rule_id": "TOK-V4-02",
+      "confidence_level": 3,
+      "evidence_type": "LOCAL_PATTERN_SYNTHESIS"
+    }
+  }
+]

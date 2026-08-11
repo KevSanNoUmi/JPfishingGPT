@@ -1,0 +1,1142 @@
+[
+  {
+    "source_label": "Trip dates / Numazu 2026",
+    "source_type": "trip_context",
+    "species": "general",
+    "raw_text": "Séjour pêche du bord prévu à Numazu du 29 novembre au 2 décembre 2026. La recherche privilégie les preuves locales de fin novembre / tout début décembre, les captures datées exactement du 29/11 au 02/12 lorsque disponibles, les secteurs Numazu Surf–Senbonhama–Katahama et Uchiura–Nishiura, ainsi que les accès et réglementations réellement compatibles avec la pêche aux leurres.",
+    "tags": {
+      "trip_dates": [
+        "2026-11-29",
+        "2026-11-30",
+        "2026-12-01",
+        "2026-12-02"
+      ],
+      "region": "Numazu / Suruga Bay / Senbonhama / Katahama / Uchiura / Nishiura",
+      "shore_relevance": "trip_context",
+      "evidence_type": "USER_CONTEXT",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Uchiura tide station",
+    "source_type": "official_tide_reference",
+    "species": "general",
+    "raw_text": "La station JMA d'Uchiura (UCHIURA), directement située à Numazu, Uchiura Nagahama Ajiro, sert de référence officielle de marée pour le secteur intérieur de la baie. Coordonnées 35°01'N, 138°53'E.",
+    "tags": {
+      "station": "Uchiura / 内浦",
+      "station_code": "UC",
+      "latitude": "35°01'N",
+      "longitude": "138°53'E",
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.data.jma.go.jp/kaiyou/db/tide/suisan/suisan.php?LV=DL&S_HILO=on&de=05&ds=21&me=12&ms=11&stn=UC&ye=2026&ys=2026"
+    }
+  },
+  {
+    "source_label": "JMA / Uchiura tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 29 novembre 2026 à Uchiura, basse mer à 02:18 à 11 cm, pleine mer à 09:28 à 147 cm, basse mer à 14:47 à 100 cm puis pleine mer à 19:58 à 138 cm. Le lever du jour arrive pendant un montant déjà bien installé.",
+    "tags": {
+      "date": "2026-11-29",
+      "location": "Uchiura / Numazu",
+      "high_tides": [
+        {
+          "time": "09:28",
+          "height_cm": 147
+        },
+        {
+          "time": "19:58",
+          "height_cm": 138
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "02:18",
+          "height_cm": 11
+        },
+        {
+          "time": "14:47",
+          "height_cm": 100
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Uchiura tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 30 novembre 2026 à Uchiura, basse mer à 03:12 à 26 cm, pleine mer à 10:23 à 141 cm, basse mer à 16:03 à 97 cm puis pleine mer à 21:11 à 126 cm. L'aube reste sur le montant; le crépuscule du soir tombe pratiquement au passage de basse mer vers le montant.",
+    "tags": {
+      "date": "2026-11-30",
+      "location": "Uchiura / Numazu",
+      "high_tides": [
+        {
+          "time": "10:23",
+          "height_cm": 141
+        },
+        {
+          "time": "21:11",
+          "height_cm": 126
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "03:12",
+          "height_cm": 26
+        },
+        {
+          "time": "16:03",
+          "height_cm": 97
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Uchiura tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 1er décembre 2026, jour du dernier quartier, Uchiura prévoit basse mer à 04:11 à 43 cm, pleine mer à 11:20 à 137 cm, basse mer à 17:36 à 89 cm puis pleine mer à 22:51 à 117 cm. L'amplitude diminue et la soirée offre un montant net après la tombée de la nuit.",
+    "tags": {
+      "date": "2026-12-01",
+      "location": "Uchiura / Numazu",
+      "moon_phase": "last_quarter",
+      "high_tides": [
+        {
+          "time": "11:20",
+          "height_cm": 137
+        },
+        {
+          "time": "22:51",
+          "height_cm": 117
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "04:11",
+          "height_cm": 43
+        },
+        {
+          "time": "17:36",
+          "height_cm": 89
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "JMA / Uchiura tide table",
+    "source_type": "official_tide_forecast",
+    "species": "general",
+    "raw_text": "Le 2 décembre 2026 à Uchiura, basse mer à 05:17 à 59 cm, pleine mer à 12:15 à 136 cm puis basse mer à 18:59 à 77 cm. L'aube arrive cette fois très près de la basse mer, puis le montant domine toute la matinée.",
+    "tags": {
+      "date": "2026-12-02",
+      "location": "Uchiura / Numazu",
+      "high_tides": [
+        {
+          "time": "12:15",
+          "height_cm": 136
+        }
+      ],
+      "low_tides": [
+        {
+          "time": "05:17",
+          "height_cm": 59
+        },
+        {
+          "time": "18:59",
+          "height_cm": 77
+        }
+      ],
+      "shore_relevance": "official_trip_condition",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "NAOJ / Shizuoka daylight reference",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "Référence régionale officielle NAOJ pour Shizuoka le 29 novembre 2026: lever du soleil 06:34, coucher 16:35. Cette table est calculée pour la ville de Shizuoka et sert de repère régional; Numazu n'est pas exactement le même point de calcul.",
+    "tags": {
+      "date": "2026-11-29",
+      "reference_location": "Shizuoka city",
+      "sunrise": "06:34",
+      "sunset": "16:35",
+      "shore_relevance": "regional_daylight_reference",
+      "evidence_type": "OFFICIAL_REGIONAL_REFERENCE",
+      "confidence_level": 3,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2311.html"
+    }
+  },
+  {
+    "source_label": "NAOJ / Shizuoka daylight reference",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "Référence régionale officielle NAOJ pour Shizuoka le 30 novembre 2026: lever du soleil 06:34, coucher 16:35. Utiliser ces heures comme repère régional plutôt que comme éphéméride exacte au mètre pour Numazu.",
+    "tags": {
+      "date": "2026-11-30",
+      "reference_location": "Shizuoka city",
+      "sunrise": "06:34",
+      "sunset": "16:35",
+      "shore_relevance": "regional_daylight_reference",
+      "evidence_type": "OFFICIAL_REGIONAL_REFERENCE",
+      "confidence_level": 3,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2311.html"
+    }
+  },
+  {
+    "source_label": "NAOJ / Shizuoka daylight reference",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "Référence régionale officielle NAOJ pour Shizuoka le 1er décembre 2026: lever du soleil 06:35, coucher 16:35.",
+    "tags": {
+      "date": "2026-12-01",
+      "reference_location": "Shizuoka city",
+      "sunrise": "06:35",
+      "sunset": "16:35",
+      "shore_relevance": "regional_daylight_reference",
+      "evidence_type": "OFFICIAL_REGIONAL_REFERENCE",
+      "confidence_level": 3,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2312.html"
+    }
+  },
+  {
+    "source_label": "NAOJ / Shizuoka daylight reference",
+    "source_type": "astronomical_context",
+    "species": "general",
+    "raw_text": "Référence régionale officielle NAOJ pour Shizuoka le 2 décembre 2026: lever du soleil 06:36, coucher 16:35.",
+    "tags": {
+      "date": "2026-12-02",
+      "reference_location": "Shizuoka city",
+      "sunrise": "06:36",
+      "sunset": "16:35",
+      "shore_relevance": "regional_daylight_reference",
+      "evidence_type": "OFFICIAL_REGIONAL_REFERENCE",
+      "confidence_level": 3,
+      "source_url": "https://eco.mtk.nao.ac.jp/koyomi/dni/2026/s2312.html"
+    }
+  },
+  {
+    "source_label": "Anglers / Uchiura Bay exact-date Aori",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "À Uchiura Bay le 1er décembre 2025 à 20:43, un Aori Ika de 740 g est enregistré. C'est une preuve directe dans la zone Numazu et exactement sur l'une des dates du futur séjour.",
+    "tags": {
+      "zone": "Uchiura Bay / Numazu",
+      "date": "2025-12-01",
+      "time": "20:43",
+      "weight_g": 740,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4,
+      "source_url": "https://anglers.jp/catches/7440010"
+    }
+  },
+  {
+    "source_label": "Anglers / Uchiura exact-date Aori condition",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "La capture Uchiura du 1er décembre 2025 à 20:43 a été enregistrée avec une température d'air d'environ 15°C et un vent de sud-ouest autour de 5 m/s selon la fiche Anglers. Elle confirme que l'eging de soirée reste pertinent même avec un vent non nul.",
+    "tags": {
+      "zone": "Uchiura Bay / Numazu",
+      "date": "2025-12-01",
+      "time": "20:43",
+      "wind": "SW ~5.0 m/s reported",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED_METADATA",
+      "confidence_level": 3,
+      "source_url": "https://anglers.jp/catches/7440010"
+    }
+  },
+  {
+    "source_label": "Anglers / Katahama exact-date Oomonhata",
+    "source_type": "catch_log",
+    "species": "oomonhata",
+    "raw_text": "À Katahama Beach le 30 novembre 2025 à 06:22, un Oomonhata de 23 cm est enregistré depuis le secteur côtier. Cette capture tombe exactement sur le deuxième jour du futur séjour et confirme qu'un prédateur de fond peut être actif au lever du jour sur le littoral de Numazu.",
+    "tags": {
+      "zone": "Katahama Beach / Numazu",
+      "date": "2025-11-30",
+      "time": "06:22",
+      "size_cm": 23,
+      "shore_relevance": "direct_shore_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4,
+      "source_url": "https://anglers.jp/catches/7436501"
+    }
+  },
+  {
+    "source_label": "Taishi / Numazu inner-bay breakwater",
+    "source_type": "local_shop_field_intel",
+    "species": "aori_ika",
+    "raw_text": "Le 20 novembre 2025 sur une digue intérieure de Numazu, le magasin Taishi observe deux Aori actifs pendant une session fukase. Un petit Muro Aji pêché au bord est immédiatement saisi par un Aori, confirmant une forte réponse au bait local à cette période.",
+    "recommended_animation": "repérer le bait et les calamars visibles; en eging, insister sur les trajectoires naturelles proches des petits poissons",
+    "tags": {
+      "zone": "Numazu inner-bay breakwater",
+      "date": "2025-11-20",
+      "baitfish": "muro aji",
+      "shore_relevance": "direct_local_shore_report",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 4,
+      "source_url": "https://fishing-taishi.com/2025/11/23/%E9%87%A3%E6%9E%9C%E6%83%85%E5%A0%B1%E2%98%862025-11-20%E6%B2%BC%E6%B4%A5%E6%B9%BE%E5%86%85%E5%A0%A4%E9%98%B2%E3%83%BB%E9%87%A3%E3%80%80%E5%A0%B4%E3%80%80%E3%80%80%E6%B2%BC%E6%B4%A5%E6%B9%BE/"
+    }
+  },
+  {
+    "source_label": "Taishi / Numazu inner-bay Meijina",
+    "source_type": "local_shop_field_intel",
+    "species": "mejina",
+    "raw_text": "La même session du 20 novembre 2025 sur une digue intérieure de Numazu produit des Meijina, dont des poissons jusqu'à environ 38 cm. Cette information est surtout utile comme signal d'activité côtière et de présence de bait/structure, même si le séjour est centré sur les leurres.",
+    "tags": {
+      "zone": "Numazu inner-bay breakwater",
+      "date": "2025-11-20",
+      "max_size_cm": 38,
+      "shore_relevance": "direct_local_shore_report",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 3,
+      "source_url": "https://fishing-taishi.com/2025/11/23/%E9%87%A3%E6%9E%9C%E6%83%85%E5%A0%B1%E2%98%862025-11-20%E6%B2%BC%E6%B4%A5%E6%B9%BE%E5%86%85%E5%A0%A4%E9%98%B2%E3%83%BB%E9%87%A3%E3%80%80%E5%A0%B4%E3%80%80%E3%80%80%E6%B2%BC%E6%B4%A5%E6%B9%BE/"
+    }
+  },
+  {
+    "source_label": "Taishi / Numazu Surf November pattern",
+    "source_type": "local_shop_field_intel",
+    "species": "general",
+    "raw_text": "Le 6 novembre 2025, Taishi signale l'Aori Ika sur Numazu Surf et résume le schéma local de cette période par des青物 le matin et de l'Aori la nuit. Le magasin note aussi une pression de pêche encore forte malgré la baisse saisonnière de fréquentation.",
+    "recommended_lure": "metal jig / sinking minnow à l'aube; egi le soir et la nuit",
+    "tags": {
+      "zone": "Numazu Surf",
+      "date": "2025-11-06",
+      "morning_pattern": "bluefish",
+      "night_pattern": "aori_ika",
+      "crowd_signal": "still busy",
+      "shore_relevance": "direct_local_shore_report",
+      "evidence_type": "OBSERVED_PLUS_LOCAL_SHOP_SYNTHESIS",
+      "confidence_level": 4,
+      "source_url": "https://fishing-taishi.com/2025/11/14/%E9%87%A3%E6%9E%9C%E6%83%85%E5%A0%B1%E2%98%862025-11-6%E6%B2%BC%E6%B4%A5%E3%82%B5%E3%83%BC%E3%83%95%E3%83%BB%E9%87%A3%E3%80%80%E5%A0%B4%E3%80%80%E3%80%80%E6%B2%BC%E6%B4%A5%E3%82%B5%E3%83%BC%E3%83%95/"
+    }
+  },
+  {
+    "source_label": "Taishi / Senbonhama parking warning",
+    "source_type": "access_context",
+    "species": "general",
+    "raw_text": "Le rapport Numazu Surf de novembre 2025 rappelle que le parking de Senbonhama Park n'est accessible qu'à partir de 06:00 et ferme à 21:00. Cette contrainte est confirmée par les informations municipales 2026.",
+    "tags": {
+      "zone": "Senbonhama Park / Numazu Surf",
+      "parking_hours": "06:00-21:00",
+      "shore_relevance": "access_context",
+      "evidence_type": "LOCAL_SHOP_PLUS_OFFICIAL_CURRENT",
+      "confidence_level": 4,
+      "source_url": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/park/kouen/kobetu/senbonhama.htm"
+    }
+  },
+  {
+    "source_label": "Numazu City / Senbonhama Park",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "La ville de Numazu indique en 2026 que Senbonhama Park possède 110 places de parking, ouvertes de 06:00 à 21:00. Le site constitue une base logistique claire pour Numazu Surf, mais ne permet pas d'arriver en voiture au cœur de la nuit via ce parking.",
+    "tags": {
+      "zone": "Senbonhama Park",
+      "parking_spaces": 110,
+      "parking_hours": "06:00-21:00",
+      "shore_relevance": "official_access_context",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.city.numazu.shizuoka.jp/kurashi/sumai/park/kouen/kobetu/senbonhama.htm"
+    }
+  },
+  {
+    "source_label": "Numazu Tourism / Katahama-Imazawa coast",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Le portail touristique de Numazu décrit Katahama–Imazawa comme une côte de Suruga Bay fréquentée notamment pour la pêche, accessible à pied depuis la gare de Katahama. C'est un secteur de plage ouverte plus adapté à la prospection mobile qu'un port professionnel.",
+    "tags": {
+      "zone": "Katahama / Imazawa coast",
+      "shore_relevance": "official_coastal_context",
+      "evidence_type": "OFFICIAL_TOURISM",
+      "confidence_level": 4,
+      "source_url": "https://numazukanko.jp/feature/numazukaisuiyokujou/numazukaisuiyokujou"
+    }
+  },
+  {
+    "source_label": "Ishiguro / Ashibo Port",
+    "source_type": "local_tackle_shop_spot_guide",
+    "species": "general",
+    "raw_text": "Ishiguro référence Ashibo Port à Numazu comme un site utilisable toute l'année, avec parking payant, toilettes et distributeur. Les espèces listées incluent Aori Ika, Aji, Kawahagi, Saba, Souda, Meijina et Warasa/Buri.",
+    "tags": {
+      "zone": "Ashibo Port / 足保港",
+      "parking": "paid",
+      "toilet": true,
+      "species": [
+        "aori_ika",
+        "aji",
+        "kawahagi",
+        "saba",
+        "souda",
+        "mejina",
+        "warasa_buri"
+      ],
+      "shore_relevance": "local_spot_guide",
+      "evidence_type": "TACKLE_SHOP_CURRENT",
+      "confidence_level": 4,
+      "source_url": "https://www.ishiguro-gr.com/enjoy/fishing-post/detail.php?id=210"
+    }
+  },
+  {
+    "source_label": "Ishiguro / Ashibo seasonal sabiki restriction",
+    "source_type": "local_regulation_context",
+    "species": "general",
+    "raw_text": "Ishiguro indique qu'autour d'Ashibo, la pêche au sabiki à plusieurs hameçons est interdite du 15 juillet au 31 octobre pour protéger les jeunes Madai. Cette période est terminée lors du séjour du 29 novembre au 2 décembre, mais les panneaux sur place restent l'autorité finale.",
+    "tags": {
+      "zone": "Ashibo Port / surrounding Nishiura coast",
+      "restriction": "multi-hook sabiki",
+      "restricted_period": "07-15 to 10-31",
+      "trip_period_status": "outside stated restriction period",
+      "shore_relevance": "local_regulation_context",
+      "evidence_type": "TACKLE_SHOP_GUIDANCE",
+      "confidence_level": 4,
+      "source_url": "https://www.ishiguro-gr.com/enjoy/fishing-post/detail.php?id=210"
+    }
+  },
+  {
+    "source_label": "FishCast / Kisho Breakwater current access",
+    "source_type": "access_context",
+    "species": "general",
+    "raw_text": "Une vérification locale publiée pour juillet 2026 indique que Kisho Breakwater reste pêchable via un parking payant d'environ 400 yens, mais que la zone de rampe est réservée aux personnes autorisées et que les cages d'aquaculture et bateaux amarrés ne doivent pas être visés.",
+    "tags": {
+      "zone": "Kisho Breakwater / 木負堤防",
+      "parking_jpy": 400,
+      "restricted_area": "ramp / authorized persons only",
+      "aquaculture": "do not cast toward cages",
+      "shore_relevance": "current_access_context",
+      "evidence_type": "CURRENT_SECONDARY_LOCAL_GUIDE",
+      "confidence_level": 3,
+      "source_url": "https://fishcast.jp/spots/kishou-breakwater/kurodai"
+    }
+  },
+  {
+    "source_label": "FishCast / Shigedera Port lure restriction",
+    "source_type": "access_context",
+    "species": "general",
+    "raw_text": "Une vérification locale datée de juillet 2026 signale que Shigedera Port autorise uniquement la pêche à l'appât dans les secteurs concernés et interdit les leurres, y compris eging et jigging. Pour ce voyage orienté leurres, le port doit être exclu tant que la signalisation n'a pas changé.",
+    "tags": {
+      "zone": "Shigedera Port / 重寺港",
+      "lure_fishing": "prohibited according to 2026-07 local survey/signage",
+      "eging": "prohibited",
+      "jigging": "prohibited",
+      "trip_action": "exclude from lure itinerary unless current on-site signs say otherwise",
+      "shore_relevance": "current_access_rule",
+      "evidence_type": "CURRENT_SECONDARY_LOCAL_GUIDE_WITH_SIGNAGE",
+      "confidence_level": 3,
+      "source_url": "https://fishcast.jp/spots/shigedera-port"
+    }
+  },
+  {
+    "source_label": "Taishi / Shizuura access etiquette",
+    "source_type": "access_context",
+    "species": "general",
+    "raw_text": "En mai 2026, Taishi relaie une demande des professionnels de Shizuura: ne pas stationner autour des bâtiments, passages ou zones de travail, ne pas monopoliser les emplacements et rapporter intégralement déchets et lignes. Le secteur doit être traité comme une zone professionnelle à accès sensible, pas comme un parking de pêche garanti.",
+    "tags": {
+      "zone": "Shizuura area",
+      "parking": "do not park in workspaces/passages",
+      "shore_relevance": "current_access_and_etiquette",
+      "evidence_type": "CURRENT_LOCAL_SHOP_NOTICE_FROM_FISHERY_STAKEHOLDERS",
+      "confidence_level": 4,
+      "source_url": "https://fishing-taishi.com/2026/05/08/%E3%80%90%E9%9D%99%E6%B5%A6%E6%96%B9%E9%9D%A2%E3%81%B8%E9%87%A3%E8%A1%8C%E4%BA%88%E5%AE%9A%E3%81%AE%E7%9A%86%E3%81%95%E3%81%BE%E3%81%B8%E3%80%91%E6%9C%80%E8%BF%91%E3%80%81%E9%9D%99%E6%B5%A6%E5%91%A8/"
+    }
+  },
+  {
+    "source_label": "Numazu City / fishing ports",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "La ville rappelle que les installations portuaires sont avant tout des lieux d'activité professionnelle. Les ports municipaux concernés sont Uchiura, Nishiura et Ida; Shizuura et Heda sont gérés par la préfecture de Shizuoka.",
+    "tags": {
+      "municipal_ports": [
+        "Uchiura",
+        "Nishiura",
+        "Ida"
+      ],
+      "prefectural_ports": [
+        "Shizuura",
+        "Heda"
+      ],
+      "shore_relevance": "official_access_context",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/sangyo/suisan/new_cov_seigen.htm"
+    }
+  },
+  {
+    "source_label": "Numazu City / port access contacts",
+    "source_type": "official_access_context",
+    "species": "general",
+    "raw_text": "Pour confirmer une restriction portuaire avant le voyage, la ville donne le service Numazu Fisheries/Coast au 055-934-4753; pour les ports préfectoraux comme Shizuura, le Numazu Civil Engineering Office est indiqué au 055-920-2209.",
+    "tags": {
+      "numazu_city_contact": "055-934-4753",
+      "prefectural_port_contact": "055-920-2209",
+      "trip_action": "confirm sensitive port access before relying on it",
+      "shore_relevance": "official_access_context",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.city.numazu.shizuoka.jp/shisei/office/ichiran/sangyo/suisan/new_cov_seigen.htm"
+    }
+  },
+  {
+    "source_label": "Shizuoka Prefecture / recreational fishing methods",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "La réglementation préfectorale 2026 autorise notamment la pêche à la canne et à la ligne à main pour les pêcheurs de loisir, hors snagging/karazuri. La pêche aux leurres et l'eging doivent rester de vraies techniques de prise par attaque, pas d'accrochage volontaire.",
+    "tags": {
+      "region": "Shizuoka Prefecture",
+      "rod_and_line": "allowed",
+      "snagging": "excluded/prohibited",
+      "shore_relevance": "official_regulation",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.pref.shizuoka.jp/sangyoshigoto/suisan/suisanshigen/1047550/1028113.html"
+    }
+  },
+  {
+    "source_label": "Shizuoka Prefecture / no-entry and fishery infrastructure",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "La préfecture demande de ne jamais pénétrer dans les zones interdites et de ne pas utiliser les installations de pêche, cages d'élevage ou marques de filets comme points d'amarrage ou de gêne. Cette règle est particulièrement importante à Uchiura, où des cages d'élevage sont officiellement signalées.",
+    "tags": {
+      "region": "Shizuoka Prefecture / Uchiura",
+      "aquaculture": "present",
+      "shore_relevance": "official_regulation_and_safety",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.pref.shizuoka.jp/sangyoshigoto/suisan/suisanshigen/1047550/1028113.html"
+    }
+  },
+  {
+    "source_label": "Shizuoka Prefecture / fixed nets around Numazu",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "La préfecture indique que des droits de pêche de type filets fixes existent notamment devant Numazu et sur le littoral d'Izu. Les cordages et filets peuvent être invisibles sous l'eau; éviter de pêcher au contact de ces installations.",
+    "tags": {
+      "region": "Numazu / Izu",
+      "fixed_nets": true,
+      "shore_relevance": "official_safety_and_fishery_rights",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.pref.shizuoka.jp/sangyoshigoto/suisan/suisanshigen/1047550/1028113.html"
+    }
+  },
+  {
+    "source_label": "Shizuoka Prefecture / protected resources",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "Les pêcheurs de loisir ne peuvent pas prélever l'awabi ni le namako; d'autres ressources sont soumises à périodes, tailles ou droits de pêche. Les espèces sous droits de pêche doivent être vérifiées par zone avant tout prélèvement non standard.",
+    "tags": {
+      "region": "Shizuoka Prefecture",
+      "abalone": "recreational take prohibited",
+      "sea_cucumber": "recreational take prohibited",
+      "shore_relevance": "official_regulation",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.pref.shizuoka.jp/sangyoshigoto/suisan/suisanshigen/1047550/1028113.html"
+    }
+  },
+  {
+    "source_label": "Shizuoka Prefecture / Buri minimum size",
+    "source_type": "official_regulation",
+    "species": "hamachi",
+    "raw_text": "La table préfectorale interdit la capture du Buri de 15 cm ou moins de longueur totale. Cette règle s'applique aussi aux jeunes formes de la même espèce rencontrées en shore-jigging.",
+    "tags": {
+      "species": "buri / Seriola quinqueradiata",
+      "prohibited_size": "<=15 cm total length",
+      "shore_relevance": "official_regulation",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "source_url": "https://www.pref.shizuoka.jp/sangyoshigoto/suisan/suisanshigen/1047550/1028113.html"
+    }
+  },
+  {
+    "source_label": "Anglers / Shizuoka exact-date Hirame analogue",
+    "source_type": "regional_catch_log",
+    "species": "hirame",
+    "raw_text": "Le 29 novembre 2025 à 08:17, un Hirame de 45 cm est capturé sur une plage de Shizuoka au Monster Shot 95 coloris glow-silver. Ce n'est pas Numazu, donc la donnée sert seulement d'analogue régional exact-date pour la pêche de plage.",
+    "recommended_lure": "dense sinking pencil ~95 mm",
+    "recommended_color": "glow-silver / baitfish",
+    "tags": {
+      "zone": "Shizuoka Prefecture beach, not Numazu",
+      "date": "2025-11-29",
+      "time": "08:17",
+      "size_cm": 45,
+      "shore_relevance": "regional_exact_date_analogue",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2,
+      "source_url": "https://anglers.jp/catches/7430308"
+    }
+  },
+  {
+    "source_label": "Anglers / Shizuoka exact-date Tachiuo analogue",
+    "source_type": "regional_catch_log",
+    "species": "tachiuo",
+    "raw_text": "Le 2 décembre 2025 à 22:26, un Tachiuo de 79 cm est enregistré sur une plage de Shizuoka au minnow sinking Ima Jetty 135S chart-back pearl; la session produit deux poissons. Ce n'est pas Numazu, mais cela confirme la viabilité régionale du Tachiuo de plage à la date exacte.",
+    "recommended_lure": "sinking minnow ~135 mm",
+    "recommended_color": "chartreuse back / pearl",
+    "tags": {
+      "zone": "Shizuoka Prefecture beach, not Numazu",
+      "date": "2025-12-02",
+      "time": "22:26",
+      "size_cm": 79,
+      "session_count": 2,
+      "shore_relevance": "regional_exact_date_analogue",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2,
+      "source_url": "https://anglers.jp/catches/7442274"
+    }
+  },
+  {
+    "source_label": "Bunbun / West Izu exact-date Kamasu",
+    "source_type": "regional_staff_field_report",
+    "species": "kamasu",
+    "raw_text": "Le 29 novembre 2025 à Arari Port, West Izu, une session du bord produit 17 Kamasu pour le staff et 24 poissons à deux pêcheurs, avec des poissons de 28 à 38 cm. La donnée n'est pas Numazu mais est un analogue Izu exact-date utile pour le light game de fin novembre.",
+    "tags": {
+      "zone": "Arari Port / West Izu, not Numazu",
+      "date": "2025-11-29",
+      "count_staff": 17,
+      "count_two_anglers": 24,
+      "size_cm": "28-38",
+      "shore_relevance": "regional_exact_date_analogue",
+      "evidence_type": "OBSERVED_STAFF",
+      "confidence_level": 2,
+      "source_url": "https://bunbun-fishing.com/fishing/195251/"
+    }
+  },
+  {
+    "source_label": "Bunbun / Kamasu slow surface tactic",
+    "source_type": "regional_staff_field_report",
+    "species": "kamasu",
+    "raw_text": "Dans la session Izu du 29 novembre 2025, les touches viennent surtout sur récupération linéaire très lente dans la couche de surface ou après moins de cinq secondes de descente. Le montant après basse mer produit même cinq touches consécutives.",
+    "recommended_lure": "small softbait / light salt lure",
+    "recommended_animation": "surface to 5-count depth, dead-slow straight retrieve",
+    "tags": {
+      "zone": "West Izu analogue",
+      "date": "2025-11-29",
+      "tide_phase": "rising after low in observed session",
+      "shore_relevance": "regional_tactical_analogue",
+      "evidence_type": "OBSERVED_STAFF",
+      "confidence_level": 2,
+      "source_url": "https://bunbun-fishing.com/fishing/195251/"
+    }
+  },
+  {
+    "source_label": "Johshuya historical / late-November Numazu shore mix",
+    "source_type": "historical_local_shop_context",
+    "species": "general",
+    "raw_text": "Un ancien bulletin local de fin novembre de Johshuya Shin-Numazu décrit le mélange saisonnier classique du bord: Aori Ika et Tachiuo la nuit, petits prédateurs comme Kamasu/Seigo/Mebaru au light game, et poissons bleus/aji/madai selon les montages. Cette source est ancienne et sert uniquement de contexte saisonnier, pas de preuve 2026.",
+    "tags": {
+      "zone": "Numazu area",
+      "season": "late November",
+      "species_mix": [
+        "aori_ika",
+        "tachiuo",
+        "kamasu",
+        "seigo",
+        "mebaru",
+        "inada",
+        "aji",
+        "madai"
+      ],
+      "shore_relevance": "historical_seasonal_context",
+      "evidence_type": "HISTORICAL_LOCAL_SHOP",
+      "confidence_level": 2
+    }
+  },
+  {
+    "source_label": "Ishiguro / autumn Numazu Aori lure role",
+    "source_type": "local_shop_field_intel",
+    "species": "aori_ika",
+    "raw_text": "Des rapports Ishiguro de Numazu en automne 2025 montrent l'Aori sur egi 3.0 et 3.5, avec touches obtenues après contrôle du fond, dérive dans le courant et variations de couleur selon la clarté. Ils servent à définir les rôles de la boîte plutôt qu'à prédire un spot exact de décembre.",
+    "recommended_lure": "egi 3.0 + 3.5",
+    "recommended_animation": "bottom stay / controlled drift / layer search",
+    "tags": {
+      "zone": "Numazu inner bay",
+      "season": "autumn",
+      "shore_relevance": "local_lure_role",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Ishiguro / Aori colors",
+    "source_type": "local_shop_field_intel",
+    "species": "aori_ika",
+    "raw_text": "Les rapports Ishiguro Numazu citent notamment Gunkan Green, des egi à sous-couche rouge et des variantes avec signal vert dans l'eau teintée. Construire la boîte par rôles de contraste est plus robuste que copier un seul coloris.",
+    "recommended_lure": "egi 3.0-3.5",
+    "recommended_color": "1 naturel/dark, 1 red-tape low-light, 1 high-appeal/green or pink",
+    "tags": {
+      "zone": "Numazu",
+      "shore_relevance": "local_lure_role",
+      "evidence_type": "OBSERVED_LOCAL_SHOP",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Taishi / current Numazu shore ecosystem 2026",
+    "source_type": "current_local_ecosystem_context",
+    "species": "general",
+    "raw_text": "Les rapports Taishi de l'été 2026 confirment que le surf et les digues de Numazu restent activement pêchés aux leurres pour青物 et autres prédateurs. Cela ne prédit pas la fin novembre, mais confirme l'actualité du réseau de spots et du suivi local.",
+    "tags": {
+      "zone": "Numazu Surf / inner-bay breakwaters",
+      "year": 2026,
+      "shore_relevance": "current_area_activity",
+      "evidence_type": "CURRENT_LOCAL_SHOP",
+      "confidence_level": 2,
+      "source_url": "https://fishing-taishi.com/"
+    }
+  },
+  {
+    "source_label": "Tsuri-gu Taishi",
+    "source_type": "local_tackle_shop",
+    "species": "general",
+    "raw_text": "Tsuri-gu Taishi est situé au 3145 Shimokanuki, Numazu, téléphone 055-932-8848, et annonce une ouverture 24 h/24 toute l'année. C'est la source la plus pratique pour demander les captures des dernières 24-48 h avant une session très matinale ou nocturne.",
+    "tags": {
+      "zone": "Numazu",
+      "address": "3145 Shimokanuki, Numazu, Shizuoka 410-0822",
+      "phone": "055-932-8848",
+      "hours": "24h",
+      "shore_relevance": "real_time_local_intel",
+      "evidence_type": "BUSINESS_CURRENT",
+      "confidence_level": 4,
+      "trip_action": "ask last 24-48h: aori, tachiuo, bluefish, kamasu, surf bait, access changes",
+      "source_url": "https://fishing-taishi.com/%E4%BC%9A%E7%A4%BE%E6%A1%88%E5%86%85/"
+    }
+  },
+  {
+    "source_label": "Ishiguro Numazu",
+    "source_type": "local_tackle_shop",
+    "species": "general",
+    "raw_text": "Ishiguro Numazu est situé au 1-17-20 Numakita-cho, Numazu, téléphone 055-927-1496. Les horaires affichés pour la période après avril sont 10:00-21:00 du lundi au samedi, 20:00 le dimanche/jour férié, avec variations possibles.",
+    "tags": {
+      "zone": "Numazu",
+      "address": "1-17-20 Numakita-cho, Numazu, Shizuoka 410-0058",
+      "phone": "055-927-1496",
+      "shore_relevance": "real_time_local_intel",
+      "evidence_type": "BUSINESS_CURRENT",
+      "confidence_level": 4,
+      "source_url": "https://www.ishiguro-gr.com/stores/detail.php?id=36"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB01",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Les quatre aubes du séjour sont toutes sur le montant à Uchiura, mais pas au même stade: la basse mer passe de 02:18 le 29/11 à 05:17 le 02/12. Il faut noter séparément la lumière et le temps écoulé depuis la basse mer au lieu de conclure simplement que 'le matin montant marche'.",
+    "tags": {
+      "rule_id": "NUM-KB01",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_TIDE_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB02",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "SI bait, oiseaux ou chasses sont visibles sur Numazu Surf à l'aube, ALORS commencer par metal jig ou sinking pencil longue distance. Un rapport local de novembre décrit précisément青物 le matin sur ce secteur.",
+    "recommended_lure": "metal jig 30-50 g ou sinking pencil 90-120 mm",
+    "recommended_animation": "cast beyond activity -> fast/medium active retrieve through the bait lane",
+    "tags": {
+      "rule_id": "NUM-KB02",
+      "condition": "visible bait / birds / bluefish activity",
+      "confidence_level": 4,
+      "evidence_type": "LOCAL_SHOP_PATTERN_PLUS_BIOLOGICAL_TRIGGER"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB03",
+    "source_type": "synthesis",
+    "species": "hirame",
+    "raw_text": "SI aucune chasse n'est visible sur Katahama/Numazu Surf mais que le courant de plage et les cassures sont lisibles, descendre dans la colonne d'eau pour Hirame/poissons de fond avec sinking pencil dense ou softbait. La capture exacte du 30 novembre à Katahama confirme au minimum une activité de prédateur de fond à l'aube.",
+    "recommended_lure": "dense sinking pencil 90-110 mm, jig 20-40 g ou softbait lesté",
+    "recommended_animation": "bottom-oriented search with controlled pauses",
+    "tags": {
+      "rule_id": "NUM-KB03",
+      "condition": "no surface activity on surf",
+      "confidence_level": 3,
+      "evidence_type": "DIRECT_EXACT_DATE_AREA_PLUS_REGIONAL_ANALOGUE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB04",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "Le 1er décembre mérite une priorité Aori en soirée: l'analogue exact Uchiura 2025 produit 740 g à 20:43, et en 2026 le secteur sera sur le montant après la basse mer de 17:36 vers la pleine mer de 22:51.",
+    "recommended_lure": "egi 3.0-3.5, priorité 3.5 si vent/profondeur",
+    "recommended_animation": "contrôler la descente et exploiter les veines/ruptures plutôt qu'accélérer les jerks",
+    "tags": {
+      "rule_id": "NUM-KB04",
+      "date": "2026-12-01",
+      "condition": "evening rising tide",
+      "confidence_level": 4,
+      "evidence_type": "EXACT_DATE_DIRECT_AREA_PLUS_OFFICIAL_TIDE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB05",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "SI de petits Aji/Muro Aji sont visibles près d'une digue ouverte à la pêche, alors cette présence vaut davantage qu'une couleur d'egi théorique. Un rapport local du 20 novembre montre un Aori saisissant quasi immédiatement un petit Muro Aji.",
+    "recommended_animation": "present egi along bait edge; slow fall and controlled pause",
+    "tags": {
+      "rule_id": "NUM-KB05",
+      "condition": "visible small baitfish near structure",
+      "confidence_level": 4,
+      "evidence_type": "DIRECT_LOCAL_OBSERVATION"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB06",
+    "source_type": "synthesis",
+    "species": "tachiuo",
+    "raw_text": "SI la nuit tombe sur Numazu Surf avec bait présent mais sans Aori clair, le Tachiuo devient une cible de valeur: prospecter d'abord la couche haute/médiane au minnow sinking ou jig, puis modifier profondeur et vitesse. L'analogue exact régional du 2 décembre valide un minnow 135 mm de nuit.",
+    "recommended_lure": "sinking minnow 100-140 mm, metal jig 20-40 g",
+    "recommended_color": "pearl/chartreuse or glow/high contrast at night",
+    "tags": {
+      "rule_id": "NUM-KB06",
+      "condition": "night surf + bait",
+      "confidence_level": 3,
+      "evidence_type": "LOCAL_SEASONAL_PATTERN_PLUS_REGIONAL_EXACT_DATE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB07",
+    "source_type": "synthesis",
+    "species": "kamasu",
+    "raw_text": "SI de petits prédateurs suivent sans franchement attaquer le soir, descendre en puissance de matériel et tester une récupération linéaire très lente proche de la surface. L'analogue West Izu du 29 novembre a fortement produit ainsi.",
+    "recommended_lure": "small softbait / micro jig / small minnow",
+    "recommended_animation": "dead-slow straight retrieve, surface to shallow count-down",
+    "tags": {
+      "rule_id": "NUM-KB07",
+      "condition": "small predator signs / short bites",
+      "confidence_level": 2,
+      "evidence_type": "REGIONAL_EXACT_DATE_TACTIC"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB08",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Ne pas utiliser Shigedera comme solution de secours eging/jigging: l'enquête locale 2026 signale une interdiction des leurres. Un spot facile d'accès mais interdit pour la technique choisie n'est pas un plan B.",
+    "tags": {
+      "rule_id": "NUM-KB08",
+      "zone": "Shigedera Port",
+      "confidence_level": 3,
+      "evidence_type": "CURRENT_ACCESS_RULE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB09",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "À Uchiura/Nishiura, considérer cages d'aquaculture, bateaux, rampes et zones de travail comme des limites absolues. Ne jamais gagner de distance ou un angle de lancer en franchissant une zone réservée ou en visant au contact des cages.",
+    "tags": {
+      "rule_id": "NUM-KB09",
+      "zone": "Uchiura / Nishiura",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_REGULATION_PLUS_CURRENT_ACCESS_GUIDE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB10",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "SI le parking officiel de Senbonhama est le point d'accès choisi, intégrer l'ouverture à 06:00 dans la tactique. En fin novembre le lever régional est vers 06:34: l'accès permet encore le lever du soleil mais pas une longue session de nuit profonde via ce parking.",
+    "tags": {
+      "rule_id": "NUM-KB10",
+      "zone": "Senbonhama Park / Numazu Surf",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_ACCESS_PLUS_OFFICIAL_DAYLIGHT_REFERENCE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB11",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Shizuura ne doit pas être le pilier du planning sans confirmation de dernière minute. Le secteur est professionnel et fait l'objet en 2026 de rappels spécifiques sur le stationnement, les zones de travail et les conflits d'usage; confirmer l'accès réel avant déplacement.",
+    "tags": {
+      "rule_id": "NUM-KB11",
+      "zone": "Shizuura",
+      "trip_action": "confirm before relying on this area",
+      "confidence_level": 4,
+      "evidence_type": "OFFICIAL_MANAGEMENT_CONTEXT_PLUS_CURRENT_LOCAL_NOTICE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB12",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "En eging de fin novembre/début décembre, le 3.5 doit être central plutôt que considérer uniquement de petits egi d'automne. Le 740 g exact-date d'Uchiura et la profondeur/vent possibles justifient une sélection 3.0 + 3.5.",
+    "recommended_lure": "egi 3.0 + 3.5",
+    "tags": {
+      "rule_id": "NUM-KB12",
+      "confidence_level": 4,
+      "evidence_type": "DIRECT_AREA_SIZE_PLUS_LOCAL_LURE_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB13",
+    "source_type": "synthesis",
+    "species": "tachiuo",
+    "raw_text": "Après toute touche de Tachiuo ou autre poisson denté, contrôler immédiatement le leader. Ne pas imposer automatiquement un bas de ligne acier si cela pénalise Aori/Hirame/青物, mais adapter la résistance si les coupes deviennent répétées.",
+    "tags": {
+      "rule_id": "NUM-KB13",
+      "condition": "toothy fish contact",
+      "trip_action": "inspect leader after each contact",
+      "confidence_level": 3,
+      "evidence_type": "OPERATIONAL_INFERENCE"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB14",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Avec quatre jours, utiliser Numazu Surf/Katahama comme bloc 'grande eau + distance' et Uchiura/Nishiura comme bloc 'baie + structure + eging'. Le choix quotidien doit se faire selon vent, bait et accès plutôt que selon une liste fixe de ports.",
+    "tags": {
+      "rule_id": "NUM-KB14",
+      "strategy": "two-environment rotation",
+      "confidence_level": 4,
+      "evidence_type": "TRIP_LOGISTICS_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB15",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Avant chaque changement de zone, poser quatre questions: activité biologique visible, vent réellement pêchable, stade précis de la marée Uchiura, puis statut d'accès du spot. À Numazu, l'accès professionnel peut annuler un excellent scénario halieutique.",
+    "tags": {
+      "rule_id": "NUM-KB15",
+      "decision_order": [
+        "bait_and_birds",
+        "wind",
+        "tide_stage",
+        "legal_open_access"
+      ],
+      "confidence_level": 4,
+      "evidence_type": "MULTI_SOURCE_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB16",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "La veille ou juste avant le premier créneau, appeler Taishi et demander précisément: 1) Aori pris dans les 24-48 h, 2) Tachiuo sur surf/digue, 3)青物 et bait du matin, 4) Kamasu/Aji visibles, 5) accès/parking récemment modifiés.",
+    "tags": {
+      "rule_id": "NUM-KB16",
+      "confidence_level": 4,
+      "evidence_type": "OPERATIONAL_SYNTHESIS",
+      "trip_action": "call Tsuri-gu Taishi 055-932-8848"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB17",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "SI un port comporte une signalisation locale plus restrictive que la règle préfectorale générale, la signalisation locale gagne pour le voyage. Le fait que la pêche à la canne soit généralement autorisée dans la préfecture ne donne aucun droit d'entrer dans une zone fermée ni d'utiliser un leurre là où il est localement interdit.",
+    "tags": {
+      "rule_id": "NUM-KB17",
+      "confidence_level": 4,
+      "evidence_type": "REGULATION_HIERARCHY_SYNTHESIS"
+    }
+  },
+  {
+    "source_label": "Decision rule / NUM-KB18",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Les captures exactes provenant d'autres plages de Shizuoka ou de West Izu sont utilisées uniquement comme analogues saisonniers. Elles ne doivent jamais être converties en promesse que le même poisson sera présent à Numazu le même jour.",
+    "tags": {
+      "rule_id": "NUM-KB18",
+      "confidence_level": 4,
+      "evidence_type": "EVIDENCE_QUALITY_RULE"
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Numazu Aori",
+    "source_type": "lure_box_synthesis",
+    "species": "aori_ika",
+    "raw_text": "Rôle prioritaire pour Numazu fin novembre/début décembre: egi 3.0 et surtout 3.5. Prévoir une combinaison naturelle/dark, une high-appeal et une sous-couche rouge/or pour varier silhouette et visibilité.",
+    "recommended_lure": "egi 3.0 + 3.5",
+    "recommended_color": "natural/dark + high appeal + red/gold tape",
+    "tags": {
+      "role": "late_autumn_eging",
+      "priority": "VERY_HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Numazu Surf distance",
+    "source_type": "lure_box_synthesis",
+    "species": "hamachi",
+    "raw_text": "Un metal jig 30-50 g couvre le rôle distance/couche sur Numazu Surf pour青物, Tachiuo et recherche rapide. Le poids exact doit être adapté au vent et à la dérive plutôt que systématiquement maximal.",
+    "recommended_lure": "compact metal jig 30-50 g",
+    "tags": {
+      "role": "distance_fast_search",
+      "priority": "VERY_HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Surf baitfish profile",
+    "source_type": "lure_box_synthesis",
+    "species": "general",
+    "raw_text": "Un sinking pencil / heavy minnow de 90-120 mm apporte une silhouette poisson que le jig ne remplace pas. Il couvre Hirame, Suzuki,青物 et peut rester exploitable sur Tachiuo selon la couche.",
+    "recommended_lure": "sinking pencil / heavy minnow 90-120 mm",
+    "tags": {
+      "role": "baitfish_profile_long_cast",
+      "priority": "VERY_HIGH",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Tachiuo",
+    "source_type": "lure_box_synthesis",
+    "species": "tachiuo",
+    "raw_text": "Pour le Tachiuo, conserver au moins un minnow sinking 110-140 mm à fort signal et des jigs 20-40 g. Cela permet de prospecter la couche supérieure au minnow puis plus profond au jig sans boîte spécialisée énorme.",
+    "recommended_lure": "sinking minnow 110-140 mm + metal jig 20-40 g",
+    "recommended_color": "pearl/chartreuse/glow + natural metallic",
+    "tags": {
+      "role": "night_layer_search",
+      "priority": "HIGH",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / Kamasu light game",
+    "source_type": "lure_box_synthesis",
+    "species": "kamasu",
+    "raw_text": "Une petite boîte light-game est rentable comme plan B: softbaits/minnows légers et micro-jigs permettant récupération très lente proche de la surface. Elle couvre aussi petits Aji, Seigo et Mebaru.",
+    "recommended_lure": "softbait 2-3 in + micro jig/small minnow",
+    "tags": {
+      "role": "night_light_game",
+      "priority": "MEDIUM_HIGH",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Lure-box synthesis / bottom predators",
+    "source_type": "lure_box_synthesis",
+    "species": "oomonhata",
+    "raw_text": "Pour Oomonhata/Kasago et éventuellement Hirame sur cassure, conserver des softbaits denses ou petits jigs 15-30 g. La capture exacte du 30 novembre à Katahama justifie un vrai rôle fond même sur un séjour dominé par Aori et pélagiques.",
+    "recommended_lure": "dense softbait / jig 15-30 g",
+    "tags": {
+      "role": "bottom_predator_search",
+      "priority": "MEDIUM_HIGH",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Target hierarchy / Numazu 29 Nov - 2 Dec",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Hiérarchie provisoire pour Numazu fin novembre/début décembre: 1) Aori Ika, avec preuve directe exacte le 1er décembre à Uchiura; 2) Tachiuo comme cible de nuit/surf à forte valeur; 3)青物 (Inada/Warasa/Buri et opportunités Sawara) à l'aube selon bait; 4) Hirame et prédateurs de fond sur Numazu Surf/Katahama; 5) Kamasu/Mebaru/light game comme plan de soirée; 6) Meijina/Kurodai/Madai surtout si le séjour bascule vers appâts/fukase.",
+    "tags": {
+      "ranking": [
+        "aori_ika",
+        "tachiuo",
+        "bluefish",
+        "hirame_bottom_predators",
+        "kamasu_mebaru_lightgame",
+        "mejina_kurodai_madai"
+      ],
+      "period": "late November / early December",
+      "evidence_type": "MULTI_SOURCE_SYNTHESIS",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Decision engine / Numazu first questions",
+    "source_type": "decision_engine",
+    "species": "general",
+    "raw_text": "Ordre des questions sur place: 1) accès légal et parking réellement ouverts? 2) bait/oiseaux/chasses visibles? 3) vent permet-il eging ou grande distance? 4) combien de temps depuis la basse/pleine mer Uchiura? 5) surface active =青物/Tachiuo; 6) baie structurée + bait = Aori; 7) surface morte = fond Hirame/Hata; 8) petits signes nocturnes = Kamasu/Mebaru.",
+    "tags": {
+      "decision_order": [
+        "legal_access",
+        "biological_activity",
+        "wind",
+        "tide_stage",
+        "pelagic_layer",
+        "aori_switch",
+        "bottom_switch",
+        "lightgame_switch"
+      ],
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 29 November 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 29 novembre: basse mer Uchiura 02:18, lever régional ~06:34, pleine mer 09:28; le matin offre donc plusieurs heures de montant avant et après le lever. Priorité Numazu Surf/Katahama pour青物-Hirame selon les signes. Le soir, basse mer 14:47 puis pleine mer 19:58: fenêtre très propre pour Aori du crépuscule au montant nocturne.",
+    "tags": {
+      "date": "2026-11-29",
+      "tactical_theme": "dawn_mid_flood_plus_evening_flood",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 30 November 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 30 novembre: basse mer 03:12, lever régional ~06:34, pleine mer 10:23. L'aube reste un montant de surf intéressant; un analogue exact 2025 montre un Oomonhata à Katahama à 06:22. Le soir, basse mer 16:03 juste avant le coucher régional 16:35 puis montant jusqu'à 21:11: bascule logique vers Aori/Tachiuo/light game.",
+    "tags": {
+      "date": "2026-11-30",
+      "tactical_theme": "dawn_rising_surf_exact_date_bottom_signal_plus_evening_low_to_rise",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 1 December 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 1er décembre, dernier quartier: basse mer 04:11, lever régional 06:35, pleine mer 11:20. Matinée montante exploitable mais amplitude plus faible. Le soir est le créneau Aori le mieux documenté du séjour: basse mer 17:36 puis montant vers 22:51, avec un Aori de 740 g enregistré à Uchiura exactement le 1er décembre 2025 à 20:43.",
+    "tags": {
+      "date": "2026-12-01",
+      "tactical_theme": "morning_rise_plus_exact_date_evening_aori",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Trip architecture / 2 December 2026",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Le 2 décembre: basse mer 05:17 puis lever régional 06:36 et pleine mer 12:15. C'est la matinée où l'aube est la plus proche de la basse mer; commencer par la remise en courant du montant sur surf. Le soir, la basse mer n'arrive qu'à 18:59: dusk sur descendante, puis possibilité Tachiuo/Aori après retournement selon bait et activité.",
+    "tags": {
+      "date": "2026-12-02",
+      "tactical_theme": "dawn_just_after_low_then_long_rise",
+      "confidence_level": 4
+    }
+  },
+  {
+    "source_label": "Four-day operating plan / Numazu",
+    "source_type": "trip_plan_seed",
+    "species": "general",
+    "raw_text": "Plan compact sur quatre jours: utiliser Senbonhama/Numazu Surf et Katahama-Imazawa comme bloc grande eau pour les aubes; réserver Uchiura-Nishiura (Ashibo/Kisho ou autre zone explicitement ouverte) aux sessions Aori/structure et aux vents défavorables au surf; ne pousser vers un port sensible que si l'accès est confirmé le jour même. Le 1er décembre au soir est le créneau Aori à préserver en priorité.",
+    "tags": {
+      "dates": [
+        "2026-11-29",
+        "2026-11-30",
+        "2026-12-01",
+        "2026-12-02"
+      ],
+      "core_zones": [
+        "Senbonhama / Numazu Surf",
+        "Katahama-Imazawa coast",
+        "Uchiura-Nishiura open-access shore / Ashibo-Kisho corridor"
+      ],
+      "priority_session": "2026-12-01 evening Aori",
+      "confidence_level": 4,
+      "evidence_type": "TRIP_LOGISTICS_SYNTHESIS"
+    }
+  }
+]

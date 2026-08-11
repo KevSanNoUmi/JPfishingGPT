@@ -1,0 +1,870 @@
+[
+  {
+    "source_label": "Trip base / やどかり志摩",
+    "source_type": "trip_context",
+    "species": "general",
+    "raw_text": "Base de séjour à Agocho Tategami, dans l'ensemble géographique d'Ago Bay. Avec une voiture pendant quatre jours, la stratégie robuste est de basculer entre baie intérieure, ports ouverts et surf selon vent, houle, baitfish et activité visible plutôt que de figer un seul spot.",
+    "tags": {
+      "zone": "Agocho Tategami / Ago Bay",
+      "shore_relevance": "trip_planning",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3,
+      "decision_priority": "conditions du jour > spot prévu"
+    }
+  },
+  {
+    "source_label": "Anglers / 松阪太郎",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Un Aori Ika a été enregistré dans Ago Bay le 1er novembre 2025 à 21 h 38. Conditions publiées: 17 °C, vent NW 7,5 m/s, marée moyenne, âge lunaire 10,6. Cela confirme que l'Aori reste une cible réelle en baie intérieure dès le début novembre.",
+    "tags": {
+      "zone": "Ago Bay",
+      "date": "2025-11-01",
+      "time": "21:38",
+      "air_temperature_c": 17.0,
+      "wind": "NW 7.5 m/s",
+      "tide": "中潮 / medium tide",
+      "moon_age": 10.6,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "location_precision": "area-level; exact point not guaranteed",
+      "source_url": "https://anglers.jp/fishings/5001145"
+    }
+  },
+  {
+    "source_label": "Anglers / ブルカレの使い手",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Un Aori Ika de 17 cm est recensé à Hamajima Port le 2 novembre 2025. C'est une preuve directe que Hamajima reste exploitable pour l'eging en novembre et constitue un plan protégé intéressant.",
+    "recommended_lure": "egi de taille automnale adaptée; modèle exact non exposé dans la source retrouvée",
+    "tags": {
+      "zone": "Hamajima Port",
+      "date": "2025-11-02",
+      "size_cm": 17.0,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "source_url": "https://anglers.jp/users/1292753"
+    }
+  },
+  {
+    "source_label": "Anglers / 餃子チャオズ",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "À Katada Port le 8 novembre 2025 à 10 h 05, un Aori Ika a été pris sur DUEL Easy-Q Cast Kushiwase 2.5, coloris glow marble orange. Conditions: 15 °C, vent nord 7,2 m/s, marée moyenne, hauteur 145 cm.",
+    "recommended_lure": "DUEL Easy-Q Cast 喰わせ 2.5",
+    "recommended_color": "夜光マーブルオレンジ / glow marble orange; HIGH APPEAL + GLOW",
+    "recommended_animation": "présentation lente compatible avec l'egi 2.5; animation exacte non décrite",
+    "tags": {
+      "zone": "Katada Port",
+      "date": "2025-11-08",
+      "time": "10:05",
+      "wind": "N 7.2 m/s",
+      "tide_height_cm": 145.0,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4,
+      "source_url": "https://anglers.jp/catches/7367878"
+    }
+  },
+  {
+    "source_label": "Anglers / 餃子チャオズ",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Dans la même sortie du 8 novembre 2025, avant le déplacement vers Katada, un Aori a été pris à 7 h 33 dans le secteur Matoya Bay avec un PataPata 3.0 coloris Nigori Lime. La séquence montre une rotation réelle 3.0 tôt le matin puis 2.5 plus tard.",
+    "recommended_lure": "PataPata 3.0",
+    "recommended_color": "にごりライム / lime visible; HIGH APPEAL",
+    "tags": {
+      "zone": "Matoya Bay",
+      "date": "2025-11-08",
+      "time": "07:33",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "important_note": "ne pas attribuer cette capture à Katada",
+      "source_url": "https://anglers.jp/catches/7367878"
+    }
+  },
+  {
+    "source_label": "Anglers / ぐでたま58410048",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Un Aori Ika a été enregistré dans Ago Bay le 21 novembre 2025 à 10 h 25. Conditions: 15 °C, vent ouest 3,9 m/s, grande marée, hauteur 112,1 cm. La baie intérieure reste donc productive bien après la mi-novembre et en pleine matinée.",
+    "tags": {
+      "zone": "Ago Bay",
+      "date": "2025-11-21",
+      "time": "10:25",
+      "wind": "W 3.9 m/s",
+      "tide_height_cm": 112.1,
+      "tide": "大潮 / spring tide",
+      "moon_age": 0.8,
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "source_url": "https://anglers.jp/catches/7406436"
+    }
+  },
+  {
+    "source_label": "Anglers / チーターマン",
+    "source_type": "catch_index",
+    "species": "aori_ika",
+    "raw_text": "Le profil de capture recense un Aori Ika à Wagu Port le 15 novembre 2025. Les détails du leurre ne sont pas exposés, mais l'observation renforce la continuité de l'eging de novembre sur la façade sud-ouest de Shima.",
+    "tags": {
+      "zone": "Wagu Port",
+      "date": "2025-11-15",
+      "shore_relevance": "direct_area_index",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2,
+      "source_url": "https://anglers.jp/catches/7615662"
+    }
+  },
+  {
+    "source_label": "Anglers / アーツ",
+    "source_type": "catch_log",
+    "species": "aori_ika",
+    "raw_text": "Le 22 novembre 2025, quatre Aori Ika ont été enregistrés sur une même journée dans la zone Kumano-nada, à 09 h 35, 11 h 07, 15 h 46 et 16 h 11. Cela confirme une activité encore étalée sur la journée en seconde moitié de novembre sur la côte extérieure du sud de Mie.",
+    "tags": {
+      "zone": "Kumano-nada / south Mie outer coast",
+      "date": "2025-11-22",
+      "times": [
+        "09:35",
+        "11:07",
+        "15:46",
+        "16:11"
+      ],
+      "shore_relevance": "regional_direct_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 2,
+      "location_precision": "broad regional label",
+      "source_url": "https://anglers.jp/catches/7410067"
+    }
+  },
+  {
+    "source_label": "Fishing Vision / 智栄丸",
+    "source_type": "environment_proxy",
+    "species": "general",
+    "raw_text": "Autour de Goza/Shima offshore, la température d'eau publiée les 22-23 novembre 2025 était d'environ 19,7 à 21 °C. C'est un proxy environnemental, pas une température mesurée depuis le bord.",
+    "tags": {
+      "zone": "Goza / Shima offshore",
+      "date": "2025-11-22_to_2025-11-23",
+      "water_temperature_c": "19.7-21.0",
+      "shore_relevance": "environment_proxy_only",
+      "evidence_type": "OBSERVED_OFFSHORE",
+      "confidence_level": 3,
+      "source_url": "https://www.fishing-v.jp/choka/choka_detail.php?pageID=11&s=1679"
+    }
+  },
+  {
+    "source_label": "Anglers / 志摩んちゅのアングラー",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "Le 29 novembre 2025 à 16 h 50, un warasa de 63 cm a été enregistré dans Ago Bay sur Jack Eye Maki Maki coloris Iwashi. C'est une preuve locale forte qu'un poisson de classe warasa peut rentrer dans Ago Bay très tard en novembre.",
+    "recommended_lure": "Hayabusa Jack Eye Maki Maki",
+    "recommended_color": "Iwashi / NATURAL + FLASH",
+    "tags": {
+      "zone": "Ago Bay",
+      "date": "2025-11-29",
+      "time": "16:50",
+      "size_cm": 63.0,
+      "wind": "NNW 1.4 m/s",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4,
+      "source_url": "https://anglers.jp/fishings/5064309"
+    }
+  },
+  {
+    "source_label": "Anglers / かめっち",
+    "source_type": "catch_log",
+    "species": "hamachi",
+    "raw_text": "À Shukutaso, juste à l'ouest de Shima, un warasa de 64 cm a été pris le 29 novembre 2025 à 08 h 00 sur Jack Eye Maki Maki blue-pink, par vent NW 8,6 m/s. À 09 h 00, le même journal enregistre aussi un Aori Ika.",
+    "recommended_lure": "Hayabusa Jack Eye Maki Maki",
+    "recommended_color": "blue-pink / FLASH + HIGH APPEAL",
+    "tags": {
+      "zone": "Shukutaso / Minami-Ise extension",
+      "date": "2025-11-29",
+      "time": "08:00",
+      "size_cm": 64.0,
+      "wind": "NW 8.6 m/s",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4,
+      "source_url": "https://anglers.jp/catches/7431041"
+    }
+  },
+  {
+    "source_label": "Fishing-YOU / 森",
+    "source_type": "field_report",
+    "species": "hamachi",
+    "raw_text": "Le 13 novembre 2025 en Minami-Ise, un pêcheur du bord observe régulièrement le bait se faire poursuivre. Il choisit un Samurai Jig 20 g argenté, lit le déplacement des poissons, lance en anticipation de leur trajectoire et prend deux hamachi, dont un de 46 cm et un d'environ 30 cm.",
+    "recommended_lure": "DAIWA Samurai Jig 20 g ou metal jig compact de même rôle",
+    "recommended_color": "silver / FLASH",
+    "recommended_animation": "lancer en avance sur la trajectoire du banc plutôt que derrière les chasses",
+    "tags": {
+      "zone": "Minami-Ise",
+      "date": "2025-11-13",
+      "catch": "2 hamachi",
+      "size_cm": "46 and ~30",
+      "biological_signs": "baitfish poursuivis",
+      "shore_relevance": "direct_shore_report",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4,
+      "source_url": "https://fishing-you.com/fish-staff/20251114id%3D411653"
+    }
+  },
+  {
+    "source_label": "Fishing-YOU / Minami-Ise",
+    "source_type": "field_report",
+    "species": "hamachi",
+    "raw_text": "Le 13 novembre 2024 en Minami-Ise, des boils de gros bluefish ont persisté en fin d'après-midi, mais les poissons ignoraient des Aji en vif car ils étaient focalisés sur du togoro-iwashi. Le bait exact peut donc dominer le choix de présentation.",
+    "recommended_lure": "présentation correspondant au togoro-iwashi lorsque ce bait domine",
+    "tags": {
+      "zone": "Minami-Ise",
+      "date": "2024-11-13",
+      "time_window": "15:30-17:30",
+      "baitfish": "togoro-iwashi",
+      "shore_relevance": "direct_shore_ecology",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "source_url": "https://fishing-you.com/fish-staff/20241115id%3D357813"
+    }
+  },
+  {
+    "source_label": "Anglers / 東雲坊",
+    "source_type": "catch_log",
+    "species": "suzuki",
+    "raw_text": "Un pêcheur qui indique pêcher principalement le surf de Shima avant le lever du soleil a enregistré un Hirasuzuki de 76 cm le 17 novembre 2025 à 05 h 34. C'est une preuve directe forte d'une fenêtre Hirasuzuki à l'aube en novembre.",
+    "tags": {
+      "zone": "Shima vicinity",
+      "date": "2025-11-17",
+      "time": "05:34",
+      "subspecies": "hirasuzuki",
+      "size_cm": 76.0,
+      "moment_jour": "predawn",
+      "shore_relevance": "direct_area_log",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 4,
+      "source_url": "https://anglers.jp/users/1058603"
+    }
+  },
+  {
+    "source_label": "Anglers / 早起きは苦になりません",
+    "source_type": "catch_log",
+    "species": "suzuki",
+    "raw_text": "Le 5 octobre 2025 à 06 h 44, un Hirasuzuki de 45 cm est pris dans la région de Shima sur Megabass KAGELOU 100F après constat d'un bon sarashi. La date est juste avant novembre mais le pattern local est clair: façade exposée + écume + minnow shallow autour de l'aube.",
+    "recommended_lure": "minnow shallow autour de 100 mm",
+    "recommended_color": "Nami-no-Hana / naturel-flash",
+    "recommended_animation": "faire travailler le minnow dans le sarashi; vitesse exacte non donnée",
+    "tags": {
+      "zone": "Shima vicinity",
+      "date": "2025-10-05",
+      "time": "06:44",
+      "subspecies": "hirasuzuki",
+      "size_cm": 45.0,
+      "structure": "sarashi",
+      "shore_relevance": "direct_area_log_near_november",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "source_url": "https://anglers.jp/catches/7251667"
+    }
+  },
+  {
+    "source_label": "Anglers / Maria Boar SS170",
+    "source_type": "catch_index",
+    "species": "hamachi",
+    "raw_text": "Le catalogue de captures du Maria Boar SS170 recense dans la région de Shima un Sawara de 92 cm le 27 novembre 2025 et un autre de 81 cm le 29 novembre. Le caractère strictement shore n'est pas confirmé; cela sert seulement de signal régional de gros prédateurs tardifs.",
+    "recommended_lure": "long sinking minnow / sinking pencil de profil sardine lorsque gros bait et prédateurs sont présents",
+    "tags": {
+      "zone": "Shima vicinity",
+      "dates": [
+        "2025-11-27",
+        "2025-11-29"
+      ],
+      "species_signal": "sawara",
+      "sizes_cm": [
+        92,
+        81
+      ],
+      "shore_relevance": "regional_signal_only",
+      "evidence_type": "OBSERVED_INDEX",
+      "confidence_level": 2,
+      "source_url": "https://anglers.jp/series/14949/lure"
+    }
+  },
+  {
+    "source_label": "Fishing Vision / 安乗釣センター",
+    "source_type": "nearshore_ecology_proxy",
+    "species": "general",
+    "raw_text": "Le 13 novembre 2025 sur les radeaux juste devant Anori, les prises comprenaient 20 chinu de 25 à 37 cm, un hirame de 62 cm, plusieurs hamachi de 43 à 47 cm et 80 à 150 Aji par poste, certains de 20 à 27 cm. C'est un proxy côtier fort, pas une preuve de capture depuis le quai.",
+    "tags": {
+      "zone": "Anori nearshore",
+      "date": "2025-11-13",
+      "baitfish": "Aji abundant, many 20-27 cm",
+      "predators": "hamachi 43-47 cm; hirame 62 cm",
+      "kurodai": "20 fish, 25-37 cm",
+      "shore_relevance": "nearshore_proxy_only",
+      "evidence_type": "OBSERVED_NEARSHORE",
+      "confidence_level": 4,
+      "source_url": "https://www.fishing-v.jp/choka/detail.php?p=868"
+    }
+  },
+  {
+    "source_label": "Anglers / しもやけアングラー",
+    "source_type": "catch_log",
+    "species": "general",
+    "raw_text": "Dans Matoya Bay le 4 novembre 2025 à 23 h 16, les Aji avaient suffisamment grossi pour que le pêcheur ne conserve que les poissons de plus de 25 cm. Cela confirme une biomasse de baitfish de taille intéressante dans l'est de Shima en novembre.",
+    "tags": {
+      "zone": "Matoya Bay",
+      "date": "2025-11-04",
+      "time": "23:16",
+      "baitfish": "Aji, many >25 cm",
+      "shore_relevance": "direct_area_bait_signal",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "source_url": "https://anglers.jp/catches/7360618"
+    }
+  },
+  {
+    "source_label": "Anglers / ポニーテール親父",
+    "source_type": "catch_log",
+    "species": "general",
+    "raw_text": "Dans Matoya Bay le 16 novembre 2025 à 17 h, un pêcheur prend 37 Aji de 22 cm après avoir changé sa présentation: contact fond, légère remontée, mise en tension, montée lente de la canne puis relâchement, avec touche subtile juste après. Le baitfish reste donc présent mi-novembre même lorsque son activité baisse.",
+    "recommended_animation": "pour sonder le bait: fond, légère remontée, tension, lever lent puis relâcher la tension",
+    "tags": {
+      "zone": "Matoya Bay",
+      "date": "2025-11-16",
+      "time": "17:00",
+      "baitfish": "Aji 22 cm",
+      "count": 37,
+      "shore_relevance": "direct_area_bait_signal",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "source_url": "https://anglers.jp/catches/7396565"
+    }
+  },
+  {
+    "source_label": "Fishing Vision / SALT X 38 / 堀田光哉",
+    "source_type": "video_program",
+    "species": "hirame",
+    "raw_text": "SALT X 38 est entièrement consacré au Hirame de surf autour de Shima en hiver avec Mitsuya Hotta. Cela confirme que les surfs de Shima constituent un vrai terrain de grands flatfish et non une option théorique.",
+    "recommended_lure": "minnow sinking 110-130 mm et leurres denses 21-32 g selon la liste de l'émission",
+    "tags": {
+      "zone": "Shima surf",
+      "season": "winter",
+      "first_broadcast": "2024-01-31",
+      "shore_relevance": "direct_professional_shore_program",
+      "evidence_type": "OBSERVED/DECLARED",
+      "confidence_level": 4,
+      "source_url": "https://www.fishing-v.jp/program/program_data.php?pcd=0319470"
+    }
+  },
+  {
+    "source_label": "Fishing Vision / SALT X 38 / tackle list",
+    "source_type": "video_program",
+    "species": "hirame",
+    "raw_text": "Pour le surf de Shima, la liste de Hotta comprend Hirame Minnow SR 110S et 130S, Spin Beam 32 g, Spin Beam High Appeal 32 g, Beam Blade High Appeal 21 g et Sankata Toshiki 30 g. Fonctionnellement, cela valide minnow sinking, dense longue distance et blade/hybrid comme rôles complémentaires.",
+    "recommended_lure": "1 minnow sinking 110-130 mm + 1 dense long-range 30-32 g + 1 blade/hybrid 20-30 g",
+    "tags": {
+      "zone": "Shima surf",
+      "season": "winter",
+      "shore_relevance": "direct_professional_shore_program",
+      "evidence_type": "DECLARED_TACKLE",
+      "confidence_level": 4,
+      "lure_box_impact": "roles complementary rather than duplicate colors",
+      "source_url": "https://www.fishing-v.jp/program/program_data.php?pcd=0319470"
+    }
+  },
+  {
+    "source_label": "Anglers / 鮃ハンターハンター",
+    "source_type": "catch_log",
+    "species": "hirame",
+    "raw_text": "Un hirame de 75 cm a été pris le 25 février 2025 à 17 h 25 sur un surf du secteur Wagu. L'auteur précise qu'il vise un surf de Shima autour de Wagu où la température d'eau est stable. La date est hivernale mais confirme le potentiel grand hirame de cette façade.",
+    "tags": {
+      "zone": "Wagu-area surf",
+      "date": "2025-02-25",
+      "time": "17:25",
+      "size_cm": 75.0,
+      "shore_relevance": "direct_shore_out_of_season",
+      "evidence_type": "OBSERVED",
+      "confidence_level": 3,
+      "source_url": "https://anglers.jp/catches/6627488"
+    }
+  },
+  {
+    "source_label": "Ishiguro / Wagu Port",
+    "source_type": "local_spot_guide",
+    "species": "general",
+    "raw_text": "Le guide Ishiguro décrit Wagu comme un port où Aori Ika, Kouika, Aji, Mebaru et Kurodai peuvent être ciblés. Il indique aussi que la plage à l'est peut devenir intéressante en shore jigging lorsque des bluefish passent. Le grand brise-lames extérieur sur tétrapodes n'est pas une option valide.",
+    "recommended_lure": "egi dans les zones autorisées du port; jig compact ou sinking lure sur la plage si signes de bluefish",
+    "tags": {
+      "zone": "Wagu",
+      "shore_relevance": "local_spot_guide",
+      "evidence_type": "DECLARED",
+      "confidence_level": 3,
+      "safety": "outer tetrapod breakwater should not be entered",
+      "source_url": "https://www.ishiguro-gr.com/enjoy/fishing-post/detail.php?id=326"
+    }
+  },
+  {
+    "source_label": "Shima Tourism Association / Wagu",
+    "source_type": "official_local",
+    "species": "general",
+    "raw_text": "L'office de tourisme de Shima décrit Wagu comme un grand port tourné vers l'océan extérieur, avec débarquements de buri, squid, tai et autres espèces, et confirme la présence d'un parking. Cela donne un contexte halieutique mais pas un droit d'accès à toutes les digues.",
+    "tags": {
+      "zone": "Wagu",
+      "shore_relevance": "official_context",
+      "evidence_type": "DECLARED_OFFICIAL",
+      "confidence_level": 4,
+      "parking": "available",
+      "source_url": "https://www.kanko-shima.com/purpose/2378/"
+    }
+  },
+  {
+    "source_label": "Current Shima port guide 2026 / Katada",
+    "source_type": "access_regulation_guide",
+    "species": "general",
+    "raw_text": "Les informations locales actualisées indiquent à Katada une interdiction de pêche de nuit et des zones de non-prélèvement/accès limité. Katada doit être traité comme un spot de jour/matin avec vérification impérative des panneaux en arrivant.",
+    "tags": {
+      "zone": "Katada Port",
+      "shore_relevance": "access_rule",
+      "evidence_type": "DECLARED_CURRENT_LOCAL_GUIDE",
+      "confidence_level": 3,
+      "night_fishing": "prohibited according to current guide",
+      "final_authority": "on-site signs / port manager",
+      "source_url": "https://hama-angler.com/archives/34934"
+    }
+  },
+  {
+    "source_label": "Current Shima port guide 2026 / Wagu",
+    "source_type": "access_regulation_guide",
+    "species": "general",
+    "raw_text": "Les informations locales actualisées indiquent que Wagu interdit la pêche de nuit et que le nouveau brise-lames de blocs ainsi que les secteurs de tétrapodes ne sont pas des zones d'accès pêche. Le plan doit se limiter aux secteurs explicitement autorisés.",
+    "tags": {
+      "zone": "Wagu Port",
+      "shore_relevance": "access_rule",
+      "evidence_type": "DECLARED_CURRENT_LOCAL_GUIDE",
+      "confidence_level": 3,
+      "night_fishing": "prohibited according to current guide",
+      "danger_zone": "outer tetrapods/new block breakwater",
+      "final_authority": "on-site signs",
+      "source_url": "https://hama-angler.com/archives/34934"
+    }
+  },
+  {
+    "source_label": "Anglers 2026 / Nakiri Port",
+    "source_type": "access_regulation",
+    "species": "general",
+    "raw_text": "La page Anglers 2026 de Nakiri précise que l'East Breakwater est interdit pour raisons de sécurité et que la pêche de nuit est interdite sur l'ensemble du port, du coucher au lever du soleil.",
+    "tags": {
+      "zone": "Nakiri Port",
+      "shore_relevance": "access_rule",
+      "evidence_type": "DECLARED_CURRENT",
+      "confidence_level": 4,
+      "night_fishing": "prohibited sunset-to-sunrise",
+      "restricted_area": "east breakwater",
+      "source_url": "https://anglers.jp/areas/3580"
+    }
+  },
+  {
+    "source_label": "Shima Tourism Association / Nakiri",
+    "source_type": "official_local",
+    "species": "general",
+    "raw_text": "La page officielle de Nakiri indique un parking de 80 places et des parkings payants voisins à 300-500 yens. Elle ne constitue pas une autorisation de pêche; les restrictions du port restent prioritaires.",
+    "tags": {
+      "zone": "Nakiri",
+      "shore_relevance": "official_access_context",
+      "evidence_type": "DECLARED_OFFICIAL",
+      "confidence_level": 4,
+      "parking": "80 spaces; nearby paid parking 300-500 JPY",
+      "source_url": "https://www.kanko-shima.com/purpose/2381/"
+    }
+  },
+  {
+    "source_label": "Current Shima port guide 2026 / Goza",
+    "source_type": "access_regulation_guide",
+    "species": "general",
+    "raw_text": "À Goza, les informations récentes signalent des restrictions de circulation automobile vers le red-light breakwater et un stationnement limité. Il faut utiliser uniquement les accès clairement publics et ne pas empiéter sur les zones de travail.",
+    "tags": {
+      "zone": "Goza Port",
+      "shore_relevance": "access_rule",
+      "evidence_type": "DECLARED_CURRENT_LOCAL_GUIDE",
+      "confidence_level": 3,
+      "parking": "limited",
+      "vehicle_restriction": "red-light breakwater access restricted according to guide",
+      "final_authority": "on-site signs",
+      "source_url": "https://hama-angler.com/archives/34934"
+    }
+  },
+  {
+    "source_label": "Shima City 2026 / Goza construction",
+    "source_type": "official_local",
+    "species": "general",
+    "raw_text": "La ville de Shima a publié en juin 2026 un chantier de conservation/réparation d'ouvrages au port municipal de Goza. L'état d'accès peut donc évoluer avant novembre et doit être revérifié juste avant le voyage.",
+    "tags": {
+      "zone": "Goza Port",
+      "shore_relevance": "access_change_warning",
+      "evidence_type": "DECLARED_OFFICIAL",
+      "confidence_level": 4,
+      "trip_action": "recheck access before trip",
+      "source_url": "https://www.city.shima.mie.jp/kakuka/somubu/kensakeiyaku/nyusatsukanren/nyusatu/reiwa8nendo/R805teireinyusatsukai_2/9366.html"
+    }
+  },
+  {
+    "source_label": "Mie Prefecture / marine recreational fishing rules 2026",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "La préfecture de Mie rappelle en juillet 2026 que les pêcheurs de loisir en mer sont limités aux engins/méthodes autorisés, notamment canne et ligne à main, et que ces règles s'appliquent aussi aux non-professionnels.",
+    "tags": {
+      "zone": "Mie Prefecture",
+      "shore_relevance": "official_rule",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "updated": "2026-07-22",
+      "source_url": "https://www.pref.mie.lg.jp/SUISAN/HP/38869033664.htm"
+    }
+  },
+  {
+    "source_label": "Mie Prefecture / Ise-ebi rules",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "La préfecture avertit qu'un Ise-ebi capturé accidentellement à la canne doit être relâché lorsque la capture entre en conflit avec les droits de pêche ou règles locales. À Ise-Shima, ne jamais transformer une capture accidentelle de crustacé/coquillage en prélèvement.",
+    "tags": {
+      "zone": "Mie Prefecture",
+      "shore_relevance": "official_rule",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "trip_action": "release protected/fishery-right organisms",
+      "source_url": "https://www.pref.mie.lg.jp/SUISAN/HP/87342000001.htm"
+    }
+  },
+  {
+    "source_label": "Mie Prefecture / closed seasons",
+    "source_type": "official_regulation",
+    "species": "general",
+    "raw_text": "En novembre, la fermeture de l'abalone à Mie court du 15 septembre au 31 décembre. Les coquillages et autres ressources sous droits de pêche ne doivent pas faire partie des objectifs du voyage.",
+    "tags": {
+      "zone": "Mie Prefecture",
+      "month": "November",
+      "shore_relevance": "official_rule",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "abalone_closed_period": "Sep 15-Dec 31",
+      "source_url": "https://www.pref.mie.lg.jp/SUISAN/HP/47233033653.htm"
+    }
+  },
+  {
+    "source_label": "Japan Fisheries Agency / fishing ports",
+    "source_type": "official_guideline",
+    "species": "general",
+    "raw_text": "L'Agence japonaise des pêches identifie comme problèmes majeurs dans les ports les lignes gênant les navires, l'intrusion dans les zones interdites, les déchets et le stationnement non autorisé. L'activité professionnelle est prioritaire sur les quais.",
+    "tags": {
+      "zone": "Japan fishing ports / applies to Shima",
+      "shore_relevance": "official_guideline",
+      "evidence_type": "OFFICIAL",
+      "confidence_level": 4,
+      "trip_action": "never block working quays or vessel routes",
+      "source_url": "https://www.jfa.maff.go.jp/j/press/keikaku/230612.html"
+    }
+  },
+  {
+    "source_label": "Yamakazu Fishing Ago",
+    "source_type": "local_shop",
+    "species": "general",
+    "raw_text": "Yamakazu Fishing Ago se trouve à Agocho Ugata 4839, téléphone 0599-43-5552. La boutique officielle indique en saison hivernale 08 h 00-18 h 00 et fermeture le mardi. C'est une source prioritaire pour obtenir l'information de la veille sur Aori, bait, bluefish et restrictions.",
+    "tags": {
+      "zone": "Ugata / near trip base",
+      "shore_relevance": "local_intel",
+      "evidence_type": "DECLARED_BUSINESS",
+      "confidence_level": 4,
+      "phone": "0599-43-5552",
+      "winter_hours": "08:00-18:00",
+      "closed": "Tuesday",
+      "source_url": "https://store.shopping.yahoo.co.jp/yamakazufishing/info.html"
+    }
+  },
+  {
+    "source_label": "Decision rule / bluefish opportunistic",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "Les preuves directes de novembre montrent que le bluefish est très dépendant du bait: Ago Bay produit un warasa le 29 novembre, Minami-Ise deux hamachi le 13 novembre sur bait poursuivi, et Shukutaso un warasa le 29 novembre. Le bluefish doit être traité comme une opportunité à haute valeur et non comme une pêche statique prolongée sans signes.",
+    "recommended_lure": "metal jig compact 20-30 g FLASH; blade jig 20-40 g; 30-40 g pour distance/fond",
+    "recommended_color": "silver/natural flash en première intention si bait argenté",
+    "recommended_animation": "si chasse: viser devant la trajectoire; sans signe: sonder rapidement plusieurs couches puis changer de cible",
+    "tags": {
+      "zone": "Ise-Shima + Minami-Ise",
+      "month": "November",
+      "shore_relevance": "synthesis",
+      "evidence_type": "INTERPRETED_FROM_MULTIPLE_DIRECT_SOURCES",
+      "confidence_level": 4,
+      "decision_rule": "real biological signs override blind casting"
+    }
+  },
+  {
+    "source_label": "Decision rule / microbait vs casting weight",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "Réduire la taille apparente de la proie ne signifie pas forcément perdre toute la distance. Un jig compact de 20 g argenté a pris les hamachi de Minami-Ise et des blade jigs Maki Maki ont pris les warasa fin novembre. Il faut donc au moins une petite silhouette dense et une solution blade.",
+    "recommended_lure": "compact metal jig 20-30 g + blade jig 20-40 g",
+    "recommended_color": "1 silver/natural + 1 blue-pink/high appeal pour couvrir l'essentiel",
+    "tags": {
+      "zone": "Ise-Shima / Minami-Ise",
+      "shore_relevance": "synthesis",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3,
+      "lure_box_impact": "keep complementary functions, remove color duplicates"
+    }
+  },
+  {
+    "source_label": "Decision rule / Aori November baseline",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "Les captures directes couvrent début, milieu et troisième semaine de novembre à Ago Bay, Hamajima, Katada et Wagu. L'Aori est la cible la plus stable pour structurer les quatre jours et peut remplir les créneaux sans activité de bluefish.",
+    "recommended_lure": "egi 3.0 comme taille centrale; 2.5 pour finesse/ralentissement; quelques 3.5 pour vent, profondeur ou plus gros sujets",
+    "recommended_color": "1 naturel, 1 high appeal/glow, 1 sombre ou red-base pour faible lumière",
+    "tags": {
+      "zone": "Shima peninsula",
+      "month": "November",
+      "shore_relevance": "synthesis",
+      "evidence_type": "INTERPRETED_FROM_MULTIPLE_DIRECT_SOURCES",
+      "confidence_level": 4,
+      "trip_role": "baseline target"
+    }
+  },
+  {
+    "source_label": "Decision rule / Aori daylight",
+    "source_type": "synthesis",
+    "species": "aori_ika",
+    "raw_text": "Les captures de Katada à 10 h 05 et d'Ago Bay à 10 h 25 montrent que l'eging de novembre ne doit pas être limité à l'aube ou au crépuscule. Une fenêtre de pleine matinée mérite d'être testée si l'accès est autorisé et que les conditions restent exploitables.",
+    "recommended_lure": "egi 2.5-3.0 selon profondeur et vent",
+    "recommended_animation": "laisser du temps à la chute; ne pas accélérer automatiquement parce qu'il fait jour",
+    "tags": {
+      "zone": "Katada / Ago Bay",
+      "month": "November",
+      "moment_jour": "mid-morning",
+      "shore_relevance": "synthesis",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Decision rule / Suzuki split",
+    "source_type": "synthesis",
+    "species": "suzuki",
+    "raw_text": "La meilleure preuve locale de novembre concerne le Hirasuzuki plutôt que le Marusuzuki: 76 cm à 05 h 34 le 17 novembre sur un surf de Shima, plus un pattern récent en octobre sur sarashi. Il faut séparer deux scénarios: Hirasuzuki sur façade exposée à l'aube; Marusuzuki en baie/estuaire seulement si courant et bait le justifient.",
+    "recommended_lure": "minnow shallow 90-120 mm pour sarashi; sinking pencil/vibration si profondeur ou courant l'imposent",
+    "tags": {
+      "zone": "Shima outer coast vs inner bay",
+      "month": "November",
+      "shore_relevance": "synthesis",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3,
+      "important_nuance": "local November evidence stronger for Hirasuzuki"
+    }
+  },
+  {
+    "source_label": "Decision rule / Hirame conditional",
+    "source_type": "synthesis",
+    "species": "hirame",
+    "raw_text": "Le Hirame est une cible crédible mais moins documentée directement en novembre que l'Aori et le bluefish. Les preuves professionnelles confirment Shima comme terrain de surf Hirame hivernal et le secteur Wagu a produit un 75 cm. Sur quatre jours, le Hirame doit être joué conditionnellement lorsque la mer et le surf sont lisibles.",
+    "recommended_lure": "minnow sinking 110-130 mm + long-range 30-32 g + blade/hybrid 20-30 g",
+    "recommended_animation": "chercher cassure, courant de retour, bord de banc et trajectoire proche du fond; diagonale si elle allonge le passage utile",
+    "tags": {
+      "zone": "Shima surf",
+      "month": "November",
+      "shore_relevance": "synthesis",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3,
+      "trip_role": "conditional target"
+    }
+  },
+  {
+    "source_label": "Decision rule / Kurodai backup",
+    "source_type": "synthesis",
+    "species": "kurodai",
+    "raw_text": "Les données de novembre autour d'Anori montrent que le chinu est bien résident, mais la meilleure preuve retrouvée vient de radeaux/centres de pêche plutôt que du leurre depuis le bord. Il doit rester une cible de secours autour des structures abritées sans recevoir une grosse boîte dédiée.",
+    "recommended_lure": "petite présentation lente près du fond/structure; softbait ou petit hardbait selon inventaire",
+    "tags": {
+      "zone": "Ago Bay / Anori / ports",
+      "month": "November",
+      "shore_relevance": "synthesis_with_proxy",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 2,
+      "lure_box_impact": "keep minimal until stronger shore-lure evidence"
+    }
+  },
+  {
+    "source_label": "Decision rule / bait reconnaissance",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "À Shima en novembre, l'Aji est documenté à Matoya Bay et très abondant devant Anori, tandis que les bluefish apparaissent dans les mêmes fenêtres saisonnières. À chaque arrivée, consacrer les premières minutes à observer oiseaux, éclaboussures, bait, pêcheurs locaux, lignes de courant et activité aux pieds avant de choisir la première boîte.",
+    "tags": {
+      "zone": "all Shima zones",
+      "month": "November",
+      "shore_relevance": "decision_engine",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 4,
+      "priority_variables": [
+        "surface activity",
+        "baitfish",
+        "water layer",
+        "current/structure",
+        "distance",
+        "lure profile",
+        "color"
+      ]
+    }
+  },
+  {
+    "source_label": "Decision rule / bluefish time budget",
+    "source_type": "synthesis",
+    "species": "hamachi",
+    "raw_text": "Avec quatre jours seulement, plusieurs heures de jigging sans bait ni activité visible ont un mauvais coût d'opportunité. Utiliser environ 30 à 45 minutes de prospection structurée: surface, mi-eau, fond, puis basculer vers Aori/Hirame/Suzuki si rien ne confirme les pélagiques.",
+    "recommended_animation": "surface rapide -> mi-eau -> fond; interrompre le protocole si une chasse apparaît ailleurs",
+    "tags": {
+      "zone": "outer-facing zones",
+      "shore_relevance": "trip_optimization",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3,
+      "time_budget_minutes": "30-45"
+    }
+  },
+  {
+    "source_label": "Decision rule / facade switching",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Shima offre Ago Bay intérieure, Hamajima à l'ouest, Katada-Wagu-Goza au sud, Nakiri à l'est et Anori/Matoya au nord-est. Le moteur doit choisir une façade avant un leurre: extérieur dangereux ou trop sale -> zone protégée; extérieur exploitable avec bait -> côte ouverte.",
+    "tags": {
+      "zone": "Shima peninsula",
+      "shore_relevance": "trip_optimization",
+      "evidence_type": "INTERPRETED_GEOGRAPHIC",
+      "confidence_level": 3,
+      "decision_rule": "choose productive and safe facade first",
+      "car_advantage": true
+    }
+  },
+  {
+    "source_label": "Decision rule / day structure",
+    "source_type": "trip_plan",
+    "species": "general",
+    "raw_text": "Structure recommandée: aube sur façade extérieure/surf si sûre avec canne bluefish/Suzuki prête; passer à l'Aori si l'activité pélagique n'est pas confirmée; milieu de journée pour eging ciblé, reconnaissance et Hirame conditionnel; crépuscule sur la zone ayant montré le plus de bait ou dans Ago Bay/Hamajima là où le nocturne est autorisé.",
+    "tags": {
+      "zone": "Shima peninsula",
+      "shore_relevance": "trip_plan",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Decision rule / four-day adaptive schedule",
+    "source_type": "trip_plan",
+    "species": "general",
+    "raw_text": "Jour 1 doit comparer une façade extérieure et une zone intérieure. Jours 2-3 doivent répéter les signaux productifs plutôt que collectionner les spots. Jour 4 doit exploiter le meilleur pattern identifié. Si Minami-Ise reçoit du bait/hamachi selon le magasin local, une demi-journée d'extension ouest devient prioritaire.",
+    "tags": {
+      "zone": "Shima + Minami-Ise",
+      "shore_relevance": "trip_plan",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3,
+      "strategy": "adaptive repetition beats rigid itinerary"
+    }
+  },
+  {
+    "source_label": "Decision rule / minimum lure functions",
+    "source_type": "lure_box_synthesis",
+    "species": "general",
+    "raw_text": "Boîte minimale soutenue par les données locales: egi 2.5/3.0/3.5; metal jig compact 20-30 g; jig 30-40 g distance/fond; blade jig 20-40 g; minnow/sinking pencil 100-130 mm; vibration ou leurre dense pour Suzuki profond; minnow sinking 110-130 mm et dense 30-32 g pour Hirame.",
+    "tags": {
+      "zone": "Ise-Shima",
+      "month": "November",
+      "shore_relevance": "lure_box_optimization",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3,
+      "principle": "maximize situations covered per reference"
+    }
+  },
+  {
+    "source_label": "Decision rule / color economy",
+    "source_type": "lure_box_synthesis",
+    "species": "general",
+    "raw_text": "Les données locales ne justifient pas une grande multiplication de coloris. Les rôles réellement observés sont NATURAL/FLASH argenté pour baitfish et bluefish, HIGH APPEAL/GLOW pour visibilité et eging, naturel discret en eau claire, éventuellement sombre/red-base pour faible lumière.",
+    "recommended_color": "1 NATURAL/FLASH + 1 HIGH APPEAL + 1 LOW-LIGHT par famille quand nécessaire",
+    "tags": {
+      "zone": "Ise-Shima",
+      "shore_relevance": "lure_box_optimization",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 3
+    }
+  },
+  {
+    "source_label": "Research method / Anglers location precision",
+    "source_type": "research_method",
+    "species": "general",
+    "raw_text": "Les pages Anglers indiquent que le centre de la carte ne représente pas nécessairement le point exact de capture. Les journaux sont utilisés pour valider espèce, saison, zone générale, heure et parfois leurre, jamais pour fabriquer un GPS précis.",
+    "tags": {
+      "zone": "all Anglers-derived records",
+      "shore_relevance": "research_quality",
+      "evidence_type": "METHODOLOGY",
+      "confidence_level": 4,
+      "important_note": "do not infer exact coordinates"
+    }
+  },
+  {
+    "source_label": "Research method / proxy discipline",
+    "source_type": "research_method",
+    "species": "general",
+    "raw_text": "Les résultats de radeaux, bateaux et centres de pêche proches de la côte sont conservés uniquement comme indicateurs d'écosystème: bait, température, espèces et tailles. Ils ne prouvent jamais qu'un poisson est accessible depuis un quai ou un surf.",
+    "tags": {
+      "zone": "Ise-Shima",
+      "shore_relevance": "research_quality",
+      "evidence_type": "METHODOLOGY",
+      "confidence_level": 4,
+      "important_note": "shore proof and ecological proxy are separate"
+    }
+  },
+  {
+    "source_label": "Decision rule / legal access first",
+    "source_type": "safety_rule",
+    "species": "general",
+    "raw_text": "À Shima, l'accès est une variable du moteur de décision au même niveau que vent et marée. Katada, Wagu et Nakiri ont des restrictions nocturnes ou de zones; Goza peut subir travaux et restrictions de véhicules. Un spot théoriquement parfait disparaît du plan si le panneau local, une chaîne ou l'activité professionnelle l'interdit.",
+    "tags": {
+      "zone": "Shima fishing ports",
+      "shore_relevance": "safety_and_legality",
+      "evidence_type": "INTERPRETED_FROM_CURRENT_RULES",
+      "confidence_level": 4,
+      "decision_rule": "legal access > fishing potential"
+    }
+  },
+  {
+    "source_label": "Trip tool / local intel questions",
+    "source_type": "trip_tool",
+    "species": "general",
+    "raw_text": "Questions prioritaires au magasin local: 今、陸っぱりでアオリイカはどの辺が釣れていますか？ 青物は回っていますか？ベイトはどこに入っていますか？ 夜釣り禁止の漁港はどこですか？ Les réponses de la veille peuvent réordonner tout le programme.",
+    "tags": {
+      "zone": "Yamakazu Fishing Ago / local shops",
+      "shore_relevance": "real_time_intel",
+      "evidence_type": "TRIP_ACTION",
+      "confidence_level": 4,
+      "translation": "Où prend-on les Aori du bord ? Les bluefish circulent-ils et où est le bait ? Quels ports interdisent la nuit ?"
+    }
+  },
+  {
+    "source_label": "Decision rule / November target hierarchy",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "Hiérarchie provisoire pour quatre jours autour de Tategami en novembre: Aori Ika = cible socle la mieux documentée; Hamachi/Warasa/Buri = forte opportunité dépendante du bait; Hirasuzuki = vraie option d'aube sur côte exposée; Hirame = option conditionnelle de surf; Kurodai = résident mais shore-lure moins documenté.",
+    "tags": {
+      "zone": "Ise-Shima",
+      "month": "November",
+      "shore_relevance": "synthesis",
+      "evidence_type": "INTERPRETED",
+      "confidence_level": 4,
+      "ranking": [
+        "aori_ika",
+        "hamachi_buri_opportunistic",
+        "hirasuzuki",
+        "hirame_conditional",
+        "kurodai_backup"
+      ]
+    }
+  }
+]

@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carnet Pêche JP</title>
+<meta name="theme-color" content="#0F1720">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1720; --surface:#172233; --surface-2:#1E2C40;
+    --accent:#E8A33D; --accent-dim:#8A6A34;
+    --text:#EDEEF0; --text-muted:#8B97A8; --flag:#C4694F; --ok:#5FA87A;
+    --border:rgba(232,163,61,0.16);
+    --safe-top:env(safe-area-inset-top,0px); --safe-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg); color:var(--text); font-family:'IBM Plex Sans', system-ui, sans-serif; min-height:100vh; overscroll-behavior-y:none;}
+  h1,h2,h3{font-family:'Fraunces', serif; font-optical-sizing:auto; letter-spacing:-0.01em;}
+  button{font-family:inherit;}
+
+  header{position:sticky; top:0; z-index:10; padding:calc(16px + var(--safe-top)) 18px 14px;
+    background:linear-gradient(180deg, var(--bg) 60%, rgba(15,23,32,0.94)); border-bottom:1px solid var(--border);}
+  .eyebrow{font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent); margin:0 0 4px;}
+  header h1{font-size:24px; font-weight:600; margin:0 0 2px;}
+  header .sub{color:var(--text-muted); font-size:13px; margin:0;}
+  .back-row{display:flex; align-items:center; gap:10px;}
+  .back-btn{all:unset; cursor:pointer; color:var(--accent); font-size:20px; line-height:1; padding:4px 6px 4px 0;}
+
+  main{padding:16px 18px calc(40px + var(--safe-bottom));}
+
+  .home-section{margin-top:26px;}
+  .home-section:first-child{margin-top:4px;}
+  .home-section-title{font-size:12.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em;
+    color:var(--accent); font-family:'IBM Plex Mono', monospace; margin:0 0 12px;}
+
+  .pad-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:10px;}
+  .pad{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px; cursor:pointer;}
+  .pad.open{border-color:var(--accent); background:var(--surface-2);}
+  .pad .pad-title{font-family:'Fraunces', serif; font-weight:600; font-size:14px; line-height:1.25;}
+  .pad .pad-sub{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-muted); margin-top:5px;}
+  .pad.active-port .pad-sub::before{content:"◉ "; color:var(--ok);}
+
+  .pad-detail{grid-column:1 / -1; background:var(--surface-2); border:1px solid var(--accent); border-radius:12px; padding:13px 14px; margin-top:-2px; font-size:13px;}
+  .pad-detail .k{font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase; color:var(--text-muted); margin:8px 0 5px;}
+  .pad-detail .k:first-child{margin-top:0;}
+  .pad-detail .chips{display:flex; flex-wrap:wrap; gap:6px;}
+  .pad-detail .chip{background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:4px 10px; font-size:12px;}
+  .chip-empty{font-size:12px; color:var(--text-muted); font-style:italic;}
+  .pad-detail .chip.linkable{color:var(--accent); cursor:pointer; border-color:var(--accent);}
+
+  .tide-now{display:flex; align-items:center; gap:10px; margin:6px 0;}
+  .tide-state{font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--accent);}
+  .tide-next{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-muted);}
+  .tide-curve{width:100%; height:52px; margin-top:6px;}
+  .tide-source{font-family:'IBM Plex Mono', monospace; font-size:9.5px; line-height:1.45; color:var(--text-muted); margin:6px 0 2px;}
+  .tide-source strong{color:var(--ok); font-weight:600;}
+  .tide-warning{background:rgba(196,105,79,0.10); border:1px solid rgba(196,105,79,0.35); border-radius:8px; padding:8px 9px; color:#d69a89; font-size:11.5px; line-height:1.45; margin-top:7px;}
+  .intel-list{display:flex; flex-direction:column; gap:7px; margin-top:7px;}
+  .intel-item{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:9px 10px; font-size:12.3px; line-height:1.5;}
+  .intel-meta{display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin-bottom:4px;}
+  .intel-cat{font-family:'IBM Plex Mono', monospace; font-size:9px; text-transform:uppercase; letter-spacing:.05em; color:var(--accent);}
+  .intel-conf{font-family:'IBM Plex Mono', monospace; font-size:9px; color:var(--ok);}
+  .intel-src{font-family:'IBM Plex Mono', monospace; font-size:9px; color:var(--text-muted); margin-top:5px;}
+
+  .brief-box{background:var(--surface); border-left:3px solid var(--accent); border-radius:0 10px 10px 0; padding:11px 12px; margin-top:8px; font-size:12.8px; line-height:1.55;}
+  .brief-box .obs-ref{color:var(--accent); font-family:'IBM Plex Mono', monospace; font-size:11px;}
+  .brief-h1{font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--text); margin-bottom:4px;}
+  .brief-h{font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--accent); margin:12px 0 5px;}
+  .brief-ul{margin:0 0 4px; padding-left:16px;}
+  .brief-ul li{margin-bottom:5px;}
+  .brief-box p{margin:0 0 6px;}
+  .brief-box em{color:var(--text-muted); font-style:italic;}
+
+  .session-btn{display:block; width:100%; text-align:center; background:var(--surface); border:1px solid var(--accent); color:var(--accent); border-radius:10px; padding:10px; font-size:13px; font-weight:600; cursor:pointer; margin-top:10px;}
+
+  .species-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;}
+  .species-card{background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:18px 14px; cursor:pointer; text-align:center;}
+  .species-icon{width:56px; height:56px; margin:0 auto 10px; border-radius:50%;
+    background:radial-gradient(circle at 50% 40%, var(--accent) 0%, var(--accent-dim) 55%, transparent 75%);}
+  .species-card .name{font-family:'Fraunces', serif; font-weight:600; font-size:14.5px;}
+  .species-card .jp{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-muted); margin-top:2px;}
+  .species-card .count{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--accent); margin-top:4px;}
+  .species-card.undoc{opacity:0.4;}
+  .species-card.undoc .count{color:var(--text-muted);}
+
+  /* Navigation par dots sur la page espèce */
+  .dot-nav{display:flex; justify-content:center; gap:14px; margin:4px 0 18px; flex-wrap:wrap;}
+  .dot-item{display:flex; flex-direction:column; align-items:center; gap:6px; cursor:pointer;}
+  .dot{width:9px; height:9px; border-radius:50%; background:var(--surface-2); border:1px solid var(--border); transition:all .15s;}
+  .dot-item.active .dot{background:var(--accent); border-color:var(--accent); box-shadow:0 0 8px rgba(232,163,61,0.5);}
+  .dot-label{font-family:'IBM Plex Mono', monospace; font-size:9.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted);}
+  .dot-item.active .dot-label{color:var(--accent);}
+
+  .synth-box{background:var(--surface); border-left:3px solid var(--accent); border-radius:0 12px 12px 0; padding:14px 15px; font-size:13.3px; line-height:1.6;}
+  .synth-box p{margin:0 0 11px;}
+  .synth-box p:last-child{margin-bottom:0;}
+  .synth-box strong{color:var(--accent); font-weight:600;}
+
+  .typo-badges{display:flex; flex-wrap:wrap; gap:5px; margin:4px 0 8px;}
+  .typo-fam{font-family:'IBM Plex Mono', monospace; font-size:10.5px; padding:2px 8px; border-radius:999px; background:rgba(232,163,61,0.14); border:1px solid var(--accent); color:var(--accent);}
+  .typo-dens{font-family:'IBM Plex Mono', monospace; font-size:10.5px; padding:2px 8px; border-radius:999px; border:1px solid var(--border); background:var(--surface-2);}
+  .typo-dens.densflottant{color:#6FB1D6; border-color:#6FB1D6;}
+  .typo-dens.denssinking{color:#C9A24B; border-color:#C9A24B;}
+  .typo-dens.densheavysinking{color:#C4694F; border-color:#C4694F;}
+  .typo-dens.densegi,.typo-dens.densvariable{color:var(--text-muted);}
+  .typo-len{font-family:'IBM Plex Mono', monospace; font-size:10.5px; padding:2px 8px; border-radius:999px; border:1px solid var(--border); background:var(--surface-2); color:var(--text-muted);}
+  .typo-corr{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--text-muted); margin:-3px 0 8px; padding-left:2px;}
+  .fam-block{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px 13px; margin-bottom:9px;}
+  .fam-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px;}
+  .fam-name{font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--accent);}
+  .fam-count{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-muted);}
+  .fam-meta{display:flex; flex-wrap:wrap; gap:5px; align-items:center;}
+  .fam-note{font-size:12px; color:var(--text-muted); margin:0 0 12px; font-style:italic;}
+  .mech-block{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:13px 14px; margin-bottom:11px;}
+  .mech-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; gap:8px;}
+  .mech-fam{font-family:'Fraunces', serif; font-weight:600; font-size:16px; color:var(--accent);}
+  .mech-esp{font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--text-muted); text-align:right;}
+  .mech-principe{font-size:13.5px; line-height:1.55; margin-bottom:9px;}
+  .mech-principe p{margin:0;}
+  .mech-corr{margin:0; padding-left:0; list-style:none;}
+  .mech-corr li{font-size:13px; line-height:1.5; padding:6px 0 6px 14px; border-left:2px solid var(--border); margin-bottom:5px; position:relative;}
+  .mech-corr li p{margin:0;}
+  .mech-principe strong, .mech-corr strong{color:var(--text); font-weight:600;}
+  .behav-block{background:var(--surface); border-left:3px solid var(--accent); border-radius:0 12px 12px 0; padding:12px 14px; margin-bottom:10px;}
+  .behav-title{font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--accent); margin-bottom:6px;}
+  .behav-txt{font-size:13.5px; line-height:1.6;}
+  .behav-txt p{margin:0;}
+  .behav-txt strong{color:var(--text); font-weight:600;}
+
+  .ideal-win{display:flex; align-items:center; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px 11px; margin-bottom:6px;}
+  .ideal-badge{font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.05em; padding:2px 8px; border-radius:999px;}
+  .ideal-badge.is-dawn{background:rgba(232,163,61,0.18); color:var(--accent);}
+  .ideal-badge.is-dusk{background:rgba(120,110,200,0.2); color:#9b8fd6;}
+  .ideal-tide{font-size:13px; color:var(--text);}
+  .ideal-time{margin-left:auto; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--text-muted);}
+  .tide-curve{width:100%; height:88px; margin:6px 0 4px; display:block;}
+  .mom-legend{display:flex; flex-direction:column; gap:5px; margin:4px 0 6px;}
+  .mom-row{display:flex; align-items:center; gap:7px; flex-wrap:wrap;}
+  .mom-sp{font-family:'Fraunces', serif; font-size:13px; color:var(--text); min-width:74px;}
+  .mom-tag{font-family:'IBM Plex Mono', monospace; font-size:10px; padding:2px 7px; border-radius:999px; border:1px solid;}
+
+  .section{margin-top:22px;}
+  .section-title{font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--accent); font-family:'IBM Plex Mono', monospace; margin:0 0 10px;}
+
+  .fact-card{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:13px 14px; margin-bottom:8px; font-size:13.5px; line-height:1.5;}
+  .fact-meta{margin-top:8px; display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+  .tag{font-family:'IBM Plex Mono', monospace; font-size:10.5px; background:var(--surface-2); color:var(--text-muted); padding:3px 7px; border-radius:6px;}
+  .conf-mini{font-family:'IBM Plex Mono', monospace; font-size:10px; padding:2px 7px; border-radius:999px; margin-left:auto;}
+  .conf-mini.high{background:rgba(95,168,122,0.18); color:var(--ok);}
+  .conf-mini.mid{background:rgba(139,151,168,0.18); color:var(--text-muted);}
+  .conf-mini.low{background:rgba(196,105,79,0.18); color:var(--flag);}
+
+  .where-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+  .where-box{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px;}
+  .where-box .dim-name{font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:6px;}
+  .where-box .vals{font-size:13px; line-height:1.5;}
+
+  .combo-block{margin-bottom:14px;}
+  .combo-header{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:8px;}
+  .combo-name{font-family:'Fraunces', serif; font-weight:600; font-size:15px; color:var(--accent);}
+  .combo-desc{font-size:11.5px; color:var(--text-muted);}
+  .lure-row{display:flex; justify-content:space-between; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px 13px; margin-bottom:6px;}
+  .lure-name{font-size:13.5px; font-weight:500;}
+  .lure-type{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-muted);}
+  .lure-rank{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--accent); background:rgba(232,163,61,0.14); border-radius:999px; padding:2px 8px;}
+
+  .consensus-pair{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px; margin-bottom:10px;}
+  .consensus-pair.is-consensus{border-color:var(--ok);}
+  .consensus-pair.is-consensus-action{border-color:#5FA87A;}
+  .consensus-pair.is-divergence{border-color:var(--flag);}
+  .consensus-pair.is-adaptation{border-color:#5B7FA6;}
+  .consensus-badge{display:inline-block; font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.06em; padding:2px 8px; border-radius:999px; margin-bottom:8px;}
+  .consensus-badge.is-consensus{background:rgba(95,168,122,0.18); color:var(--ok);}
+  .consensus-badge.is-consensus-action{background:rgba(95,168,122,0.14); color:#5FA87A;}
+  .consensus-badge.is-divergence{background:rgba(196,105,79,0.18); color:var(--flag);}
+  .consensus-badge.is-adaptation{background:rgba(91,127,166,0.2); color:#7FA8C9;}
+
+  .obs-chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .obs-chip{background:var(--surface-2); border:1px solid var(--border); border-radius:999px; padding:9px 13px; font-size:12.5px; color:var(--text); cursor:pointer; text-align:left;}
+  .obs-chip.on{background:rgba(232,163,61,0.16); border-color:var(--accent); color:var(--accent);}
+  .match-chips{display:flex; flex-wrap:wrap; gap:5px; margin:6px 0 8px;}
+  .match-chip{font-family:'IBM Plex Mono', monospace; font-size:10px; padding:2px 7px; border-radius:999px; background:var(--surface-2); border:1px solid var(--border); color:var(--text-muted);}
+  .match-chip.is-spot{background:rgba(232,163,61,0.14); border-color:var(--accent); color:var(--accent);}
+  .diverge-conditions{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-muted); margin-bottom:9px;}
+  .diverge-opt{border-left:3px solid var(--accent); padding:6px 10px; margin-bottom:7px; font-size:13px;}
+  .diverge-opt:last-child{margin-bottom:0;}
+  .diverge-opt .who{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--accent);}
+
+  .qcm-cta{width:100%; background:var(--accent); color:#0F1720; border:none; border-radius:12px; padding:15px; font-size:15px; font-weight:600; cursor:pointer; margin-top:6px;}
+  .qcm-panel{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:16px; margin-top:14px;}
+  .qcm-step-label{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-muted); margin-bottom:10px;}
+  .qcm-question{font-family:'Fraunces', serif; font-weight:600; font-size:16px; margin:0 0 14px;}
+  .qcm-options{display:flex; flex-direction:column; gap:8px;}
+  .qcm-opt{background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:13px 14px; font-size:14px; cursor:pointer; text-align:left; color:var(--text);}
+  .qcm-opt.suggested{border-color:var(--ok);}
+  .qcm-opt.suggested::after{content:" ← calculé"; font-family:'IBM Plex Mono', monospace; font-size:10px; color:var(--ok);}
+  .qcm-auto{font-size:12px; color:var(--text-muted); margin-top:10px; font-family:'IBM Plex Mono', monospace;}
+  .qcm-manual-input{width:100%; margin-top:8px; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--surface-2); color:var(--text); font-size:13px;}
+
+  .reco-card{background:var(--surface); border:1px solid var(--accent); border-radius:14px; padding:16px; margin-bottom:10px;}
+  .reco-lure{font-family:'Fraunces', serif; font-weight:600; font-size:16px; color:var(--accent); margin-bottom:8px;}
+  .reco-row{display:flex; gap:8px; font-size:13px; margin-bottom:5px;}
+  .reco-row .k{color:var(--text-muted); font-family:'IBM Plex Mono', monospace; font-size:10.5px; text-transform:uppercase; min-width:88px; padding-top:2px;}
+  .reco-source{margin-top:10px; padding-top:9px; border-top:1px solid var(--border); font-size:11px; color:var(--text-muted);}
+
+  .log-form{background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px; margin-top:12px;}
+  .log-form label{display:block; font-family:'IBM Plex Mono', monospace; font-size:10px; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); margin:10px 0 4px;}
+  .log-form label:first-child{margin-top:0;}
+  .log-form input, .log-form select, .log-form textarea{width:100%; background:var(--surface-2); border:1px solid var(--border); border-radius:8px; color:var(--text); padding:9px 10px; font-size:13.5px; font-family:inherit;}
+  .log-form .row3{display:flex; gap:7px;}
+  .log-form .row3 button{flex:1; background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:10px 4px; color:var(--text); font-size:12.5px; cursor:pointer;}
+  .log-form .row3 button.sel{background:var(--accent); color:#0F1720; border-color:var(--accent); font-weight:600;}
+  .log-save{width:100%; margin-top:12px; background:var(--accent); color:#0F1720; border:none; border-radius:10px; padding:12px; font-size:14px; font-weight:600; cursor:pointer;}
+  .log-count{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--text-muted); margin-top:8px; text-align:center;}
+  .log-export{all:unset; display:block; text-align:center; width:100%; color:var(--accent); font-size:12.5px; font-family:'IBM Plex Mono', monospace; margin-top:8px; cursor:pointer;}
+
+  .empty{text-align:center; color:var(--text-muted); padding:40px 20px; font-size:13.5px;}
+  .restart-btn{all:unset; cursor:pointer; color:var(--accent); font-size:13px; font-family:'IBM Plex Mono', monospace; margin-top:14px; display:inline-block;}
+</style>
+</head>
+<body>
+
+<header id="headerZone"></header>
+<main id="mainZone"></main>
+
+<script>
+/* ============ MARÉES OFFICIELLES EMBARQUÉES (JMA) ============
+   V4 : plus de constantes harmoniques fictives. L'app lit tides_2026.json,
+   construit l'état montante/descendante entre PM/BM officielles et interpole
+   uniquement pour dessiner la courbe. Les valeurs JMA sont des PRÉVISIONS
+   astronomiques, pas des niveaux observés en temps réel. */
+const JST_OFFSET_MS = 9*3.6e6;
+let TIDES = {ports:{}, source_note:'Prévisions astronomiques JMA embarquées.'};
+const PORTS = {
+  shimizu: {label:'Shimizu Port (JMA)', lat:35.02, lng:138.49},
+  fukuoka: {label:'Hakata (JMA)', lat:33.60, lng:130.40},
+  itoshima:{label:'Itoshima · réf. Hakata JMA', lat:33.58, lng:130.20},
+  kobe:    {label:'Kobe (JMA)', lat:34.69, lng:135.19},
+  toba:    {label:'Toba JMA · proxy Ise-Shima', lat:34.48, lng:136.84},
+  numazu:  {label:'Uchiura / Numazu (JMA)', lat:35.02, lng:138.88},
+  tokyo:   {label:'Tokyo (JMA)', lat:35.65, lng:139.77},
+  kashima: {label:'Kashima (JMA)', lat:35.94, lng:140.69},
+};
+
+function jstParts(d){
+  const j = new Date(d.getTime()+JST_OFFSET_MS);
+  return {y:j.getUTCFullYear(), m:j.getUTCMonth()+1, d:j.getUTCDate(), hh:j.getUTCHours(), mm:j.getUTCMinutes()};
+}
+function dateKeyJST(d){
+  const x=jstParts(d), pad=n=>String(n).padStart(2,'0');
+  return `${x.y}-${pad(x.m)}-${pad(x.d)}`;
+}
+function shiftDateKey(key, days){
+  const [y,m,d]=key.split('-').map(Number);
+  const z=new Date(Date.UTC(y,m-1,d+days));
+  const pad=n=>String(n).padStart(2,'0');
+  return `${z.getUTCFullYear()}-${pad(z.getUTCMonth()+1)}-${pad(z.getUTCDate())}`;
+}
+function dateFromJST(key, hm='12:00'){
+  return new Date(`${key}T${hm}:00+09:00`);
+}
+function hrJST(d){
+  if(!d) return null;
+  const j=new Date(d.getTime()+JST_OFFSET_MS);
+  return j.getUTCHours()+j.getUTCMinutes()/60;
+}
+function fmtJST(d){
+  if(!d) return '—';
+  const j=new Date(d.getTime()+JST_OFFSET_MS);
+  return `${String(j.getUTCHours()).padStart(2,'0')}:${String(j.getUTCMinutes()).padStart(2,'0')}`;
+}
+function officialTideDay(portKey, dateOrKey){
+  const key=typeof dateOrKey==='string' ? dateOrKey : dateKeyJST(dateOrKey);
+  return TIDES && TIDES.ports && TIDES.ports[portKey] ? TIDES.ports[portKey][key] || null : null;
+}
+function tideEventsForDay(portKey, dateOrKey){
+  const key=typeof dateOrKey==='string' ? dateOrKey : dateKeyJST(dateOrKey);
+  const day=officialTideDay(portKey,key); if(!day) return [];
+  const out=[];
+  (day.high_tides||[]).forEach(e=>out.push({type:'PM', time:dateFromJST(key,e.time), height_cm:Number(e.height_cm)}));
+  (day.low_tides||[]).forEach(e=>out.push({type:'BM', time:dateFromJST(key,e.time), height_cm:Number(e.height_cm)}));
+  return out.sort((a,b)=>a.time-b.time);
+}
+function surroundingTideEvents(portKey,date,range=2){
+  const key=dateKeyJST(date), out=[];
+  for(let i=-range;i<=range;i++) out.push(...tideEventsForDay(portKey,shiftDateKey(key,i)));
+  return out.sort((a,b)=>a.time-b.time);
+}
+function tideBracket(portKey,date){
+  const ev=surroundingTideEvents(portKey,date,2);
+  let prev=null,next=null;
+  for(const e of ev){
+    if(e.time<=date) prev=e;
+    if(e.time>date){next=e;break;}
+  }
+  return {prev,next};
+}
+function tideState(portKey,date){
+  const {prev,next}=tideBracket(portKey,date);
+  if(!prev||!next) return null;
+  const near=Math.min(Math.abs(date-prev.time),Math.abs(next.time-date));
+  if(near<=20*6e4) return 'étale';
+  if(prev.type==='BM' && next.type==='PM') return 'montante';
+  if(prev.type==='PM' && next.type==='BM') return 'descendante';
+  return null;
+}
+function tideHeight(portKey,date){
+  const {prev,next}=tideBracket(portKey,date);
+  if(!prev||!next || !Number.isFinite(prev.height_cm) || !Number.isFinite(next.height_cm)) return null;
+  const span=next.time-prev.time; if(span<=0) return null;
+  const p=Math.max(0,Math.min(1,(date-prev.time)/span));
+  const mid=(prev.height_cm+next.height_cm)/2;
+  const amp=(prev.height_cm-next.height_cm)/2;
+  return mid + amp*Math.cos(Math.PI*p);
+}
+function dayExtremes(portKey,refDate){ return tideEventsForDay(portKey,refDate); }
+function nextExtremes(portKey,date){
+  return surroundingTideEvents(portKey,date,3).filter(e=>e.time>date).slice(0,2);
+}
+function tideSourceInfo(portKey,date){
+  const day=officialTideDay(portKey,date); if(!day) return null;
+  return {station:day.station||PORTS[portKey]?.label||portKey, code:day.station_code||null,
+    proxy:day.proxy_note||null, url:day.source_url||null};
+}
+
+/* Soleil calculé localement pour le repère de faible lumière. */
+function sunTimes(lat,lng,date){
+  const rad=Math.PI/180, deg=180/Math.PI;
+  const p=jstParts(date), base=Date.UTC(p.y,p.m-1,p.d), jan0=Date.UTC(p.y,0,0);
+  const day=Math.floor((base-jan0)/864e5), lngHour=lng/15;
+  function calc(isSunrise){
+    const t=day+((isSunrise?6:18)-lngHour)/24;
+    const M=(0.9856*t)-3.289;
+    let L=M+(1.916*Math.sin(M*rad))+(0.020*Math.sin(2*M*rad))+282.634; L=(L+360)%360;
+    let RA=deg*Math.atan(0.91764*Math.tan(L*rad)); RA=(RA+360)%360;
+    RA+=(Math.floor(L/90)*90)-(Math.floor(RA/90)*90); RA/=15;
+    const sinDec=.39782*Math.sin(L*rad), cosDec=Math.cos(Math.asin(sinDec));
+    const cosH=(Math.cos(90.833*rad)-(sinDec*Math.sin(lat*rad)))/(cosDec*Math.cos(lat*rad));
+    if(cosH>1||cosH<-1) return null;
+    let H=isSunrise?360-deg*Math.acos(cosH):deg*Math.acos(cosH); H/=15;
+    const T=H+RA-(0.06571*t)-6.622; let UT=(T-lngHour)%24; UT=(UT+24)%24;
+    return new Date(Date.UTC(p.y,p.m-1,p.d,Math.floor(UT),Math.round((UT%1)*60),0));
+  }
+  return {sunrise:calc(true),sunset:calc(false)};
+}
+
+function idealWindows(portKey,date){
+  if(!officialTideDay(portKey,date)) return [];
+  const p=PORTS[portKey]; if(!p||p.lat==null) return [];
+  const sun=sunTimes(p.lat,p.lng,date), wins=[], zones=[];
+  if(sun.sunrise) zones.push({label:'aube',center:sun.sunrise});
+  if(sun.sunset) zones.push({label:'crépuscule',center:sun.sunset});
+  for(const z of zones){
+    const start=new Date(z.center.getTime()-54e5), end=new Date(z.center.getTime()+54e5);
+    let curStart=null,curState=null;
+    for(let t=start.getTime();t<=end.getTime();t+=15*6e4){
+      const st=tideState(portKey,new Date(t));
+      if(st && st!=='étale'){
+        if(curState!==st){ if(curStart) wins.push({light:z.label,tide:curState,from:new Date(curStart),to:new Date(t)}); curStart=t;curState=st; }
+      } else if(curStart){ wins.push({light:z.label,tide:curState,from:new Date(curStart),to:new Date(t)});curStart=null;curState=null; }
+    }
+    if(curStart) wins.push({light:z.label,tide:curState,from:new Date(curStart),to:end});
+  }
+  return wins.filter(w=>(w.to-w.from)>=45*6e4);
+}
+
+/* Meilleurs moments par espèce, dérivés des observations (fréquence moment_jour).
+   Renvoie un objet {espèce: [{moment, pct}]} trié, calculé une fois les données chargées. */
+function bestMomentsBySpecies(){
+  const acc = {};
+  DATA.observations.forEach(o=>{
+    const mj = o.tags && o.tags.moment_jour; if(!mj) return;
+    const sp = o.species;
+    (acc[sp] = acc[sp] || {})[mj] = (acc[sp][mj]||0)+1;
+  });
+  const out = {};
+  Object.entries(acc).forEach(([sp,c])=>{
+    const tot = Object.values(c).reduce((a,b)=>a+b,0);
+    out[sp] = Object.entries(c).map(([m,n])=>({moment:m, pct:Math.round(100*n/tot)}))
+      .sort((a,b)=>b.pct-a.pct);
+  });
+  return out;
+}
+
+const MOMENT_COLORS = {
+  aube:       '#E8A33D',   // ambre
+  jour:       '#6FB1D6',   // bleu clair
+  crépuscule: '#9b8fd6',   // violet
+  nuit:       '#3f5170',   // bleu nuit
+};
+
+/* Convertit un moment_jour en plage horaire [hDébut,hFin] pour un jour donné, à partir du soleil réel. */
+function momentRange(portKey, date, moment){
+  const p = PORTS[portKey]; if(!p||p.lat==null) return null;
+  const sun = sunTimes(p.lat, p.lng, date);
+  const hr = d => hrJST(d);
+  const sr = hr(sun.sunrise), ss = hr(sun.sunset);
+  if(sr==null||ss==null) return null;
+  switch(moment){
+    case 'aube':       return [sr-1, sr+1.5];
+    case 'crépuscule': return [ss-1.5, ss+1];
+    case 'jour':       return [sr+1.5, ss-1.5];
+    case 'nuit':       return [ss+1, sr-1+24]; // traverse minuit
+    default: return null;
+  }
+}
+
+function tideCurveSVG(portKey, refDate, speciesFilter){
+  const base=refDate?new Date(refDate):new Date(), key=dateKeyJST(base), day=officialTideDay(portKey,key);
+  if(!day) return `<div class="tide-warning">Pas de table JMA embarquée pour ${escHTML(key)}. La V4 refuse volontairement d'inventer une courbe.</div>`;
+  const dayStart=dateFromJST(key,'00:00'), pts=[];
+  for(let m=0;m<=24*60;m+=15){
+    const t=new Date(dayStart.getTime()+m*6e4), h=tideHeight(portKey,t);
+    if(h!=null) pts.push([m,h]);
+  }
+  const ev=tideEventsForDay(portKey,key), values=pts.map(p=>p[1]).concat(ev.map(e=>e.height_cm)).filter(Number.isFinite);
+  if(values.length<2) return `<div class="tide-warning">Données officielles insuffisantes pour tracer ce jour.</div>`;
+  const W=400,H=100,topPad=24,min=Math.min(...values),max=Math.max(...values),span=max-min||1;
+  const X=m=>m/(24*60)*W, Y=h=>H-14-(h-min)/span*(H-topPad-22), hourToX=hr=>X((((hr%24)+24)%24)*60);
+  let path='',pen=false;
+  for(const [m,h] of pts){ path+=`${pen?'L':'M'}${X(m).toFixed(1)},${Y(h).toFixed(1)} `; pen=true; }
+  const p=PORTS[portKey], sun=(p&&p.lat!=null)?sunTimes(p.lat,p.lng,base):{};
+  let lightBands='',sunLines='';
+  ['aube','crépuscule'].forEach(mo=>{
+    const r=momentRange(portKey,base,mo); if(!r)return;
+    const x1=hourToX(r[0]),x2=hourToX(r[1]);
+    lightBands+=`<rect x="${Math.min(x1,x2).toFixed(1)}" y="${topPad}" width="${Math.abs(x2-x1).toFixed(1)}" height="${H-topPad-10}" fill="${MOMENT_COLORS[mo]}" opacity="0.09"/>`;
+  });
+  if(sun.sunrise){const x=hourToX(hrJST(sun.sunrise));sunLines+=`<line x1="${x}" y1="${topPad}" x2="${x}" y2="${H-10}" stroke="${MOMENT_COLORS.aube}" stroke-width=".8" stroke-dasharray="2,2"/>`;}
+  if(sun.sunset){const x=hourToX(hrJST(sun.sunset));sunLines+=`<line x1="${x}" y1="${topPad}" x2="${x}" y2="${H-10}" stroke="${MOMENT_COLORS['crépuscule']}" stroke-width=".8" stroke-dasharray="2,2"/>`;}
+
+  let speciesBands='',row=0; const best=bestMomentsBySpecies();
+  const targets=speciesFilter&&speciesFilter.length?speciesFilter:Object.keys(best);
+  targets.forEach(sp=>{
+    const arr=best[sp]; if(!arr||!arr.length)return;
+    arr.filter(x=>x.pct>=30).slice(0,2).forEach(({moment})=>{
+      const r=momentRange(portKey,base,moment); if(!r)return; const y=2+row*5;
+      if(moment==='nuit'){
+        const a=hourToX(r[0]),b=hourToX(r[1]-24);
+        speciesBands+=`<rect x="${a.toFixed(1)}" y="${y}" width="${(W-a).toFixed(1)}" height="3" rx="1" fill="${MOMENT_COLORS[moment]}"/><rect x="0" y="${y}" width="${b.toFixed(1)}" height="3" rx="1" fill="${MOMENT_COLORS[moment]}"/>`;
+      }else{const a=hourToX(r[0]),b=hourToX(r[1]);speciesBands+=`<rect x="${Math.min(a,b).toFixed(1)}" y="${y}" width="${Math.abs(b-a).toFixed(1)}" height="3" rx="1" fill="${MOMENT_COLORS[moment]}"/>`;}
+    }); row++;
+  });
+  const markers=ev.map(e=>{
+    const x=X((hrJST(e.time))*60),y=Y(e.height_cm),anchor=x<35?'start':x>365?'end':'middle';
+    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.4" fill="#E8A33D"/><text x="${x.toFixed(1)}" y="${Math.max(topPad+8,y-6).toFixed(1)}" font-size="7.5" fill="#8B97A8" text-anchor="${anchor}" font-family="monospace">${e.type} ${fmtJST(e.time)} · ${Math.round(e.height_cm)}cm</text>`;
+  }).join('');
+  return `<svg class="tide-curve" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${lightBands}${sunLines}<path d="${path.trim()}" fill="none" stroke="#E8A33D" stroke-width="1.6"/>${markers}${speciesBands}<text x="2" y="${H-2}" font-size="7" fill="#8B97A8" font-family="monospace">00h</text><text x="${W/2}" y="${H-2}" font-size="7" fill="#8B97A8" text-anchor="middle" font-family="monospace">12h</text><text x="${W-2}" y="${H-2}" font-size="7" fill="#8B97A8" text-anchor="end" font-family="monospace">24h JST</text></svg>`;
+}
+
+/* Légende des tags couleur espèce×moment, pour une liste d'espèces ciblées */
+function momentLegend(speciesList){
+  const best = bestMomentsBySpecies();
+  const rows = (speciesList||[]).map(sp=>{
+    const arr = best[sp]; if(!arr||!arr.length) return '';
+    const top = arr.filter(x=>x.pct>=30).slice(0,2);
+    const tags = top.map(({moment,pct})=>`<span class="mom-tag" style="background:${MOMENT_COLORS[moment]}22;color:${MOMENT_COLORS[moment]};border-color:${MOMENT_COLORS[moment]}">${moment} ${pct}%</span>`).join(' ');
+    return `<div class="mom-row"><span class="mom-sp">${sp}</span>${tags}</div>`;
+  }).filter(Boolean).join('');
+  return rows ? `<div class="mom-legend">${rows}</div>` : '';
+}
+
+/* ============ ÉTAT GLOBAL ============ */
+let DATA = {species:[], observations:[], lures:[], combos:[], trip_stops:[]};
+let SYNTH = {species:{}, transversals:null};
+let LURETYPO = {};
+let LOAD_WARNINGS = [];
+let openSynthHome = false;
+let currentSpeciesId = null;
+let speciesTab = 0;   // 0 comportement / 1 leurres / 2 couleur / 3 animation
+let qcmState = null;
+let openStopId = null;
+let openComboName = null;
+let logResult = null;
+
+const LS_PORT = 'peche_active_port';
+const LS_SESSIONS = 'peche_sessions';
+
+const DIM_LABELS = {
+  saison:"Saison", maree:"Marée", moment_jour:"Lumière", spot_type:"Type de spot",
+  leurre:"Leurre", comportement:"Comportement", profondeur:"Profondeur",
+  temperature_eau:"Temp. eau", couleur_eau:"Couleur eau", pression_atmo:"Pression"
+};
+// Vocabulaire contrôlé — identique au pipeline (VOCAB)
+
+/* Lecture du spot : ce que le pêcheur observe (courant de surface, structure, géographie)
+   → matché par mots-clés sur spot_type + comportement + texte des observations.
+   DÉCLARÉ AVANT QCM_STEPS car QCM_STEPS y fait référence. */
+const OBS_PATTERNS = {
+  "cassure / rupture de fond":        ["rupture","cassure","ブレイク","カケ","pente","駆け上"],
+  "courant de retour vers le large":  ["courant de retour","離岸流","chenal"],
+  "veine / limite de courant":        ["veine","ヨレ","limite","contre-courant","反転流","frontière","bordure de courant","ligne de courant"],
+  "courant qui démarre / accélère":   ["s'établit","accélèr","accéléra","démarr","redémarr","courant favorable","s'installe","se met en place","recommence"],
+  "clair-obscur / zone éclairée":     ["clair-obscur","明暗","éclair","ombre","limite lumière","zone éclairée"],
+  "structure (digue, pont, rochers)": ["digue","pont","pile","mur","rocher","磯","bloc","huître","fondation","amarr","brise-lames","structure immergée","coquillage"],
+  "fosse / creux proche du bord":     ["fosse","creux","affouill","cuvette","creusé"],
+  "fourrage visible / oiseaux":       ["fourrage","bait","oiseau","sardine","iwashi","konoshiro","mulet","anchois","banc de","sayori","sappa","chasse"],
+};
+
+const QCM_STEPS = [
+  {dim:"moment_jour", question:"Lumière ambiante ?", options:["aube","jour","crépuscule","nuit"]},
+  {dim:"maree", question:"Marée ?", options:["montante","descendante","étale"], tide:true},
+  {dim:"couleur_eau", question:"Couleur de l'eau ?", options:["claire","trouble","verte"]},
+  {dim:"pression_atmo", question:"Pression atmosphérique ?", options:["basse","moyenne","haute"], auto:true},
+  {dim:"observation", question:"Ce que tu lis sur le spot ? (plusieurs choix possibles)", multi:true,
+   options:Object.keys(OBS_PATTERNS)},
+];
+
+function obsMatchCategories(o, selectedCats){
+  const texte = ((o.tags.spot_type||'')+' '+(o.tags.comportement||'')+' '+(o.text||'')).toLowerCase();
+  return (selectedCats||[]).filter(cat => OBS_PATTERNS[cat].some(k => texte.includes(k.toLowerCase())));
+}
+
+function escHTML(v){ return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function escAttr(v){ return escHTML(v).replace(/`/g,'&#96;'); }
+function normalizeLure(v){ return String(v||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim(); }
+function findTypology(lure){
+  const n=normalizeLure(lure); if(!n||n.length<4) return null;
+  let best=null,bestLen=0;
+  for(const [key,t] of Object.entries(LURETYPO||{})){
+    const variants=[normalizeLure(key),normalizeLure(t&&t.modele)].filter(Boolean);
+    for(const v of variants){ if(v.length>=4 && (n===v || n.includes(v) || v.includes(n)) && v.length>bestLen){best=t;bestLen=v.length;} }
+  }
+  return best;
+}
+function hydrateTypologies(){
+  for(const o of DATA.observations||[]){
+    if(!o.recommendation) continue;
+    if(!o.recommendation.typology && o.recommendation.lure){ const t=findTypology(o.recommendation.lure); if(t) o.recommendation.typology=t; }
+  }
+}
+async function fetchJSONRequired(url){
+  const r=await fetch(url,{cache:'no-store'}); if(!r.ok) throw new Error(`${url} : HTTP ${r.status}`); return r.json();
+}
+async function fetchJSONOptional(url,fallback){
+  try{ const r=await fetch(url,{cache:'no-store'}); if(!r.ok) throw new Error(`HTTP ${r.status}`); return await r.json(); }
+  catch(e){ LOAD_WARNINGS.push(`${url} indisponible`); return fallback; }
+}
+async function loadData(){
+  DATA=await fetchJSONRequired('data.json');
+  const [syn,typ,tides]=await Promise.all([
+    fetchJSONOptional('synthesis.json',{species:{},transversals:null}),
+    fetchJSONOptional('lure_typology.json',{}),
+    fetchJSONOptional('tides_2026.json',{ports:{},source_note:'Tables JMA non chargées.'}),
+  ]);
+  SYNTH=syn; LURETYPO=typ; TIDES=tides; hydrateTypologies(); route();
+}
+
+function mdLite(s){
+  const safe=escHTML(s||'');
+  return safe.split(/\n\n+/).map(p=>'<p>'+p.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>')+'</p>').join('');
+}
+
+function route(){
+  const hash = location.hash.replace('#','');
+  if(hash.startsWith('species/')){
+    currentSpeciesId = parseInt(hash.split('/')[1]);
+    speciesTab = 0; qcmState = null; logResult = null;
+    renderSpeciesPage();
+  } else { renderHome(); }
+}
+window.addEventListener('hashchange', route);
+
+function getActivePort(){ try{ return localStorage.getItem(LS_PORT); }catch(e){ return null; } }
+function setActivePort(p){ try{ p ? localStorage.setItem(LS_PORT,p) : localStorage.removeItem(LS_PORT); }catch(e){} }
+function getSessions(){ try{ return JSON.parse(localStorage.getItem(LS_SESSIONS)||'[]'); }catch(e){ return []; } }
+function saveSessions(s){ try{ localStorage.setItem(LS_SESSIONS, JSON.stringify(s)); }catch(e){} }
+
+/* ============ ACCUEIL ============ */
+function renderHome(){
+  const ap = getActivePort();
+  document.getElementById('headerZone').innerHTML = `
+    <p class="eyebrow">Base de connaissance</p>
+    <h1>Carnet Pêche JP</h1>
+    <p class="sub">${ap && PORTS[ap] ? 'Port actif : '+PORTS[ap].label+' — '+(tideState(ap,new Date()) ? 'marée '+tideState(ap,new Date()) : 'table officielle hors période embarquée') : 'Espèces · marées · leurres · terrain'}</p>
+  `;
+
+  const stopsGrid = DATA.trip_stops.map(s => `
+    <div class="pad ${openStopId===s.id?'open':''} ${s.port===ap?'active-port':''}" onclick="toggleStop(${s.id})">
+      <div class="pad-title">${escHTML(s.city)}</div>
+      <div class="pad-sub">${escHTML(s.dates)}${s.port&&PORTS[s.port]&&s.arrival_date ? ' · marée JMA à l\'arrivée' : ''}</div>
+    </div>
+    ${openStopId === s.id ? stopDetail(s) : ''}
+  `).join('');
+
+  const obsCount = id => DATA.observations.filter(o=>o.species_id===id).length;
+  const speciesGrid = DATA.species.map(sp => {
+    const n = obsCount(sp.id);
+    const doc = n > 0 || DATA.lures.some(l=>l.species_id===sp.id);
+    return `
+    <div class="species-card ${doc?'':'undoc'}" onclick="location.hash='species/${sp.id}'">
+      <div class="species-icon"></div>
+      <div class="name">${sp.name_fr}</div>
+      <div class="jp">${sp.name_jp}</div>
+      <div class="count">${n ? n+' obs' : 'non documentée'}</div>
+    </div>`;
+  }).join('');
+
+  const combosGrid = DATA.combos.map(c => `
+    <div class="pad ${openComboName===c.name?'open':''}" onclick="toggleCombo('${c.name}')">
+      <div class="pad-title">${c.name}</div>
+      <div class="pad-sub">${c.description||''}</div>
+    </div>
+    ${openComboName === c.name ? comboDetail(c) : ''}
+  `).join('');
+
+  const nSessions = getSessions().length;
+
+  document.getElementById('mainZone').innerHTML = `
+    <div class="home-section">
+      <p class="home-section-title">Où je pêche</p>
+      ${DATA.trip_stops.length ? `<div class="pad-grid">${stopsGrid}</div>` : `<div class="empty">Aucune étape.</div>`}
+    </div>
+    <div class="home-section">
+      <p class="home-section-title">Espèces documentées</p>
+      ${speciesGrid ? `<div class="species-grid">${speciesGrid}</div>` : `<div class="empty">Aucune espèce documentée pour l'instant.</div>`}
+    </div>
+    <div class="home-section">
+      <p class="home-section-title">Combos</p>
+      ${DATA.combos.length ? `<div class="pad-grid">${combosGrid}</div>` : `<div class="empty">Aucun combo.</div>`}
+    </div>
+    ${SYNTH.transversals ? `<div class="home-section">
+      <p class="home-section-title">Grandes lignes</p>
+      <div class="pad-grid">
+        <div class="pad ${openSynthHome?'open':''}" style="grid-column:1 / -1;" onclick="openSynthHome=!openSynthHome;renderHome()">
+          <div class="pad-title">Les 5 transversales — toutes espèces</div>
+          <div class="pad-sub">${SYNTH.based_on||''}</div>
+        </div>
+        ${openSynthHome ? `<div class="pad-detail" onclick="event.stopPropagation()"><div class="synth-box" style="border:none;padding:0;background:transparent;">${mdLite(SYNTH.transversals)}</div></div>` : ''}
+      </div>
+    </div>` : ''}
+    ${nSessions ? `<div class="home-section">
+      <p class="home-section-title">Terrain</p>
+      <div class="log-count">${nSessions} session(s) loggée(s) sur ce téléphone</div>
+      <button class="log-export" onclick="exportSessions()">⇩ Exporter le log (à passer dans pipeline.py import-log)</button>
+    </div>` : ''}
+  `;
+}
+
+function briefMd(s){
+  // Échappe d'abord le contenu, puis applique un sous-ensemble markdown maîtrisé.
+  const safe=escHTML(s||'').replace(/\[#(\d+)\]/g,'<span class="obs-ref">[#$1]</span>');
+  const lines=safe.split('\n'); let html='',inList=false;
+  for(let ln of lines){
+    if(/^##\s+/.test(ln)){if(inList){html+='</ul>';inList=false;}html+=`<div class="brief-h">${ln.replace(/^##\s+/,'')}</div>`;}
+    else if(/^#\s+/.test(ln)){if(inList){html+='</ul>';inList=false;}html+=`<div class="brief-h1">${ln.replace(/^#\s+/,'')}</div>`;}
+    else if(/^-\s+/.test(ln)){if(!inList){html+='<ul class="brief-ul">';inList=true;}html+=`<li>${ln.replace(/^-\s+/,'').replace(/\*(.+?)\*/g,'<em>$1</em>')}</li>`;}
+    else if(ln.trim()===''){if(inList){html+='</ul>';inList=false;}}
+    else{if(inList){html+='</ul>';inList=false;}html+=`<p>${ln.replace(/\*(.+?)\*/g,'<em>$1</em>')}</p>`;}
+  }
+  if(inList)html+='</ul>'; return html;
+}
+
+function intelBlock(s){
+  const intel=(s.intel||[]).filter(x=>['strategy','access','field'].includes(x.category));
+  if(!intel.length) return '';
+  const score=x=>(x.confidence_level||0)*10 + (x.category==='strategy'?3:x.category==='access'?2:1);
+  const chosen=[...intel].sort((a,b)=>score(b)-score(a)).slice(0,8);
+  return `<div class="k">Intel local V4 — ${intel.length} éléments sourcés</div><div class="intel-list">${chosen.map(x=>`<div class="intel-item"><div class="intel-meta"><span class="intel-cat">${escHTML(x.category)}</span><span class="intel-conf">niveau ${Number(x.confidence_level||0)}/4</span></div>${escHTML(x.text)}<div class="intel-src">${escHTML(x.source||'source')}</div></div>`).join('')}</div>`;
+}
+
+function stopDetail(s){
+  const targets=s.target_species||[];
+  const chips=targets.length?targets.map(name=>{
+    const sp=DATA.species.find(x=>x.name_fr.toLowerCase()===String(name).toLowerCase());
+    return sp?`<span class="chip linkable" onclick="event.stopPropagation();location.hash='species/${sp.id}'">${escHTML(name)}</span>`:`<span class="chip">${escHTML(name)}</span>`;
+  }).join(''):`<span class="chip-empty">À définir — tes espèces cibles pour ce spot</span>`;
+
+  let tideBlock='';
+  if(s.port&&PORTS[s.port]){
+    const refDate=s.arrival_date?dateFromJST(s.arrival_date,'09:00'):new Date();
+    const dateLabel=s.arrival_date?refDate.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',timeZone:'Asia/Tokyo'}):'maintenant';
+    const ext=dayExtremes(s.port,refDate),wins=idealWindows(s.port,refDate),documented=Object.keys(bestMomentsBySpecies());
+    const effectiveSpecies=(s.target_species&&s.target_species.length)?s.target_species:documented;
+    const sun=sunTimes(PORTS[s.port].lat,PORTS[s.port].lng,refDate), src=tideSourceInfo(s.port,refDate);
+    const winHTML=wins.length?wins.map(w=>`<div class="ideal-win"><span class="ideal-badge ${w.light==='aube'?'is-dawn':'is-dusk'}">${w.light}</span><span class="ideal-tide">marée ${w.tide}</span><span class="ideal-time">${fmtJST(w.from)}–${fmtJST(w.to)}</span></div>`).join(''):`<div class="tide-next">Pas de fenêtre calculable avec les tables officielles embarquées ce jour-là.</div>`;
+    const sourceHTML=src?`<div class="tide-source"><strong>JMA embarqué</strong> · ${escHTML(src.station)}${src.code?' ('+escHTML(src.code)+')':''}. Prévision astronomique, pas une mesure temps réel.${src.proxy?`<br>⚠ ${escHTML(src.proxy)}`:''}</div>`:`<div class="tide-warning">Aucune table JMA embarquée pour cette date. Aucune estimation harmonique de secours n'est affichée.</div>`;
+    tideBlock=`<div class="k">Marée — ${escHTML(PORTS[s.port].label)} · ${escHTML(dateLabel)}</div><div class="tide-now"><span class="tide-next">${ext.length?ext.map(e=>`${e.type} ${fmtJST(e.time)} · ${Math.round(e.height_cm)} cm`).join(' · '):'—'}</span></div>${sourceHTML}<div class="k" style="margin-top:12px">☀︎ Soleil : ${sun.sunrise?fmtJST(sun.sunrise):'—'} → ${sun.sunset?fmtJST(sun.sunset):'—'} JST</div><div class="k" style="margin-top:12px">Fenêtres — marée active × faible lumière</div>${winHTML}<div class="k" style="margin-top:12px">Courbe interpolée ENTRE les PM/BM officielles</div>${tideCurveSVG(s.port,refDate,effectiveSpecies)}${momentLegend(effectiveSpecies)}<button class="session-btn" onclick="event.stopPropagation();setActivePort('${escAttr(s.port)}');renderHome()">Pêcher ici — activer ce port</button>`;
+  }
+  const briefBlock=s.brief?`<div class="k">Brief destination</div><div class="brief-box">${briefMd(s.brief)}</div>`:`<div class="k">Briefing</div><div class="tide-next">Pas encore de brief local pour cette étape.</div>`;
+  return `<div class="pad-detail" onclick="event.stopPropagation()"><div class="k">Espèces ciblées</div><div class="chips">${chips||'—'}</div>${tideBlock}${briefBlock}${intelBlock(s)}</div>`;
+}
+
+function toggleStop(id){ openStopId = (openStopId===id) ? null : id; renderHome(); }
+
+function comboDetail(c){
+  const lures = DATA.lures.filter(l=>l.combos.includes(c.name));
+  const bySpecies = {};
+  lures.forEach(l=>{ (bySpecies[l.species_id] = bySpecies[l.species_id]||[]).push(l); });
+  const blocks = Object.entries(bySpecies).map(([spId, ls])=>{
+    const sp = DATA.species.find(s=>s.id==spId);
+    return `<div class="k">${sp?sp.name_fr:'Espèce'}</div><div class="chips">${ls.map(l=>`<span class="chip">${l.name}</span>`).join('')}</div>`;
+  }).join('');
+  return `<div class="pad-detail" onclick="event.stopPropagation()">${blocks || '<div class="k">Aucun leurre rattaché</div>'}</div>`;
+}
+
+function toggleCombo(name){ openComboName = (openComboName===name) ? null : name; renderHome(); }
+
+/* ============ PAGE ESPÈCE ============ */
+function speciesObservations(id){ return DATA.observations.filter(o=>o.species_id===id); }
+function speciesLures(id){ return DATA.lures.filter(l=>l.species_id===id).sort((a,b)=>a.rank-b.rank); }
+
+function confClass(c){ return c>=0.7 ? 'high' : c>=0.5 ? 'mid' : 'low'; }
+
+function renderSpeciesPage(){
+  const sp = DATA.species.find(s=>s.id===currentSpeciesId);
+  if(!sp){ location.hash=''; return; }
+
+  document.getElementById('headerZone').innerHTML = `
+    <div class="back-row">
+      <button class="back-btn" onclick="location.hash=''">←</button>
+      <div>
+        <p class="eyebrow">${sp.name_jp} · ${sp.name_latin||''}</p>
+        <h1 style="font-size:21px;">${sp.name_fr}</h1>
+      </div>
+    </div>`;
+
+  const obs = speciesObservations(sp.id);
+  const divergences = findConsensusPairs(obs);
+  const TABS = ['Synthèse','Leurres','Couleur','Animation','Comportement'];
+
+  const dotNav = `<div class="dot-nav">
+    ${TABS.map((t,i)=>`<div class="dot-item ${i===speciesTab?'active':''}" onclick="setSpeciesTab(${i})">
+      <div class="dot"></div><div class="dot-label">${t}</div>
+    </div>`).join('')}
+  </div>`;
+
+  const panels = [panelSynthese, panelLeurres, panelCouleur, panelAnimation, panelComportement];
+
+  document.getElementById('mainZone').innerHTML = `
+    ${dotNav}
+    <div id="tabPanel">${panels[speciesTab](sp, obs)}</div>
+
+    ${divergences.length ? `<div class="section">
+      <p class="section-title">Consensus &amp; désaccords (${divergences.length})</p>
+      ${divergences.slice(0,12).map(consensusCard).join('')}
+    </div>` : ''}
+
+    <div class="section">
+      <p class="section-title">Config du moment</p>
+      <button class="qcm-cta" onclick="startQCM()">Trouver la config adaptée →</button>
+      <div id="qcmZone"></div>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Logger une session</p>
+      <div id="logZone">${logFormHTML(sp)}</div>
+    </div>
+  `;
+}
+
+function setSpeciesTab(i){
+  speciesTab = i;
+  const sp = DATA.species.find(s=>s.id===currentSpeciesId);
+  const obs = speciesObservations(sp.id);
+  const panels = [panelSynthese, panelLeurres, panelCouleur, panelAnimation, panelComportement];
+  document.getElementById('tabPanel').innerHTML = panels[i](sp, obs);
+  document.querySelectorAll('.dot-item').forEach((el,idx)=>el.classList.toggle('active', idx===i));
+}
+
+/* --- Panneau 1 : comportement + où/quand --- */
+function panelComportement(sp, obs){
+  const blocks = (SYNTH.behavior && SYNTH.behavior[sp.name_fr]) || null;
+  const whereDims = ["maree","moment_jour","spot_type"];
+  const whereBoxes = whereDims.map(dim=>{
+    const vals = [...new Set(obs.map(o=>o.tags[dim]).filter(Boolean))];
+    // spot_type peut être long : limiter aux plus fréquents
+    let show = vals;
+    if(dim==='spot_type' && vals.length>8){
+      const freq = {};
+      obs.forEach(o=>{ const v=o.tags[dim]; if(v) freq[v]=(freq[v]||0)+1; });
+      show = Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,8).map(x=>x[0]);
+    }
+    return `<div class="where-box"><div class="dim-name">${DIM_LABELS[dim]}</div><div class="vals">${show.length ? show.join(', ') : '—'}</div></div>`;
+  }).join('');
+
+  const synthHTML = blocks
+    ? blocks.map(b=>`<div class="behav-block">
+        <div class="behav-title">${b.titre}</div>
+        <div class="behav-txt">${mdLite(b.txt)}</div>
+      </div>`).join('')
+    : `<div class="empty">Synthèse comportementale pas encore générée pour cette espèce.</div>`;
+
+  return `
+    <div class="section" style="margin-top:0">
+      <p class="section-title">Comprendre l'espèce — l'essentiel</p>
+      <p class="fam-note">Regroupements synthétisés à partir des observations, pas la liste brute.</p>
+      ${synthHTML}
+    </div>
+    <div class="section">
+      <p class="section-title">Où &amp; quand (repères)</p>
+      <div class="where-grid">${whereBoxes}</div>
+    </div>`;
+}
+
+/* --- Panneau 2 : types de leurre + top 10 par combo --- */
+function panelLeurres(sp, obs){
+  // Agrégation par famille → densité → longueurs, depuis les observations enrichies (typologie vérifiée fabricant)
+  const withTypo = obs.filter(o=>o.recommendation && o.recommendation.typology);
+  const fams = {};
+  withTypo.forEach(o=>{
+    const tp = o.recommendation.typology;
+    const f = tp.famille || '—';
+    fams[f] = fams[f] || {n:0, dens:{}, lens:new Set(), sources:new Set()};
+    fams[f].n++;
+    if(tp.densite){ fams[f].dens[tp.densite] = (fams[f].dens[tp.densite]||0)+1; }
+    if(tp.longueur) fams[f].lens.add(tp.longueur);
+    fams[f].sources.add(o.source);
+  });
+  const famList = Object.entries(fams).sort((a,b)=>b[1].n-a[1].n);
+
+  // Boîte à leurres perso (si un jour renseignée)
+  const lures = speciesLures(sp.id);
+
+  const famHTML = famList.length ? famList.map(([f,d])=>{
+    const densStr = Object.entries(d.dens).sort((a,b)=>b[1]-a[1])
+      .map(([k,v])=>`<span class="typo-dens dens-${k.replace(/[^a-z]/g,'')}">${k} ×${v}</span>`).join(' ');
+    const lens = [...d.lens].sort((a,b)=>a-b);
+    const lenStr = lens.length ? `${Math.min(...lens)}–${Math.max(...lens)} cm` : '';
+    return `<div class="fam-block">
+      <div class="fam-head"><span class="fam-name">${f}</span><span class="fam-count">${d.n} obs · ${d.sources.size} source${d.sources.size>1?'s':''}</span></div>
+      <div class="fam-meta">${densStr} ${lenStr?`<span class="typo-len">${lenStr}</span>`:''}</div>
+    </div>`;
+  }).join('') : `<div class="empty">Pas encore de leurre typologisé pour cette espèce.</div>`;
+
+  return `
+    <div class="section" style="margin-top:0">
+      <p class="section-title">Ce qui ressort — par famille &amp; densité</p>
+      <p class="fam-note">Typologie vérifiée fabricant. Le modèle exact compte moins que : famille · densité · longueur.</p>
+      ${famHTML}
+    </div>
+    ${lures.length ? `<div class="section">
+      <p class="section-title">Ta boîte (${lures.length})</p>
+      ${lures.map(lureRow).join('')}
+    </div>` : ''}`;
+}
+
+/* --- Panneaux 3 & 4 : agrégation des recos couleur / animation, sourcées --- */
+/* Badge typologie leurre : famille · densité · longueur, à partir de la reco enrichie */
+function typoBadge(o){
+  const tp = o.recommendation && o.recommendation.typology;
+  if(!tp) return '';
+  const bits = [];
+  if(tp.famille) bits.push(`<span class="typo-fam">${tp.famille}</span>`);
+  if(tp.densite){
+    const nu = tp.densite_nuance && tp.densite_nuance!==tp.densite ? ` (${tp.densite_nuance})` : '';
+    bits.push(`<span class="typo-dens dens-${(tp.densite||'').replace(/[^a-z]/g,'')}">${tp.densite}${nu}</span>`);
+  }
+  if(tp.longueur) bits.push(`<span class="typo-len">${tp.longueur} cm</span>`);
+  if(tp.poids) bits.push(`<span class="typo-len">${tp.poids} g</span>`);
+  const corr = (tp.marque && o.recommendation.lure && !o.recommendation.lure.toLowerCase().includes((tp.marque||'').toLowerCase().split(' ')[0]))
+    ? `<div class="typo-corr">↳ ${tp.modele||''}${tp.marque?' — '+tp.marque:''}${tp.confiance?' · '+tp.confiance.toLowerCase():''}</div>` : '';
+  return `<div class="typo-badges">${bits.join('')}</div>${corr}`;
+}
+
+function recoPanelInner(obs, field){
+  const entries = obs.filter(o=>o.recommendation && o.recommendation[field]);
+  if(!entries.length) return `<div class="empty">Aucune recommandation sourcée pour l'instant.<br>Elles apparaîtront dès qu'une extraction ou une session terrain en fournit.</div>`;
+  return entries.map(o=>{
+    const conds = COND_DIMS.filter(d=>o.tags[d]).map(d=>`<span class="tag">${DIM_LABELS[d]}: ${o.tags[d]}</span>`).join('');
+    return `<div class="fact-card">
+      <strong style="color:var(--accent)">${o.recommendation[field]}</strong>
+      ${o.recommendation.lure ? `<span style="color:var(--text-muted); font-size:12.5px"> — sur ${o.recommendation.lure}</span>` : ''}
+      <div class="fact-meta">${conds}<span class="conf-mini ${confClass(o.confidence)}">${o.confidence.toFixed(2)} · ${o.source}</span></div>
+    </div>`;
+  }).join('');
+}
+function recoPanel(obs, field, title){
+  const inner = recoPanelInner(obs, field);
+  return `<div class="section" style="margin-top:0">
+    <p class="section-title">${title}</p>
+    ${inner}</div>`;
+}
+function panelCouleur(sp, obs){ return recoPanel(obs, 'color', 'Choix de la couleur — selon conditions'); }
+function panelAnimation(sp, obs){
+  // Mécanique de mise en action, par famille de leurre — filtrée sur les familles pertinentes pour l'espèce
+  const mech = (SYNTH.mechanics || []).filter(m => m.especes.toLowerCase().includes(sp.name_fr.toLowerCase()));
+  const mechHTML = mech.length ? mech.map(m=>`
+    <div class="mech-block">
+      <div class="mech-head">
+        <span class="mech-fam">${m.famille}</span>
+        <span class="mech-esp">${m.especes}</span>
+      </div>
+      <div class="mech-principe">${mdLite(m.principe)}</div>
+      <ul class="mech-corr">${m.corr.map(c=>`<li>${mdLite(c)}</li>`).join('')}</ul>
+    </div>`).join('') : '';
+
+  return `
+    ${mech.length ? `<div class="section" style="margin-top:0">
+      <p class="section-title">Mécanique de mise en action</p>
+      <p class="fam-note">Comment animer chaque famille selon l'activité — corrélations tirées des observations.</p>
+      ${mechHTML}
+    </div>` : ''}
+    <div class="section" ${mech.length?'':'style="margin-top:0"'}>
+      <p class="section-title">Animations observées — selon conditions</p>
+      ${recoPanelInner(obs, 'animation')}
+    </div>`;
+}
+
+/* --- Panneau 5 : synthèse (grandes lignes, générée depuis l'ensemble de la base) --- */
+function panelSynthese(sp, obs){
+  const txt = SYNTH.species && SYNTH.species[sp.name_fr];
+  if(!txt) return `<div class="section" style="margin-top:0">
+    <p class="section-title">Synthèse</p>
+    <div class="empty">Pas encore de synthèse pour cette espèce — elle sera générée quand la base sera assez dense.</div></div>`;
+  return `<div class="section" style="margin-top:0">
+    <p class="section-title">Synthèse — grandes lignes (${SYNTH.based_on||''})</p>
+    <div class="synth-box">${mdLite(txt)}</div>
+  </div>`;
+}
+
+function factCard(o){
+  const tags = Object.entries(o.tags||{}).map(([d,v])=>`<span class="tag">${DIM_LABELS[d]||d}: ${v}</span>`).join('');
+  return `<div class="fact-card">${o.text}
+    <div class="fact-meta">${tags}<span class="conf-mini ${confClass(o.confidence)}">${o.confidence.toFixed(2)} · ${o.source}</span></div>
+  </div>`;
+}
+
+function lureRow(l){
+  return `<div class="lure-row">
+    <div><div class="lure-name">${l.name}</div><div class="lure-type">${l.type||''}</div></div>
+    <span class="lure-rank">#${l.rank}</span></div>`;
+}
+
+/* Désaccords / consensus : similarité de conditions + similarité de recommandation,
+   PAS de correspondance texte exacte. Mots-clés partagés + tags à vocabulaire
+   contrôlé identiques comptent comme "conditions proches". */
+const COND_DIMS = ["maree","moment_jour","couleur_eau","spot_type","saison","pression_atmo"];
+const STOPWORDS = new Set(['les','des','une','un','le','la','de','du','pour','dans','sur','avec','par',
+  'est','sont','plus','tres','peu','vers','apres','avant','entre','depuis','lorsque','comme','tout',
+  'cette','ces','leur','leurs','ils','elle','qui','que','son','ses','sans','pendant','environ','aussi',
+  'ainsi','ete','etre','fait','faire','tant','meme','encore','deja','alors','donc','mais','ou','et',
+  // domaine : trop génériques pour signaler une vraie similarité de conditions
+  'attaque','leurre','poisson','poissons','activite','presence','pris','prise','pecheur','recherche',
+  'anime','animee','presente','presentation','recuperation','zone','secteur','session']);
+
+function normWords(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^\p{L}\p{N}\s]/gu,' ').split(/\s+/).filter(w=>w.length>2 && !STOPWORDS.has(w));
+}
+function jaccard(a,b){
+  const A=new Set(normWords(a)), B=new Set(normWords(b));
+  if(!A.size||!B.size) return {score:0, inter:0};
+  let inter=0; A.forEach(w=>{ if(B.has(w)) inter++; });
+  return {score: inter/(A.size+B.size-inter), inter};
+}
+
+function conditionMatch(a,b){
+  let controlled=0;
+  ["maree","moment_jour","couleur_eau","pression_atmo"].forEach(d=>{
+    if(a.tags[d] && a.tags[d]===b.tags[d]) controlled++;
+  });
+  const textA = [a.tags.spot_type,a.tags.comportement].filter(Boolean).join(' ');
+  const textB = [b.tags.spot_type,b.tags.comportement].filter(Boolean).join(' ');
+  const text = jaccard(textA, textB);
+  // au moins 2 tags à vocabulaire contrôlé identiques (un seul tag isolé comme
+  // "nuit" tout seul ne suffit pas à dire que deux sessions sont comparables),
+  // OU au moins 2 mots-clés significatifs partagés sur spot/comportement
+  return {controlled, text: text.score, related: controlled>=2 || (text.score>=0.2 && text.inter>=2)};
+}
+
+/* Niveau d'activité décrit dans une observation — sert à requalifier les faux désaccords :
+   deux recos différentes pour des niveaux d'activité différents = adaptation du pêcheur, pas contradiction */
+function activityLevel(o){
+  const t = ((o.tags.comportement||'')+' '+(o.text||'')).toLowerCase();
+  const low = ['peu actif','faible activité','méfian','sollicit','sans réaction','ne réagi','refus','difficile','poursuite sans','suit sans','calé mais inactif','activité réduite','moins actif'];
+  const high = ['forte activité','très actif','chasse','agressi','boil','frénési','activité soutenue','forte concentration','attaques répétées','poissons actifs'];
+  const isLow = low.some(k=>t.includes(k)), isHigh = high.some(k=>t.includes(k));
+  if(isLow && !isHigh) return 'faible';
+  if(isHigh && !isLow) return 'forte';
+  return null;
+}
+
+/* Typologie d'ACTION — le GESTE réel une fois le leurre à l'eau. Distinctions techniques strictes
+   (demande explicite de l'utilisateur) : le geste de CANNE, le rôle du fond et de la chute comptent,
+   pas la marque. Chaque obs reçoit UNE catégorie dominante (la plus spécifique), jamais plusieurs.
+
+   - lift-and-fall / jig    : tirées de CANNE pour décoller le leurre du FOND, puis chute contrôlée à la bannière (touche à la retombée)
+   - fall / chute (egi…)    : on laisse DESCENDRE le leurre, prise pendant la chute — sans tirée de décollage du fond
+   - jerk / twitch / dog-walk: animation de CANNE (coups de scion, écarts) SANS logique de fond
+   - stop-and-go            : récupération MOULINET entrecoupée d'ARRÊTS
+   - linéaire               : récupération MOULINET continue, AUCUN mouvement de canne
+   - dérive                 : on accompagne le COURANT, récupération minimale
+   - surface / induction    : travail en surface (topwater, 誘い出し) */
+const ACTION_PATTERNS = [
+  {cat:"lift-and-fall (canne, décollage du fond + chute)",
+   any:["lift-and-fall","lift and fall","one-pitch","one pitch","remontée rythmée depuis le fond","remonte en one-pitch","soulever le montage","relever puis","décoll","remontées et descentes en laissant le leurre retomber","fast pitch"],
+   // doit impliquer canne + fond/chute
+  },
+  {cat:"fall / chute contrôlée (laisser descendre)",
+   any:["free fall","tension fall","カーブフォール","descente en courbe","shimmy fall","back-roll","rolling fall","laisser l'egi retomber","laisser descendre","chute horizontale","laisser tomber","chute contrôlée","10 secondes de chute","allonger le temps de descente","descente stable","descente progressive"],
+  },
+  {cat:"jerk / twitch / dog-walk (animation de canne, sans logique de fond)",
+   any:["jerk","twitch","dog walk","dog-walk","écart","glisse","glissade","dart","pop","zigzag","tirée","impulsion de canne","animation souple imprimée","pointe de la canne","誘い出し","induction"],
+  },
+  {cat:"stop-and-go (moulinet + arrêts)",
+   any:["stop-and-go","stop and go","arrêt","pause","interrompre","interrompu","tours puis arrêt","tours de manivelle puis arrêt","marquer un arrêt","puis marquer une pause"],
+  },
+  {cat:"dérive dans le courant",
+   any:["dériv","drift","accompagner le courant","dérive du courant","laisser filer","dans le courant en conservant","vitesse de dérive"],
+  },
+  {cat:"récupération linéaire (moulinet continu, sans canne)",
+   any:["linéaire","récupération continue","récupération régulière","récupération lente","récupération très lente","dead slow","récupération simple","récupération rapide","tour de manivelle toutes les","récupération dead slow","balancement de la queue","récupération sous la surface","récupération minimale","digital retrieve","ジャカ巻き","prospection large en récupération"],
+  },
+  {cat:"surface / topwater",
+   any:["surface","topwater","top water","wake","sous la surface","juste sous la surface","planante","en surface"],
+  },
+];
+
+/* Renvoie LA catégorie d'action dominante d'une obs (la première règle qui matche, ordre = spécificité),
+   ou null si le geste n'est pas décrit. */
+function actionCategory(o){
+  const rec = o.recommendation || {};
+  const blob = ((rec.animation||'') + ' ' + (o.tags && o.tags.comportement || '')).toLowerCase();
+  if(!blob.trim()) return null;
+  for(const p of ACTION_PATTERNS){
+    if(p.any.some(k=>blob.includes(k.toLowerCase()))) return p.cat;
+  }
+  return null;
+}
+
+function findConsensusPairs(obs){
+  const recos = obs.filter(o=>o.recommendation && o.recommendation.lure);
+  const pairs = [];
+  for(let i=0;i<recos.length;i++){
+    for(let j=i+1;j<recos.length;j++){
+      const a=recos[i], b=recos[j];
+      if(a.source===b.source) continue;
+      const cond = conditionMatch(a,b);
+      if(!cond.related) continue;
+
+      const lureSim = jaccard(a.recommendation.lure, b.recommendation.lure).score;
+      const famA = a.recommendation.typology && a.recommendation.typology.famille;
+      const famB = b.recommendation.typology && b.recommendation.typology.famille;
+      const sameFamille = famA && famB && famA===famB;
+      const actA = actionCategory(a), actB = actionCategory(b);
+      const sameAction = actA && actB && actA===actB;   // MÊME geste exact, pas un chevauchement flou
+
+      let type, actKind=null, levA=null, levB=null;
+      if(lureSim>=0.25 || sameFamille){
+        type = 'consensus';                        // même leurre / même famille
+      } else if(sameAction){
+        type = 'consensus-action';                 // leurres différents MAIS strictement le même geste
+        actKind = actA;
+      } else {
+        levA = activityLevel(a); levB = activityLevel(b);
+        if(levA && levB && levA!==levB){ type = 'adaptation'; }
+        else { type = 'divergence'; }
+      }
+      pairs.push({a, b, cond, lureSim, type, actKind, actA, actB, levA, levB});
+    }
+  }
+  const rank = {consensus:0,'consensus-action':1,adaptation:2,divergence:3};
+  return pairs.sort((p,q)=> (rank[p.type]-rank[q.type]) || ((q.cond.controlled+q.cond.text)-(p.cond.controlled+p.cond.text)));
+}
+
+function conditionLabel(pair){
+  const bits = [];
+  ["maree","moment_jour","couleur_eau","pression_atmo"].forEach(d=>{
+    if(pair.a.tags[d] && pair.a.tags[d]===pair.b.tags[d]) bits.push(`${DIM_LABELS[d]}: ${pair.a.tags[d]}`);
+  });
+  if(pair.cond.text >= 0.2) bits.push('conditions similaires (spot/comportement)');
+  return bits.join(' · ') || 'conditions proches';
+}
+
+function consensusCard(pair){
+  const labels = {consensus:'Consensus', 'consensus-action':"Consensus d'action", divergence:'Désaccord', adaptation:"Adaptation à l'activité"};
+  const badge = labels[pair.type];
+  let note = '';
+  if(pair.type==='adaptation'){
+    note = `<div class="diverge-conditions" style="color:#7FA8C9">Pas une contradiction : réponses à deux états d'activité (${pair.levA} vs ${pair.levB})</div>`;
+  } else if(pair.type==='consensus-action'){
+    note = `<div class="diverge-conditions" style="color:#5FA87A">Même geste à l'eau — <strong>${pair.actKind}</strong> — avec deux leurres différents. Ce qui compte, c'est l'action, pas le modèle.</div>`;
+  }
+  const opt = (o,lev) => `<div class="diverge-opt">
+    <div class="who">${o.source} (conf ${o.confidence.toFixed(2)})${lev?` · poissons ${lev}s`:''}</div>
+    ${o.recommendation.lure}${o.recommendation.animation?' — '+o.recommendation.animation:''}${o.recommendation.color?' — '+o.recommendation.color:''}
+  </div>`;
+  return `<div class="consensus-pair is-${pair.type}">
+    <span class="consensus-badge is-${pair.type}">${badge}</span>
+    <div class="diverge-conditions">${conditionLabel(pair)}</div>
+    ${note}
+    ${opt(pair.a, pair.type==='adaptation'?pair.levA:null)}${opt(pair.b, pair.type==='adaptation'?pair.levB:null)}
+  </div>`;
+}
+
+/* ============ QCM ============ */
+function startQCM(){ qcmState = {step:0, answers:{}}; renderQCM(); }
+
+async function fetchPressure(expectedStep){
+  const zone=document.getElementById('qcmZone'), note=zone&&zone.querySelector('.qcm-auto');
+  if(note) note.textContent='Relevé en cours…';
+  try{
+    const pos=await new Promise((res,rej)=>navigator.geolocation.getCurrentPosition(res,rej,{timeout:6000}));
+    const r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&current=pressure_msl`);
+    if(!r.ok) throw new Error(`HTTP ${r.status}`); const j=await r.json(), hpa=j.current.pressure_msl;
+    const bucket=hpa<1013?'basse':hpa<=1020?'moyenne':'haute';
+    // Réponse auto ignorée si l'utilisateur a déjà répondu/changé d'étape.
+    if(qcmState && qcmState.step===expectedStep && QCM_STEPS[expectedStep]?.dim==='pression_atmo') selectQCMAnswer('pression_atmo',bucket,expectedStep);
+  }catch(e){ if(qcmState&&qcmState.step===expectedStep&&note) note.textContent='Relevé impossible — choisis manuellement.'; }
+}
+
+function renderQCM(){
+  const zone = document.getElementById('qcmZone');
+  if(!qcmState){ zone.innerHTML=''; return; }
+  if(qcmState.step >= QCM_STEPS.length){ renderQCMResults(); return; }
+
+  const step = QCM_STEPS[qcmState.step];
+  let suggestion = null, note = '';
+
+  if(step.tide){
+    const ap = getActivePort();
+    if(ap && PORTS[ap]){
+      suggestion = tideState(ap, new Date());
+      note = suggestion ? `<div class="qcm-auto">JMA embarqué — ${PORTS[ap].label}, maintenant. Tape une autre option pour corriger.</div>` : `<div class="qcm-auto">Pas de table JMA embarquée pour aujourd’hui — choisis manuellement.</div>`;
+    } else {
+      note = `<div class="qcm-auto">Astuce : active un port depuis "Où je pêche" pour utiliser la table JMA embarquée quand la date est couverte.</div>`;
+    }
+  }
+  if(step.auto){
+    note = `<div class="qcm-auto">Relevé auto via Open-Meteo…</div>`;
+  }
+
+  if(step.multi){
+    const sel = qcmState.obsSel || [];
+    zone.innerHTML = `<div class="qcm-panel">
+      <div class="qcm-step-label">Étape ${qcmState.step+1} / ${QCM_STEPS.length} — lecture du spot</div>
+      <p class="qcm-question">${step.question}</p>
+      <div class="obs-chips">
+        ${step.options.map(o=>`<button class="obs-chip ${sel.includes(o)?'on':''}" onclick="toggleObsChip('${o.replace(/'/g,"\\'")}')">${o}</button>`).join('')}
+      </div>
+      <button class="qcm-cta" style="margin-top:14px" onclick="validateObs()">${sel.length?`Valider (${sel.length} indice${sel.length>1?'s':''}) →`:'Rien de notable → résultats'}</button>
+    </div>`;
+    return;
+  }
+
+  zone.innerHTML = `<div class="qcm-panel">
+    <div class="qcm-step-label">Étape ${qcmState.step+1} / ${QCM_STEPS.length}</div>
+    <p class="qcm-question">${step.question}</p>
+    <div class="qcm-options">
+      ${step.options.map(o=>`<button class="qcm-opt ${o===suggestion?'suggested':''}" onclick="selectQCMAnswer('${step.dim}','${o}')">${o}</button>`).join('')}
+    </div>
+    ${note}
+  </div>`;
+
+  if(step.auto) fetchPressure(qcmState.step);
+}
+
+function toggleObsChip(cat){
+  if(!qcmState) return;
+  qcmState.obsSel = qcmState.obsSel || [];
+  const i = qcmState.obsSel.indexOf(cat);
+  if(i>=0) qcmState.obsSel.splice(i,1); else qcmState.obsSel.push(cat);
+  renderQCM();
+}
+function validateObs(){
+  if(!qcmState) return;
+  qcmState.answers.observation = qcmState.obsSel || [];
+  qcmState.step += 1;
+  renderQCM();
+}
+
+function selectQCMAnswer(dim, value, expectedStep=null){
+  if(!qcmState) return;
+  if(expectedStep!==null && qcmState.step!==expectedStep) return;
+  const step=QCM_STEPS[qcmState.step];
+  if(!step || step.dim!==dim) return;
+  qcmState.answers[dim] = String(value).toLowerCase();
+  qcmState.step += 1;
+  renderQCM();
+}
+
+function renderQCMResults(){
+  const obs = speciesObservations(currentSpeciesId).filter(o=>o.recommendation);
+  const answers = qcmState.answers;
+  const obsSel = answers.observation || [];
+  const scored = obs.map(o=>{
+    const matchedDims = [];
+    Object.entries(answers).forEach(([d,v])=>{
+      if(d==='observation') return;
+      if(o.tags[d] && o.tags[d].toLowerCase()===v) matchedDims.push(`${DIM_LABELS[d]||d}: ${v}`);
+    });
+    const matchedObs = obsMatchCategories(o, obsSel);
+    return {o, matchedDims, matchedObs, matches: matchedDims.length + matchedObs.length};
+  }).filter(r=>r.matches>0).sort((a,b)=> b.matches-a.matches || b.o.confidence-a.o.confidence);
+
+  const zone = document.getElementById('qcmZone');
+  const condBits = Object.entries(answers).filter(([d])=>d!=='observation').map(([d,v])=>`${DIM_LABELS[d]||d}=${v}`);
+  if(obsSel.length) condBits.push(`lecture: ${obsSel.join(' + ')}`);
+  const condLine = condBits.join(' · ');
+  if(!scored.length){
+    zone.innerHTML = `<div class="qcm-panel">
+      <div class="qcm-step-label">${condLine}</div>
+      <div class="empty">Pas de recommandation sourcée pour cette combinaison.<br>Réfère-toi au top leurres — et logge ta session : elle deviendra la première source terrain pour ces conditions.</div>
+      <span class="restart-btn" onclick="startQCM()">↺ Refaire</span></div>`;
+    return;
+  }
+  zone.innerHTML = `<div class="qcm-panel">
+    <p class="qcm-step-label">${condLine}</p>
+    ${scored.map(({o,matchedDims,matchedObs})=>`
+      <div class="reco-card">
+        <div class="reco-lure">${escHTML(o.recommendation.lure||'Config')}</div>
+        ${typoBadge(o)}
+        <div class="match-chips">
+          ${matchedObs.map(c=>`<span class="match-chip is-spot">👁 ${c}</span>`).join('')}
+          ${matchedDims.map(c=>`<span class="match-chip">${c}</span>`).join('')}
+        </div>
+        ${o.recommendation.color?`<div class="reco-row"><span class="k">Couleur</span>${escHTML(o.recommendation.color)}</div>`:''}
+        ${o.recommendation.animation?`<div class="reco-row"><span class="k">Animation</span>${escHTML(o.recommendation.animation)}</div>`:''}
+        ${o.recommendation.leader?`<div class="reco-row"><span class="k">Bas de ligne</span>${escHTML(o.recommendation.leader)}</div>`:''}
+        <div class="reco-source">${escHTML(o.source)} (${escHTML(o.source_type)}) · confiance ${Number(o.confidence).toFixed(2)}</div>
+      </div>`).join('')}
+    <span class="restart-btn" onclick="startQCM()">↺ Refaire</span></div>`;
+}
+
+/* ============ LOG TERRAIN ============ */
+function logFormHTML(sp){
+  const last = qcmState && qcmState.answers ? qcmState.answers : {};
+  const condNote = Object.keys(last).length
+    ? `Conditions reprises du QCM : ${Object.entries(last).map(([d,v])=>`${DIM_LABELS[d]||d}=${Array.isArray(v)?v.join(' + '):v}`).join(' · ')}`
+    : 'Fais le QCM d\u2019abord pour capturer les conditions automatiquement (sinon la session part sans conditions).';
+  return `<div class="log-form">
+    <label>Leurre utilisé</label>
+    <input id="logLure" placeholder="ex: Jerkbait 120mm coulant, ormeau">
+    <label>Résultat</label>
+    <div class="row3">
+      <button onclick="setLogResult(this,'prise')">Prise</button>
+      <button onclick="setLogResult(this,'suivi')">Suivi/raté</button>
+      <button onclick="setLogResult(this,'rien')">Rien</button>
+    </div>
+    <label>Notes (taille, comportement, spot précis…)</label>
+    <textarea id="logNotes" rows="2"></textarea>
+    <div class="qcm-auto" style="margin-top:8px">${condNote}</div>
+    <button class="log-save" onclick="saveLog('${sp.name_fr}')">Enregistrer la session</button>
+    <div class="log-count">${getSessions().length} session(s) en mémoire locale</div>
+  </div>`;
+}
+
+function setLogResult(btn, val){
+  logResult = val;
+  btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function saveLog(speciesName){
+  const lure = document.getElementById('logLure').value.trim();
+  if(!lure || !logResult){ alert('Leurre + résultat obligatoires.'); return; }
+  const sessions = getSessions();
+  const now=new Date(), jp=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(now).replace('T',' ');
+  sessions.push({
+    date: jp,
+    timezone: 'Asia/Tokyo',
+    created_at_utc: now.toISOString(),
+    species: speciesName.toLowerCase(),
+    conditions: JSON.parse(JSON.stringify((qcmState && qcmState.answers) ? qcmState.answers : {})),
+    port: getActivePort() || null,
+    lure, result: logResult,
+    notes: document.getElementById('logNotes').value.trim(),
+  });
+  saveSessions(sessions);
+  logResult = null;
+  const sp = DATA.species.find(s=>s.id===currentSpeciesId);
+  document.getElementById('logZone').innerHTML = logFormHTML(sp);
+}
+
+function exportSessions(){
+  const data = JSON.stringify(getSessions(), null, 2);
+  const a = document.createElement('a');
+  a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(data);
+  a.download = 'sessions-terrain.json';
+  a.click();
+}
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+}
+
+// Filet de sécurité : jamais d'écran blanc muet. Si le démarrage plante ou traîne, on affiche un message + reset.
+function showFatal(msg){
+  document.getElementById('mainZone').innerHTML =
+    '<div style="padding:24px;font-family:sans-serif;color:#ddd">'
+    + '<h3 style="color:#E8A33D">Chargement impossible</h3>'
+    + '<p style="opacity:.8;font-size:14px">'+escHTML(msg||'')+'</p>'
+    + '<button onclick="resetApp()" style="margin-top:12px;padding:10px 16px;background:#E8A33D;border:none;border-radius:8px;font-weight:600">Vider le cache et recharger</button>'
+    + '</div>';
+}
+function resetApp(){
+  if('serviceWorker' in navigator){ navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())); }
+  if(window.caches){ caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).then(()=>location.reload(true)); }
+  else location.reload(true);
+}
+window.addEventListener('error', (e)=>{
+  if(!document.getElementById('mainZone').innerHTML.trim()) showFatal(e.message);
+});
+const _bootTimer = setTimeout(()=>{
+  if(!document.getElementById('mainZone').innerHTML.trim()) showFatal('Délai dépassé au chargement des données.');
+}, 6000);
+
+(async ()=>{
+  try{ await loadData(); }
+  catch(e){ showFatal(e.message); }
+  finally{ clearTimeout(_bootTimer); }
+})();
+</script>
+</body>
+</html>

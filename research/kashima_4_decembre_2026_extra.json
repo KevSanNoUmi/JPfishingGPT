@@ -1,0 +1,28 @@
+[
+  {
+    "source_label": "Casting Kashima-Kamisu / Kashimanada seasonal shore signal",
+    "source_type": "local_shop_field_intel",
+    "species": "hirame",
+    "raw_text": "À Kashimanada, un bulletin local de fin novembre signale l'arrivée d'iwashi sur le surf avec une hausse des prises de Hirame. Le magasin met en avant un leurre dense longue distance de 44 g adapté au surf très peu profond.",
+    "recommended_lure": "sinking pencil / jig minnow longue distance autour de 40-45 g",
+    "tags": {
+      "zone": "Kashimanada Surf",
+      "date_published": "2024-11-20",
+      "baitfish": "iwashi close to shore",
+      "evidence_type": "DECLARED_LOCAL_SHOP",
+      "confidence_level": 3,
+      "source_url": "https://castingnet.jp/shop/detail.php?no=214859&s=29"
+    }
+  },
+  {
+    "source_label": "Decision rule / KAS-V4-01",
+    "source_type": "synthesis",
+    "species": "general",
+    "raw_text": "À Kashimanada, traiter l'iwashi visible comme signal prioritaire: s'il rentre sur le surf, une présentation dense longue distance permet de couvrir les cassures extérieures tout en restant compatible avec le faible fond.",
+    "tags": {
+      "rule_id": "KAS-V4-01",
+      "confidence_level": 3,
+      "evidence_type": "LOCAL_SEASONAL_SYNTHESIS"
+    }
+  }
+]
