@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Carnet Pêche JP · V6 Travel Loadout</title>
+<title>Carnet Pêche JP · V6.1 Terrain UX</title>
 <meta name="theme-color" content="#0F1720">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -214,7 +214,7 @@
   .lure-type{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-muted);}
   .lure-rank{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--accent); background:rgba(232,163,61,0.14); border-radius:999px; padding:2px 8px;}
 
-  /* V6 — Travel Loadout */
+  /* V6.1 — Travel Loadout + Terrain UX */
   .loadout-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-end;margin-bottom:10px;}
   .loadout-rule{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--flag);text-align:right;}
   .loadout-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
@@ -243,7 +243,71 @@
   .gear-reco strong{font-family:'Fraunces',serif;font-size:14px;color:var(--text);}
   .dest-gear{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
   .dest-gear-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:5px;}
-  @media(max-width:390px){.loadout-grid{grid-template-columns:1fr}.gear-detail-grid{grid-template-columns:1fr}}
+  /* V6.1 UX — terrain d'abord, ambre = signal et non fond */
+  .essence-box{background:var(--surface);border-color:var(--border);}
+  .species-loadout{display:block;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:14px 15px;margin:0 0 14px;}
+  .ux-hero-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+  .ux-pattern{font-family:'Fraunces',serif;font-size:20px;font-weight:650;line-height:1.15;color:var(--text);letter-spacing:-.01em;}
+  .ux-pattern-sub{font-size:12.5px;color:var(--text-muted);line-height:1.45;margin-top:5px;max-width:34rem;}
+  .ux-combo{display:flex;align-items:center;gap:6px;flex-shrink:0;}
+  .ux-combo-code{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:10px;padding:4px 9px;line-height:1;}
+  .ux-combo-meta{font-family:'IBM Plex Mono',monospace;font-size:9px;line-height:1.35;color:var(--text-muted);text-align:right;}
+  .ux-hero-rule{display:flex;flex-wrap:wrap;gap:5px;margin-top:11px;padding-top:10px;border-top:1px solid var(--border);}
+  .ux-chip{font-family:'IBM Plex Mono',monospace;font-size:9.5px;border:1px solid var(--border);border-radius:999px;padding:3px 7px;background:var(--surface-2);color:var(--text-muted);}
+  .ux-chip.hot{border-color:var(--accent);color:var(--accent);background:transparent;}
+  .ux-chip.good{border-color:rgba(95,168,122,.45);color:var(--ok);background:transparent;}
+  .ux-section-lead{font-size:12px;color:var(--text-muted);line-height:1.45;margin:-3px 0 11px;}
+  .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .field-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 12px;min-width:0;}
+  .field-card.wide{grid-column:1/-1;}
+  .field-label{font-family:'IBM Plex Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:5px;}
+  .field-value{font-size:13px;line-height:1.48;color:var(--text);}
+  .field-value strong{color:var(--accent);font-weight:600;}
+  .field-planb{margin-top:9px;background:transparent;border:1px dashed rgba(139,151,168,.35);border-radius:12px;padding:10px 12px;}
+  .field-planb .field-label{color:var(--accent);}
+  .field-cta{display:grid;grid-template-columns:1fr auto;align-items:center;gap:10px;margin-top:10px;background:var(--surface-2);border:1px solid var(--border);border-radius:12px;padding:11px 12px;}
+  .field-cta .txt{font-size:12px;line-height:1.4;color:var(--text-muted);}
+  .field-cta button{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:9px;padding:8px 10px;font-weight:600;font-size:11.5px;cursor:pointer;}
+  .role-card,.tech-card,.color-card{background:var(--surface);border-color:var(--border);box-shadow:none;}
+  .role-card{position:relative;padding-top:11px;}
+  .role-index{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+  .role-card .fam-name{color:var(--text);font-size:14px;}
+  .role-card .tech-k{color:var(--accent);font-size:9px;}
+  .motion-priority{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:11px 12px;margin-bottom:11px;}
+  .motion-priority .title{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:4px;}
+  .motion-priority .txt{font-size:13px;line-height:1.5;}
+  .motion-card{background:var(--surface);border:1px solid var(--border);border-radius:13px;padding:12px 13px;margin-bottom:9px;}
+  .motion-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:8px;}
+  .motion-name{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--text);}
+  .motion-control{font-family:'IBM Plex Mono',monospace;font-size:8.5px;text-transform:uppercase;color:var(--accent);border:1px solid var(--border);border-radius:999px;padding:2px 7px;white-space:nowrap;}
+  .motion-step{display:grid;grid-template-columns:58px 1fr;gap:8px;padding:7px 0;border-top:1px solid rgba(232,163,61,.10);}
+  .motion-step:first-of-type{border-top:none;}
+  .motion-step .n{font-family:'IBM Plex Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);padding-top:2px;}
+  .motion-step .v{font-size:12.5px;line-height:1.45;}
+  .mini-details{margin-top:6px;}
+  .mini-details summary{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text-muted);cursor:pointer;}
+  .mini-details .inside{font-size:11.5px;color:var(--text-muted);line-height:1.45;padding-top:6px;}
+  .color-rule{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px;}
+  .color-step{flex:1 1 95px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px 10px;}
+  .color-step .num{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--accent);margin-bottom:3px;}
+  .color-step .txt{font-size:11.5px;line-height:1.35;}
+  .signal-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;}
+  .signal-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 11px;}
+  .signal-card .state{font-family:'IBM Plex Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:5px;}
+  .signal-card .do{font-size:12.5px;line-height:1.45;}
+  .color-matrix-row{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 11px;margin-bottom:7px;display:block;}
+  .color-matrix-row .tech-k{color:var(--text);font-size:10px;margin-bottom:5px;}
+  .color-matrix-row .tech-v{font-size:12px;}
+  .pink-chart{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+  .pink-chart .pc{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 11px;}
+  .pink-chart .pc .name{font-family:'Fraunces',serif;font-size:14px;color:var(--text);margin-bottom:4px;}
+  .pink-chart .pc .txt{font-size:11.5px;color:var(--text-muted);line-height:1.4;}
+  .understand-stat{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+  .understand-stat span{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--text-muted);border:1px solid var(--border);border-radius:999px;padding:3px 7px;}
+  .behav-block{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:0 12px 12px 0;}
+  .behav-title{color:var(--text);}
+  .synth-box{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:0 12px 12px 0;}
+  @media(max-width:390px){.loadout-grid{grid-template-columns:1fr}.gear-detail-grid{grid-template-columns:1fr}.field-grid{grid-template-columns:1fr}.field-card.wide{grid-column:auto}.signal-grid,.pink-chart{grid-template-columns:1fr}.ux-hero-top{align-items:flex-start}.ux-combo-meta{display:none}}
 
   .consensus-pair{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px; margin-bottom:10px;}
   .consensus-pair.is-consensus{border-color:var(--ok);}
@@ -727,12 +791,29 @@ function gearBadgeHTML(sp,o){
   const wtxt=w!==null?`${w} g`:'poids à vérifier';
   return `<div class="gear-reco"><strong>${escHTML(p.code)}</strong><span class="gear-pill ${p.status}">${escHTML(p.label.replace(p.code+' · ',''))}</span>${pe?`<span class="gear-pill">${escHTML(pe)}</span>`:''}<span class="gear-pill">${escHTML(wtxt)}</span></div>`;
 }
+function speciesUXProfile(name){
+  return ({
+    'Hirame':{pattern:'Cassure → fond → pause',sub:'Lire une discontinuité, tenir le bas de couche et créer une vraie fenêtre de prise.',tags:['fond','pause / chute','distance'],where:'Cassure, chenal de retour ou fosse proche du bord. Ramène jusqu’aux pieds si le bait est là.',when:'Aube et surtout mise en route du courant. Sans fourrage ni lecture de fond : change de secteur.',fail:'Refus ou activité basse : downsizing, ralentis et allonge la pause / chute avant de changer complètement de zone.'},
+    'Suzuki':{pattern:'Structure → dérive → limite',sub:'Faire passer le leurre avec la veine d’eau, au contact d’une structure ou d’une bordure.',tags:['dérive','structure','sub-surface'],where:'Ponts, piles, murs, clair-obscur et limites de courant. Le poste est souvent une frontière plus qu’un point.',when:'Nuit dominante dans la base; jusant très présent. Cherche une veine qui accélère ou évacue le bait.',fail:'Si les couches hautes ne répondent pas, descends progressivement. Sur poisson suiveur : moins de signal et dérive plus propre.'},
+    'Hamachi':{pattern:'Bait → courant → interception',sub:'Trouver la couche et couper la trajectoire du banc plutôt que pêcher au hasard.',tags:['bait','courant','distance'],where:'Pointes, entrées de baie, hauts-fonds, oiseaux et frontières de courant. Lance devant la trajectoire du banc.',when:'Aube et redémarrage du courant. L’étale est un vrai signal de baisse d’activité dans la base.',fail:'Pas de passage : cherche d’abord bait/oiseaux/courant. Si la surface s’éteint, explore sub-surface puis fond → mi-eau.'},
+    'Aori-Ika':{pattern:'Couche → chute → répétition',sub:'Le jerk replace l’egi. La descente pêche : angle, vitesse et profondeur doivent être reproductibles.',tags:['fall','contrôle ligne','egi'],where:'Angles de digue, ruptures de fond, fentes rocheuses, fondations et veines de courant plus calmes.',when:'La base locale est moins robuste sur l’horaire : lis surtout vent, profondeur, courant et présence de bait.',fail:'Moins actif : moins de jerks, plus doux, et chute plus longue/stable. Vent fort : privilégie une chute lisible et reproductible.'},
+    'Kurodai':{pattern:'Peu d’eau → discrétion → rupture',sub:'Présenter proprement en très faible profondeur et changer une seule variable sur un suivi.',tags:['surface','précision','discrétion'],where:'Vasières, pentes douces, blocs, huîtres et bordures dans très peu d’eau. Évite de faire passer la ligne sur le poisson.',when:'Fenêtre très dépendante du niveau d’eau local; mémorise surtout le niveau qui rend le poste pêchable.',fail:'Suivi sans attaque : ralentis/stoppe ou, à l’inverse, crée une rupture franche. Teste une seule réponse à la fois.'},
+    'Tachiuo':{pattern:'Trouve la couche → compte → reproduis',sub:'La profondeur utile est la première information. Une touche doit devenir un repère reproductible.',tags:['couche','fall','crépuscule'],where:'Cherche une profondeur avant de chercher un modèle. Le poisson regarde vers le haut : évite de présenter sous sa couche.',when:'Crépuscule = fenêtre courte et forte dans la base; la couche remonte avec la baisse de lumière.',fail:'Raté : remets immédiatement en descente dans la même couche. Si plus rien, recompte et recherche verticalement avant de changer de leurre.'},
+    'Madai':{pattern:'Courant → passage → tenue',sub:'Base shore encore mince : privilégier les situations lisibles et rester dans le domaine MH ≤50 g.',tags:['MH','≤50 g','à enrichir']},
+    'Saba':{pattern:'Bait → couche → cadence',sub:'Chercher le banc et sa profondeur avant d’affiner le leurre.',tags:['M','banc','réaction']},
+    'Aji':{pattern:'Lumière → bait → finesse',sub:'Approche opportuniste avec la M : une grande partie de l’ajing classique reste sous sa plage optimale.',tags:['M','opportuniste','<8 g limité']},
+    'Mebaru':{pattern:'Structure → faible lumière → lent',sub:'Approche opportuniste avec la M ; la base locale et le domaine light-game restent à compléter.',tags:['M','structure','light-game limité']}
+  })[name] || {pattern:'Lire → choisir → exécuter',sub:'Partir de la situation avant le nom du leurre.',tags:[]};
+}
+function plainTech(s){ return String(s||'').replace(/\*\*/g,'').replace(/[\n\r]+/g,' ').replace(/\s+/g,' ').trim(); }
+function shortTech(s,max=175){ const x=plainTech(s); if(x.length<=max) return x; const cut=x.slice(0,max); return cut.slice(0,Math.max(cut.lastIndexOf('.'),cut.lastIndexOf(';'),cut.lastIndexOf(','),max-20)).trim()+'…'; }
+function behaviorBlock(sp,title){ const xs=(SYNTH.behavior&&SYNTH.behavior[sp.name_fr])||[]; return xs.find(x=>String(x.titre||'').toLowerCase()===title.toLowerCase())||null; }
 function speciesLoadoutHTML(sp){
-  const p=gearPlanFor(sp.name_fr,null), g=gearSetup(p.code), sec=p.secondary&&gearSetup(p.secondary);
+  const p=gearPlanFor(sp.name_fr,null), g=gearSetup(p.code), sec=p.secondary&&gearSetup(p.secondary), ux=speciesUXProfile(sp.name_fr);
   if(!g) return '';
-  const setup=g.setup||{};
-  const range=`${setup.rod?.lure_min_g??'—'}–${setup.rod?.lure_max_nominal_g??'—'} g`;
-  return `<div class="species-loadout"><div class="big">${escHTML(p.code)}</div><div class="txt"><strong>${escHTML(setup.role||g.description||'Combo voyage')}</strong> — ${escHTML(setup.rod?.model||'')} + ${escHTML(setup.reel?.model||'')} · PE${escHTML(setup.line?.size||'—')} · ${escHTML(range)}${p.code==='MH'?' nominal / 50 g plafond':''}<div class="sub">${escHTML(p.note)}${sec?` · Alternative : ${escHTML(p.secondary)}`:''}</div></div></div>`;
+  const setup=g.setup||{}, rod=setup.rod||{}, line=setup.line||{};
+  const range=p.code==='MH'?`${rod.lure_min_g||12}–45 g · 46–50 haute charge`:`${rod.lure_min_g||8}–${rod.lure_max_nominal_g||30} g`;
+  return `<div class="species-loadout"><div class="ux-hero-top"><div><div class="ux-pattern">${escHTML(ux.pattern)}</div><div class="ux-pattern-sub">${escHTML(ux.sub)}</div></div><div class="ux-combo"><div class="ux-combo-code">${escHTML(p.code)}</div><div class="ux-combo-meta">PE${escHTML(line.size||'—')}<br>${escHTML(range)}</div></div></div><div class="ux-hero-rule">${(ux.tags||[]).map((x,i)=>`<span class="ux-chip ${i===0?'hot':''}">${escHTML(x)}</span>`).join('')}${sec?`<span class="ux-chip">${escHTML(p.secondary)} possible selon situation</span>`:''}</div></div>`;
 }
 function destinationGearHTML(s){
   const groups={M:[],MH:[]};
@@ -952,47 +1033,16 @@ function renderSpeciesPage(){
   document.getElementById('headerZone').innerHTML = `
     <div class="back-row">
       <button class="back-btn" onclick="location.hash=''">←</button>
-      <div>
-        <p class="eyebrow">${sp.name_jp} · ${sp.name_latin||''}</p>
-        <h1 style="font-size:21px;">${sp.name_fr}</h1>
-      </div>
+      <div><p class="eyebrow">${sp.name_jp} · ${sp.name_latin||''}</p><h1 style="font-size:21px;">${sp.name_fr}</h1></div>
     </div>`;
 
   const obs = speciesObservations(sp.id);
-  const divergences = findConsensusPairs(obs);
-  const TABS = ['Synthèse','Leurres','Couleur','Animation','Comportement'];
-
-  const dotNav = `<div class="dot-nav">
-    ${TABS.map((t,i)=>`<div class="dot-item ${i===speciesTab?'active':''}" onclick="setSpeciesTab(${i})">
-      <div class="dot"></div><div class="dot-label">${t}</div>
-    </div>`).join('')}
-  </div>`;
-
+  const TABS = ['Terrain','Leurres','Couleurs','Animations','Comprendre'];
+  const dotNav = `<div class="dot-nav">${TABS.map((t,i)=>`<div class="dot-item ${i===speciesTab?'active':''}" onclick="setSpeciesTab(${i})"><div class="dot"></div><div class="dot-label">${t}</div></div>`).join('')}</div>`;
   const panels = [panelSynthese, panelLeurres, panelCouleur, panelAnimation, panelComportement];
 
-  document.getElementById('mainZone').innerHTML = `
-    ${speciesLoadoutHTML(sp)}
-    ${dotNav}
-    <div id="tabPanel">${panels[speciesTab](sp, obs)}</div>
-
-    ${divergences.length ? `<div class="section">
-      <p class="section-title">Consensus &amp; désaccords (${divergences.length})</p>
-      ${divergences.slice(0,12).map(consensusCard).join('')}
-    </div>` : ''}
-
-    <div class="section">
-      <p class="section-title">Config du moment</p>
-      <button class="qcm-cta" onclick="startQCM()">Trouver la config adaptée →</button>
-      <div id="qcmZone"></div>
-    </div>
-
-    <div class="section">
-      <p class="section-title">Logger une session</p>
-      <div id="logZone">${logFormHTML(sp)}</div>
-    </div>
-  `;
+  document.getElementById('mainZone').innerHTML = `${speciesLoadoutHTML(sp)}${dotNav}<div id="tabPanel">${panels[speciesTab](sp, obs)}</div>`;
 }
-
 function setSpeciesTab(i){
   speciesTab = i;
   const sp = DATA.species.find(s=>s.id===currentSpeciesId);
@@ -1004,39 +1054,13 @@ function setSpeciesTab(i){
 
 /* --- Panneau 1 : comportement + où/quand --- */
 function panelComportement(sp, obs){
-  const blocks = (SYNTH.behavior && SYNTH.behavior[sp.name_fr]) || null;
-  const whereDims = ["maree","moment_jour","spot_type"];
-  const whereBoxes = whereDims.map(dim=>{
-    const vals = [...new Set(obs.map(o=>o.tags[dim]).filter(Boolean))];
-    // spot_type peut être long : limiter aux plus fréquents
-    let show = vals;
-    if(dim==='spot_type' && vals.length>8){
-      const freq = {};
-      obs.forEach(o=>{ const v=o.tags[dim]; if(v) freq[v]=(freq[v]||0)+1; });
-      show = Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,8).map(x=>x[0]);
-    }
-    return `<div class="where-box"><div class="dim-name">${DIM_LABELS[dim]}</div><div class="vals">${show.length ? show.join(', ') : '—'}</div></div>`;
-  }).join('');
-
-  const synthHTML = blocks
-    ? blocks.map(b=>`<div class="behav-block">
-        <div class="behav-title">${b.titre}</div>
-        <div class="behav-txt">${mdLite(b.txt)}</div>
-      </div>`).join('')
-    : `<div class="empty">Synthèse comportementale pas encore générée pour cette espèce.</div>`;
-
-  return `
-    <div class="section" style="margin-top:0">
-      <p class="section-title">Comprendre l'espèce — l'essentiel</p>
-      <p class="fam-note">Regroupements synthétisés à partir des observations, pas la liste brute.</p>
-      ${synthHTML}
-    </div>
-    <div class="section">
-      <p class="section-title">Où &amp; quand (repères)</p>
-      <div class="where-grid">${whereBoxes}</div>
-    </div>`;
+  const blocks=(SYNTH.behavior&&SYNTH.behavior[sp.name_fr])||[];
+  const divergences=findConsensusPairs(obs);
+  const sourceCount=new Set(obs.map(o=>o.source).filter(Boolean)).size;
+  const synth=blocks.length?blocks.map(b=>`<div class="behav-block"><div class="behav-title">${escHTML(b.titre)}</div><div class="behav-txt">${mdLite(b.txt)}</div></div>`).join(''):`<div class="empty">Pas encore assez de matière pour une lecture comportementale robuste.</div>`;
+  const full=SYNTH.species&&SYNTH.species[sp.name_fr];
+  return `<div class="section" style="margin-top:0"><p class="section-title">Comprendre le poisson</p><div class="understand-stat"><span>${obs.length} observations</span><span>${sourceCount} sources</span>${divergences.length?`<span>${divergences.length} désaccords utiles</span>`:''}</div>${synth}</div>${full?`<div class="section"><details class="intel-details"><summary>Synthèse complète de la base</summary><div class="synth-box" style="margin-top:10px">${mdLite(full)}</div></details></div>`:''}${divergences.length?`<div class="section"><details class="intel-details"><summary>Quand les sources ne racontent pas la même chose (${divergences.length})</summary><div style="margin-top:10px">${divergences.slice(0,12).map(consensusCard).join('')}</div></details></div>`:''}<div class="section"><details class="intel-details"><summary>Voir les observations brutes (${obs.length})</summary><div style="margin-top:10px">${obs.slice().sort((a,b)=>b.confidence-a.confidence).map(factCard).join('')}</div></details></div>`;
 }
-
 /* --- Panneaux techniques V5 : rôle du leurre, geste, comportement, couleur --- */
 function techSpecies(sp){
   return SYNTH.technique_v5 && SYNTH.technique_v5.species && SYNTH.technique_v5.species[sp.name_fr];
@@ -1044,104 +1068,48 @@ function techSpecies(sp){
 function techRoot(){ return SYNTH.technique_v5 || {}; }
 
 function lureRoleEssenceHTML(sp){
-  const ts = techSpecies(sp);
-  if(!ts || !ts.lure_roles || !ts.lure_roles.length) return '';
-  return `<div class="essence-box">
-    <strong>Lecture pêcheur :</strong> ne pars pas d'un nom de modèle. Pars du rôle à remplir sur le spot, puis choisis famille, densité et taille.
-  </div>
-  <div class="tech-grid">${ts.lure_roles.map(r=>`<div class="role-card">
-    <div class="tech-k">${escHTML(r.role)}</div>
-    <div class="fam-name" style="font-size:14px;margin:3px 0 5px">${escHTML(r.families)}</div>
-    <div class="tech-v">${escHTML(r.essence)}</div>
-  </div>`).join('')}</div>`;
+  const ts=techSpecies(sp);
+  if(!ts||!ts.lure_roles||!ts.lure_roles.length) return '';
+  return `<div class="tech-grid">${ts.lure_roles.map((r,i)=>`<div class="role-card"><div class="role-index">Rôle ${i+1}</div><div class="tech-k">${escHTML(r.role)}</div><div class="fam-name">${escHTML(r.families)}</div><div class="tech-v">${escHTML(r.essence)}</div></div>`).join('')}</div>`;
 }
-
+function relevantAnimationNames(name){
+  return ({
+    'Hirame':['Linéaire','Stop-and-go','Lift-and-fall','Fall / chute'],
+    'Suzuki':['Dérive / dead drift','Linéaire','Jerk / twitch'],
+    'Hamachi':['Surface: dog-walk / pop / dive','One-pitch / jigging','Linéaire','Fall / chute'],
+    'Aori-Ika':['Jerk / twitch','Fall / chute'],
+    'Kurodai':['Surface: dog-walk / pop / dive','Linéaire','Stop-and-go'],
+    'Tachiuo':['Lift-and-fall','Fall / chute','Linéaire'],
+    'Madai':['Linéaire','One-pitch / jigging','Lift-and-fall'],
+    'Saba':['Linéaire','One-pitch / jigging'],
+    'Aji':['Linéaire','Fall / chute'],
+    'Mebaru':['Linéaire','Dérive / dead drift']
+  })[name]||['Linéaire','Stop-and-go','Lift-and-fall'];
+}
+function motionCard(a){
+  return `<div class="motion-card"><div class="motion-head"><div class="motion-name">${escHTML(a.name)}</div><div class="motion-control">${escHTML(a.control)}</div></div><div class="motion-step"><div class="n">1 · geste</div><div class="v">${escHTML(a.gesture)}</div></div><div class="motion-step"><div class="n">2 · leurre</div><div class="v">${escHTML(a.lure)}</div></div><div class="motion-step"><div class="n">3 · but</div><div class="v">${escHTML(a.purpose)}</div></div><details class="mini-details"><summary>À ne pas confondre</summary><div class="inside">${escHTML(a.not)}</div></details></div>`;
+}
 function animationEssenceHTML(sp){
-  const root = techRoot(), ts = techSpecies(sp);
-  if(!root.animation_grammar) return '';
-  const speciesLine = ts && ts.animation ? `<div class="essence-box"><strong>Essence ${escHTML(sp.name_fr)} :</strong> ${escHTML(ts.animation)}</div>` : '';
-  const cards = root.animation_grammar.map(a=>`<div class="tech-card">
-    <div class="mech-head" style="margin-bottom:6px"><span class="mech-fam">${escHTML(a.name)}</span><span class="mech-esp">piloté par ${escHTML(a.control)}</span></div>
-    <div class="tech-grid" style="grid-template-columns:1fr">
-      <div><div class="tech-k">Geste</div><div class="tech-v">${escHTML(a.gesture)}</div></div>
-      <div><div class="tech-k">Ce que fait le leurre</div><div class="tech-v">${escHTML(a.lure)}</div></div>
-      <div><div class="tech-k">But</div><div class="tech-v">${escHTML(a.purpose)}</div></div>
-    </div>
-    <div class="tech-not">≠ ${escHTML(a.not)}</div>
-  </div>`).join('');
-  return `${speciesLine}<div class="essence-box"><strong>Règle de lecture :</strong> ${escHTML(root.principle||'')}</div>${cards}`;
+  const root=techRoot(), ts=techSpecies(sp), all=root.animation_grammar||[];
+  if(!all.length) return '';
+  const wanted=relevantAnimationNames(sp.name_fr), primary=all.filter(a=>wanted.includes(a.name)), other=all.filter(a=>!wanted.includes(a.name));
+  return `${ts&&ts.animation?`<div class="motion-priority"><div class="title">À retenir pour ${escHTML(sp.name_fr)}</div><div class="txt">${escHTML(ts.animation)}</div></div>`:''}${primary.map(motionCard).join('')}${other.length?`<details class="intel-details" style="margin-top:10px"><summary>Voir les autres mécaniques</summary><div style="margin-top:10px">${other.map(motionCard).join('')}</div></details>`:''}`;
 }
-
 function colorLogicHTML(sp){
   const root=techRoot(), c=root.color_logic, ts=techSpecies(sp);
   if(!c) return '';
-  const speciesLine = ts && ts.color ? `<div class="essence-box"><strong>Essence ${escHTML(sp.name_fr)} :</strong> ${escHTML(ts.color)}</div>` : '';
-  const axes = (c.axes||[]).map(a=>`<div class="color-axis">
-    <div class="tech-k">${escHTML(a.axis)}</div>
-    <div class="tech-v"><strong>Signal réduit :</strong> ${escHTML(a.low)}<br><strong>Signal renforcé :</strong> ${escHTML(a.high)}</div>
-  </div>`).join('');
-  const matrix = (c.matrix||[]).map(r=>`<div class="color-matrix-row">
-    <div class="tech-k">${escHTML(r.condition)}</div>
-    <div class="tech-v"><strong>Départ :</strong> ${escHTML(r.start)}<br><span style="color:var(--text-muted)">Puis :</span> ${escHTML(r.switch)}</div>
-  </div>`).join('');
+  const matrix=(c.matrix||[]).map(r=>`<div class="color-matrix-row"><div class="tech-k">${escHTML(r.condition)}</div><div class="tech-v"><strong>Départ :</strong> ${escHTML(r.start)}<br><span style="color:var(--text-muted)">Si ça ne colle pas :</span> ${escHTML(r.switch)}</div></div>`).join('');
   const finishes=(c.finish_logic||[]).map(f=>`<div class="color-card"><div class="color-name">${escHTML(f.finish)}</div><div class="tech-v">${escHTML(f.mechanic)}</div><div class="tech-not"><strong>À sortir :</strong> ${escHTML(f.best)}<br><strong>Attention :</strong> ${escHTML(f.watch)}</div></div>`).join('');
-  const tint=c.water_tint_logic||{};
-  const tintHTML=Object.keys(tint).length?`<div class="essence-box"><strong>Teinte d'eau :</strong><br>${Object.entries(tint).map(([k,v])=>`<span class="tech-k" style="display:inline;color:var(--accent)">${escHTML(k.replaceAll('_',' '))}</span> — ${escHTML(v)}`).join('<br>')}</div>`:'';
-  return `${speciesLine}
-    <div class="essence-box"><strong>Principe :</strong> ${escHTML(c.rule||'')}</div>
-    <div class="color-axis-grid">${axes}</div>
-    ${tintHTML}
-    <div style="margin-top:10px">${matrix}</div>
-    <p class="section-title" style="margin-top:16px">Finition : ce qu'elle change réellement</p>
-    ${finishes}
-    <div class="essence-box"><strong>Bracketing :</strong> ${escHTML(c.bracketing||'')}</div>
-    <div class="essence-box"><strong>Rose fluo vs jaune/chartreuse :</strong> ${escHTML(c.pink_vs_yellow||'')}</div>`;
+  return `${ts&&ts.color?`<div class="motion-priority"><div class="title">Point de départ ${escHTML(sp.name_fr)}</div><div class="txt">${escHTML(ts.color)}</div></div>`:''}<div class="color-rule"><div class="color-step"><div class="num">01</div><div class="txt">Lis <strong>clarté + lumière</strong></div></div><div class="color-step"><div class="num">02</div><div class="txt">Regarde <strong>activité / refus</strong></div></div><div class="color-step"><div class="num">03</div><div class="txt">Si bait identifié, <strong>match the hatch</strong></div></div></div><div class="signal-grid"><div class="signal-card"><div class="state">Suivi / refus</div><div class="do">Réduis le signal : naturel, ghost, moins de flash. Ne change qu’une variable.</div></div><div class="signal-card"><div class="state">Aucun contact</div><div class="do">Monte la lisibilité : pearl/opaque, accent fluo ou contraste, puis revalide la couche.</div></div></div><p class="section-title">Choix de départ</p>${matrix}<div class="pink-chart"><div class="pc"><div class="name">Rose / magenta</div><div class="txt">Contraste de teinte marqué, intéressant dans le vert/bleuté et aux transitions de lumière.</div></div><div class="pc"><div class="name">Jaune / chartreuse</div><div class="txt">Lisibilité brute et silhouette forte en eau chargée ou lumière diffuse.</div></div></div><div class="ux-section-lead" style="margin-top:8px">Si le bait est clairement identifié : taille → silhouette → couche → nage → teinte. Le naturel/flash peut repasser devant les deux.</div><details class="intel-details" style="margin-top:10px"><summary>Comprendre les finitions</summary><div style="margin-top:10px">${finishes}</div></details>`;
 }
-
 /* --- Panneau 2 : types de leurre + rôle technique --- */
 function panelLeurres(sp, obs){
-  // Agrégation par famille → densité → longueurs, depuis les observations enrichies (typologie vérifiée fabricant)
-  const withTypo = technicalObservations(obs).filter(o=>o.recommendation.typology);
-  const fams = {};
-  withTypo.forEach(o=>{
-    const tp = o.recommendation.typology;
-    const f = tp.famille || '—';
-    fams[f] = fams[f] || {n:0, dens:{}, lens:new Set(), sources:new Set()};
-    fams[f].n++;
-    if(tp.densite){ fams[f].dens[tp.densite] = (fams[f].dens[tp.densite]||0)+1; }
-    if(tp.longueur) fams[f].lens.add(tp.longueur);
-    fams[f].sources.add(o.source);
-  });
-  const famList = Object.entries(fams).sort((a,b)=>b[1].n-a[1].n);
-  const lures = speciesLures(sp.id);
-
-  const famHTML = famList.length ? famList.map(([f,d])=>{
-    const densStr = Object.entries(d.dens).sort((a,b)=>b[1]-a[1])
-      .map(([k,v])=>`<span class="typo-dens dens-${k.replace(/[^a-z]/g,'')}">${escHTML(k)} ×${v}</span>`).join(' ');
-    const lens = [...d.lens].sort((a,b)=>a-b);
-    const lenStr = lens.length ? `${Math.min(...lens)}–${Math.max(...lens)} cm` : '';
-    return `<div class="fam-block">
-      <div class="fam-head"><span class="fam-name">${escHTML(f)}</span><span class="fam-count">${d.n} obs · ${d.sources.size} source${d.sources.size>1?'s':''}</span></div>
-      <div class="fam-meta">${densStr} ${lenStr?`<span class="typo-len">${lenStr}</span>`:''}</div>
-    </div>`;
-  }).join('') : `<div class="empty">Pas encore de leurre typologisé pour cette espèce.</div>`;
-
-  return `
-    <div class="section" style="margin-top:0">
-      <p class="section-title">Rôles dans la boîte — l'essence</p>
-      ${lureRoleEssenceHTML(sp) || `<div class="empty">Pas encore assez de consensus pour hiérarchiser les rôles.</div>`}
-    </div>
-    <div class="section">
-      <p class="section-title">Consensus par famille &amp; densité</p>
-      <p class="fam-note">Fréquence dans la base enrichie. À lire après le rôle : famille · densité · longueur, pas comme un classement absolu de modèles.</p>
-      ${famHTML}
-    </div>
-    ${lures.length ? `<div class="section">
-      <p class="section-title">Ta boîte (${lures.length})</p>
-      ${lures.map(lureRow).join('')}
-    </div>` : ''}`;
+  const withTypo=technicalObservations(obs).filter(o=>o.recommendation.typology), fams={};
+  withTypo.forEach(o=>{ const tp=o.recommendation.typology,f=tp.famille||'—'; fams[f]=fams[f]||{n:0,dens:{},lens:new Set(),sources:new Set()}; fams[f].n++; if(tp.densite) fams[f].dens[tp.densite]=(fams[f].dens[tp.densite]||0)+1; if(tp.longueur) fams[f].lens.add(tp.longueur); fams[f].sources.add(o.source); });
+  const famList=Object.entries(fams).sort((a,b)=>b[1].n-a[1].n), lures=speciesLures(sp.id);
+  const famHTML=famList.length?famList.map(([f,d])=>{ const densStr=Object.entries(d.dens).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span class="typo-dens dens-${k.replace(/[^a-z]/g,'')}">${escHTML(k)} ×${v}</span>`).join(' '); const lens=[...d.lens].sort((a,b)=>a-b),lenStr=lens.length?`${Math.min(...lens)}–${Math.max(...lens)} cm`:''; return `<div class="fam-block"><div class="fam-head"><span class="fam-name">${escHTML(f)}</span><span class="fam-count">${d.n} obs · ${d.sources.size} source${d.sources.size>1?'s':''}</span></div><div class="fam-meta">${densStr} ${lenStr?`<span class="typo-len">${lenStr}</span>`:''}</div></div>`; }).join(''):`<div class="empty">Pas encore assez de leurres typologisés pour cette espèce.</div>`;
+  return `<div class="section" style="margin-top:0"><p class="section-title">À quoi sert chaque famille ?</p><div class="ux-section-lead">Pars du problème à résoudre sur le spot, puis choisis famille, densité et taille.</div>${lureRoleEssenceHTML(sp)||`<div class="empty">Pas encore assez de consensus pour hiérarchiser les rôles.</div>`}</div><div class="section"><p class="section-title">Ce qui ressort dans la base</p><div class="ux-section-lead">Fréquence observée, pas classement absolu. Ton plafond de 50 g est déjà appliqué.</div>${famHTML}</div>${lures.length?`<div class="section"><p class="section-title">Ta boîte (${lures.length})</p>${lures.map(lureRow).join('')}</div>`:''}`;
 }
-
 /* Badge typologie leurre : famille · densité · longueur, à partir de la reco enrichie */
 function typoBadge(o){
   const tp = o.recommendation && o.recommendation.typology;
@@ -1176,47 +1144,26 @@ function recoPanelInner(obs, field){
 }
 
 function panelCouleur(sp, obs){
-  const n = technicalObservations(obs).filter(o=>o.recommendation.color).length;
-  return `<div class="section" style="margin-top:0">
-    <p class="section-title">Logique couleur — décider, pas réciter</p>
-    <p class="fam-note">Visibilité utile → lumière → activité → fourrage. La couleur vient après la silhouette, la taille et la présentation.</p>
-    ${colorLogicHTML(sp)}
-  </div>
-  <div class="section">
-    <details class="intel-details">
-      <summary>Voir les recommandations couleur sourcées (${n})</summary>
-      <div style="margin-top:10px">${recoPanelInner(obs,'color')}</div>
-    </details>
-  </div>`;
+  const n=technicalObservations(obs).filter(o=>o.recommendation.color).length;
+  return `<div class="section" style="margin-top:0"><p class="section-title">Choisir la couleur</p><div class="ux-section-lead">Pas de couleur magique : décide du niveau de signal, puis affine la teinte.</div>${colorLogicHTML(sp)}</div><div class="section"><details class="intel-details"><summary>Voir les recommandations couleur sourcées (${n})</summary><div style="margin-top:10px">${recoPanelInner(obs,'color')}</div></details></div>`;
 }
-
 function panelAnimation(sp, obs){
-  const n = technicalObservations(obs).filter(o=>o.recommendation.animation).length;
-  return `<div class="section" style="margin-top:0">
-    <p class="section-title">Grammaire d'animation — geste → leurre → effet</p>
-    <p class="fam-note">Un mot doit dire qui crée le mouvement : moulinet, canne, ligne/courant ou gravité. Roll, wobble, dart et shimmy décrivent le comportement du leurre, pas forcément ton geste.</p>
-    ${animationEssenceHTML(sp)}
-  </div>
-  <div class="section">
-    <details class="intel-details">
-      <summary>Voir les animations sourcées dans la base (${n})</summary>
-      <div style="margin-top:10px">${recoPanelInner(obs,'animation')}</div>
-    </details>
-  </div>`;
+  const n=technicalObservations(obs).filter(o=>o.recommendation.animation).length;
+  return `<div class="section" style="margin-top:0"><p class="section-title">Faire travailler le leurre</p><div class="ux-section-lead">Lis chaque mécanique dans le même ordre : ce que tu fais → ce que fait le leurre → ce que tu cherches à provoquer.</div>${animationEssenceHTML(sp)}</div><div class="section"><details class="intel-details"><summary>Voir les animations sourcées (${n})</summary><div style="margin-top:10px">${recoPanelInner(obs,'animation')}</div></details></div>`;
 }
-
 /* --- Panneau 5 : synthèse (grandes lignes, générée depuis l'ensemble de la base) --- */
 function panelSynthese(sp, obs){
-  const txt = SYNTH.species && SYNTH.species[sp.name_fr];
-  if(!txt) return `<div class="section" style="margin-top:0">
-    <p class="section-title">Synthèse</p>
-    <div class="empty">Pas encore de synthèse pour cette espèce — elle sera générée quand la base sera assez dense.</div></div>`;
-  return `<div class="section" style="margin-top:0">
-    <p class="section-title">Synthèse — grandes lignes (${SYNTH.based_on||''})</p>
-    <div class="synth-box">${mdLite(txt)}</div>
-  </div>`;
+  const ts=techSpecies(sp)||{}, where=behaviorBlock(sp,'Où il se poste'), active=behaviorBlock(sp,'Ce qui le met en activité'), eat=behaviorBlock(sp,'Comment il mange'), refuse=behaviorBlock(sp,'Quand il refuse');
+  const role=(ts.lure_roles&&ts.lure_roles[0])||null, p=gearPlanFor(sp.name_fr,null), g=p.code&&gearSetup(p.code), pe=g&&g.setup&&g.setup.line?g.setup.line.size:'—';
+  const ux=speciesUXProfile(sp.name_fr);
+  const whereTxt=ux.where|| (where?shortTech(where.txt):'Repère de poste à consolider avec les observations locales.');
+  const whenTxt=ux.when|| (active?shortTech(active.txt):'Fenêtre locale encore à préciser.');
+  const lureTxt=role?`${role.families} — ${shortTech(role.role,80)}`:'Choix de leurre encore à consolider.';
+  const animTxt=ts.animation?shortTech(ts.animation):eat?shortTech(eat.txt):'Animation à adapter à la couche et au courant.';
+  const colorTxt=ts.color?shortTech(ts.color,150):'Commencer naturel puis ajuster le niveau de visibilité.';
+  const planBTxt=ux.fail|| (refuse?shortTech(refuse.txt,185):'Pas de signal : change d’abord la couche ou le rôle du leurre. Suivi/refus : réduis le signal et ne change qu’une variable.');
+  return `<div class="section" style="margin-top:0"><p class="section-title">Plan de jeu</p><div class="ux-section-lead">Le minimum utile avant le premier lancer.</div><div class="field-grid"><div class="field-card"><div class="field-label">Où</div><div class="field-value">${escHTML(whereTxt)}</div></div><div class="field-card"><div class="field-label">Quand</div><div class="field-value">${escHTML(whenTxt)}</div></div><div class="field-card"><div class="field-label">Combo</div><div class="field-value"><strong>${escHTML(p.code||'—')} · PE${escHTML(pe)}</strong><br>${escHTML(p.note||'')}</div></div><div class="field-card"><div class="field-label">Leurre / rôle</div><div class="field-value">${escHTML(lureTxt)}</div></div><div class="field-card wide"><div class="field-label">Comment</div><div class="field-value">${escHTML(animTxt)}</div></div><div class="field-card wide"><div class="field-label">Couleur de départ</div><div class="field-value">${escHTML(colorTxt)}</div></div></div><div class="field-planb"><div class="field-label">Si ça ne donne rien</div><div class="field-value">${escHTML(planBTxt)}</div></div><div class="field-cta"><div class="txt">Tu as les conditions du moment ? Le QCM transforme ce plan en config plus précise.</div><button onclick="startQCM()">Trouver ma config →</button></div><div id="qcmZone" style="margin-top:10px"></div></div><div class="section"><p class="section-title">Logger la session</p><div id="logZone">${logFormHTML(sp)}</div></div>`;
 }
-
 function factCard(o){
   const tags = Object.entries(o.tags||{}).map(([d,v])=>`<span class="tag">${escHTML(DIM_LABELS[d]||d)}: ${escHTML(Array.isArray(v)?v.join(' · '):v)}</span>`).join('');
   const gf=o.metadata&&o.metadata.gear_filter;
@@ -1494,7 +1441,7 @@ function qcmColorGuideHTML(sp,answers){
     alt='bracketer avec une option plus discrète et une plus visible';
   }
   const baitLine=bait?'Fourrage visible : fais d’abord matcher silhouette/taille, couche et cadence; la nuance exacte vient après. ':'';
-  return `<div class="essence-box" style="margin:10px 0"><strong>Logique couleur V5</strong> <span style="color:var(--text-muted);font-size:10px">(heuristique, séparée des recos sourcées)</span><br>${escHTML(baitLine)}Départ : <strong>${escHTML(start)}</strong>. Alternative : ${escHTML(alt)}.</div>`;
+  return `<div class="essence-box" style="margin:10px 0"><strong>Couleur — point de départ</strong> <span style="color:var(--text-muted);font-size:10px">(aide de décision)</span><br>${escHTML(baitLine)}Départ : <strong>${escHTML(start)}</strong>. Alternative : ${escHTML(alt)}.</div>`;
 }
 
 function renderQCMResults(){

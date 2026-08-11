@@ -1,4 +1,4 @@
-# Carnet Pêche JP — V6 Travel Loadout
+# Carnet Pêche JP — V6.1 Terrain UX
 
 PWA mobile-first de préparation et de décision pour un voyage de pêche du bord au Japon.
 Le dépôt contient l'application GitHub Pages, la base SQLite source de vérité, les données
@@ -13,6 +13,17 @@ exportées et le pipeline Python d'enrichissement.
 - **96 recommandations actives** enrichies par une typologie de leurre après application du plafond 50 g.
 - Deep research conservé dans `research/` pour Fukuoka, Kobe, Ise-Shima, Numazu, plus les
   compléments Shizuoka, Tokyo, Kashima, Madai et Saba.
+
+## V6.1 — interface terrain
+
+- Les fiches espèce commencent par un **pattern opérationnel** (ex. Hirame : `Cassure → fond → pause`) et le combo M/MH associé.
+- Le premier onglet est désormais **Terrain** : `Où / Quand / Combo / Leurre-rôle / Comment / Couleur / Si ça ne donne rien`.
+- Les grands encarts ambre ont été supprimés : l’ambre sert uniquement de **signal**, les cartes restent bleu nuit.
+- Les intitulés de travail (`Essence`, `Règle de lecture`, `Principe`, `Bracketing`) ne sont plus exposés à l’utilisateur.
+- Les animations suivent une lecture constante : **geste → comportement du leurre → but**, avec seulement les mécaniques pertinentes en premier et les autres repliées.
+- Les couleurs deviennent un **diagnostic** : clarté/lumière → activité/refus → bait, puis choix de signal. Rose/magenta et jaune/chartreuse sont comparés par fonction plutôt que comme recettes.
+- Consensus, synthèse longue, observations brutes et désaccords sont déplacés dans **Comprendre** et repliés.
+- Le QCM et le journal terrain restent accessibles depuis le plan de jeu sans allonger tous les onglets.
 
 ## Ce qui change en V6
 
@@ -195,11 +206,11 @@ Le contenu du dossier peut être envoyé directement à la racine du dépôt :
 
 ```bash
 git add .
-git commit -m "Carnet Peche JP V6 Travel Loadout"
+git commit -m "Carnet Peche JP V6.1 Terrain UX"
 git push
 ```
 
-Aucune étape de build n'est nécessaire. Le service worker V6 utilise un nouveau cache afin
+Aucune étape de build n'est nécessaire. Le service worker V6.1 utilise un nouveau cache afin
 de forcer la prise en compte de l'interface après déploiement.
 
 `.gitignore` est optionnel pour le fonctionnement du site : si le sélecteur de fichiers du
