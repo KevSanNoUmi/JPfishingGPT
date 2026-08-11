@@ -334,6 +334,32 @@
             "height_cm": 90
           }
         ]
+      },
+      "2026-11-24": {
+        "station": "Kobe",
+        "station_code": "KB",
+        "source_url": "https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/KB.txt",
+        "proxy_note": null,
+        "high_tides": [
+          {
+            "time": "06:47",
+            "height_cm": 155
+          },
+          {
+            "time": "17:49",
+            "height_cm": 151
+          }
+        ],
+        "low_tides": [
+          {
+            "time": "00:14",
+            "height_cm": 4
+          },
+          {
+            "time": "12:10",
+            "height_cm": 94
+          }
+        ]
       }
     },
     "numazu": {
@@ -493,6 +519,32 @@
       }
     },
     "toba": {
+      "2026-11-26": {
+        "station": "Toba",
+        "station_code": "TB",
+        "source_url": "https://www.data.jma.go.jp/kaiyou/data/db/tide/suisan/txt/2026/TB.txt",
+        "proxy_note": "Référence régionale pour Ise-Shima/Ago Bay; vérifier localement les décalages.",
+        "high_tides": [
+          {
+            "time": "07:19",
+            "height_cm": 211
+          },
+          {
+            "time": "18:14",
+            "height_cm": 201
+          }
+        ],
+        "low_tides": [
+          {
+            "time": "00:29",
+            "height_cm": -19
+          },
+          {
+            "time": "12:47",
+            "height_cm": 98
+          }
+        ]
+      },
       "2026-11-27": {
         "station": "Toba",
         "station_code": "TB",

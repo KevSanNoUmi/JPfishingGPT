@@ -3,13 +3,13 @@
     "source_label": "Trip dates / Kobe 2026",
     "source_type": "trip_context",
     "species": "general",
-    "raw_text": "Séjour pêche du bord prévu à Kobe du 20 au 23 novembre 2026. Priorité aux preuves locales datées des 20-23 novembre, aux zones officiellement ouvertes et aux secteurs Kobe Airport, Azure Maiko, Hiraiso et Suma.",
+    "raw_text": "Séjour pêche du bord prévu à Kobe du 21 au 24 novembre 2026. Priorité aux preuves locales de fin novembre, aux zones officiellement ouvertes et aux secteurs Kobe Airport, Azure Maiko, Hiraiso et Suma.",
     "tags": {
       "trip_dates": [
-        "2026-11-20",
         "2026-11-21",
         "2026-11-22",
-        "2026-11-23"
+        "2026-11-23",
+        "2026-11-24"
       ],
       "region": "Kobe / Kobe Airport / Suma / Tarumi / Azure Maiko / Hiraiso",
       "evidence_type": "USER_CONTEXT",

@@ -79,6 +79,9 @@
   .sun-chip{background:var(--surface); border:1px solid var(--border); border-radius:9px; padding:7px 4px; text-align:center;}
   .sun-chip .lab{font-family:'IBM Plex Mono',monospace; font-size:8.5px; color:var(--text-muted); text-transform:uppercase;}
   .sun-chip .tm{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text); margin-top:2px;}
+  .dest-section{margin-top:22px; padding-top:16px; border-top:1px solid var(--border);}
+  .dest-targets{margin:8px 0 10px;}
+  .dest-targets .lab{font-family:'IBM Plex Mono',monospace; font-size:9px; text-transform:uppercase; color:var(--text-muted); margin-bottom:6px;}
   .dest-summary{display:flex; flex-direction:column; gap:8px; margin-top:7px;}
   .dest-row{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px 11px; line-height:1.5;}
   .dest-row .lab{font-family:'IBM Plex Mono',monospace; font-size:9px; text-transform:uppercase; color:var(--accent); margin-bottom:4px;}
@@ -279,7 +282,7 @@
 
 <script>
 /* ============ MARÉES OFFICIELLES EMBARQUÉES (JMA) ============
-   V5 : plus de constantes harmoniques fictives. L'app lit tides_2026.json,
+   V5.1 : plus de constantes harmoniques fictives. L'app lit tides_2026.json,
    construit l'état montante/descendante entre PM/BM officielles et interpole
    uniquement pour dessiner la courbe. Les valeurs JMA sont des PRÉVISIONS
    astronomiques, pas des niveaux observés en temps réel. */
@@ -826,17 +829,18 @@ function stopDetail(s){
     const winHTML=wins.length?wins.slice(0,4).map(w=>`<div class="ideal-win"><span class="ideal-badge ${w.light==='aube'?'is-dawn':'is-dusk'}">${w.light}</span><span class="ideal-tide">${w.tide}</span><span class="ideal-time">${fmtJST(w.from)}–${fmtJST(w.to)}</span></div>`).join(''):`<div class="tide-next">Pas de fenêtre faible lumière × phase active calculable ce jour.</div>`;
     const sourceHTML=src?`<div class="tide-source"><strong>JMA embarqué</strong> · ${escHTML(src.station)}${src.code?' ('+escHTML(src.code)+')':''}. Courbe interpolée entre extrema officiels; le score est un outil de comparaison, pas une prédiction de touche.${src.proxy?`<br>⚠ ${escHTML(src.proxy)}`:''}</div>`:`<div class="tide-warning">Aucune table JMA embarquée pour cette date.</div>`;
     tideBlock=`<div class="k">Prévisions marée — jours du séjour</div>
-      ${days.length>1?`<div class="tide-days">${dayButtons}</div><div class="tide-nav"><button ${idx===0?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx-1})">← Préc.</button><span class="tide-next">${escHTML(fullDayLabel(key))}</span><button ${idx===days.length-1?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx+1})">Suiv. →</button></div>`:`<div class="tide-next" style="margin:6px 0">${escHTML(fullDayLabel(key))}</div>`}
+      <div class="tide-next" style="margin:5px 0 2px">${escHTML(fullDayLabel(key))}</div>
+      ${tideCurveSVG(s.port,refDate,effectiveSpecies)}
+      ${days.length>1?`<div class="tide-days">${dayButtons}</div><div class="tide-nav"><button ${idx===0?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx-1})">← Préc.</button><span class="tide-next">Jour ${idx+1}/${days.length}</span><button ${idx===days.length-1?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx+1})">Suiv. →</button></div>`:''}
       <div class="tide-scorebox"><div class="tide-scorebig">${score.score??'—'}</div><div class="tide-scoretxt"><strong style="color:var(--text)">Score marée/lumière : ${escHTML(score.label)}</strong><br>${escHTML(score.reason)}<br><span style="font-size:10px">Compare uniquement les jours du séjour; mouvement de phase ≠ courant réel du spot.</span></div></div>
       <div class="tide-now"><span class="tide-next">${ext.length?ext.map(e=>`${e.type} ${fmtJST(e.time)} · ${Math.round(e.height_cm)} cm`).join(' · '):'—'}</span></div>
       <div class="sun-strip"><div class="sun-chip"><div class="lab">1res lueurs</div><div class="tm">${sun.civilDawn?fmtJST(sun.civilDawn):'—'}</div></div><div class="sun-chip"><div class="lab">Lever</div><div class="tm">${sun.sunrise?fmtJST(sun.sunrise):'—'}</div></div><div class="sun-chip"><div class="lab">Coucher</div><div class="tm">${sun.sunset?fmtJST(sun.sunset):'—'}</div></div><div class="sun-chip"><div class="lab">Fin lueurs</div><div class="tm">${sun.civilDusk?fmtJST(sun.civilDusk):'—'}</div></div></div>
-      <div class="k" style="margin-top:10px">Courbe du jour</div>${tideCurveSVG(s.port,refDate,effectiveSpecies)}
       <div class="k" style="margin-top:10px">Fenêtres faibles lumières × marée active</div>${winHTML}${sourceHTML}
       <button class="session-btn" onclick="event.stopPropagation();setActivePort('${escAttr(s.port)}');renderHome()">Pêcher ici — activer ce port</button>`;
   }
-  const summaryBlock=`<div class="k" style="margin-top:13px">Lecture destination</div>${destinationSummaryHTML(s)}`;
+  const summaryBlock=`<div class="dest-section"><div class="k">Lecture destination</div><div class="dest-targets"><div class="lab">Espèces ciblées</div><div class="chips">${chips||'—'}</div></div>${destinationSummaryHTML(s)}</div>`;
   const details=(s.intel&&s.intel.length)?`<details class="intel-details"><summary>Voir quelques preuves / contraintes (${s.intel.length} éléments en base)</summary>${intelBlock(s,5)}</details>`:'';
-  return `<div class="pad-detail" onclick="event.stopPropagation()"><div class="k">Espèces ciblées</div><div class="chips">${chips||'—'}</div>${summaryBlock}${tideBlock}${details}</div>`;
+  return `<div class="pad-detail" onclick="event.stopPropagation()">${tideBlock}${summaryBlock}${details}</div>`;
 }
 
 function toggleStop(id){ openStopId = (openStopId===id) ? null : id; renderHome(); }

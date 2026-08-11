@@ -23,7 +23,7 @@ jour du séjour** et permet de naviguer avec **Préc. / Suiv.** uniquement dans 
 avec un maximum de quatre jours affichés.
 
 Pour Fukuoka, Kobe et Numazu, les plages suivent directement les dates des deep research :
-15–18 novembre, 20–23 novembre et 29 novembre–2 décembre. Tokyo couvre 2–5 décembre.
+15–18 novembre, 21–24 novembre et 29 novembre–1er décembre. Ise-Shima couvre 26–28 novembre et Tokyo 2–5 décembre.
 
 Chaque jour affiche :
 
@@ -183,7 +183,7 @@ Le contenu du dossier peut être envoyé directement à la racine du dépôt :
 
 ```bash
 git add .
-git commit -m "Carnet Peche JP V5"
+git commit -m "Carnet Peche JP V5.1"
 git push
 ```
 
