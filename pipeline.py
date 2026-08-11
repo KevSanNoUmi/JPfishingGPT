@@ -30,6 +30,7 @@ from datetime import datetime, timezone, timedelta
 DB_PATH = os.path.join(os.path.dirname(__file__), "peche_jp.db")
 SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "schema.sql")
 LURE_TYPO_PATH = os.path.join(os.path.dirname(__file__), "lure_typology.json")
+MAX_LURE_WEIGHT_G = 50.0  # plafond utilisateur : aucune recommandation > 50 g
 TIDES_PATH = os.path.join(os.path.dirname(__file__), "tides_2026.json")
 
 SEARCH_DIMS = {
@@ -135,6 +136,7 @@ def migrate_db(conn):
     _ensure_column(conn, "trip_stops", "arrival_date TEXT")
     _ensure_column(conn, "trip_stops", "stay_dates_json TEXT")
     _ensure_column(conn, "trip_stops", "summary_json TEXT")
+    _ensure_column(conn, "combos", "setup_json TEXT")
     conn.executescript("""
         CREATE UNIQUE INDEX IF NOT EXISTS idx_observation_fingerprint
           ON observations(fingerprint) WHERE fingerprint IS NOT NULL;
@@ -450,22 +452,28 @@ def import_log(filepath):
             continue
         result = sess.get("result", "rien")
         lure = (sess.get("lure") or "").strip()
+        cast_weight = sess.get("cast_weight_g")
+        try: cast_weight = float(cast_weight) if cast_weight not in (None, "") else None
+        except (TypeError, ValueError): cast_weight = None
         conds = dict(sess.get("conditions") or {})
         # observation peut être un array : iter_search_tags l'explose proprement.
         date_txt = sess.get("date", "?")
+        combo = (sess.get("combo") or "").strip() or None
+        gear_txt = f" · combo {combo}" if combo else ""
+        weight_txt = f" · {cast_weight:g} g total" if cast_weight is not None else ""
         if result == "rien":
-            txt = f"Session sans touche ({date_txt}) au {lure} — conditions notées, à recouper"
+            txt = f"Session sans touche ({date_txt}) au {lure}{weight_txt}{gear_txt} — conditions notées, à recouper"
         else:
-            txt = f"Prise confirmée ({result}, {date_txt}) au {lure}"
+            txt = f"Prise confirmée ({result}, {date_txt}) au {lure}{weight_txt}{gear_txt}"
             if sess.get("notes"):
                 txt += f" — {sess['notes']}"
-        fp = make_fingerprint("pwa", species_id, date_txt, lure, result, sess.get("notes"), json.dumps(conds, ensure_ascii=False, sort_keys=True))
+        fp = make_fingerprint("pwa", species_id, date_txt, lure, cast_weight, combo, result, sess.get("notes"), json.dumps(conds, ensure_ascii=False, sort_keys=True))
         if conn.execute("SELECT id FROM observations WHERE fingerprint=?", (fp,)).fetchone():
             print(f"  [DOUBLON] {date_txt} {sp_key} {lure}")
             continue
         obs = {
             "raw_text": txt,
-            "recommended_lure": lure if result != "rien" else None,
+            "recommended_lure": lure if result != "rien" and (cast_weight is None or cast_weight <= MAX_LURE_WEIGHT_G) else None,
             "tags": conds,
             "metadata": {"pwa_session": sess},
             "evidence_level": 4,
@@ -759,7 +767,9 @@ def bootstrap_json(filepath, force=False):
             except ValueError: continue
             conn.execute("INSERT OR IGNORE INTO observation_tags (observation_id,tag_id) VALUES (?,?)",(o["id"],tag_id))
     for c in data.get("combos", []):
-        conn.execute("INSERT OR REPLACE INTO combos (id,name,description) VALUES (?,?,?)",(c["id"],c["name"],c.get("description")))
+        conn.execute("INSERT OR REPLACE INTO combos (id,name,description,setup_json) VALUES (?,?,?,?)",
+                     (c["id"],c["name"],c.get("description"),
+                      json.dumps(c.get("setup"),ensure_ascii=False) if c.get("setup") else None))
     for l in data.get("lures", []):
         conn.execute("INSERT OR REPLACE INTO lures (id,species_id,name,type,rank) VALUES (?,?,?,?,?)",(l["id"],l["species_id"],l["name"],l.get("type"),l.get("rank",99)))
         for combo_name in l.get("combos",[]):
@@ -914,6 +924,26 @@ def validate(obs_id):
     print(f"Observation {obs_id} validée.")
 
 
+def _recommendation_weight_g(reco, typology=None):
+    """Poids lancé connu. Priorité à la typologie vérifiée, sinon poids explicite dans le nom de leurre."""
+    tp = typology or (reco or {}).get("typology") or {}
+    w = tp.get("poids") if isinstance(tp, dict) else None
+    if isinstance(w, (int, float)):
+        return float(w)
+    lure = str((reco or {}).get("lure") or "")
+    import re
+    m = re.search(r"(?<!\d)(\d+(?:[.,]\d+)?)\s*g\b", lure, flags=re.I)
+    if m:
+        try: return float(m.group(1).replace(",", "."))
+        except ValueError: return None
+    return None
+
+
+def _recommendation_allowed(reco, typology=None):
+    w = _recommendation_weight_g(reco, typology)
+    return w is None or w <= MAX_LURE_WEIGHT_G
+
+
 def export_json():
     conn = get_conn(); migrate_db(conn)
     conn.row_factory = sqlite3.Row
@@ -949,15 +979,35 @@ def export_json():
                 try: tp=json.loads(o["typology_json"])
                 except json.JSONDecodeError: tp=None
             if not tp: tp=_match_typology(reco.get("lure"),typology)
-            if tp: reco["typology"]=tp
-            entry["recommendation"]=reco
+            weight_g=_recommendation_weight_g(reco,tp)
+            # Une session terrain peut connaître le poids total lancé même si le nom du leurre ne l'encode pas.
+            if weight_g is None:
+                sess=((entry.get("metadata") or {}).get("pwa_session") or {})
+                try:
+                    sw=sess.get("cast_weight_g")
+                    weight_g=float(sw) if sw not in (None, "") else None
+                except (TypeError, ValueError):
+                    weight_g=None
+            if weight_g is None or weight_g <= MAX_LURE_WEIGHT_G:
+                if tp: reco["typology"]=tp
+                if weight_g is not None: reco["cast_weight_g"]=weight_g
+                entry["recommendation"]=reco
+            else:
+                # On garde le fait biologique/terrain mais le leurre >50 g ne nourrit plus le moteur décisionnel.
+                entry.setdefault("metadata",{})["gear_filter"]={"excluded_recommendation":True,"reason":"lure_over_50g","cast_weight_g":weight_g}
         obs_out.append(entry)
 
     lures_out=[]
     for l in conn.execute("SELECT * FROM lures ORDER BY species_id,rank"):
         combo_names=[r["name"] for r in conn.execute("SELECT c.name FROM lure_combo lc JOIN combos c ON c.id=lc.combo_id WHERE lc.lure_id=?",(l["id"],))]
         lures_out.append({"id":l["id"],"species_id":l["species_id"],"name":l["name"],"type":l["type"],"rank":l["rank"],"combos":combo_names})
-    combos_out=[dict(c) for c in conn.execute("SELECT * FROM combos")]
+    combos_out=[]
+    for c in conn.execute("SELECT * FROM combos ORDER BY id"):
+        item={"id":c["id"],"name":c["name"],"description":c["description"]}
+        if c["setup_json"]:
+            try: item["setup"]=json.loads(c["setup_json"])
+            except json.JSONDecodeError: pass
+        combos_out.append(item)
     briefs={b["stop_id"]:b["text"] for b in conn.execute("SELECT * FROM trip_briefs")}
     stops_out=[]
     for st in conn.execute("SELECT * FROM trip_stops ORDER BY id"):
@@ -981,7 +1031,9 @@ def export_json():
                           "summary":summary,
                           "target_species":[x.strip() for x in (st["target_species"] or "").split(",") if x.strip()],
                           "brief":briefs.get(st["id"]),"intel":intel})
-    result={"schema_version":5,"updated":datetime.now(JST).date().isoformat(),"species":species_out,"observations":obs_out,
+    result={"schema_version":6,"updated":datetime.now(JST).date().isoformat(),
+            "gear_policy":{"max_lure_weight_g":MAX_LURE_WEIGHT_G,"rule":"Poids total lancé >50 g exclu des recommandations; 46–50 g = MH haute charge utilisateur."},
+            "species":species_out,"observations":obs_out,
             "lures":lures_out,"combos":combos_out,"trip_stops":stops_out}
     out_path=os.path.join(os.path.dirname(__file__),"data.json")
     with open(out_path,"w",encoding="utf-8") as f: json.dump(result,f,ensure_ascii=False,indent=2)

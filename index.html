@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Carnet Pêche JP</title>
+<title>Carnet Pêche JP · V6 Travel Loadout</title>
 <meta name="theme-color" content="#0F1720">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -213,6 +213,37 @@
   .lure-name{font-size:13.5px; font-weight:500;}
   .lure-type{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--text-muted);}
   .lure-rank{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--accent); background:rgba(232,163,61,0.14); border-radius:999px; padding:2px 8px;}
+
+  /* V6 — Travel Loadout */
+  .loadout-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-end;margin-bottom:10px;}
+  .loadout-rule{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--flag);text-align:right;}
+  .loadout-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .loadout-card{background:linear-gradient(180deg,var(--surface),rgba(23,34,51,.72));border:1px solid var(--border);border-radius:15px;padding:13px;cursor:pointer;}
+  .loadout-card.open{border-color:var(--accent);background:var(--surface-2);}
+  .loadout-code{font-family:'Fraunces',serif;font-weight:700;font-size:22px;color:var(--accent);line-height:1;}
+  .loadout-role{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.06em;color:var(--text-muted);margin:4px 0 9px;}
+  .loadout-rod{font-size:12.5px;font-weight:600;line-height:1.35;}
+  .loadout-reel{font-size:11.5px;color:var(--text-muted);line-height:1.4;margin-top:3px;}
+  .loadout-spec{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;}
+  .gear-pill{font-family:'IBM Plex Mono',monospace;font-size:9.5px;border:1px solid var(--border);border-radius:999px;padding:3px 7px;background:var(--surface-2);color:var(--text-muted);}
+  .gear-pill.primary{border-color:var(--accent);color:var(--accent);background:rgba(232,163,61,.10);}
+  .gear-pill.ok{border-color:rgba(95,168,122,.55);color:var(--ok);}
+  .gear-pill.high{border-color:rgba(196,105,79,.65);color:#d69a89;background:rgba(196,105,79,.08);}
+  .gear-pill.off{border-color:rgba(196,105,79,.45);color:var(--flag);text-decoration:line-through;}
+  .gear-detail{grid-column:1/-1;background:var(--surface-2);border:1px solid var(--accent);border-radius:12px;padding:13px 14px;}
+  .gear-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:9px 0;}
+  .gear-mini{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:9px;}
+  .gear-mini .lab{font-family:'IBM Plex Mono',monospace;font-size:8.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;}
+  .gear-mini .val{font-size:12px;line-height:1.35;}
+  .species-loadout{display:flex;gap:9px;align-items:center;background:rgba(232,163,61,.07);border:1px solid var(--border);border-radius:12px;padding:10px 11px;margin:0 0 14px;}
+  .species-loadout .big{font-family:'Fraunces',serif;font-size:21px;color:var(--accent);font-weight:700;min-width:30px;}
+  .species-loadout .txt{font-size:12px;line-height:1.45;}
+  .species-loadout .sub{font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--text-muted);margin-top:2px;}
+  .gear-reco{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 8px;}
+  .gear-reco strong{font-family:'Fraunces',serif;font-size:14px;color:var(--text);}
+  .dest-gear{margin-top:12px;padding-top:10px;border-top:1px solid var(--border);}
+  .dest-gear-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:5px;}
+  @media(max-width:390px){.loadout-grid{grid-template-columns:1fr}.gear-detail-grid{grid-template-columns:1fr}}
 
   .consensus-pair{background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px; margin-bottom:10px;}
   .consensus-pair.is-consensus{border-color:var(--ok);}
@@ -587,7 +618,7 @@ function momentLegend(speciesList){
 }
 
 /* ============ ÉTAT GLOBAL ============ */
-let DATA = {species:[], observations:[], lures:[], combos:[], trip_stops:[]};
+let DATA = {species:[], observations:[], lures:[], combos:[], trip_stops:[], gear_policy:{max_lure_weight_g:50}};
 let SYNTH = {species:{}, transversals:null};
 let LURETYPO = {};
 let LOAD_WARNINGS = [];
@@ -656,6 +687,59 @@ function hydrateTypologies(){
     if(!o.recommendation.typology && o.recommendation.lure){ const t=findTypology(o.recommendation.lure); if(t) o.recommendation.typology=t; }
   }
 }
+
+const SPECIES_GEAR = {
+  'Hirame':   {primary:'MH',secondary:'M', note:'MH par défaut; M sur 8–30 g quand mer calme, faible profondeur ou besoin de finesse.'},
+  'Hamachi':  {primary:'MH', note:'MH dédiée. Priorité distance, courant et contrôle 20–50 g.'},
+  'Suzuki':   {primary:'M',secondary:'MH', note:'M pour dérive/contrôle; MH si >30 g, gros courant, sarashi ou réserve nécessaire.'},
+  'Kurodai':  {primary:'M', note:'M pour précision, surface et contrôle de bannière.'},
+  'Aori-Ika': {primary:'M', note:'M compatible voyage; non spécialisée eging, priorité au contrôle de chute.'},
+  'Madai':    {primary:'MH', note:'MH pour les approches shore compatibles ≤50 g.'},
+  'Tachiuo':  {primary:'M',secondary:'MH', note:'M jusqu’à 30 g; MH au-delà ou si courant/tenue l’exigent.'},
+  'Saba':     {primary:'M', note:'M par défaut.'},
+  'Aji':      {primary:'M', note:'M opportuniste seulement : beaucoup d’ajing est sous 8 g.'},
+  'Mebaru':   {primary:'M', note:'M opportuniste seulement : beaucoup de mebaring est sous 8 g.'}
+};
+function maxLureWeight(){ return Number(DATA.gear_policy&&DATA.gear_policy.max_lure_weight_g)||50; }
+function gearSetup(code){ return (DATA.combos||[]).find(c=>c.setup&&c.setup.code===code) || null; }
+function recommendationWeight(o){
+  const r=o&&o.recommendation||{};
+  const tp=r.typology||{};
+  const w=Number(r.cast_weight_g??tp.poids);
+  if(Number.isFinite(w)&&w>0) return w;
+  const m=String(r.lure||'').match(/(?<!\d)(\d+(?:[.,]\d+)?)\s*g\b/i);
+  return m?Number(m[1].replace(',','.')):null;
+}
+function recommendationAllowed(o){ const w=recommendationWeight(o); return w===null || w<=maxLureWeight(); }
+function technicalObservations(obs){ return (obs||[]).filter(o=>o.recommendation && recommendationAllowed(o)); }
+function gearPlanFor(speciesName,weight=null){
+  if(weight!==null && weight>maxLureWeight()) return {code:null,status:'off',label:'HORS SETUP',note:`${weight} g > plafond ${maxLureWeight()} g`};
+  if(weight!==null && weight<8) return {code:null,status:'off',label:'SOUS PLAGE',note:`${weight} g : sous les 8 g de la M`};
+  if(weight!==null && weight>45) return {code:'MH',status:'high',label:'MH · HAUTE CHARGE',note:`${weight} g · plafond utilisateur 50 g`};
+  if(weight!==null && weight>30) return {code:'MH',status:'ok',label:'MH · IDÉAL',note:`${weight} g · domaine MH`};
+  const p=SPECIES_GEAR[speciesName]||{primary:'M',note:'Choix par défaut à confirmer selon poids et conditions.'};
+  return {code:p.primary,secondary:p.secondary||null,status:'ok',label:`${p.primary} · DÉPART`,note:p.note};
+}
+function gearBadgeHTML(sp,o){
+  const w=recommendationWeight(o), p=gearPlanFor(sp.name_fr,w), g=p.code&&gearSetup(p.code);
+  if(!p.code) return `<div class="gear-reco"><span class="gear-pill ${p.status}">${escHTML(p.label)}</span><span class="gear-pill off">${escHTML(p.note)}</span></div>`;
+  const pe=g&&g.setup&&g.setup.line?`PE${g.setup.line.size}`:'';
+  const wtxt=w!==null?`${w} g`:'poids à vérifier';
+  return `<div class="gear-reco"><strong>${escHTML(p.code)}</strong><span class="gear-pill ${p.status}">${escHTML(p.label.replace(p.code+' · ',''))}</span>${pe?`<span class="gear-pill">${escHTML(pe)}</span>`:''}<span class="gear-pill">${escHTML(wtxt)}</span></div>`;
+}
+function speciesLoadoutHTML(sp){
+  const p=gearPlanFor(sp.name_fr,null), g=gearSetup(p.code), sec=p.secondary&&gearSetup(p.secondary);
+  if(!g) return '';
+  const setup=g.setup||{};
+  const range=`${setup.rod?.lure_min_g??'—'}–${setup.rod?.lure_max_nominal_g??'—'} g`;
+  return `<div class="species-loadout"><div class="big">${escHTML(p.code)}</div><div class="txt"><strong>${escHTML(setup.role||g.description||'Combo voyage')}</strong> — ${escHTML(setup.rod?.model||'')} + ${escHTML(setup.reel?.model||'')} · PE${escHTML(setup.line?.size||'—')} · ${escHTML(range)}${p.code==='MH'?' nominal / 50 g plafond':''}<div class="sub">${escHTML(p.note)}${sec?` · Alternative : ${escHTML(p.secondary)}`:''}</div></div></div>`;
+}
+function destinationGearHTML(s){
+  const groups={M:[],MH:[]};
+  for(const name of (s.target_species||[])){ const p=gearPlanFor(name,null); if(p.code&&groups[p.code]) groups[p.code].push(name); }
+  if(!groups.M.length&&!groups.MH.length) return '';
+  return `<div class="dest-gear"><div class="lab">Loadout probable</div><div class="dest-gear-row">${groups.M.length?`<span class="gear-pill primary">M · ${escHTML(groups.M.join(' / '))}</span>`:''}${groups.MH.length?`<span class="gear-pill primary">MH · ${escHTML(groups.MH.join(' / '))}</span>`:''}<span class="gear-pill high">50 g max</span></div></div>`;
+}
 async function fetchJSONRequired(url){
   const r=await fetch(url,{cache:'no-store'}); if(!r.ok) throw new Error(`${url} : HTTP ${r.status}`); return r.json();
 }
@@ -699,7 +783,7 @@ function renderHome(){
   document.getElementById('headerZone').innerHTML = `
     <p class="eyebrow">Base de connaissance</p>
     <h1>Carnet Pêche JP</h1>
-    <p class="sub">${ap && PORTS[ap] ? 'Port actif : '+PORTS[ap].label+' — '+(tideState(ap,new Date()) ? 'marée '+tideState(ap,new Date()) : 'table officielle hors période embarquée') : 'Espèces · marées · leurres · terrain'}</p>
+    <p class="sub">${ap && PORTS[ap] ? 'Port actif : '+PORTS[ap].label+' — '+(tideState(ap,new Date()) ? 'marée '+tideState(ap,new Date()) : 'table officielle hors période embarquée') : 'Marées · loadout · leurres ≤50 g · terrain'}</p>
   `;
 
   const stopsGrid = DATA.trip_stops.map(s => `
@@ -723,13 +807,7 @@ function renderHome(){
     </div>`;
   }).join('');
 
-  const combosGrid = DATA.combos.map(c => `
-    <div class="pad ${openComboName===c.name?'open':''}" onclick="toggleCombo('${c.name}')">
-      <div class="pad-title">${c.name}</div>
-      <div class="pad-sub">${c.description||''}</div>
-    </div>
-    ${openComboName === c.name ? comboDetail(c) : ''}
-  `).join('');
+  const combosGrid = DATA.combos.map(c => comboHomeCard(c)).join('');
 
   const nSessions = getSessions().length;
 
@@ -739,12 +817,12 @@ function renderHome(){
       ${DATA.trip_stops.length ? `<div class="pad-grid">${stopsGrid}</div>` : `<div class="empty">Aucune étape.</div>`}
     </div>
     <div class="home-section">
-      <p class="home-section-title">Espèces documentées</p>
-      ${speciesGrid ? `<div class="species-grid">${speciesGrid}</div>` : `<div class="empty">Aucune espèce documentée pour l'instant.</div>`}
+      <div class="loadout-head"><p class="home-section-title" style="margin:0">Ma valise — 2 combos</p><div class="loadout-rule">PLAFOND PROJET · 50 G MAX</div></div>
+      ${DATA.combos.length ? `<div class="loadout-grid">${combosGrid}</div>` : `<div class="empty">Aucun combo.</div>`}
     </div>
     <div class="home-section">
-      <p class="home-section-title">Combos</p>
-      ${DATA.combos.length ? `<div class="pad-grid">${combosGrid}</div>` : `<div class="empty">Aucun combo.</div>`}
+      <p class="home-section-title">Espèces documentées</p>
+      ${speciesGrid ? `<div class="species-grid">${speciesGrid}</div>` : `<div class="empty">Aucune espèce documentée pour l'instant.</div>`}
     </div>
     ${SYNTH.transversals ? `<div class="home-section">
       <p class="home-section-title">Grandes lignes</p>
@@ -838,22 +916,25 @@ function stopDetail(s){
       <div class="k" style="margin-top:10px">Fenêtres faibles lumières × marée active</div>${winHTML}${sourceHTML}
       <button class="session-btn" onclick="event.stopPropagation();setActivePort('${escAttr(s.port)}');renderHome()">Pêcher ici — activer ce port</button>`;
   }
-  const summaryBlock=`<div class="dest-section"><div class="k">Lecture destination</div><div class="dest-targets"><div class="lab">Espèces ciblées</div><div class="chips">${chips||'—'}</div></div>${destinationSummaryHTML(s)}</div>`;
+  const summaryBlock=`<div class="dest-section"><div class="k">Lecture destination</div><div class="dest-targets"><div class="lab">Espèces ciblées</div><div class="chips">${chips||'—'}</div></div>${destinationSummaryHTML(s)}${destinationGearHTML(s)}</div>`;
   const details=(s.intel&&s.intel.length)?`<details class="intel-details"><summary>Voir quelques preuves / contraintes (${s.intel.length} éléments en base)</summary>${intelBlock(s,5)}</details>`:'';
   return `<div class="pad-detail" onclick="event.stopPropagation()">${tideBlock}${summaryBlock}${details}</div>`;
 }
 
 function toggleStop(id){ openStopId = (openStopId===id) ? null : id; renderHome(); }
 
+function comboHomeCard(c){
+  const x=c.setup||{}, code=x.code||c.name, rod=x.rod||{}, reel=x.reel||{}, line=x.line||{};
+  const max = code==='MH' ? `${rod.lure_min_g||12}–${rod.lure_max_nominal_g||45} g · 46–50 haute charge` : `${rod.lure_min_g||8}–${rod.lure_max_nominal_g||30} g`;
+  return `<div class="loadout-card ${openComboName===c.name?'open':''}" onclick="toggleCombo('${escAttr(c.name)}')"><div class="loadout-code">${escHTML(code)}</div><div class="loadout-role">${escHTML(x.role||c.description||'')}</div><div class="loadout-rod">${escHTML(rod.model||c.name)}</div><div class="loadout-reel">${escHTML(reel.model||'')} · PE${escHTML(line.size||'—')}</div><div class="loadout-spec"><span class="gear-pill primary">${escHTML(max)}</span></div></div>${openComboName===c.name?comboDetail(c):''}`;
+}
+
 function comboDetail(c){
-  const lures = DATA.lures.filter(l=>l.combos.includes(c.name));
-  const bySpecies = {};
-  lures.forEach(l=>{ (bySpecies[l.species_id] = bySpecies[l.species_id]||[]).push(l); });
-  const blocks = Object.entries(bySpecies).map(([spId, ls])=>{
-    const sp = DATA.species.find(s=>s.id==spId);
-    return `<div class="k">${sp?sp.name_fr:'Espèce'}</div><div class="chips">${ls.map(l=>`<span class="chip">${l.name}</span>`).join('')}</div>`;
-  }).join('');
-  return `<div class="pad-detail" onclick="event.stopPropagation()">${blocks || '<div class="k">Aucun leurre rattaché</div>'}</div>`;
+  const x=c.setup||{}, rod=x.rod||{}, reel=x.reel||{}, line=x.line||{};
+  const species=(x.primary_species||[]).map(n=>`<span class="gear-pill primary">${escHTML(n)}</span>`).join('');
+  const secondary=(x.secondary_species||[]).map(n=>`<span class="gear-pill ok">${escHTML(n)}</span>`).join('');
+  const opp=(x.opportunistic_species||[]).map(n=>`<span class="gear-pill">${escHTML(n)} · opportuniste</span>`).join('');
+  return `<div class="gear-detail" onclick="event.stopPropagation()"><div class="gear-detail-grid"><div class="gear-mini"><div class="lab">Canne</div><div class="val"><strong>${escHTML(rod.model||'—')}</strong><br>${escHTML(rod.length_cm||'—')} cm · ${escHTML(rod.sections||'—')} brins · ${escHTML(rod.lure_min_g||'—')}–${escHTML(rod.lure_max_nominal_g||'—')} g officiel</div></div><div class="gear-mini"><div class="lab">Moulinet / ligne</div><div class="val"><strong>${escHTML(reel.model||'—')}</strong><br>PE ${escHTML(line.size||'—')}</div></div></div><div class="k">Espèces principales</div><div class="loadout-spec">${species||'—'}</div>${secondary?`<div class="k">Selon situation</div><div class="loadout-spec">${secondary}</div>`:''}${opp?`<div class="k">Opportuniste / limite basse</div><div class="loadout-spec">${opp}</div>`:''}<div class="essence-box" style="margin-top:10px;margin-bottom:0">${escHTML(x.decision_note||'')}</div></div>`;
 }
 
 function toggleCombo(name){ openComboName = (openComboName===name) ? null : name; renderHome(); }
@@ -890,6 +971,7 @@ function renderSpeciesPage(){
   const panels = [panelSynthese, panelLeurres, panelCouleur, panelAnimation, panelComportement];
 
   document.getElementById('mainZone').innerHTML = `
+    ${speciesLoadoutHTML(sp)}
     ${dotNav}
     <div id="tabPanel">${panels[speciesTab](sp, obs)}</div>
 
@@ -1019,7 +1101,7 @@ function colorLogicHTML(sp){
 /* --- Panneau 2 : types de leurre + rôle technique --- */
 function panelLeurres(sp, obs){
   // Agrégation par famille → densité → longueurs, depuis les observations enrichies (typologie vérifiée fabricant)
-  const withTypo = obs.filter(o=>o.recommendation && o.recommendation.typology);
+  const withTypo = technicalObservations(obs).filter(o=>o.recommendation.typology);
   const fams = {};
   withTypo.forEach(o=>{
     const tp = o.recommendation.typology;
@@ -1078,11 +1160,13 @@ function typoBadge(o){
 }
 
 function recoPanelInner(obs, field){
-  const entries = obs.filter(o=>o.recommendation && o.recommendation[field]);
+  const entries = technicalObservations(obs).filter(o=>o.recommendation[field]);
   if(!entries.length) return `<div class="empty">Aucune recommandation sourcée pour l'instant.<br>Elles apparaîtront dès qu'une extraction ou une session terrain en fournit.</div>`;
   return entries.map(o=>{
     const conds = COND_DIMS.filter(d=>o.tags[d]).map(d=>`<span class="tag">${DIM_LABELS[d]}: ${escHTML(o.tags[d])}</span>`).join('');
+    const sp=DATA.species.find(x=>x.id===o.species_id);
     return `<div class="fact-card">
+      ${sp?gearBadgeHTML(sp,o):''}
       <strong style="color:var(--accent)">${escHTML(o.recommendation[field])}</strong>
       ${o.recommendation.lure ? `<span style="color:var(--text-muted); font-size:12.5px"> — sur ${escHTML(o.recommendation.lure)}</span>` : ''}
       ${field==='animation' ? typoBadge(o) : ''}
@@ -1092,7 +1176,7 @@ function recoPanelInner(obs, field){
 }
 
 function panelCouleur(sp, obs){
-  const n = obs.filter(o=>o.recommendation && o.recommendation.color).length;
+  const n = technicalObservations(obs).filter(o=>o.recommendation.color).length;
   return `<div class="section" style="margin-top:0">
     <p class="section-title">Logique couleur — décider, pas réciter</p>
     <p class="fam-note">Visibilité utile → lumière → activité → fourrage. La couleur vient après la silhouette, la taille et la présentation.</p>
@@ -1107,7 +1191,7 @@ function panelCouleur(sp, obs){
 }
 
 function panelAnimation(sp, obs){
-  const n = obs.filter(o=>o.recommendation && o.recommendation.animation).length;
+  const n = technicalObservations(obs).filter(o=>o.recommendation.animation).length;
   return `<div class="section" style="margin-top:0">
     <p class="section-title">Grammaire d'animation — geste → leurre → effet</p>
     <p class="fam-note">Un mot doit dire qui crée le mouvement : moulinet, canne, ligne/courant ou gravité. Roll, wobble, dart et shimmy décrivent le comportement du leurre, pas forcément ton geste.</p>
@@ -1134,9 +1218,11 @@ function panelSynthese(sp, obs){
 }
 
 function factCard(o){
-  const tags = Object.entries(o.tags||{}).map(([d,v])=>`<span class="tag">${DIM_LABELS[d]||d}: ${v}</span>`).join('');
-  return `<div class="fact-card">${o.text}
-    <div class="fact-meta">${tags}<span class="conf-mini ${confClass(o.confidence)}">${o.confidence.toFixed(2)} · ${o.source}</span></div>
+  const tags = Object.entries(o.tags||{}).map(([d,v])=>`<span class="tag">${escHTML(DIM_LABELS[d]||d)}: ${escHTML(Array.isArray(v)?v.join(' · '):v)}</span>`).join('');
+  const gf=o.metadata&&o.metadata.gear_filter;
+  const off=gf&&gf.excluded_recommendation ? `<div class="gear-reco"><span class="gear-pill off">LEURRE HORS SETUP</span><span class="gear-pill">${escHTML(gf.cast_weight_g||'>50')} g · fait comportemental conservé</span></div>` : '';
+  return `<div class="fact-card">${off}${escHTML(o.text)}
+    <div class="fact-meta">${tags}<span class="conf-mini ${confClass(o.confidence)}">${Number(o.confidence).toFixed(2)} · ${escHTML(o.source)}</span></div>
   </div>`;
 }
 
@@ -1231,7 +1317,7 @@ function actionCategory(o){
 }
 
 function findConsensusPairs(obs){
-  const recos = obs.filter(o=>o.recommendation && o.recommendation.lure);
+  const recos = technicalObservations(obs).filter(o=>o.recommendation.lure);
   const pairs = [];
   for(let i=0;i<recos.length;i++){
     for(let j=i+1;j<recos.length;j++){
@@ -1412,7 +1498,7 @@ function qcmColorGuideHTML(sp,answers){
 }
 
 function renderQCMResults(){
-  const obs = speciesObservations(currentSpeciesId).filter(o=>o.recommendation);
+  const obs = technicalObservations(speciesObservations(currentSpeciesId));
   const answers = qcmState.answers;
   const obsSel = answers.observation || [];
   const scored = obs.map(o=>{
@@ -1442,6 +1528,7 @@ function renderQCMResults(){
     ${qcmColorGuideHTML(DATA.species.find(s=>s.id===currentSpeciesId),answers)}
     ${scored.map(({o,matchedDims,matchedObs})=>`
       <div class="reco-card">
+        ${gearBadgeHTML(DATA.species.find(s=>s.id===currentSpeciesId),o)}
         <div class="reco-lure">${escHTML(o.recommendation.lure||'Config')}</div>
         ${typoBadge(o)}
         <div class="match-chips">
@@ -1464,7 +1551,11 @@ function logFormHTML(sp){
     : 'Fais le QCM d\u2019abord pour capturer les conditions automatiquement (sinon la session part sans conditions).';
   return `<div class="log-form">
     <label>Leurre utilisé</label>
-    <input id="logLure" placeholder="ex: Jerkbait 120mm coulant, ormeau">
+    <input id="logLure" placeholder="ex: sinking pencil 28 g, iwashi">
+    <label>Combo utilisé</label>
+    <select id="logCombo">${['M','MH'].map(code=>`<option value="${code}" ${gearPlanFor(sp.name_fr,null).code===code?'selected':''}>${code} · ${escHTML((gearSetup(code)?.setup?.rod?.model)||code)} · PE${escHTML(gearSetup(code)?.setup?.line?.size||'')}</option>`).join('')}</select>
+    <label>Poids total lancé (g) · optionnel</label>
+    <input id="logWeight" type="number" inputmode="decimal" min="0" max="50" step="0.5" placeholder="poids leurre + montage">
     <label>Résultat</label>
     <div class="row3">
       <button onclick="setLogResult(this,'prise')">Prise</button>
@@ -1487,7 +1578,11 @@ function setLogResult(btn, val){
 
 function saveLog(speciesName){
   const lure = document.getElementById('logLure').value.trim();
+  const combo = document.getElementById('logCombo').value;
+  const rawWeight=document.getElementById('logWeight').value;
+  const castWeight=rawWeight===''?null:Number(rawWeight);
   if(!lure || !logResult){ alert('Leurre + résultat obligatoires.'); return; }
+  if(castWeight!==null && (!Number.isFinite(castWeight)||castWeight>maxLureWeight())){ alert(`Plafond projet : ${maxLureWeight()} g maximum.`); return; }
   const sessions = getSessions();
   const now=new Date(), jp=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(now).replace('T',' ');
   sessions.push({
@@ -1497,7 +1592,7 @@ function saveLog(speciesName){
     species: speciesName.toLowerCase(),
     conditions: JSON.parse(JSON.stringify((qcmState && qcmState.answers) ? qcmState.answers : {})),
     port: getActivePort() || null,
-    lure, result: logResult,
+    lure, combo, cast_weight_g: castWeight, result: logResult,
     notes: document.getElementById('logNotes').value.trim(),
   });
   saveSessions(sessions);

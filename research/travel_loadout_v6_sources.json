@@ -1,0 +1,32 @@
+{
+  "version": "V6 Travel Loadout",
+  "updated": "2026-08-11",
+  "user_constraints": {
+    "max_lure_weight_g": 50,
+    "M": "Tenryu Injection SP82M Quattro + Shimano Twin Power XD 4000HG + PE0.8",
+    "MH": "Tenryu Injection SP82MH Quattro + Shimano Twin Power FE C5000XG + PE1.5",
+    "MH_user_note": "50 g passe selon expérience personnelle malgré 45 g nominal; ne jamais recommander au-delà."
+  },
+  "primary_sources": [
+    {
+      "label": "Ultimate Fishing — Injection SP 82 M Quattro",
+      "url": "https://ultimate-fishing.co.uk/catalog/product/view/id/48818/s/uf34330/category/50/",
+      "facts": "2.50 m, 4 brins, 8–30 g; petits shads linéaire/jerk, topwater, exploration shore et distance."
+    },
+    {
+      "label": "Ultimate Fishing — Injection SP 82 MH Quattro",
+      "url": "https://ultimate-fishing.co.uk/injection-sp-82-mh-quattro.html",
+      "facts": "2.50 m, 4 brins, 12–45 g; Regular Fast, lancer longue distance, linéaire souple, fond, petites tractions, gros topwaters."
+    },
+    {
+      "label": "Shimano — Twin Power XD",
+      "url": "https://fish.shimano.com/en-SG/product/reels/spinning/a075f00003slwhoqac.html",
+      "facts": "MagnumLite Rotor à faible inertie; sensibilité, démarrages/arrêts et contrôle technique du leurre."
+    },
+    {
+      "label": "Shimano — Twin Power FE",
+      "url": "https://fish.shimano.com/en-US/product/reels/spinning/frontdrag/a075f00003slw5kqac.html",
+      "facts": "CoreSolid, rigidité et puissance sous charge; C5000XG présent dans la gamme FE."
+    }
+  ]
+}

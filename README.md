@@ -1,4 +1,4 @@
-# Carnet Pêche JP — V5
+# Carnet Pêche JP — V6 Travel Loadout
 
 PWA mobile-first de préparation et de décision pour un voyage de pêche du bord au Japon.
 Le dépôt contient l'application GitHub Pages, la base SQLite source de vérité, les données
@@ -10,11 +10,23 @@ exportées et le pipeline Python d'enrichissement.
 - **257 éléments d'intelligence locale** rattachés aux étapes du voyage.
 - **8 étapes** avec jours de séjour explicites (maximum 4 jours affichés par pad).
 - **25 journées de marées astronomiques JMA** embarquées dans `tides_2026.json`.
-- **101 observations** enrichies par une typologie de leurre.
+- **96 recommandations actives** enrichies par une typologie de leurre après application du plafond 50 g.
 - Deep research conservé dans `research/` pour Fukuoka, Kobe, Ise-Shima, Numazu, plus les
   compléments Shizuoka, Tokyo, Kashima, Madai et Saba.
 
-## Ce qui change en V5
+## Ce qui change en V6
+
+
+### 0. La valise devient le filtre principal
+
+Le moteur raisonne maintenant avec les **deux ensembles réellement emportés** :
+
+- **M** — Tenryu Injection SP 82 M Quattro + Twin Power XD 4000HG + PE0.8. Plage officielle 8–30 g. Rôle : contrôle, dérive, précision, stop/restart.
+- **MH** — Tenryu Injection SP 82 MH Quattro + Twin Power FE C5000XG + PE1.5. Plage officielle 12–45 g. Rôle : puissance, distance, courant, fond. L'utilisateur accepte 46–50 g en **haute charge**, avec un plafond absolu à 50 g.
+
+Règle globale : **aucun leurre >50 g n'entre dans les recommandations, consensus, QCM ou typologies actives**. Quand une bonne source utilise 65–80 g, le fait biologique peut être conservé (courant, couche, timing, comportement), mais la recommandation de leurre est retirée du moteur personnel.
+
+Les fiches espèce et la config du moment affichent désormais le combo M/MH avant le leurre. Le journal terrain stocke aussi le combo et le poids total lancé.
 
 ### 1. Navigation marée limitée aux vrais jours sur place
 
@@ -121,7 +133,7 @@ Les horaires de lumière sont calculés localement pour les coordonnées du port
 civil du matin (premières lueurs), lever, coucher et crépuscule civil du soir. Ils donnent une
 fenêtre opérationnelle plus utile au pêcheur que le seul lever/coucher.
 
-## Pipeline / schéma V5
+## Pipeline / schéma V6
 
 `trip_stops` conserve désormais :
 
@@ -130,7 +142,7 @@ fenêtre opérationnelle plus utile au pêcheur que le seul lever/coucher.
 - `summary_json` ;
 - les espèces cibles, port et briefs existants.
 
-Le reste des migrations V4 est conservé : métadonnées observations, fingerprint terrain,
+Le schéma ajoute `combos.setup_json` pour conserver canne, moulinet, PE, plages de lancer et rôle. Le reste des migrations V4/V5 est conservé : métadonnées observations, fingerprint terrain,
 `trip_intel`, typologie, `tide_days`, etc.
 
 ### Installation / migration
@@ -183,11 +195,11 @@ Le contenu du dossier peut être envoyé directement à la racine du dépôt :
 
 ```bash
 git add .
-git commit -m "Carnet Peche JP V5.1"
+git commit -m "Carnet Peche JP V6 Travel Loadout"
 git push
 ```
 
-Aucune étape de build n'est nécessaire. Le service worker V5 utilise un nouveau cache afin
+Aucune étape de build n'est nécessaire. Le service worker V6 utilise un nouveau cache afin
 de forcer la prise en compte de l'interface après déploiement.
 
 `.gitignore` est optionnel pour le fonctionnement du site : si le sélecteur de fichiers du
@@ -196,6 +208,11 @@ navigateur le masque, il peut être ignoré ou créé directement dans GitHub.
 ## `synthesis.json`
 
 Les grands paragraphes historiques de synthèse sont conservés comme couche narrative, mais
-la **couche technique V5** (`technique_v5`) a été ajoutée séparément : grammaire des animations,
+la **couche technique V5** (`technique_v5`), complétée par les règles loadout V6 a été ajoutée séparément : grammaire des animations,
 logique couleur, rôles de leurres par espèce et sources techniques. Elle est celle utilisée par
 les nouveaux onglets Leurres / Couleur / Animation.
+
+
+## Sources matériel V6
+
+Les plages de lancer cannes sont vérifiées sur les fiches Ultimate Fishing : SP82M Quattro 8–30 g et SP82MH Quattro 12–45 g. Le rôle des moulinets est recoupé avec les pages Shimano Twin Power XD (faible inertie / contrôle technique) et Twin Power FE (CoreSolid / rigidité sous charge). Les URLs et la distinction entre données fabricant et plafond utilisateur 50 g sont conservées dans `research/travel_loadout_v6_sources.json`.

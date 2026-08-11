@@ -1,4 +1,4 @@
--- Schéma base de connaissance pêche Japon — v5
+-- Schéma base de connaissance pêche Japon — v6
 -- Multi-espèces, briefs, terrain PWA, intel locale et marées officielles 2026.
 
 CREATE TABLE IF NOT EXISTS species (
@@ -65,7 +65,8 @@ CREATE TABLE IF NOT EXISTS lures (
 CREATE TABLE IF NOT EXISTS combos (
     id INTEGER PRIMARY KEY,
     name TEXT UNIQUE NOT NULL,
-    description TEXT
+    description TEXT,
+    setup_json TEXT          -- matériel voyage : canne, moulinet, PE, plages de lancer et rôle
 );
 
 CREATE TABLE IF NOT EXISTS lure_combo (

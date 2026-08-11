@@ -1,6 +1,10 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "updated": "2026-08-11",
+  "gear_policy": {
+    "max_lure_weight_g": 50.0,
+    "rule": "Poids total lancé >50 g exclu des recommandations; 46–50 g = MH haute charge utilisateur."
+  },
   "species": [
     {
       "id": 1,
@@ -77,8 +81,12 @@
         "leurre": "metal jig 80 g",
         "moment_jour": "aube"
       },
-      "recommendation": {
-        "lure": "metal jig 80 g"
+      "metadata": {
+        "gear_filter": {
+          "excluded_recommendation": true,
+          "reason": "lure_over_50g",
+          "cast_weight_g": 80.0
+        }
       }
     },
     {
@@ -93,9 +101,12 @@
         "comportement": "montage renforcé en présence possible de gros pélagiques",
         "leurre": "metal jig 80 g"
       },
-      "recommendation": {
-        "lure": "metal jig 80 g",
-        "leader": "ligne de taille 2"
+      "metadata": {
+        "gear_filter": {
+          "excluded_recommendation": true,
+          "reason": "lure_over_50g",
+          "cast_weight_g": 80.0
+        }
       }
     },
     {
@@ -170,9 +181,12 @@
         "leurre": "metal jig 65 g",
         "spot_type": "zone à courant faible"
       },
-      "recommendation": {
-        "lure": "metal jig 65 g",
-        "animation": "faire progresser le jig par la récupération lorsque le courant est faible"
+      "metadata": {
+        "gear_filter": {
+          "excluded_recommendation": true,
+          "reason": "lure_over_50g",
+          "cast_weight_g": 65.0
+        }
       }
     },
     {
@@ -568,7 +582,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -653,7 +668,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -697,7 +713,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -739,7 +756,8 @@
           "modele": "FLAT JUNKIE HIRAMETAL Z II 32",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -808,7 +826,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -835,7 +854,8 @@
           "modele": "FLAT JUNKIE HIRAMETAL Z II 32",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -862,7 +882,8 @@
           "modele": "SHORELINE SHINER-Z SET UPPER 125S-DR",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 26.0
       }
     },
     {
@@ -918,7 +939,8 @@
           "modele": "FLAT JUNKIE RODEM R4 BLADE",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 18.0
       }
     },
     {
@@ -946,7 +968,8 @@
           "modele": "FLAT JUNKIE RODEM R4 BLADE",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 18.0
       }
     },
     {
@@ -1016,7 +1039,8 @@
           "modele": "FLAT JUNKIE RODEM R4 BLADE",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 18.0
       }
     },
     {
@@ -1059,7 +1083,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1087,7 +1112,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1115,7 +1141,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1158,7 +1185,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1185,7 +1213,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1213,7 +1242,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1241,7 +1271,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1269,7 +1300,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1297,7 +1329,8 @@
           "modele": "Overdrive 65S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -1324,7 +1357,8 @@
           "modele": "FLA-PEN WING S85",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 24.0
       }
     },
     {
@@ -1351,7 +1385,8 @@
           "modele": "FLA-PEN WING S85",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 24.0
       }
     },
     {
@@ -1378,7 +1413,8 @@
           "modele": "FLA-PEN WING S85",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 24.0
       }
     },
     {
@@ -1406,7 +1442,8 @@
           "modele": "FLA-PEN WING S85",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 24.0
       }
     },
     {
@@ -1608,7 +1645,8 @@
           "modele": "CHOVY SF125",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 20.0
       }
     },
     {
@@ -1640,7 +1678,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -1672,7 +1711,8 @@
           "modele": "CHOVY SF125",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 20.0
       }
     },
     {
@@ -1702,7 +1742,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -1721,18 +1762,11 @@
         "spot_type": "embouchure",
         "temperature_eau": "plus élevée que la normale cette année"
       },
-      "recommendation": {
-        "lure": "Rerise SS130",
-        "animation": "effectuer une remontée rythmée depuis le fond",
-        "typology": {
-          "famille": "sinking pencil",
-          "densite": "sinking",
-          "densite_nuance": "slow sinking",
-          "longueur": 13,
-          "poids": 55,
-          "modele": "RERISE SS130",
-          "marque": "Maria",
-          "confiance": "Haute"
+      "metadata": {
+        "gear_filter": {
+          "excluded_recommendation": true,
+          "reason": "lure_over_50g",
+          "cast_weight_g": 55.0
         }
       }
     },
@@ -1762,7 +1796,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -1808,7 +1843,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -1837,7 +1873,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -1857,21 +1894,7 @@
       "recommendation": {
         "lure": "Boa SS195",
         "color": "chart pearl",
-        "animation": "augmenter l'amplitude des jerks, multiplier les tirées et ralentir la récupération lorsque la visibilité est faible",
-        "typology": {
-          "modele": "BOAR SS195",
-          "marque": "Maria",
-          "famille": "minnow / jerkbait",
-          "densite": "sinking",
-          "densite_nuance": "slow sinking",
-          "longueur": 19.5,
-          "poids": 85,
-          "action": "jerks rapides / side-to-side",
-          "zone": "Variable / countdown",
-          "chute": null,
-          "confiance": "Haute",
-          "remarque": "Nom corrigé : BOAR (pas Boa). Slow sinking; la flottabilité peut évoluer selon le montage d’hameçons."
-        }
+        "animation": "augmenter l'amplitude des jerks, multiplier les tirées et ralentir la récupération lorsque la visibilité est faible"
       }
     },
     {
@@ -1889,18 +1912,11 @@
         "saison": "novembre",
         "spot_type": "embouchure"
       },
-      "recommendation": {
-        "lure": "Loaded F180",
-        "animation": "maintenir le leurre sur place puis effectuer de petites animations discrètes pour imiter un konoshiro affaibli",
-        "typology": {
-          "famille": "diving pencil",
-          "densite": "flottant",
-          "densite_nuance": null,
-          "longueur": 18,
-          "poids": 80,
-          "modele": "LOADED F180",
-          "marque": "Maria",
-          "confiance": "Haute"
+      "metadata": {
+        "gear_filter": {
+          "excluded_recommendation": true,
+          "reason": "lure_over_50g",
+          "cast_weight_g": 80.0
         }
       }
     },
@@ -1921,21 +1937,7 @@
       "recommendation": {
         "lure": "Boa SS170",
         "color": "chart pearl",
-        "animation": "tenir la pointe de canne près de la surface et récupérer légèrement plus lentement afin de faire travailler le leurre plus bas",
-        "typology": {
-          "modele": "BOAR SS170",
-          "marque": "Maria",
-          "famille": "minnow / jerkbait",
-          "densite": "sinking",
-          "densite_nuance": "slow sinking",
-          "longueur": 17,
-          "poids": 60,
-          "action": "jerks rapides / side-to-side",
-          "zone": "Variable / countdown",
-          "chute": null,
-          "confiance": "Haute",
-          "remarque": "Nom corrigé : BOAR (pas Boa). Le fabricant le décrit comme « jerking minnow » slow sinking."
-        }
+        "animation": "tenir la pointe de canne près de la surface et récupérer légèrement plus lentement afin de faire travailler le leurre plus bas"
       }
     },
     {
@@ -1965,7 +1967,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -1994,7 +1997,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -2012,18 +2016,11 @@
         "saison": "novembre",
         "spot_type": "embouchure"
       },
-      "recommendation": {
-        "lure": "Rerise SS130",
-        "animation": "partir du fond et effectuer une remontée lente et progressive",
-        "typology": {
-          "famille": "sinking pencil",
-          "densite": "sinking",
-          "densite_nuance": "slow sinking",
-          "longueur": 13,
-          "poids": 55,
-          "modele": "RERISE SS130",
-          "marque": "Maria",
-          "confiance": "Haute"
+      "metadata": {
+        "gear_filter": {
+          "excluded_recommendation": true,
+          "reason": "lure_over_50g",
+          "cast_weight_g": 55.0
         }
       }
     },
@@ -2574,7 +2571,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -2675,7 +2673,8 @@
           "modele": "Freak Worm + Finesse Head 5–15g",
           "marque": "Jackson",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 15.0
       }
     },
     {
@@ -2733,7 +2732,8 @@
           "modele": "Beach Walker Haul 27g + shad",
           "marque": "DUO",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 27.0
       }
     },
     {
@@ -2890,7 +2890,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -2920,7 +2921,8 @@
           "modele": "FLA-PEN WING S85",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 24.0
       }
     },
     {
@@ -3137,7 +3139,8 @@
           "modele": "Bay RUF BULK 95F",
           "marque": "DUO",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 14.0
       }
     },
     {
@@ -3156,7 +3159,8 @@
       },
       "recommendation": {
         "lure": "leurre souple sur jighead de 5 à 15 g",
-        "animation": "présentation finesse"
+        "animation": "présentation finesse",
+        "cast_weight_g": 15.0
       }
     },
     {
@@ -3185,7 +3189,8 @@
           "modele": "Freak Worm + Finesse Head 5–15g",
           "marque": "Jackson",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 15.0
       }
     },
     {
@@ -3556,7 +3561,8 @@
           "modele": "Athlete 12SSP",
           "marque": "Jackson",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 33.0
       }
     },
     {
@@ -3721,7 +3727,8 @@
           "modele": "DOG-X QUICK WALKER SW",
           "marque": "Megabass",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 12.0
       }
     },
     {
@@ -3829,7 +3836,8 @@
           "modele": "Juroku 150F",
           "marque": "Purple Ism",
           "confiance": "Moyenne"
-        }
+        },
+        "cast_weight_g": 48.0
       }
     },
     {
@@ -4064,7 +4072,8 @@
           "modele": "Athlete 12SSP",
           "marque": "Jackson",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 33.0
       }
     },
     {
@@ -4347,7 +4356,8 @@
           "modele": "Mini Kobako",
           "marque": "GoTo9 SHORE",
           "confiance": "Moyenne"
-        }
+        },
+        "cast_weight_g": 6.0
       }
     },
     {
@@ -4597,7 +4607,8 @@
           "modele": "RAPIDO F130",
           "marque": "Maria",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -4759,7 +4770,8 @@
       },
       "recommendation": {
         "lure": "metal jig d'environ 32 g",
-        "animation": "prise de contact du fond puis stop-and-go"
+        "animation": "prise de contact du fond puis stop-and-go",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -4776,7 +4788,8 @@
         "spot_type": "surf"
       },
       "recommendation": {
-        "lure": "shad souple: 14 g en faible profondeur, 21 g comme base, 27 g plus profond ou plus loin"
+        "lure": "shad souple: 14 g en faible profondeur, 21 g comme base, 27 g plus profond ou plus loin",
+        "cast_weight_g": 14.0
       }
     },
     {
@@ -5084,7 +5097,8 @@
           "modele": "RECTER 111F (?)",
           "marque": "POP SEA CREW",
           "confiance": "Moyenne"
-        }
+        },
+        "cast_weight_g": 10.5
       }
     },
     {
@@ -5129,7 +5143,8 @@
           "modele": "BANQ 120S",
           "marque": "POP SEA CREW",
           "confiance": "Moyenne"
-        }
+        },
+        "cast_weight_g": 46.0
       }
     },
     {
@@ -5180,7 +5195,8 @@
           "modele": "BANQ 120S",
           "marque": "POP SEA CREW",
           "confiance": "Moyenne"
-        }
+        },
+        "cast_weight_g": 46.0
       }
     },
     {
@@ -5267,7 +5283,8 @@
           "modele": "HADARA TRAP",
           "marque": "Megabass",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 29.0
       }
     },
     {
@@ -5298,7 +5315,8 @@
           "modele": "HADARA TRAP",
           "marque": "Megabass",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 29.0
       }
     },
     {
@@ -5326,7 +5344,8 @@
           "modele": "KAGELOU 124F",
           "marque": "Megabass",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 22.0
       }
     },
     {
@@ -5356,7 +5375,8 @@
           "modele": "KAGELOU 124F",
           "marque": "Megabass",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 22.0
       }
     },
     {
@@ -5387,7 +5407,8 @@
           "modele": "VJ VIBRATIONJIGHEAD (poids à préciser)",
           "marque": "COREMAN",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 26.0
       }
     },
     {
@@ -5507,7 +5528,8 @@
           "modele": "MORETHAN SOLARIA 85F",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 11.3
       }
     },
     {
@@ -5537,7 +5559,8 @@
           "modele": "MORETHAN SOLARIA 85F",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 11.3
       }
     },
     {
@@ -5568,7 +5591,8 @@
           "modele": "MORETHAN GARVA 73S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 12.8
       }
     },
     {
@@ -5685,7 +5709,8 @@
           "modele": "RJ-10 ROLLINGJIGHEAD",
           "marque": "COREMAN",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 10.0
       }
     },
     {
@@ -5743,7 +5768,8 @@
           "modele": "MORETHAN GARVA 73S",
           "marque": "Daiwa",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 12.8
       }
     },
     {
@@ -5839,7 +5865,8 @@
           "modele": "Mini Kobako",
           "marque": "GoTo9 SHORE",
           "confiance": "Moyenne"
-        }
+        },
+        "cast_weight_g": 6.0
       }
     },
     {
@@ -5867,7 +5894,8 @@
           "modele": "Mini Kobako",
           "marque": "GoTo9 SHORE",
           "confiance": "Moyenne"
-        }
+        },
+        "cast_weight_g": 6.0
       }
     },
     {
@@ -6376,7 +6404,8 @@
       "recommendation": {
         "lure": "metal jig 40 g",
         "color": "bleu-rose imitation sardine",
-        "animation": "long lancer puis laisser descendre le jig; surveiller particulièrement la chute"
+        "animation": "long lancer puis laisser descendre le jig; surveiller particulièrement la chute",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -6734,7 +6763,8 @@
       },
       "recommendation": {
         "lure": "blade jig de 30 g",
-        "animation": "récupération linéaire rapide avec arrêts ponctuels; surveiller particulièrement la pause"
+        "animation": "récupération linéaire rapide avec arrêts ponctuels; surveiller particulièrement la pause",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -6754,7 +6784,8 @@
       },
       "recommendation": {
         "lure": "blade jig de 30 g",
-        "animation": "prendre contact avec le fond puis effectuer une récupération linéaire"
+        "animation": "prendre contact avec le fond puis effectuer une récupération linéaire",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -6791,7 +6822,8 @@
       },
       "recommendation": {
         "lure": "metal jig de 30 à 40 g",
-        "animation": "prendre le fond puis remonter en one-pitch jerk en explorant plusieurs couches"
+        "animation": "prendre le fond puis remonter en one-pitch jerk en explorant plusieurs couches",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -6811,7 +6843,8 @@
       },
       "recommendation": {
         "lure": "metal jig de 40 g",
-        "animation": "one-pitch jerk suivi d'une chute contrôlée; ferrer lorsque la ligne se détend anormalement"
+        "animation": "one-pitch jerk suivi d'une chute contrôlée; ferrer lorsque la ligne se détend anormalement",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -6831,7 +6864,8 @@
       },
       "recommendation": {
         "lure": "jigging sabiki avec metal jig de 30 g",
-        "animation": "adapter la couche: descente jusqu'au fond en l'absence d'activité, ou récupération dans la couche supérieure pendant une chasse"
+        "animation": "adapter la couche: descente jusqu'au fond en l'absence d'activité, ou récupération dans la couche supérieure pendant une chasse",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -6904,7 +6938,8 @@
       },
       "recommendation": {
         "lure": "Flipper 32 g",
-        "animation": "long lancer au-delà du haut-fond puis récupération en contrôlant la couche"
+        "animation": "long lancer au-delà du haut-fond puis récupération en contrôlant la couche",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -6923,7 +6958,8 @@
       },
       "recommendation": {
         "lure": "Flipper 40 g",
-        "animation": "long lancer puis prospection de la cassure extérieure"
+        "animation": "long lancer puis prospection de la cassure extérieure",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -6976,7 +7012,8 @@
         "spot_type": "surf"
       },
       "recommendation": {
-        "lure": "minnow de 127 à 135 mm près du bord; leurre dense de 32 à 40 g au large"
+        "lure": "minnow de 127 à 135 mm près du bord; leurre dense de 32 à 40 g au large",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -7366,7 +7403,8 @@
       },
       "recommendation": {
         "lure": "metal jig de 40 g",
-        "animation": "descente au fond puis fast pitch du fond vers la mi-eau"
+        "animation": "descente au fond puis fast pitch du fond vers la mi-eau",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -7385,7 +7423,8 @@
       },
       "recommendation": {
         "lure": "metal jig de 40 g",
-        "animation": "compte à rebours d'environ cinq secondes puis fast pitch dans la couche supérieure"
+        "animation": "compte à rebours d'environ cinq secondes puis fast pitch dans la couche supérieure",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -7404,7 +7443,8 @@
       "recommendation": {
         "lure": "metal jig compact de 30 g",
         "color": "argenté imitation petit poisson-fourrage",
-        "animation": "animation rapide dans la couche où le baitfish est visible"
+        "animation": "animation rapide dans la couche où le baitfish est visible",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -7439,7 +7479,8 @@
       },
       "recommendation": {
         "lure": "metal jig de 40 g avec bras et softbait",
-        "animation": "lift and fall en reprenant contact avec le fond après chaque mouvement"
+        "animation": "lift and fall en reprenant contact avec le fond après chaque mouvement",
+        "cast_weight_g": 40.0
       }
     },
     {
@@ -7539,7 +7580,8 @@
           "modele": "Athlete 12SSP",
           "marque": "Jackson",
           "confiance": "Haute"
-        }
+        },
+        "cast_weight_g": 33.0
       }
     },
     {
@@ -7590,7 +7632,8 @@
       "recommendation": {
         "lure": "DAIWA Samurai Jig 20 g ou metal jig compact de même rôle",
         "color": "silver / FLASH",
-        "animation": "lancer en avance sur la trajectoire du banc plutôt que derrière les chasses"
+        "animation": "lancer en avance sur la trajectoire du banc plutôt que derrière les chasses",
+        "cast_weight_g": 20.0
       }
     },
     {
@@ -7676,7 +7719,8 @@
         "spot_type": "surf"
       },
       "recommendation": {
-        "lure": "minnow sinking 110-130 mm et leurres denses 21-32 g selon la liste de l'émission"
+        "lure": "minnow sinking 110-130 mm et leurres denses 21-32 g selon la liste de l'émission",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -7691,7 +7735,8 @@
         "spot_type": "surf"
       },
       "recommendation": {
-        "lure": "1 minnow sinking 110-130 mm + 1 dense long-range 30-32 g + 1 blade/hybrid 20-30 g"
+        "lure": "1 minnow sinking 110-130 mm + 1 dense long-range 30-32 g + 1 blade/hybrid 20-30 g",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -7721,7 +7766,8 @@
       "recommendation": {
         "lure": "metal jig compact 20-30 g FLASH; blade jig 20-40 g; 30-40 g pour distance/fond",
         "color": "silver/natural flash en première intention si bait argenté",
-        "animation": "si chasse: viser devant la trajectoire; sans signe: sonder rapidement plusieurs couches puis changer de cible"
+        "animation": "si chasse: viser devant la trajectoire; sans signe: sonder rapidement plusieurs couches puis changer de cible",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -7737,7 +7783,8 @@
       },
       "recommendation": {
         "lure": "compact metal jig 20-30 g + blade jig 20-40 g",
-        "color": "1 silver/natural + 1 blue-pink/high appeal pour couvrir l'essentiel"
+        "color": "1 silver/natural + 1 blue-pink/high appeal pour couvrir l'essentiel",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -7778,7 +7825,8 @@
       },
       "recommendation": {
         "lure": "minnow sinking 110-130 mm + long-range 30-32 g + blade/hybrid 20-30 g",
-        "animation": "chercher cassure, courant de retour, bord de banc et trajectoire proche du fond; diagonale si elle allonge le passage utile"
+        "animation": "chercher cassure, courant de retour, bord de banc et trajectoire proche du fond; diagonale si elle allonge le passage utile",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -7859,7 +7907,8 @@
       "recommendation": {
         "lure": "DAIWA Samurai Jig 20 g ou metal jig compact de même rôle",
         "color": "silver / FLASH",
-        "animation": "lancer en avance sur la trajectoire du banc plutôt que derrière les chasses"
+        "animation": "lancer en avance sur la trajectoire du banc plutôt que derrière les chasses",
+        "cast_weight_g": 20.0
       }
     },
     {
@@ -7945,7 +7994,8 @@
         "spot_type": "surf"
       },
       "recommendation": {
-        "lure": "minnow sinking 110-130 mm et leurres denses 21-32 g selon la liste de l'émission"
+        "lure": "minnow sinking 110-130 mm et leurres denses 21-32 g selon la liste de l'émission",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -7960,7 +8010,8 @@
         "spot_type": "surf"
       },
       "recommendation": {
-        "lure": "1 minnow sinking 110-130 mm + 1 dense long-range 30-32 g + 1 blade/hybrid 20-30 g"
+        "lure": "1 minnow sinking 110-130 mm + 1 dense long-range 30-32 g + 1 blade/hybrid 20-30 g",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -7990,7 +8041,8 @@
       "recommendation": {
         "lure": "metal jig compact 20-30 g FLASH; blade jig 20-40 g; 30-40 g pour distance/fond",
         "color": "silver/natural flash en première intention si bait argenté",
-        "animation": "si chasse: viser devant la trajectoire; sans signe: sonder rapidement plusieurs couches puis changer de cible"
+        "animation": "si chasse: viser devant la trajectoire; sans signe: sonder rapidement plusieurs couches puis changer de cible",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -8006,7 +8058,8 @@
       },
       "recommendation": {
         "lure": "compact metal jig 20-30 g + blade jig 20-40 g",
-        "color": "1 silver/natural + 1 blue-pink/high appeal pour couvrir l'essentiel"
+        "color": "1 silver/natural + 1 blue-pink/high appeal pour couvrir l'essentiel",
+        "cast_weight_g": 30.0
       }
     },
     {
@@ -8047,7 +8100,8 @@
       },
       "recommendation": {
         "lure": "minnow sinking 110-130 mm + long-range 30-32 g + blade/hybrid 20-30 g",
-        "animation": "chercher cassure, courant de retour, bord de banc et trajectoire proche du fond; diagonale si elle allonge le passage utile"
+        "animation": "chercher cassure, courant de retour, bord de banc et trajectoire proche du fond; diagonale si elle allonge le passage utile",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -8525,7 +8579,8 @@
       "recommendation": {
         "lure": "Jackson G-Control 28 g ou sinking minnow compact de même rôle",
         "color": "Sagoshibait / baitfish flash",
-        "animation": "viser dans ou légèrement devant les montées; récupération active"
+        "animation": "viser dans ou légèrement devant les montées; récupération active",
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -8592,7 +8647,8 @@
       },
       "recommendation": {
         "lure": "vibration compacte ~18 g",
-        "animation": "prospecter la couche où les prédateurs restent après la baisse d'activité des Sagoshi/Tachiuo"
+        "animation": "prospecter la couche où les prédateurs restent après la baisse d'activité des Sagoshi/Tachiuo",
+        "cast_weight_g": 18.0
       }
     },
     {
@@ -8651,7 +8707,8 @@
         "confidence_level": 2
       },
       "recommendation": {
-        "lure": "metal jig ~28 g"
+        "lure": "metal jig ~28 g",
+        "cast_weight_g": 28.0
       }
     },
     {
@@ -9471,7 +9528,8 @@
       "recommendation": {
         "lure": "DAIWA Samurai Jig 20 g ou metal jig compact de même rôle",
         "color": "silver / FLASH",
-        "animation": "lancer en avance sur la trajectoire du banc plutôt que derrière les chasses"
+        "animation": "lancer en avance sur la trajectoire du banc plutôt que derrière les chasses",
+        "cast_weight_g": 20.0
       }
     },
     {
@@ -9618,7 +9676,8 @@
         "source_url": "https://www.fishing-v.jp/program/program_data.php?pcd=0319470"
       },
       "recommendation": {
-        "lure": "minnow sinking 110-130 mm et leurres denses 21-32 g selon la liste de l'émission"
+        "lure": "minnow sinking 110-130 mm et leurres denses 21-32 g selon la liste de l'émission",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -9644,7 +9703,8 @@
         "source_url": "https://www.fishing-v.jp/program/program_data.php?pcd=0319470"
       },
       "recommendation": {
-        "lure": "1 minnow sinking 110-130 mm + 1 dense long-range 30-32 g + 1 blade/hybrid 20-30 g"
+        "lure": "1 minnow sinking 110-130 mm + 1 dense long-range 30-32 g + 1 blade/hybrid 20-30 g",
+        "cast_weight_g": 32.0
       }
     },
     {
@@ -9976,7 +10036,8 @@
           "chute": null,
           "confiance": "Moyenne",
           "remarque": "« MEGABANK 120S » ne correspond pas à un Megabass : il s’agit très probablement du POP SEA CREW BANQ 120S (surnommé « Mega Bank »)."
-        }
+        },
+        "cast_weight_g": 46.0
       }
     },
     {
@@ -10002,7 +10063,8 @@
         "source_url": "https://castingnet.jp/shop/detail.php?no=214859&s=29"
       },
       "recommendation": {
-        "lure": "sinking pencil / jig minnow longue distance autour de 40-45 g"
+        "lure": "sinking pencil / jig minnow longue distance autour de 40-45 g",
+        "cast_weight_g": 45.0
       }
     },
     {
@@ -10053,7 +10115,86 @@
     }
   ],
   "lures": [],
-  "combos": [],
+  "combos": [
+    {
+      "id": 1,
+      "name": "M · SP82M QUATTRO",
+      "description": "Contrôle / précision · 8–30 g · PE0.8",
+      "setup": {
+        "code": "M",
+        "role": "TECHNIQUE / CONTRÔLE",
+        "rod": {
+          "brand": "Tenryu",
+          "model": "Injection SP 82 M Quattro",
+          "length_cm": 250,
+          "sections": 4,
+          "lure_min_g": 8,
+          "lure_max_nominal_g": 30
+        },
+        "reel": {
+          "brand": "Shimano",
+          "model": "Twin Power XD 4000HG"
+        },
+        "line": {
+          "type": "PE",
+          "size": "0.8"
+        },
+        "user_max_g": 30,
+        "primary_species": [
+          "Suzuki",
+          "Kurodai",
+          "Saba"
+        ],
+        "secondary_species": [
+          "Aori-Ika",
+          "Tachiuo",
+          "Hirame"
+        ],
+        "opportunistic_species": [
+          "Aji",
+          "Mebaru"
+        ],
+        "decision_note": "Priorité au contrôle du leurre, aux dérives, aux stop/restart et aux présentations ≤30 g. Aji/Mebaru souvent sous la plage basse de 8 g."
+      }
+    },
+    {
+      "id": 2,
+      "name": "MH · SP82MH QUATTRO",
+      "description": "Puissance / distance · 12–45 g nominal · 50 g plafond utilisateur · PE1.5",
+      "setup": {
+        "code": "MH",
+        "role": "POWER / DISTANCE / COURANT",
+        "rod": {
+          "brand": "Tenryu",
+          "model": "Injection SP 82 MH Quattro",
+          "length_cm": 250,
+          "sections": 4,
+          "lure_min_g": 12,
+          "lure_max_nominal_g": 45
+        },
+        "reel": {
+          "brand": "Shimano",
+          "model": "Twin Power FE C5000XG"
+        },
+        "line": {
+          "type": "PE",
+          "size": "1.5"
+        },
+        "user_max_g": 50,
+        "high_load_from_g": 46,
+        "primary_species": [
+          "Hirame",
+          "Hamachi",
+          "Madai"
+        ],
+        "secondary_species": [
+          "Suzuki",
+          "Tachiuo"
+        ],
+        "decision_note": "31–45 g = domaine naturel. 46–50 g = haute charge acceptée par expérience utilisateur. >50 g exclu de tout moteur décisionnel."
+      }
+    }
+  ],
   "trip_stops": [
     {
       "id": 1,
@@ -11667,15 +11808,15 @@
       "intel": [
         {
           "category": "context",
-          "text": "Séjour pêche du bord prévu à Kobe du 20 au 23 novembre 2026. Priorité aux preuves locales datées des 20-23 novembre, aux zones officiellement ouvertes et aux secteurs Kobe Airport, Azure Maiko, Hiraiso et Suma.",
+          "text": "Séjour pêche du bord prévu à Kobe du 21 au 24 novembre 2026. Priorité aux preuves locales de fin novembre, aux zones officiellement ouvertes et aux secteurs Kobe Airport, Azure Maiko, Hiraiso et Suma.",
           "source": "Trip dates / Kobe 2026",
           "confidence_level": 4,
           "metadata": {
             "trip_dates": [
-              "2026-11-20",
               "2026-11-21",
               "2026-11-22",
-              "2026-11-23"
+              "2026-11-23",
+              "2026-11-24"
             ],
             "region": "Kobe / Kobe Airport / Suma / Tarumi / Azure Maiko / Hiraiso",
             "evidence_type": "USER_CONTEXT",
@@ -13140,15 +13281,14 @@
       "intel": [
         {
           "category": "context",
-          "text": "Séjour pêche du bord prévu à Numazu du 29 novembre au 2 décembre 2026. La recherche privilégie les preuves locales de fin novembre / tout début décembre, les captures datées exactement du 29/11 au 02/12 lorsque disponibles, les secteurs Numazu Surf–Senbonhama–Katahama et Uchiura–Nishiura, ainsi que les accès et réglementations réellement compatibles avec la pêche aux leurres.",
+          "text": "Séjour pêche du bord prévu à Numazu du 29 novembre au 1er décembre 2026. La recherche privilégie les preuves locales de fin novembre / tout début décembre, les secteurs Numazu Surf–Senbonhama–Katahama et Uchiura–Nishiura, ainsi que les accès et réglementations réellement compatibles avec la pêche aux leurres.",
           "source": "Trip dates / Numazu 2026",
           "confidence_level": 4,
           "metadata": {
             "trip_dates": [
               "2026-11-29",
               "2026-11-30",
-              "2026-12-01",
-              "2026-12-02"
+              "2026-12-01"
             ],
             "region": "Numazu / Suruga Bay / Senbonhama / Katahama / Uchiura / Nishiura",
             "shore_relevance": "trip_context",
