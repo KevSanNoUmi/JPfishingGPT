@@ -1,7 +1,7 @@
 {
   "name": "Carnet Pêche JP",
   "short_name": "Pêche JP",
-  "description": "Pêche Japon — marées, espèces, loadout voyage et recommandations leurres ≤50 g",
+  "description": "Pêche Japon — marées, espèces, loadout voyage et moteur de preuve contextuel",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

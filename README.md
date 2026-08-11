@@ -1,4 +1,4 @@
-# Carnet Pêche JP — V6.1 Terrain UX
+# Carnet Pêche JP — V6.2 Evidence
 
 PWA mobile-first de préparation et de décision pour un voyage de pêche du bord au Japon.
 Le dépôt contient l'application GitHub Pages, la base SQLite source de vérité, les données
@@ -13,6 +13,22 @@ exportées et le pipeline Python d'enrichissement.
 - **96 recommandations actives** enrichies par une typologie de leurre après application du plafond 50 g.
 - Deep research conservé dans `research/` pour Fukuoka, Kobe, Ise-Shima, Numazu, plus les
   compléments Shizuoka, Tokyo, Kashima, Madai et Saba.
+
+## V6.2 — moteur de preuve contextuel
+
+La V6.2 sépare désormais explicitement **opportunité** et **niveau de preuve**. Le score marée/lumière sert uniquement à comparer les jours du séjour. Le niveau de preuve décrit la solidité documentaire d'un pattern ou d'une recommandation ; aucun des deux n'est présenté comme une probabilité de capture.
+
+Le moteur évalue cinq dimensions :
+
+- **localité** : spot/secteur actif > zone locale > région > information générale ;
+- **saison** : proximité calendrier avec les vraies dates du séjour ;
+- **directivité** : capture/observation directe, source locale, fabricant technique, interprétation ;
+- **réplication** : nombre de sources et surtout d'origines indépendantes ;
+- **setup** : application réelle aux combos M/MH et au plafond absolu de 50 g.
+
+Quatre niveaux sont affichés : **TRÈS SOLIDE / SOLIDE / SIGNAL / HYPOTHÈSE**. Une observation personnelle loggée ajoute une couche séparée **VALIDÉ PAR TOI**. Une source répétée dix fois ne compte donc plus comme dix confirmations indépendantes. Les poids des dimensions dépendent de la question : localité/saison pèsent davantage sur présence et timing ; réplication/directivité technique pèsent davantage sur animation et mécanique de leurre.
+
+Dans **Terrain**, la fiche affiche maintenant la force de la base par facette : présence, timing, leurre, animation et couleur. Dans le **QCM**, la compatibilité avec les conditions est affichée séparément du niveau de preuve de la recommandation. Le volet “Pourquoi ce niveau ?” détaille les cinq dimensions et signale automatiquement le maillon le plus faible.
 
 ## V6.1 — interface terrain
 
@@ -206,11 +222,11 @@ Le contenu du dossier peut être envoyé directement à la racine du dépôt :
 
 ```bash
 git add .
-git commit -m "Carnet Peche JP V6.1 Terrain UX"
+git commit -m "Carnet Peche JP V6.2 Evidence"
 git push
 ```
 
-Aucune étape de build n'est nécessaire. Le service worker V6.1 utilise un nouveau cache afin
+Aucune étape de build n'est nécessaire. Le service worker V6.2 utilise un nouveau cache afin
 de forcer la prise en compte de l'interface après déploiement.
 
 `.gitignore` est optionnel pour le fonctionnement du site : si le sélecteur de fichiers du

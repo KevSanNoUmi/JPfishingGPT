@@ -1,5 +1,5 @@
 """
-Pipeline base de connaissance pêche Japon — v5.
+Pipeline base de connaissance pêche Japon — v6.2.
 Usage :
     export ANTHROPIC_API_KEY=sk-ant-...
     python pipeline.py init                                # crée/migre la base (schema.sql)
@@ -40,6 +40,17 @@ SEARCH_DIMS = {
 DERIVED_RESEARCH_TYPES = {"synthesis", "lure_box_synthesis", "trip_plan_seed", "decision_engine", "trip_plan", "trip_tool", "research_method"}
 EVIDENCE_CONFIDENCE = {4: 0.85, 3: 0.70, 2: 0.55, 1: 0.40}
 JST = timezone(timedelta(hours=9))
+
+# V6.2 — politique d'évidence exportée pour documenter le moteur côté PWA.
+# Le navigateur recalcule les niveaux selon le contexte actif (destination / dates).
+EVIDENCE_POLICY = {
+    "version": "6.2",
+    "principle": "opportunity_is_not_evidence",
+    "labels": ["TRÈS SOLIDE", "SOLIDE", "SIGNAL", "HYPOTHÈSE"],
+    "dimensions": ["localite", "saison", "directivite", "replication", "setup"],
+    "personal_layer": "TON TERRAIN",
+    "source_independence": "Les répétitions d'une même source/origine sont décotées; les sources indépendantes comptent davantage.",
+}
 
 # Vocabulaire contrôlé — DOIT rester identique aux options du QCM côté app
 VOCAB = {
@@ -1033,6 +1044,7 @@ def export_json():
                           "brief":briefs.get(st["id"]),"intel":intel})
     result={"schema_version":6,"updated":datetime.now(JST).date().isoformat(),
             "gear_policy":{"max_lure_weight_g":MAX_LURE_WEIGHT_G,"rule":"Poids total lancé >50 g exclu des recommandations; 46–50 g = MH haute charge utilisateur."},
+            "evidence_policy":EVIDENCE_POLICY,
             "species":species_out,"observations":obs_out,
             "lures":lures_out,"combos":combos_out,"trip_stops":stops_out}
     out_path=os.path.join(os.path.dirname(__file__),"data.json")

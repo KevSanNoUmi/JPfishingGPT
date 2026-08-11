@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Carnet Pêche JP · V6.1 Terrain UX</title>
+<title>Carnet Pêche JP · V6.2 Evidence</title>
 <meta name="theme-color" content="#0F1720">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -368,6 +368,44 @@
     .sun-strip{grid-template-columns:repeat(2,1fr);}
     .tide-scorebox{align-items:flex-start;}
   }
+
+  /* V6.2 — Evidence Engine: opportunité ≠ niveau de preuve */
+  .evidence-strip{margin:10px 0 0;border-top:1px solid var(--border);padding-top:10px;}
+  .evidence-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px;}
+  .evidence-title{font-family:'IBM Plex Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);}
+  .ev-badge{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--border);border-radius:999px;padding:3px 7px;font-family:'IBM Plex Mono',monospace;font-size:8.5px;line-height:1.1;white-space:nowrap;background:transparent;}
+  .ev-badge.very{color:var(--ok);border-color:rgba(95,168,122,.55);}
+  .ev-badge.solid{color:var(--accent);border-color:rgba(232,163,61,.5);}
+  .ev-badge.signal{color:#6FB1D6;border-color:rgba(111,177,214,.5);}
+  .ev-badge.hyp{color:var(--text-muted);border-color:rgba(139,151,168,.35);}
+  .ev-badge.personal{color:#B7A4E8;border-color:rgba(183,164,232,.5);}
+  .ev-dot{width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block;}
+  .evidence-facets{display:flex;flex-wrap:wrap;gap:5px;}
+  .ev-facet{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(139,151,168,.18);border-radius:8px;padding:5px 7px;background:var(--surface-2);font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--text-muted);}
+  .ev-facet strong{font-weight:600;color:var(--text);}
+  .ev-facet .quality{font-size:7.5px;text-transform:uppercase;letter-spacing:.04em;}
+  .ev-why{margin-top:8px;border-top:1px dashed rgba(139,151,168,.22);padding-top:7px;}
+  .ev-why summary{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--text-muted);}
+  .ev-dims{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;}
+  .ev-dim{background:var(--surface-2);border:1px solid rgba(139,151,168,.14);border-radius:9px;padding:7px 8px;}
+  .ev-dim .lab{display:flex;justify-content:space-between;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:7.5px;text-transform:uppercase;color:var(--text-muted);margin-bottom:5px;}
+  .ev-meter{height:3px;border-radius:999px;background:rgba(139,151,168,.16);overflow:hidden;}
+  .ev-meter>span{display:block;height:100%;background:currentColor;border-radius:999px;}
+  .ev-dim.very{color:var(--ok)} .ev-dim.solid{color:var(--accent)} .ev-dim.signal{color:#6FB1D6} .ev-dim.hyp{color:var(--text-muted)}
+  .ev-note{font-size:10.5px;line-height:1.45;color:var(--text-muted);margin-top:7px;}
+  .ev-note strong{color:var(--text);font-weight:600;}
+  .evidence-legend{font-size:10.5px;line-height:1.5;color:var(--text-muted);margin-bottom:10px;}
+  .evidence-legend strong{color:var(--text);}
+  .evidence-model{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 12px;}
+  .evidence-model .item{background:var(--surface);border:1px solid var(--border);border-radius:11px;padding:10px 11px;}
+  .evidence-model .name{font-family:'IBM Plex Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);margin-bottom:4px;}
+  .evidence-model .txt{font-size:11.5px;line-height:1.45;color:var(--text-muted);}
+  .reco-proofline{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:7px 0 3px;}
+  .context-fit{font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--text-muted);border-left:2px solid #6FB1D6;padding-left:6px;}
+  .intel-proof{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin-top:6px;}
+  .raw-source{font-size:9.5px;color:var(--text-muted);margin-top:4px;}
+  @media(max-width:390px){.ev-dims,.evidence-model{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -942,7 +980,7 @@ function intelBlock(s,limit=5){
   if(!intel.length) return '';
   const score=x=>(x.confidence_level||0)*10 + (x.category==='strategy'?3:x.category==='access'?2:1);
   const chosen=[...intel].sort((a,b)=>score(b)-score(a)).slice(0,limit);
-  return `<div class="intel-list">${chosen.map(x=>`<div class="intel-item"><div class="intel-meta"><span class="intel-cat">${escHTML(x.category)}</span><span class="intel-conf">niveau ${Number(x.confidence_level||0)}/4</span></div>${escHTML(x.text)}<div class="intel-src">${escHTML(x.source||'source')}</div></div>`).join('')}</div>`;
+  return `<div class="intel-list">${chosen.map(x=>`<div class="intel-item"><div class="intel-meta"><span class="intel-cat">${escHTML(x.category)}</span><span class="intel-conf">${Number(x.confidence_level||0)>=4?'preuve directe':Number(x.confidence_level||0)>=3?'signal local':Number(x.confidence_level||0)>=2?'indice':'contexte'}</span></div>${escHTML(x.text)}<div class="intel-src">${escHTML(x.source||'source')}</div></div>`).join('')}</div>`;
 }
 
 function destinationSummaryHTML(s){
@@ -986,12 +1024,12 @@ function stopDetail(s){
     const score=tideDayScore(s.port,key,effectiveSpecies,days.length?days:[key]);
     const dayButtons=days.map((k,i)=>{const sc=tideDayScore(s.port,k,effectiveSpecies,days);return `<button class="tide-day ${i===idx?'on':''}" onclick="event.stopPropagation();setTideDay(${s.id},${i})"><div class="d">${escHTML(shortDayLabel(k))}</div><div class="score">${sc.score??'—'}</div></button>`;}).join('');
     const winHTML=wins.length?wins.slice(0,4).map(w=>`<div class="ideal-win"><span class="ideal-badge ${w.light==='aube'?'is-dawn':'is-dusk'}">${w.light}</span><span class="ideal-tide">${w.tide}</span><span class="ideal-time">${fmtJST(w.from)}–${fmtJST(w.to)}</span></div>`).join(''):`<div class="tide-next">Pas de fenêtre faible lumière × phase active calculable ce jour.</div>`;
-    const sourceHTML=src?`<div class="tide-source"><strong>JMA embarqué</strong> · ${escHTML(src.station)}${src.code?' ('+escHTML(src.code)+')':''}. Courbe interpolée entre extrema officiels; le score est un outil de comparaison, pas une prédiction de touche.${src.proxy?`<br>⚠ ${escHTML(src.proxy)}`:''}</div>`:`<div class="tide-warning">Aucune table JMA embarquée pour cette date.</div>`;
+    const sourceHTML=src?`<div class="tide-source"><strong>JMA embarqué</strong> · ${escHTML(src.station)}${src.code?' ('+escHTML(src.code)+')':''}. Courbe interpolée entre extrema officiels; l’opportunité compare les jours du séjour et reste séparée du niveau de preuve technique.${src.proxy?`<br>⚠ ${escHTML(src.proxy)}`:''}</div>`:`<div class="tide-warning">Aucune table JMA embarquée pour cette date.</div>`;
     tideBlock=`<div class="k">Prévisions marée — jours du séjour</div>
       <div class="tide-next" style="margin:5px 0 2px">${escHTML(fullDayLabel(key))}</div>
       ${tideCurveSVG(s.port,refDate,effectiveSpecies)}
       ${days.length>1?`<div class="tide-days">${dayButtons}</div><div class="tide-nav"><button ${idx===0?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx-1})">← Préc.</button><span class="tide-next">Jour ${idx+1}/${days.length}</span><button ${idx===days.length-1?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx+1})">Suiv. →</button></div>`:''}
-      <div class="tide-scorebox"><div class="tide-scorebig">${score.score??'—'}</div><div class="tide-scoretxt"><strong style="color:var(--text)">Score marée/lumière : ${escHTML(score.label)}</strong><br>${escHTML(score.reason)}<br><span style="font-size:10px">Compare uniquement les jours du séjour; mouvement de phase ≠ courant réel du spot.</span></div></div>
+      <div class="tide-scorebox"><div class="tide-scorebig">${score.score??'—'}</div><div class="tide-scoretxt"><strong style="color:var(--text)">Opportunité marée/lumière : ${escHTML(score.label)}</strong><br>${escHTML(score.reason)}<br><span style="font-size:10px">Compare uniquement les jours du séjour; mouvement de phase ≠ courant réel du spot.</span></div></div>
       <div class="tide-now"><span class="tide-next">${ext.length?ext.map(e=>`${e.type} ${fmtJST(e.time)} · ${Math.round(e.height_cm)} cm`).join(' · '):'—'}</span></div>
       <div class="sun-strip"><div class="sun-chip"><div class="lab">1res lueurs</div><div class="tm">${sun.civilDawn?fmtJST(sun.civilDawn):'—'}</div></div><div class="sun-chip"><div class="lab">Lever</div><div class="tm">${sun.sunrise?fmtJST(sun.sunrise):'—'}</div></div><div class="sun-chip"><div class="lab">Coucher</div><div class="tm">${sun.sunset?fmtJST(sun.sunset):'—'}</div></div><div class="sun-chip"><div class="lab">Fin lueurs</div><div class="tm">${sun.civilDusk?fmtJST(sun.civilDusk):'—'}</div></div></div>
       <div class="k" style="margin-top:10px">Fenêtres faibles lumières × marée active</div>${winHTML}${sourceHTML}
@@ -1026,6 +1064,183 @@ function speciesLures(id){ return DATA.lures.filter(l=>l.species_id===id).sort((
 
 function confClass(c){ return c>=0.7 ? 'high' : c>=0.5 ? 'mid' : 'low'; }
 
+
+/* ============ V6.2 EVIDENCE ENGINE ============
+   Le moteur sépare volontairement deux questions :
+   - OPPORTUNITÉ : les conditions semblent-elles intéressantes maintenant / ce jour ?
+   - PREUVE : sur quoi repose la recommandation et à quel point est-elle répliquée ?
+   Aucun score de preuve n'est présenté comme une probabilité de capture. */
+const EVIDENCE_PORT_ALIASES={
+  shimizu:['shizuoka','shimizu','enshu','suruga'],
+  fukuoka:['fukuoka','hakata','naka','meinohama','izaki','marina town'],
+  itoshima:['itoshima','shikanoshima','nata','nokita','fukuno','karatomari','nishiura','genkaishima','shingu'],
+  kobe:['kobe','akashi','maiko','hiraiso','suma','tarumi','kobe airport','azure'],
+  toba:['ise','shima','ago','wagu','katada','matoya','hamajima','minami-ise','anori','toba','kumano'],
+  numazu:['numazu','uchiura','senbon','katahama','nishiura','suruga'],
+  tokyo:['tokyo','tokyo bay','odaiba','arakawa','tamagawa','sumida'],
+  kashima:['kashima','kamisu','kashimanada','ibaraki']
+};
+const EVIDENCE_LABELS={
+  very:{label:'TRÈS SOLIDE',cls:'very'}, solid:{label:'SOLIDE',cls:'solid'},
+  signal:{label:'SIGNAL',cls:'signal'}, hyp:{label:'HYPOTHÈSE',cls:'hyp'}
+};
+function activeEvidenceStop(){ const p=getActivePort(); return p ? DATA.trip_stops.find(s=>s.port===p)||null : null; }
+function evNorm(s){ return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9\u3040-\u30ff\u3400-\u9fff]+/g,' ').trim(); }
+function evidenceOrigin(o){
+  const u=o&&o.metadata&&o.metadata.source_url;
+  if(u){ try{return new URL(u).hostname.replace(/^www\./,'').toLowerCase();}catch(e){} }
+  const raw=String(o&&o.source||o&&o.source_type||'source');
+  return evNorm(raw.split('/')[0]||raw)||'source';
+}
+function evidenceSourceIdentity(o){ return evNorm(o&&o.source)||evidenceOrigin(o); }
+function isPersonalEvidence(o){ return !!(o&&o.metadata&&o.metadata.pwa_session); }
+function evidenceDateValue(o){
+  const m=o&&o.metadata||{}, candidates=[m.date,m.capture_date,m.date_reference,m.date_published];
+  for(const x of candidates){ if(typeof x==='string' && /^\d{4}-\d{2}-\d{2}/.test(x)) return x.slice(0,10); }
+  return null;
+}
+function calendarDistance(a,b){
+  if(!a||!b) return null;
+  const pa=a.split('-').map(Number), pb=b.split('-').map(Number); if(pa.length<3||pb.length<3) return null;
+  const da=Date.UTC(2000,pa[1]-1,pa[2]), db=Date.UTC(2000,pb[1]-1,pb[2]);
+  const d=Math.abs(da-db)/86400000; return Math.min(d,366-d);
+}
+function evidenceLocalityScore(o,stop){
+  if(isPersonalEvidence(o)){
+    const ps=o.metadata&&o.metadata.pwa_session&&o.metadata.pwa_session.port;
+    if(stop&&ps===stop.port) return 5;
+  }
+  const m=o.metadata||{}, zone=evNorm([m.zone,o.tags&&o.tags.zone,m.location,m.reference_location].filter(Boolean).join(' '));
+  const sr=evNorm(m.shore_relevance||'');
+  if(stop){
+    const aliases=EVIDENCE_PORT_ALIASES[stop.port]||[];
+    if(zone && aliases.some(a=>zone.includes(evNorm(a)))) return 5;
+    const city=evNorm(stop.city); if(zone&&city&&city.split(' ').some(w=>w.length>4&&zone.includes(w))) return 4;
+    if(sr.includes('direct area')||sr.includes('direct shore')||sr.includes('direct local')) return 3;
+    if(sr.includes('regional')) return 2;
+    return zone?2:1;
+  }
+  if(sr.includes('direct area')||sr.includes('direct shore')||sr.includes('direct local')) return 4;
+  if(sr.includes('local')) return 3;
+  if(sr.includes('regional')) return 2;
+  return zone?2:1;
+}
+function evidenceSeasonScore(o,stop){
+  const d=evidenceDateValue(o);
+  if(stop&&d&&(stop.stay_dates||[]).length){
+    const dd=Math.min(...stop.stay_dates.map(x=>calendarDistance(d,x)).filter(x=>x!==null));
+    if(dd<=3)return 5; if(dd<=10)return 4; if(dd<=31)return 3; if(dd<=60)return 2; return 1;
+  }
+  if(d){ const md=d.slice(5,7); return (md==='11'||md==='12')?4:2; }
+  const s=evNorm(o.tags&&o.tags.saison||'');
+  if(s.includes('novembre')||s.includes('decembre')||s==='hiver') return 3;
+  if(s==='general') return 2;
+  return 2;
+}
+function evidenceDirectScore(o,facet='presence'){
+  if(isPersonalEvidence(o)) return 5;
+  const et=String(o.metadata&&o.metadata.evidence_type||'').toUpperCase(), st=String(o.source_type||'').toLowerCase();
+  if(st==='official_regulation') return facet==='presence'?1:2;
+  if(et.includes('OFFICIAL')) return (facet==='presence'||facet==='timing')?4:3;
+  if(et.includes('OBSERVED') && (st.includes('catch')||st==='terrain')) return 5;
+  if(et.includes('OBSERVED_LOCAL_SHOP')||et.includes('OBSERVED_PLUS_LOCAL_SHOP')||et.includes('OBSERVED/DECLARED')) return 4;
+  if(st==='catch_log'||st==='catch_report'||st==='regional_catch_log') return 5;
+  if(st.includes('local_shop')) return 4;
+  if(st==='marque') return (facet==='lure'||facet==='animation')?5:(facet==='color'?3:1);
+  if(st==='video') return (facet==='lure'||facet==='animation')?4:3;
+  if(st==='blog') return 3;
+  return Math.max(1,Math.min(5,Math.round((Number(o.confidence)||.5)*5)));
+}
+function evidenceSetupScore(o){
+  const gf=o.metadata&&o.metadata.gear_filter; if(gf&&gf.excluded_recommendation) return 1;
+  const rec=o.recommendation||{}, w=Number(rec.cast_weight_g||(rec.typology&&rec.typology.poids)||0);
+  if(w>50) return 1; if(w>45) return 4; return 5;
+}
+function evidenceQuality(v){ return v>=4.3?'very':v>=3.3?'solid':v>=2.3?'signal':'hyp'; }
+function evidenceBadge(label,extra=''){ const x=EVIDENCE_LABELS[label]||EVIDENCE_LABELS.hyp; return `<span class="ev-badge ${x.cls}"><span class="ev-dot"></span>${x.label}${extra?` · ${escHTML(extra)}`:''}</span>`; }
+function personalBadge(n){ return n?`<span class="ev-badge personal"><span class="ev-dot"></span>VALIDÉ PAR TOI${n>1?` ×${n}`:''}</span>`:''; }
+function lureEvidenceKey(o){
+  const r=o.recommendation||{}, tp=r.typology||{}; if(tp.famille) return evNorm(tp.famille);
+  const s=evNorm(r.lure||o.tags&&o.tags.leurre||''); if(!s)return null;
+  const keys=['sinking pencil','diving pencil','metal jig','blade jig','minnow','jerkbait','egi','popper','topwater','vibration','souple','soft bait','tenya'];
+  return keys.find(k=>s.includes(k))||s.split(' ').slice(0,4).join(' ');
+}
+function colorEvidenceKey(o){
+  const s=evNorm(o.recommendation&&o.recommendation.color||''); if(!s)return null;
+  const groups=[['ghost','transparent','translucide'],['pearl','blanc','white','opaque'],['chart','chartreuse','jaune','yellow'],['rose','pink','magenta'],['orange'],['glow','phospho','night glow'],['uv','keimura'],['silver','argent','iwashi','sardine','natural','naturel'],['gold','or'],['red','rouge'],['dark','sombre','black','noir']];
+  const hit=groups.find(g=>g.some(k=>s.includes(k))); return hit?hit[0]:s.split(' ').slice(0,3).join(' ');
+}
+function evidenceKey(o,facet){
+  if(facet==='presence') return 'presence';
+  if(facet==='timing') return [o.tags&&o.tags.moment_jour,o.tags&&o.tags.maree].filter(Boolean).map(evNorm).join('|')||null;
+  if(facet==='lure') return lureEvidenceKey(o);
+  if(facet==='animation') return actionCategory(o)||null;
+  if(facet==='color') return colorEvidenceKey(o);
+  return null;
+}
+function evidenceCandidates(spId,facet,key,stop){
+  let arr=speciesObservations(spId);
+  if(facet==='presence') arr=arr.filter(o=>evidenceDirectScore(o,'presence')>=3 && (evidenceDateValue(o)||o.metadata&&o.metadata.zone||o.tags&&o.tags.zone));
+  else arr=technicalObservations(arr).filter(o=>evidenceKey(o,facet)===key);
+  if(stop){
+    const local=arr.filter(o=>evidenceLocalityScore(o,stop)>=4);
+    if(local.length>=2) arr=local; // priorité au local si la base locale suffit; sinon on garde le corpus plus large.
+  }
+  return arr;
+}
+function evidenceGroup(spId,facet,key=null,stop=activeEvidenceStop()){
+  const arr=evidenceCandidates(spId,facet,key,stop); if(!arr.length)return null;
+  const sources=new Set(arr.map(evidenceSourceIdentity)), origins=new Set(arr.map(evidenceOrigin));
+  const personal=arr.filter(isPersonalEvidence).length;
+  let rep=1; if(sources.size>=5&&origins.size>=3)rep=5; else if(sources.size>=3&&origins.size>=2)rep=4; else if(sources.size>=2)rep=3; else if(arr.length>=2)rep=2;
+  const avg=fn=>arr.reduce((a,o)=>a+fn(o),0)/arr.length;
+  const loc=avg(o=>evidenceLocalityScore(o,stop)), season=avg(o=>evidenceSeasonScore(o,stop)), direct=avg(o=>evidenceDirectScore(o,facet)), setup=avg(evidenceSetupScore);
+  const weights=({presence:[.30,.25,.25,.15,.05],timing:[.25,.30,.20,.20,.05],lure:[.15,.15,.20,.25,.25],animation:[.08,.12,.30,.30,.20],color:[.12,.18,.20,.30,.20]})[facet]||[.20,.20,.25,.25,.10];
+  let score=weights[0]*loc+weights[1]*season+weights[2]*direct+weights[3]*rep+weights[4]*setup;
+  if(rep===1)score=Math.min(score,3.15); else if(rep===2)score=Math.min(score,3.75);
+  const quality=evidenceQuality(score);
+  const dims={localite:loc,saison:season,direct:direct,replication:rep,setup:setup};
+  const low=Object.entries(dims).sort((a,b)=>a[1]-b[1])[0];
+  return {facet,key,items:arr,n:arr.length,sources:sources.size,origins:origins.size,personal,score,quality,dims,weak:low&&low[0]};
+}
+function strongestEvidence(spId,facet,stop=activeEvidenceStop()){
+  if(facet==='presence') return evidenceGroup(spId,facet,'presence',stop);
+  const groups=new Map();
+  technicalObservations(speciesObservations(spId)).forEach(o=>{const k=evidenceKey(o,facet);if(k&&!groups.has(k))groups.set(k,evidenceGroup(spId,facet,k,stop));});
+  return [...groups.values()].filter(Boolean).sort((a,b)=>b.score-a.score||b.sources-a.sources||b.n-a.n)[0]||null;
+}
+function evidenceWeakText(g){
+  if(!g)return 'pas assez de matière';
+  return ({localite:'localité encore large',saison:'fenêtre saisonnière moins précise',direct:'preuve surtout interprétée / technique',replication:'peu de sources indépendantes',setup:'application matériel partielle'})[g.weak]||'limite non déterminée';
+}
+function evDimHTML(name,v){ const q=evidenceQuality(v); return `<div class="ev-dim ${q}"><div class="lab"><span>${escHTML(name)}</span><span>${Math.round(v)}/5</span></div><div class="ev-meter"><span style="width:${Math.max(8,Math.min(100,v/5*100))}%"></span></div></div>`; }
+function evidenceDetailsHTML(g){
+  if(!g)return '';
+  const ctx=activeEvidenceStop();
+  return `<details class="ev-why"><summary>Pourquoi ce niveau ?</summary><div class="ev-dims">${evDimHTML('Localité',g.dims.localite)}${evDimHTML('Saison',g.dims.saison)}${evDimHTML('Observation',g.dims.direct)}${evDimHTML('Réplication',g.dims.replication)}${evDimHTML('Setup',g.dims.setup)}</div><div class="ev-note"><strong>${g.n} observation${g.n>1?'s':''} · ${g.sources} source${g.sources>1?'s':''} · ${g.origins} origine${g.origins>1?'s':''}</strong>${ctx?` · contexte ${escHTML(ctx.city)}`:''}. Limite principale : ${escHTML(evidenceWeakText(g))}. Les répétitions d'une même origine sont volontairement moins valorisées.</div></details>`;
+}
+function evidenceRecommendationScore(o){ const k=evidenceKey(o,'lure'), g=k?evidenceGroup(o.species_id,'lure',k):null; return g?g.score:(Number(o.confidence)||.5)*5; }
+function evidenceMiniHTML(sp,o,facet='lure'){
+  const key=evidenceKey(o,facet), g=key?evidenceGroup(sp.id,facet,key):evidenceGroup(sp.id,'presence','presence');
+  if(!g)return `<span class="ev-badge hyp"><span class="ev-dot"></span>HYPOTHÈSE</span>`;
+  return `${evidenceBadge(g.quality,`${g.sources} src`)}${personalBadge(g.personal)}`;
+}
+function speciesEvidenceStripHTML(sp){
+  const facets=[['presence','Présence'],['timing','Timing'],['lure','Leurre'],['animation','Animation'],['color','Couleur']];
+  const gs=facets.map(([f,n])=>[f,n,strongestEvidence(sp.id,f)]);
+  const valid=gs.filter(x=>x[2]); if(!valid.length)return '';
+  const avg=valid.reduce((a,x)=>a+x[2].score,0)/valid.length, overall=evidenceQuality(avg), personal=Math.max(0,...valid.map(x=>x[2].personal));
+  return `<div class="evidence-strip"><div class="evidence-head"><div class="evidence-title">Niveau de preuve de la base${activeEvidenceStop()?` · ${escHTML(activeEvidenceStop().city)}`:''}</div><div>${evidenceBadge(overall)}${personalBadge(personal)}</div></div><div class="evidence-facets">${valid.map(([f,n,g])=>`<span class="ev-facet"><strong>${escHTML(n)}</strong><span class="quality ${g.quality}">${EVIDENCE_LABELS[g.quality].label}</span></span>`).join('')}</div><div class="ev-note">Le niveau de preuve mesure la solidité documentaire. Il est séparé du score d'opportunité marée/lumière et ne représente jamais une probabilité de capture.</div></div>`;
+}
+function observationEvidenceType(o){
+  if(isPersonalEvidence(o))return 'TON TERRAIN';
+  const et=String(o.metadata&&o.metadata.evidence_type||'').toUpperCase();
+  if(et.includes('OBSERVED')||String(o.source_type||'').includes('catch'))return 'OBSERVATION';
+  if(et.includes('OFFICIAL'))return 'RÉFÉRENCE';
+  if(o.recommendation)return 'RECOMMANDATION';
+  return 'INTERPRÉTATION';
+}
+
 function renderSpeciesPage(){
   const sp = DATA.species.find(s=>s.id===currentSpeciesId);
   if(!sp){ location.hash=''; return; }
@@ -1059,7 +1274,7 @@ function panelComportement(sp, obs){
   const sourceCount=new Set(obs.map(o=>o.source).filter(Boolean)).size;
   const synth=blocks.length?blocks.map(b=>`<div class="behav-block"><div class="behav-title">${escHTML(b.titre)}</div><div class="behav-txt">${mdLite(b.txt)}</div></div>`).join(''):`<div class="empty">Pas encore assez de matière pour une lecture comportementale robuste.</div>`;
   const full=SYNTH.species&&SYNTH.species[sp.name_fr];
-  return `<div class="section" style="margin-top:0"><p class="section-title">Comprendre le poisson</p><div class="understand-stat"><span>${obs.length} observations</span><span>${sourceCount} sources</span>${divergences.length?`<span>${divergences.length} désaccords utiles</span>`:''}</div>${synth}</div>${full?`<div class="section"><details class="intel-details"><summary>Synthèse complète de la base</summary><div class="synth-box" style="margin-top:10px">${mdLite(full)}</div></details></div>`:''}${divergences.length?`<div class="section"><details class="intel-details"><summary>Quand les sources ne racontent pas la même chose (${divergences.length})</summary><div style="margin-top:10px">${divergences.slice(0,12).map(consensusCard).join('')}</div></details></div>`:''}<div class="section"><details class="intel-details"><summary>Voir les observations brutes (${obs.length})</summary><div style="margin-top:10px">${obs.slice().sort((a,b)=>b.confidence-a.confidence).map(factCard).join('')}</div></details></div>`;
+  return `<div class="section" style="margin-top:0"><p class="section-title">Comprendre le poisson</p><div class="evidence-legend"><strong>V6.2 :</strong> une capture constatée, un pattern répété et une recommandation ne sont plus confondus. La réplication compte les sources et les origines pour éviter les faux consensus.</div><div class="evidence-model"><div class="item"><div class="name">Observation</div><div class="txt">Un fait constaté : capture, comportement, condition ou mesure.</div></div><div class="item"><div class="name">Pattern</div><div class="txt">Plusieurs observations indépendantes convergent sur une même relation.</div></div><div class="item"><div class="name">Hypothèse</div><div class="txt">Interprétation utile mais encore peu répliquée ou trop éloignée du contexte.</div></div><div class="item"><div class="name">Ton terrain</div><div class="txt">Validation personnelle issue de tes sessions loggées, affichée séparément.</div></div></div><div class="understand-stat"><span>${obs.length} observations</span><span>${sourceCount} sources</span>${divergences.length?`<span>${divergences.length} désaccords utiles</span>`:''}</div>${synth}</div>${full?`<div class="section"><details class="intel-details"><summary>Synthèse complète de la base</summary><div class="synth-box" style="margin-top:10px">${mdLite(full)}</div></details></div>`:''}${divergences.length?`<div class="section"><details class="intel-details"><summary>Quand les sources ne racontent pas la même chose (${divergences.length})</summary><div style="margin-top:10px">${divergences.slice(0,12).map(consensusCard).join('')}</div></details></div>`:''}<div class="section"><details class="intel-details"><summary>Voir les observations brutes (${obs.length})</summary><div style="margin-top:10px">${obs.slice().sort((a,b)=>b.confidence-a.confidence).map(factCard).join('')}</div></details></div>`;
 }
 /* --- Panneaux techniques V5 : rôle du leurre, geste, comportement, couleur --- */
 function techSpecies(sp){
@@ -1138,7 +1353,7 @@ function recoPanelInner(obs, field){
       <strong style="color:var(--accent)">${escHTML(o.recommendation[field])}</strong>
       ${o.recommendation.lure ? `<span style="color:var(--text-muted); font-size:12.5px"> — sur ${escHTML(o.recommendation.lure)}</span>` : ''}
       ${field==='animation' ? typoBadge(o) : ''}
-      <div class="fact-meta">${conds}<span class="conf-mini ${confClass(o.confidence)}">${o.confidence.toFixed(2)} · ${escHTML(o.source)}</span></div>
+      <div class="fact-meta">${conds}${evidenceMiniHTML(sp,o,field==='color'?'color':field==='animation'?'animation':'lure')}</div><div class="raw-source">${escHTML(o.source)} · ${escHTML(observationEvidenceType(o))}</div>
     </div>`;
   }).join('');
 }
@@ -1162,14 +1377,14 @@ function panelSynthese(sp, obs){
   const animTxt=ts.animation?shortTech(ts.animation):eat?shortTech(eat.txt):'Animation à adapter à la couche et au courant.';
   const colorTxt=ts.color?shortTech(ts.color,150):'Commencer naturel puis ajuster le niveau de visibilité.';
   const planBTxt=ux.fail|| (refuse?shortTech(refuse.txt,185):'Pas de signal : change d’abord la couche ou le rôle du leurre. Suivi/refus : réduis le signal et ne change qu’une variable.');
-  return `<div class="section" style="margin-top:0"><p class="section-title">Plan de jeu</p><div class="ux-section-lead">Le minimum utile avant le premier lancer.</div><div class="field-grid"><div class="field-card"><div class="field-label">Où</div><div class="field-value">${escHTML(whereTxt)}</div></div><div class="field-card"><div class="field-label">Quand</div><div class="field-value">${escHTML(whenTxt)}</div></div><div class="field-card"><div class="field-label">Combo</div><div class="field-value"><strong>${escHTML(p.code||'—')} · PE${escHTML(pe)}</strong><br>${escHTML(p.note||'')}</div></div><div class="field-card"><div class="field-label">Leurre / rôle</div><div class="field-value">${escHTML(lureTxt)}</div></div><div class="field-card wide"><div class="field-label">Comment</div><div class="field-value">${escHTML(animTxt)}</div></div><div class="field-card wide"><div class="field-label">Couleur de départ</div><div class="field-value">${escHTML(colorTxt)}</div></div></div><div class="field-planb"><div class="field-label">Si ça ne donne rien</div><div class="field-value">${escHTML(planBTxt)}</div></div><div class="field-cta"><div class="txt">Tu as les conditions du moment ? Le QCM transforme ce plan en config plus précise.</div><button onclick="startQCM()">Trouver ma config →</button></div><div id="qcmZone" style="margin-top:10px"></div></div><div class="section"><p class="section-title">Logger la session</p><div id="logZone">${logFormHTML(sp)}</div></div>`;
+  return `<div class="section" style="margin-top:0"><p class="section-title">Plan de jeu</p><div class="ux-section-lead">Le minimum utile avant le premier lancer.</div><div class="field-grid"><div class="field-card"><div class="field-label">Où</div><div class="field-value">${escHTML(whereTxt)}</div></div><div class="field-card"><div class="field-label">Quand</div><div class="field-value">${escHTML(whenTxt)}</div></div><div class="field-card"><div class="field-label">Combo</div><div class="field-value"><strong>${escHTML(p.code||'—')} · PE${escHTML(pe)}</strong><br>${escHTML(p.note||'')}</div></div><div class="field-card"><div class="field-label">Leurre / rôle</div><div class="field-value">${escHTML(lureTxt)}</div></div><div class="field-card wide"><div class="field-label">Comment</div><div class="field-value">${escHTML(animTxt)}</div></div><div class="field-card wide"><div class="field-label">Couleur de départ</div><div class="field-value">${escHTML(colorTxt)}</div></div></div><div class="field-planb"><div class="field-label">Si ça ne donne rien</div><div class="field-value">${escHTML(planBTxt)}</div></div>${speciesEvidenceStripHTML(sp)}<div class="field-cta"><div class="txt">Tu as les conditions du moment ? Le QCM transforme ce plan en config plus précise.</div><button onclick="startQCM()">Trouver ma config →</button></div><div id="qcmZone" style="margin-top:10px"></div></div><div class="section"><p class="section-title">Logger la session</p><div id="logZone">${logFormHTML(sp)}</div></div>`;
 }
 function factCard(o){
   const tags = Object.entries(o.tags||{}).map(([d,v])=>`<span class="tag">${escHTML(DIM_LABELS[d]||d)}: ${escHTML(Array.isArray(v)?v.join(' · '):v)}</span>`).join('');
   const gf=o.metadata&&o.metadata.gear_filter;
   const off=gf&&gf.excluded_recommendation ? `<div class="gear-reco"><span class="gear-pill off">LEURRE HORS SETUP</span><span class="gear-pill">${escHTML(gf.cast_weight_g||'>50')} g · fait comportemental conservé</span></div>` : '';
   return `<div class="fact-card">${off}${escHTML(o.text)}
-    <div class="fact-meta">${tags}<span class="conf-mini ${confClass(o.confidence)}">${Number(o.confidence).toFixed(2)} · ${escHTML(o.source)}</span></div>
+    <div class="fact-meta">${tags}<span class="ev-badge ${isPersonalEvidence(o)?'personal':evidenceQuality(evidenceDirectScore(o,'presence'))}"><span class="ev-dot"></span>${escHTML(observationEvidenceType(o))}</span></div><div class="raw-source">${escHTML(o.source)} · score source historique ${Number(o.confidence).toFixed(2)}</div>
   </div>`;
 }
 
@@ -1456,7 +1671,7 @@ function renderQCMResults(){
     });
     const matchedObs = obsMatchCategories(o, obsSel);
     return {o, matchedDims, matchedObs, matches: matchedDims.length + matchedObs.length};
-  }).filter(r=>r.matches>0).sort((a,b)=> b.matches-a.matches || b.o.confidence-a.o.confidence);
+  }).filter(r=>r.matches>0).sort((a,b)=> b.matches-a.matches || evidenceRecommendationScore(b.o)-evidenceRecommendationScore(a.o));
 
   const zone = document.getElementById('qcmZone');
   const condBits = Object.entries(answers).filter(([d])=>d!=='observation').map(([d,v])=>`${DIM_LABELS[d]||d}=${v}`);
@@ -1485,7 +1700,7 @@ function renderQCMResults(){
         ${o.recommendation.color?`<div class="reco-row"><span class="k">Couleur</span>${escHTML(o.recommendation.color)}</div>`:''}
         ${o.recommendation.animation?`<div class="reco-row"><span class="k">Animation</span>${escHTML(o.recommendation.animation)}</div>`:''}
         ${o.recommendation.leader?`<div class="reco-row"><span class="k">Bas de ligne</span>${escHTML(o.recommendation.leader)}</div>`:''}
-        <div class="reco-source">${escHTML(o.source)} (${escHTML(o.source_type)}) · confiance ${Number(o.confidence).toFixed(2)}</div>
+        <div class="reco-proofline"><span class="context-fit">Compatibilité conditions : ${matchedDims.length+matchedObs.length}/${Object.keys(answers).filter(k=>k!=='observation').length+(answers.observation||[]).length||1}</span>${evidenceMiniHTML(DATA.species.find(s=>s.id===currentSpeciesId),o,'lure')}</div>${(()=>{const spx=DATA.species.find(s=>s.id===currentSpeciesId),k=evidenceKey(o,'lure'),g=k?evidenceGroup(spx.id,'lure',k):null;return g?evidenceDetailsHTML(g):'';})()}<div class="reco-source">${escHTML(o.source)} (${escHTML(o.source_type)}) · ${escHTML(observationEvidenceType(o))}</div>
       </div>`).join('')}
     <span class="restart-btn" onclick="startQCM()">↺ Refaire</span></div>`;
 }

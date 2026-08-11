@@ -1,4 +1,4 @@
--- Schéma base de connaissance pêche Japon — v6
+-- Schéma base de connaissance pêche Japon — v6.2
 -- Multi-espèces, briefs, terrain PWA, intel locale et marées officielles 2026.
 
 CREATE TABLE IF NOT EXISTS species (
