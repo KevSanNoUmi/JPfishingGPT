@@ -1028,6 +1028,8 @@ function stopDetail(s){
     tideBlock=`<div class="k">Prévisions marée — jours du séjour</div>
       <div class="tide-next" style="margin:5px 0 2px">${escHTML(fullDayLabel(key))}</div>
       ${tideCurveSVG(s.port,refDate,effectiveSpecies)}
+      <div class="k" style="margin-top:5px">Créneaux espèces — signal de la base</div>
+      ${momentLegend(effectiveSpecies)}
       ${days.length>1?`<div class="tide-days">${dayButtons}</div><div class="tide-nav"><button ${idx===0?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx-1})">← Préc.</button><span class="tide-next">Jour ${idx+1}/${days.length}</span><button ${idx===days.length-1?'disabled':''} onclick="event.stopPropagation();setTideDay(${s.id},${idx+1})">Suiv. →</button></div>`:''}
       <div class="tide-scorebox"><div class="tide-scorebig">${score.score??'—'}</div><div class="tide-scoretxt"><strong style="color:var(--text)">Opportunité marée/lumière : ${escHTML(score.label)}</strong><br>${escHTML(score.reason)}<br><span style="font-size:10px">Compare uniquement les jours du séjour; mouvement de phase ≠ courant réel du spot.</span></div></div>
       <div class="tide-now"><span class="tide-next">${ext.length?ext.map(e=>`${e.type} ${fmtJST(e.time)} · ${Math.round(e.height_cm)} cm`).join(' · '):'—'}</span></div>

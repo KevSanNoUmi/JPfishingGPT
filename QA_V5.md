@@ -21,8 +21,8 @@ Date : 2026-08-11
 
 - JavaScript inline validé avec `node --check`.
 - Test runtime avec DOM/fetch simulés : chargement des 493 observations, rendu accueil, pad Kobe, onglets Animation et Couleur.
-- Test du pad Kobe : 4 jours 20→23/11 présents et scores calculés.
-- Contrôle solaire Kobe 20/11/2026 : premières lueurs ~06:10, lever ~06:37, coucher ~16:52, fin des lueurs ~17:19 JST.
+- Test du pad Kobe : 4 jours 21→24/11 présents et scores calculés.
+- Contrôle solaire Kobe 21/11/2026 : premières lueurs ~06:10, lever ~06:37, coucher ~16:52, fin des lueurs ~17:19 JST.
 - Le bug de date UTC/JST sur l'aube a été détecté puis corrigé pendant cette passe.
 - Les panneaux techniques contiennent bien des mécaniques distinctes `Linéaire` et `Lift-and-fall`.
 - La logique couleur contient ghost/transparent, opaque/pearl, flash, fluo/UV, glow et silhouette sombre.
